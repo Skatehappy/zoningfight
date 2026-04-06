@@ -523,7 +523,7 @@ PRECEDENTS: ${formData.precedents || "none specified"}`;
               </button>
               <div style={{ marginTop: "16px", fontSize: "12px", color: colors.inkFaint, lineHeight: "1.6" }}>
                 Don't have an access code?{" "}
-                <a href="https://payhip.com/zoningfight" style={{ color: colors.goldLight, textDecoration: "none" }}>Purchase for $49 →</a>
+                <a href="https://payhip.com/b/Z3JNl" style={{ color: colors.goldLight, textDecoration: "none" }}>Purchase for $49 →</a>
               </div>
             </div>
           </div>
