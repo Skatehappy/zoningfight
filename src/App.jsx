@@ -235,7 +235,7 @@ export default function ZoningFight() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           accessCode: code,
-          systemPrompt: "Respond with only the word: VALID",
+          systemPrompt: "Reply: VALID",
           userPrompt: "Access check",
         }),
       });
