@@ -49,8 +49,8 @@ const stepFields = {
     { key: "zoningDistrict",  label: "Zoning District",      type: "text",   required: false, placeholder: "e.g. R-20, Commercial B" },
   ],
   Variance: [
-    { key: "varianceType",      label: "Type of Variance",        type: "select", required: true,
-      options: ["Area/Setback Variance", "Use Variance", "Dimensional Variance", "Other"] },
+    { key: "varianceType",      label: "Type of Dispute",         type: "select", required: true,
+      options: ["Area/Setback Variance", "Use Variance", "Dimensional Variance", "Building Permit Denial", "Cease and Desist / Stop Work Order", "Non-Conforming Use Dispute", "Conditional Use Permit Denial", "Zoning Code Interpretation Dispute", "Sign Permit Denial", "Code Enforcement / Neighbor Complaint", "Other"] },
     { key: "whatYouWant",       label: "What You Want to Build/Do", type: "textarea", required: true,
       placeholder: "e.g. Build a 12x16 detached garage in the side yard, 4 feet from the property line" },
     { key: "currentRequirement", label: "Current Zoning Requirement", type: "textarea", required: true,
@@ -83,6 +83,60 @@ const requiredFields = {
   Criteria: ["townCriteria"],
   Demand: [],
 };
+
+const VARIANCE_TYPES = ["Area/Setback Variance", "Use Variance", "Dimensional Variance"];
+const isVarianceType = (t) => VARIANCE_TYPES.includes(t);
+
+const conditionalFields = {
+  "Building Permit Denial": [
+    { key: "permitType",         label: "Permit Type",                                type: "select",   options: ["Residential — new construction","Residential — addition","Residential — accessory structure","Commercial — new construction","Commercial — renovation","Demolition","Change of use","Other"] },
+    { key: "permitDenialReason", label: "Denial Reason the Municipality Gave",        type: "textarea", placeholder: "e.g. 'Does not meet lot coverage requirements' — no specific subsection cited" },
+    { key: "permitProjectDesc",  label: "Project Description",                        type: "textarea", placeholder: "e.g. Two-story 2,400 sq ft single-family home with attached garage on a 12,000 sq ft R-1 lot" },
+    { key: "permitPriorApprovals",label: "Prior Approvals for Similar Nearby Projects",type: "textarea", placeholder: "e.g. 145 Maple Ave approved for similar lot coverage in 2023 (Permit #23-0842); 210 Maple approved 2024" },
+  ],
+  "Cease and Desist / Stop Work Order": [
+    { key: "stopActivity",       label: "Activity Ordered to Stop",                   type: "textarea", placeholder: "e.g. Construction of the approved 10x12 rear deck" },
+    { key: "stopOrderDate",      label: "Date of Order",                               type: "text",     placeholder: "e.g. March 12, 2026" },
+    { key: "stopReason",         label: "Reason Given for the Order",                  type: "textarea", placeholder: "e.g. 'Activity not permitted in R-1 zone' — no ordinance section cited" },
+    { key: "stopDuration",       label: "How Long Has the Activity Been Ongoing?",     type: "text",     placeholder: "e.g. 8 weeks since permit #24-1102 was issued" },
+  ],
+  "Non-Conforming Use Dispute": [
+    { key: "ncUseAtIssue",       label: "Use at Issue",                                type: "textarea", placeholder: "e.g. Small auto repair shop operating from the detached garage" },
+    { key: "ncEstablishedDate",  label: "Date the Use Was Established",                type: "text",     placeholder: "e.g. June 1978" },
+    { key: "ncCurrentZoning",    label: "Current Zoning Designation",                  type: "text",     placeholder: "e.g. R-20 (changed from MU-1 in 2015)" },
+    { key: "ncMunicipalityBasis",label: "Municipality's Stated Basis for Action",      type: "textarea", placeholder: "e.g. Claims the use was abandoned when owner took medical leave 2022-2023" },
+  ],
+  "Conditional Use Permit Denial": [
+    { key: "cupUseProposed",     label: "Use Proposed",                                type: "textarea", placeholder: "e.g. Home-occupation tutoring service — up to 4 students at a time, 2pm-7pm weekdays" },
+    { key: "cupCriteria",        label: "Criteria in the Ordinance",                   type: "textarea", placeholder: "Paste the ordinance's conditional-use criteria here (e.g. compatibility, traffic impact, hours, parking)" },
+    { key: "cupDenialReason",    label: "Denial Reason Given",                         type: "textarea", placeholder: "e.g. 'Not in keeping with the neighborhood' — no specific criterion identified" },
+  ],
+  "Zoning Code Interpretation Dispute": [
+    { key: "interpSection",      label: "Ordinance Section in Dispute",                type: "text",     placeholder: "e.g. Section 4.2.3 — Accessory Structures" },
+    { key: "interpMunicipality", label: "Municipality's Interpretation",               type: "textarea", placeholder: "e.g. Reads 'accessory structure' to exclude detached workshops over 200 sq ft" },
+    { key: "interpOwner",        label: "Your Interpretation",                         type: "textarea", placeholder: "e.g. Plain text includes all accessory structures up to the 600 sq ft cap in §4.2.3(b)" },
+    { key: "interpBasis",        label: "Basis for Your Interpretation",               type: "textarea", placeholder: "e.g. Plain language of §4.2.3(b); consistent prior interpretations in 2018-2023 permits; defined term in §2.1" },
+  ],
+  "Sign Permit Denial": [
+    { key: "signType",           label: "Sign Type",                                   type: "select",   options: ["Business wall sign","Freestanding / pole sign","Monument sign","Window sign","Temporary / political sign","Digital / LED sign","Directional sign","Other"] },
+    { key: "signDenialReason",   label: "Denial Reason Given",                         type: "textarea", placeholder: "e.g. 'Content not permitted for your business category'" },
+    { key: "signSimilarApproved",label: "Similar Signs Approved in the Area",          type: "textarea", placeholder: "e.g. The national-chain tenant next door has an identical-size internally illuminated sign approved in 2022" },
+  ],
+  "Code Enforcement / Neighbor Complaint": [
+    { key: "ceAllegedViolation", label: "Alleged Violation",                           type: "textarea", placeholder: "e.g. 'Excessive outdoor storage' — pertaining to 2 kayaks and a bicycle rack" },
+    { key: "ceNoticeDate",       label: "Notice Date",                                 type: "text",     placeholder: "e.g. March 4, 2026" },
+    { key: "ceSameActivityNeighbors", label: "Same Activity Visible on Neighboring Properties?", type: "select", options: ["Yes — clearly visible on many","Yes — visible on a few","No","Not sure"] },
+    { key: "cePriorNotices",     label: "Prior Notices or Enforcement",                type: "textarea", placeholder: "e.g. None; or this is the third notice in 18 months" },
+  ],
+};
+
+function buildVarianceFields(baseFields, varianceType) {
+  const cond = conditionalFields[varianceType];
+  if (!cond) return baseFields;
+  const idx = baseFields.findIndex(f => f.key === "varianceType");
+  if (idx === -1) return [...baseFields, ...cond];
+  return [...baseFields.slice(0, idx + 1), ...cond, ...baseFields.slice(idx + 1)];
+}
 
 const inputStyle = (focused) => ({
   width: "100%",
@@ -211,6 +265,11 @@ export default function App() {
   const handleChange = (key, value) => setFormData(prev => ({ ...prev, [key]: value }));
 
   const isStepValid = (stepName) => {
+    const variance = isVarianceType(formData.varianceType);
+    if (!variance) {
+      if (stepName === "Variance") return !!formData.varianceType?.trim();
+      if (stepName === "Hardship" || stepName === "Criteria") return true;
+    }
     return (requiredFields[stepName] || []).every(k => formData[k] && formData[k].trim());
   };
 
@@ -247,6 +306,131 @@ export default function App() {
 
   const systemPrompt = "You are an expert land use and zoning attorney. Write compelling variance appeal letters that address the specific evaluation criteria for the town. Cite hardship, minimum variance necessary, and public benefit. Professional, precise tone. 550-750 words. Format: formal letter with [DATE] placeholder, via certified mail to the Zoning Board of Appeals. Output ONLY the letter, no preamble.";
 
+  const buildingPermitPrompt = `You are an expert land use and zoning attorney specializing in building permit denial appeals. Write firm, legally precise demand letters.
+
+Rules:
+- Open with clear statement: the municipality denied the building permit application on a specific date; the denial is improper for specified reasons
+- Cite the applicable state building code (state adoption of the International Residential Code, International Building Code, or state-specific code), the local zoning ordinance by section, and the state's zoning enabling act (e.g., New York Town Law §267; California Government Code §65900 et seq.; Florida Chapter 163; Connecticut General Statutes §8-7)
+- Invoke due process — a denial must state with specificity which code sections are allegedly violated so the applicant can respond
+- Rebut the stated denial reason point by point, citing the project's compliance with each provision
+- Reference prior permits approved for similar projects in the same jurisdiction (comparable-treatment argument)
+- Demand: written denial specifying exact code sections violated; reconsideration based on the compliance showing; identification of the administrative appeal path (zoning board of appeals, building code board of appeals) and its deadlines
+- Warn of remedies: administrative appeal; Article 78 / mandamus; declaratory judgment; civil rights action under 42 U.S.C. §1983 for arbitrary due-process violations; and attorney's fees where statute provides
+- Set a firm 30-day response deadline
+- Professional but firm tone
+- 500-700 words
+- Format: formal letter with [DATE] placeholder, via certified mail
+- Output ONLY the letter, no preamble`;
+
+  const stopWorkPrompt = `You are an expert land use and zoning attorney specializing in stop-work orders and cease-and-desist responses. Write firm, legally precise response letters with appropriate urgency.
+
+Rules:
+- Open with clear statement: the municipality issued a stop-work / cease-and-desist order on a specific date; the order is improper because the activity is permitted
+- Cite the local zoning ordinance by specific section governing the activity at issue
+- Invoke the vested rights doctrine — work commenced under a valid permit or with substantial reliance on prior government approval cannot be halted by post-hoc interpretation changes
+- Invoke non-conforming use protections where applicable — pre-existing legal uses are grandfathered against later zoning changes under state zoning enabling acts
+- Cite the state's zoning enabling act and relevant case law on stop-work orders and procedural due process
+- Demand: the specific ordinance citation underlying the stop-work determination; suspension of the order pending administrative review; identification of the appeal path and timeline (most jurisdictions provide 30 days to appeal to the zoning board of appeals)
+- Warn of remedies: administrative appeal; Article 78 / mandamus; preliminary injunction against improper stoppage to prevent irreparable economic harm; and damages where authorized
+- Set a firm 7-day response deadline given the urgency of a stop-work order
+- Firm and urgent tone
+- 500-700 words
+- Format: formal letter with [DATE] placeholder, via certified mail and hand delivery
+- Output ONLY the letter, no preamble`;
+
+  const nonConformingPrompt = `You are an expert land use and zoning attorney specializing in non-conforming use protections. Write firm, legally precise demand letters.
+
+Rules:
+- Open with clear statement: the use at issue was lawfully established on a specific date and is protected as a pre-existing legal non-conforming use
+- Cite the state zoning enabling act provision that protects non-conforming uses (e.g., New York Town Law §267-b; California Government Code §65852.25; Connecticut General Statutes §8-2; Florida Chapter 163)
+- Cite case law establishing that non-conforming uses are vested property rights that cannot be eliminated without just compensation or a lawful amortization period meeting constitutional standards
+- Document the use's establishment date, lawful commencement under then-applicable zoning, and continuous operation — non-conforming status is typically lost only by abandonment or substantial discontinuance
+- If the municipality invokes amortization: challenge the amortization period as unreasonable; amortization must provide a period long enough to recoup investment and must be supported by a legitimate public purpose
+- Demand: documentation of the specific zoning amendment allegedly eliminating the use; recognition of the vested non-conforming status; withdrawal of any enforcement action
+- Warn of remedies: declaratory judgment quieting the non-conforming use; Article 78 / mandamus; inverse condemnation claim if the municipality attempts a regulatory taking; §1983 action for due-process violations; and attorney's fees where statute provides
+- Set a firm 30-day response deadline
+- Professional but firm tone
+- 500-700 words
+- Format: formal letter with [DATE] placeholder, via certified mail
+- Output ONLY the letter, no preamble`;
+
+  const cupPrompt = `You are an expert land use and zoning attorney specializing in conditional use permit (CUP) / special exception appeals. Write firm, legally precise appeal letters.
+
+Rules:
+- Open with clear statement: the municipality denied a conditional use permit / special exception for the specified proposed use on a specific date; the denial lacks required findings
+- Cite the local zoning ordinance provision establishing the conditional use permit and the specific criteria that govern issuance
+- Cite the state zoning enabling act provision on special exceptions and CUPs (e.g., New York Town Law §274-b; California Government Code §65901; Connecticut General Statutes §8-2; Florida §163.3202)
+- Invoke the rule that a conditional use, unlike a variance, is a use the ordinance has already deemed appropriate for the district in general — the board's role is to verify compliance with enumerated standards, not to re-evaluate policy
+- For each enumerated CUP criterion, demonstrate compliance with specific facts and evidence the applicant presented
+- Rebut the denial reason point by point — conclusory findings like "not in keeping with the neighborhood" are legally insufficient without specific factual support in the record
+- Demand: written findings identifying which specific criterion was not met and the evidentiary basis; reconsideration on the current record; identification of the appeal path
+- Warn of remedies: administrative appeal; Article 78 / certiorari review (denial set aside if unsupported by substantial evidence or based on legal error); declaratory judgment; and attorney's fees where statute provides
+- Set a firm 30-day response deadline
+- Professional but firm tone
+- 500-700 words
+- Format: formal letter with [DATE] placeholder, via certified mail
+- Output ONLY the letter, no preamble`;
+
+  const codeInterpretationPrompt = `You are an expert land use and zoning attorney specializing in zoning code interpretation disputes. Write firm, legally precise demand letters.
+
+Rules:
+- Open with clear statement: the municipality has interpreted a specific zoning ordinance section in a manner the property owner disputes
+- Cite the zoning ordinance section verbatim as provided
+- Apply the rules of statutory construction: (1) plain meaning controls when unambiguous; (2) ambiguities in zoning ordinances are construed in favor of the property owner and against the government because zoning is in derogation of common-law property rights; (3) definitional terms must be applied consistently throughout the ordinance
+- Present the owner's interpretation with textual, structural, and purposive support
+- Rebut the municipality's interpretation — identify where it conflicts with the plain language, renders other provisions superfluous, or produces absurd results
+- Demand: a formal written interpretation from the zoning officer citing specific ordinance language and reasoning; if adverse, identification of the administrative appeal path (the zoning board of appeals has primary jurisdiction to construe the ordinance in most states)
+- Warn of remedies: administrative appeal; Article 78 / certiorari review of the interpretation for legal error; declaratory judgment as to the meaning of the ordinance; and attorney's fees where statute provides
+- Set a firm 30-day response deadline
+- Professional but firm tone
+- 500-700 words
+- Format: formal letter with [DATE] placeholder, via certified mail
+- Output ONLY the letter, no preamble`;
+
+  const signPermitPrompt = `You are an expert land use and zoning attorney specializing in sign ordinance disputes and First Amendment challenges. Write firm, legally precise appeal letters.
+
+Rules:
+- Open with clear statement: the municipality denied the sign permit application on a specific date; the denial is improper for specified reasons
+- Cite the local sign ordinance section governing the proposed sign
+- Invoke the U.S. Supreme Court's decision in Reed v. Town of Gilbert, 576 U.S. 155 (2015), which held that content-based sign regulations are subject to strict scrutiny — if the ordinance treats signs differently based on the message conveyed, it is presumptively unconstitutional
+- Identify whether the stated denial basis is content-based (e.g., restrictions that turn on whether the sign is political, ideological, commercial, or directional) and challenge it under Reed
+- Cite the state's adoption of and state-court gloss on First Amendment protections for commercial and noncommercial speech
+- For selective-enforcement claims: identify other similar signs approved or not enforced against in the municipality
+- Demand: written denial citing the specific ordinance section and the content-neutral justification; reconsideration; identification of the appeal path
+- Warn of remedies: administrative appeal; First Amendment suit under 42 U.S.C. §1983 (injunctive relief, nominal and actual damages, attorney's fees under 42 U.S.C. §1988); declaratory judgment on facial and as-applied challenges; and Article 78 / certiorari review
+- Set a firm 30-day response deadline
+- Professional but firm tone
+- 500-700 words
+- Format: formal letter with [DATE] placeholder, via certified mail
+- Output ONLY the letter, no preamble`;
+
+  const codeEnforcementPrompt = `You are an expert land use and zoning attorney specializing in code enforcement defense and selective enforcement claims. Write firm, legally precise response letters.
+
+Rules:
+- Open with clear statement: the property owner received a code enforcement notice on a specific date; the notice is improper because the activity is permitted or the enforcement is selective
+- Cite the local code section allegedly violated — demand that the municipality identify the specific subsection and the factual basis for the alleged violation
+- For equal protection / selective enforcement: cite the rule that similarly situated property owners must be treated alike; identify other properties with the same condition visible on neighboring parcels that have not received enforcement action; this is a classic class-of-one equal protection claim under Village of Willowbrook v. Olech, 528 U.S. 562 (2000)
+- Where the enforcement stems from a neighbor complaint, reference the rule that complaint-driven enforcement must still independently satisfy the code — a neighbor's complaint is not itself the violation
+- Demand: specific code citation for the alleged violation; evidence supporting the determination; documentation of how other similarly situated properties have been treated; identification of the administrative appeal procedure
+- Warn of remedies: administrative appeal; Article 78 / mandamus; §1983 action for equal protection or due process violations; injunctive relief; and attorney's fees where statute provides
+- Set a firm response deadline consistent with (and not shorter than) the appeal period stated in the notice
+- Professional but firm tone
+- 500-700 words
+- Format: formal letter with [DATE] placeholder, via certified mail
+- Output ONLY the letter, no preamble`;
+
+  const pickSystemPrompt = (varianceType) => {
+    if (!varianceType) return systemPrompt;
+    if (varianceType === "Building Permit Denial") return buildingPermitPrompt;
+    if (varianceType === "Cease and Desist / Stop Work Order") return stopWorkPrompt;
+    if (varianceType === "Non-Conforming Use Dispute") return nonConformingPrompt;
+    if (varianceType === "Conditional Use Permit Denial") return cupPrompt;
+    if (varianceType === "Zoning Code Interpretation Dispute") return codeInterpretationPrompt;
+    if (varianceType === "Sign Permit Denial") return signPermitPrompt;
+    if (varianceType === "Code Enforcement / Neighbor Complaint") return codeEnforcementPrompt;
+    return systemPrompt;
+  };
+
   const buildPrompt = (tone) => {
     const base = `
 PROPERTY ADDRESS: ${formData.propertyAddress}
@@ -264,10 +448,16 @@ PRIOR VARIANCES NEARBY: ${formData.priorVariances || "none provided"}
 HEARING DATE: ${formData.hearingDate || "not specified"}
 ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
 
+    const cond = (conditionalFields[formData.varianceType] || [])
+      .filter(f => formData[f.key]?.toString().trim())
+      .map(f => `${f.label.toUpperCase()}: ${formData[f.key]}`)
+      .join("\n");
+    const fullBase = cond ? `${base}\n\nTYPE-SPECIFIC DETAILS:\n${cond}` : base;
+
     if (tone === "assertive") {
-      return `Write a MORE ASSERTIVE variance letter. Stronger language, explicit legal citations, more forceful arguments for why criteria are met. Different wording from standard:\n${base}`;
+      return `Write a MORE ASSERTIVE letter. Stronger language, explicit legal citations, more forceful arguments. Different wording from standard:\n${fullBase}`;
     }
-    return `Write a STANDARD PROFESSIONAL variance letter:\n${base}`;
+    return `Write a STANDARD PROFESSIONAL letter:\n${fullBase}`;
   };
 
   const generateLetter = async () => {
@@ -277,13 +467,14 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
     setAltLetter("");
     setChecklist([]);
     try {
-      setLoadingMsg("Drafting your variance letter...");
-      const draft = await callAPI(systemPrompt, buildPrompt("standard"), false, "");
+      const effectivePrompt = pickSystemPrompt(formData.varianceType);
+      setLoadingMsg("Drafting your letter...");
+      const draft = await callAPI(effectivePrompt, buildPrompt("standard"), false, "");
       setLoadingMsg("Running quality review...");
       const reviewed = await callAPI("", "", true, draft);
       setLetter(reviewed);
       setLoadingMsg("Generating assertive version...");
-      const alt = await callAPI(systemPrompt, buildPrompt("assertive"), false, "");
+      const alt = await callAPI(effectivePrompt, buildPrompt("assertive"), false, "");
       setAltLetter(alt);
       setLoadingMsg("Building checklist...");
       try {
@@ -410,7 +601,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
               Your Zoning Board Said No. Fight Back.
             </h1>
             <p style={{ fontSize: "17px", color: colors.inkMuted, maxWidth: "480px", margin: "0 auto 40px", lineHeight: "1.7" }}>
-              AI-generated variance letters addressing your town's specific criteria. Attorney-quality. 5 minutes. {APP.price}.
+              AI-generated letters for variance denials, building permits, stop-work orders, non-conforming use, CUPs, code interpretation, sign permits, and code enforcement. Attorney-quality. 5 minutes. {APP.price}.
             </p>
             <div style={{ maxWidth: "400px", margin: "0 auto", background: colors.white, border: `1px solid ${colors.border}`, borderRadius: "12px", padding: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}>
               <div style={{ fontSize: "14px", color: colors.inkLight, marginBottom: "16px", fontWeight: "600" }}>Enter Your Access Code</div>
@@ -478,7 +669,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
 
             {/* Fields */}
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-              {(stepFields[currentStep] || []).map(f => (
+              {(currentStep === "Variance" ? buildVarianceFields(stepFields.Variance, formData.varianceType) : (stepFields[currentStep] || [])).map(f => (
                 <Field key={f.key} field={f} value={formData[f.key]} onChange={v => handleChange(f.key, v)} />
               ))}
             </div>
