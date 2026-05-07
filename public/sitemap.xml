@@ -1,15 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://zoningfight.com/</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://zoningfight.com/app</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url><loc>https://zoningfight.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+<url><loc>https://zoningfight.com/california</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/texas</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/florida</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/new-york</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/illinois</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/pennsylvania</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/ohio</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/georgia</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/north-carolina</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/arizona</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/california/zoning-variance-appeal-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/california/zoning-decision-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/california/special-use-permit-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/california/setback-variance-request</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/california/conditional-use-permit-denial</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/california/zoning-board-hearing-objection</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/california/spot-zoning-challenge</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/california/nonconforming-use-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/california/zoning-code-violation-defense</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/california/rezoning-application-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/texas/zoning-variance-appeal-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/texas/zoning-decision-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/texas/special-use-permit-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/texas/setback-variance-request</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/texas/conditional-use-permit-denial</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/texas/zoning-board-hearing-objection</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/texas/spot-zoning-challenge</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/texas/nonconforming-use-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/texas/zoning-code-violation-defense</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/texas/rezoning-application-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/florida/zoning-variance-appeal-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/florida/zoning-decision-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/florida/special-use-permit-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/florida/setback-variance-request</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/florida/conditional-use-permit-denial</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/florida/zoning-board-hearing-objection</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/florida/spot-zoning-challenge</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/florida/nonconforming-use-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/florida/zoning-code-violation-defense</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/florida/rezoning-application-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/new-york/zoning-variance-appeal-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/new-york/zoning-decision-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/new-york/special-use-permit-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/new-york/setback-variance-request</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/new-york/conditional-use-permit-denial</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/new-york/zoning-board-hearing-objection</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/new-york/spot-zoning-challenge</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/new-york/nonconforming-use-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/new-york/zoning-code-violation-defense</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/new-york/rezoning-application-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/illinois/zoning-variance-appeal-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/illinois/zoning-decision-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/illinois/special-use-permit-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/illinois/setback-variance-request</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/illinois/conditional-use-permit-denial</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/illinois/zoning-board-hearing-objection</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/illinois/spot-zoning-challenge</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/illinois/nonconforming-use-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/illinois/zoning-code-violation-defense</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/illinois/rezoning-application-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/pennsylvania/zoning-variance-appeal-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/pennsylvania/zoning-decision-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/pennsylvania/special-use-permit-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/pennsylvania/setback-variance-request</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/pennsylvania/conditional-use-permit-denial</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/pennsylvania/zoning-board-hearing-objection</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/pennsylvania/spot-zoning-challenge</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/pennsylvania/nonconforming-use-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/pennsylvania/zoning-code-violation-defense</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/pennsylvania/rezoning-application-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/ohio/zoning-variance-appeal-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/ohio/zoning-decision-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/ohio/special-use-permit-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/ohio/setback-variance-request</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/ohio/conditional-use-permit-denial</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/ohio/zoning-board-hearing-objection</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/ohio/spot-zoning-challenge</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/ohio/nonconforming-use-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/ohio/zoning-code-violation-defense</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/ohio/rezoning-application-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/georgia/zoning-variance-appeal-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/georgia/zoning-decision-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/georgia/special-use-permit-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/georgia/setback-variance-request</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/georgia/conditional-use-permit-denial</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/georgia/zoning-board-hearing-objection</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/georgia/spot-zoning-challenge</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/georgia/nonconforming-use-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/georgia/zoning-code-violation-defense</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/georgia/rezoning-application-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/north-carolina/zoning-variance-appeal-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/north-carolina/zoning-decision-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/north-carolina/special-use-permit-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/north-carolina/setback-variance-request</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/north-carolina/conditional-use-permit-denial</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/north-carolina/zoning-board-hearing-objection</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/north-carolina/spot-zoning-challenge</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/north-carolina/nonconforming-use-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/north-carolina/zoning-code-violation-defense</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/north-carolina/rezoning-application-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/arizona/zoning-variance-appeal-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/arizona/zoning-decision-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/arizona/special-use-permit-appeal</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/arizona/setback-variance-request</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/arizona/conditional-use-permit-denial</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/arizona/zoning-board-hearing-objection</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/arizona/spot-zoning-challenge</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/arizona/nonconforming-use-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/arizona/zoning-code-violation-defense</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://zoningfight.com/arizona/rezoning-application-letter</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
 </urlset>

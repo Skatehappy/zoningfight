@@ -256,6 +256,30 @@ export default function App() {
 
   useEffect(() => {
     try { const s = sessionStorage.getItem("zf_form"); if (s) setFormData(JSON.parse(s)); } catch {}
+    const params = new URLSearchParams(window.location.search);
+    const stateParam = params.get("state");
+    const disputeParam = params.get("dispute");
+    const slugToStateName = {
+      "california": "California", "texas": "Texas", "florida": "Florida",
+      "new-york": "New York", "illinois": "Illinois", "pennsylvania": "Pennsylvania",
+      "ohio": "Ohio", "georgia": "Georgia", "north-carolina": "North Carolina", "arizona": "Arizona"
+    };
+    const slugToVarianceType = {
+      "zoning-variance-appeal-letter": "Area/Setback Variance",
+      "zoning-decision-appeal": "Other",
+      "special-use-permit-appeal": "Use Variance",
+      "setback-variance-request": "Area/Setback Variance",
+      "conditional-use-permit-denial": "Use Variance",
+      "zoning-board-hearing-objection": "Other",
+      "spot-zoning-challenge": "Other",
+      "nonconforming-use-letter": "Other",
+      "zoning-code-violation-defense": "Other",
+      "rezoning-application-letter": "Other"
+    };
+    const updates = {};
+    if (stateParam && slugToStateName[stateParam]) updates.state = slugToStateName[stateParam];
+    if (disputeParam && slugToVarianceType[disputeParam]) updates.varianceType = slugToVarianceType[disputeParam];
+    if (Object.keys(updates).length) setFormData(prev => ({ ...prev, ...updates }));
   }, []);
 
   useEffect(() => {
