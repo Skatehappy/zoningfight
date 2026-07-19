@@ -366,7 +366,7 @@ Rules:
 
 Rules:
 - Open with clear statement: the use at issue was lawfully established on a specific date and is protected as a pre-existing legal non-conforming use
-- Cite the state zoning enabling act provision that protects non-conforming uses (e.g., New York Town Law §267-b; California Government Code §65852.25; Connecticut General Statutes §8-2; Florida Chapter 163)
+- Cite the state zoning enabling act provision that protects non-conforming uses (e.g., New York Town Law §267-b; California's common-law vested-rights doctrine and the local zoning ordinance's non-conforming-use provisions (note: California has no single non-conforming-use statute; Government Code §65852.25 covers only post-disaster reconstruction of multifamily dwellings, not general non-conforming use); Connecticut General Statutes §8-2; Florida Chapter 163)
 - Cite case law establishing that non-conforming uses are vested property rights that cannot be eliminated without just compensation or a lawful amortization period meeting constitutional standards
 - Document the use's establishment date, lawful commencement under then-applicable zoning, and continuous operation — non-conforming status is typically lost only by abandonment or substantial discontinuance
 - If the municipality invokes amortization: challenge the amortization period as unreasonable; amortization must provide a period long enough to recoup investment and must be supported by a legitimate public purpose
