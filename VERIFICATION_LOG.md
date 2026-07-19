@@ -108,3 +108,10 @@ Standard: Three-Gate v7
 - **Subject:** non-statutory internal reference — no verification needed.
 - **Source:** n/a
 - **Action:** no change — confirmed
+
+### 2026-07-19 — CA Government Code §65900 / §65901 (caveat resolution)
+- **Source file:** src/App.jsx:337 / :386
+- **Verdict:** VERIFIED (Gate-3 spot-check caveat cleared)
+- **Subject:** §65900 authorizes a city/county to create a board of zoning adjustment or zoning administrator by ordinance; §65901 grants that body authority to hear and decide conditional use permits and variances.
+- **Source:** law.justia.com Cal. Gov. Code §§65900-65909.5; Stockton Citizens for Sensible Planning v. City of Stockton (quoting §65901(a)).
+- **Action:** no code change — citations confirmed correct; earlier "retrieval inconclusive" flag resolved. Perplexity-verified 2026-07-19.
