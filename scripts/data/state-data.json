@@ -1,0 +1,282 @@
+{
+  "CA": {
+    "state": "California",
+    "abbreviation": "CA",
+    "zoning_enabling_statute": {
+      "name": "Planning and Zoning Law",
+      "citation": "Cal. Gov. Code § 65000 et seq. (Title 7, Division 1)"
+    },
+    "primary_land_use_law": "California's Planning and Zoning Law (Gov. Code § 65000 et seq.) requires every county and city to adopt a comprehensive general plan and authorizes local legislative bodies to adopt zoning ordinances regulating the use of land and structures. Zoning must be consistent with the adopted general plan. The state overlays this local framework with mandatory housing statutes (Housing Accountability Act, statewide ADU law, SB 9, SB 35).",
+    "variance_process": "Handled by the local zoning administrator, board of adjustment, or planning commission. Under Gov. Code § 65906, a variance may be granted only where, because of special circumstances of the property (size, shape, topography, location, surroundings), strict application deprives the property of privileges enjoyed by other similarly zoned property in the vicinity; the variance may not grant a special privilege. Section 65906 expressly does not apply to conditional use permits.",
+    "appeal_process": "First appeal the local decision administratively (to the city council or board of supervisors) within the period set by local ordinance, commonly 10-15 days. After exhausting administrative remedies, seek judicial review by petition for administrative writ of mandate in superior court under Code of Civil Procedure § 1094.5. The petition must be filed within 90 days after the decision becomes final (CCP § 1094.6); requesting the record within 10 days can extend to 30 days after the record is delivered.",
+    "special_use_permits": "Conditional use permits (CUPs) are discretionary permits issued by the local planning commission or zoning administrator for uses allowed subject to conditions. CUPs are governed separately from variances and are expressly excluded from the § 65906 variance standard; the agency imposes conditions and typically requires findings and a public hearing.",
+    "nonconforming_use_rules": "Grandfathering of lawful pre-existing nonconforming uses is administered by local ordinance; the Planning and Zoning Law leaves abandonment/discontinuance thresholds (commonly cessation for 6-12 months) to municipal codes. No uniform statewide abandonment period.",
+    "adu_rules": "Strong state-level preemption. California's statewide ADU law (Gov. Code § 66310 et seq., consolidated by SB 477 effective 2024) requires local agencies to ministerially approve at least one ADU and one junior ADU per lot with a proposed or existing single-family dwelling, exempt from most local development standards; local ADU ordinances must be consistent with § 66310.",
+    "home_business_rules": "Home occupations are regulated locally through municipal zoning codes; no uniform statewide home-occupation statute (local only).",
+    "regulatory_body": "Zoning is administered locally by city/county planning departments and the local legislative body; appeals go to the municipal board (council/board of supervisors) then to superior court. The California Department of Housing and Community Development (HCD) enforces statewide housing/zoning mandates (HAA, ADU law, SB 35).",
+    "complaint_process": "Challenge or appeal a zoning decision to the local zoning administrator/planning commission and then the city council or board of supervisors (per local timelines); after exhausting administrative remedies, file a writ of mandate in the Superior Court under CCP § 1094.5 within the § 1094.6 90-day deadline. Housing-law violations may also be reported to HCD's enforcement unit.",
+    "unique_features": [
+      "Housing Accountability Act (Gov. Code § 65589.5, enacted 1982) limits local ability to deny/reduce housing and enables the 'Builder's Remedy'",
+      "Statewide ADU-by-right law (Gov. Code § 66310 et seq.) mandating ministerial ADU/JADU approval and preempting many local standards",
+      "SB 9 (ministerial duplex + lot-split, up to 4 units on single-family lots in urban areas) and SB 35 (streamlined ministerial approval, Gov. Code § 65913.4)"
+    ],
+    "common_disputes": [
+      "General plan / zoning consistency and rezoning challenges to residential density",
+      "Variance and conditional use permit denials/conditions litigated via writ of mandate",
+      "ADU and SB 9/SB 35 approval fights where localities impose standards preempted by state housing law"
+    ],
+    "recent_reform": "2025 ADU package — Governor Newsom signed four new ADU bills in November 2025 further expanding statewide ADU rights (building on the SB 477 consolidation of Gov. Code § 66310 et seq. effective 2024)."
+  },
+  "TX": {
+    "state": "Texas",
+    "abbreviation": "TX",
+    "zoning_enabling_statute": {
+      "name": "Texas Zoning Enabling Act (Municipal Zoning Authority)",
+      "citation": "Tex. Local Gov't Code Ch. 211 (Subtitle A, Title 7)"
+    },
+    "primary_land_use_law": "Texas has no statewide zoning code. Under Tex. Local Gov't Code Ch. 211, zoning power is delegated to municipalities. Regulations must be adopted in accordance with a comprehensive plan and serve public health, safety, morals, or general welfare. Home-rule cities must appoint a zoning commission; general-law cities may.",
+    "variance_process": "The municipal Board of Adjustment (BOA) decides variances (§ 211.009). Standard: a variance may be authorized only where, because of special conditions, literal enforcement would result in unnecessary hardship, and the variance is not contrary to the public interest. Hardship must arise from unique property characteristics, not financial considerations or self-created circumstances. Texas prohibits use variances — only dimensional relief (setbacks, height, lot coverage). A concurring vote of 4 of the 5 members is required to grant.",
+    "appeal_process": "Appeal an administrative/zoning-officer decision to the Board of Adjustment. To challenge a BOA decision, an aggrieved person files a verified petition for a writ of certiorari in district court, county court, or county court at law within 10 days after the decision is filed in the board's office (§ 211.011). Filing does not automatically stay proceedings.",
+    "special_use_permits": "Special exceptions are heard and decided by the Board of Adjustment when the ordinance requires (§ 211.009); a showing of hardship is not required (unlike a variance). Conditional/special use permits are otherwise created and administered by local ordinance (commonly approved by the city council on recommendation of the planning/zoning commission).",
+    "nonconforming_use_rules": "Nonconforming uses are generally grandfathered; specific amortization, abandonment, and discontinuance thresholds are set by local ordinance rather than fixed statewide in Ch. 211. No uniform statewide abandonment period.",
+    "adu_rules": "Local only. Texas sets no statewide ADU mandate; permit timelines, size, and eligibility depend on the municipality (e.g., Austin and Houston permit ADUs). Statewide preemption bills (SB 673 and SB 1412, 89th Legislature) proposed ministerial 60-day approval, but no statewide ADU preemption law was verified as enacted.",
+    "home_business_rules": "Local only. Home occupation / home-business standards are set by individual municipal zoning ordinances; no statewide home-occupation statute in Ch. 211.",
+    "regulatory_body": "Zoning is administered locally — there is no state zoning agency. Each municipality's zoning/planning commission and Board of Adjustment administer zoning; appeals go from the BOA to the district court (or county court / county court at law).",
+    "complaint_process": "Appeal an administrative zoning decision to the municipal Board of Adjustment; then seek judicial review by filing a verified petition for writ of certiorari in district court, county court, or county court at law within 10 days of the decision being filed (§ 211.011).",
+    "unique_features": [
+      "No statewide zoning; Houston is the largest U.S. city with no zoning ordinance (relying on deed restrictions and platting)",
+      "Extraterritorial jurisdiction (ETJ): Texas cities exercise certain land-use/platting authority beyond city limits",
+      "Texas prohibits use variances — the Board of Adjustment may grant dimensional relief only, not authorize a prohibited use"
+    ],
+    "common_disputes": [
+      "Variance denials/challenges over setbacks, height, or lot coverage (dimensional hardship)",
+      "Nonconforming-use / grandfathering and amortization disputes when a use predates a new ordinance",
+      "Deed-restriction and platting conflicts in no-zoning jurisdictions (notably Houston)"
+    ],
+    "recent_reform": "SB 673 and SB 1412 (89th Texas Legislature, 2025) proposed statewide ADU/lot-size reform requiring ministerial 60-day ADU approval; enactment not verified. Otherwise no statewide zoning-preemption law confirmed."
+  },
+  "FL": {
+    "state": "Florida",
+    "abbreviation": "FL",
+    "zoning_enabling_statute": {
+      "name": "Community Planning Act (Local Government Comprehensive Planning and Land Development Regulation Act)",
+      "citation": "Fla. Stat. Ch. 163, Part II (§§ 163.3161 et seq.)"
+    },
+    "primary_land_use_law": "Florida delegates zoning to counties and municipalities under the Community Planning Act, Fla. Stat. Ch. 163, Part II. Each local government must adopt a comprehensive plan, and under Fla. Stat. § 163.3194 all land development regulations and development orders must be consistent with the adopted comprehensive plan. Consistency is the central legal standard governing all local land-use action.",
+    "variance_process": "Variances are decided by the local zoning board of adjustment (ZBA). An applicant files with the local board; the board grants relief only on a showing of legal hardship (unnecessary hardship / unique circumstances of the property not created by the owner), and variances may not be used to change permitted use.",
+    "appeal_process": "A person aggrieved by a board of adjustment decision may seek judicial review by filing a petition for writ of certiorari in the circuit court where the board sits, within 30 days after rendition of the decision. On first-tier certiorari the circuit court reviews whether due process was afforded, the correct law was applied, and the decision is supported by competent, substantial evidence.",
+    "special_use_permits": "Conditional uses / special exceptions are authorized and administered locally under the comprehensive plan and land development regulations (Ch. 163, Part II). Applications are heard by the local board; approval requires that the use meet local-code criteria and be consistent with the comprehensive plan. Denials are reviewable by certiorari to circuit court.",
+    "nonconforming_use_rules": "Grandfathering of lawful pre-existing (nonconforming) uses is administered locally; abandonment/discontinuance thresholds are set by each local government's land development regulations rather than by a uniform statewide statutory threshold.",
+    "adu_rules": "Local only. Florida has no statewide preemption mandating ADUs in single-family zones; ADU regulation is set at the city and county level. Proposed statewide ADU provisions were dropped from Live Local Act amendments, so as of 2026 there is no statewide ADU mandate.",
+    "home_business_rules": "Local only for zoning purposes. Home occupations are regulated through local land development regulations (Florida separately preempts certain licensing aspects of home-based businesses, but zoning-based home-occupation standards remain local).",
+    "regulatory_body": "Zoning is administered locally; each county/municipality's board of adjustment and governing body handle land-use decisions. State-level planning oversight sits with the Florida Department of Commerce under the Community Planning Act. Appeals go to the local board and then to the circuit court by certiorari.",
+    "complaint_process": "Challenge or appeal a zoning decision first before the local board of adjustment, then seek judicial review by petition for writ of certiorari in the circuit court within 30 days of the board's decision. Property owners inordinately burdened by a regulation may separately bring a Bert Harris claim under Fla. Stat. § 70.001.",
+    "unique_features": [
+      "Bert J. Harris, Jr., Private Property Rights Protection Act (Fla. Stat. § 70.001, enacted 1995) — allows a property owner to claim monetary compensation when a law or ordinance 'inordinately burdens' an existing use or vested right, even short of a constitutional taking",
+      "Live Local Act (SB 102, signed March 29, 2023; amended 2024) — preempts local zoning, density, and height limits for qualifying affordable multifamily/mixed-use projects, with a 150% FAR bonus added in 2024",
+      "Mandatory comprehensive-plan consistency under Fla. Stat. § 163.3194"
+    ],
+    "common_disputes": [
+      "Consistency challenges arguing that a rezoning, development order, or regulation is inconsistent with the adopted comprehensive plan (§ 163.3194)",
+      "Bert Harris Act claims seeking compensation for ordinances that inordinately burden existing uses (§ 70.001)",
+      "Live Local Act preemption disputes over density, height, and FAR entitlements for affordable-housing projects"
+    ],
+    "recent_reform": "Live Local Act — SB 102 (2023), amended in 2024 (adding the 150% FAR bonus preemption); landmark statewide affordable-housing zoning preemption."
+  },
+  "NY": {
+    "state": "New York",
+    "abbreviation": "NY",
+    "zoning_enabling_statute": {
+      "name": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zones under its own City Charter and Zoning Resolution",
+      "citation": "N.Y. Town Law §§ 261-285; N.Y. Village Law Art. 7 (§§ 7-700 et seq.); N.Y. General City Law Art. 2-A (§§ 20 et seq.)"
+    },
+    "primary_land_use_law": "New York has no single unified state planning act; zoning power is delegated to municipalities through three parallel enabling statutes (Town Law Art. 16, Village Law Art. 7, General City Law Art. 2-A). Each authorizes the local legislative body to adopt zoning regulations made in accordance with a comprehensive plan. NYC operates under its own City Charter and Zoning Resolution.",
+    "variance_process": "Decided by the local Zoning Board of Appeals (ZBA). Area (dimensional) variance: no hardship showing required; the ZBA applies a five-factor balancing test weighing benefit to the applicant against detriment to the neighborhood (Town Law § 267-b). Use variance: applicant must prove 'unnecessary hardship' with dollars-and-cents proof that it cannot realize a reasonable return, the hardship is unique, the use will not alter neighborhood character, and the hardship was not self-created.",
+    "appeal_process": "An aggrieved party first appeals the administrative determination to the local ZBA. Judicial review of a ZBA determination is by a CPLR Article 78 proceeding in the New York State Supreme Court, which must be instituted within 30 days after the ZBA's decision is filed in the office of the town/village/city clerk (Town Law § 267-c). This 30-day zoning deadline supersedes the general CPLR Art. 78 four-month limitation.",
+    "special_use_permits": "Special use permits (special exceptions/conditional uses) are authorized under Town Law § 274-b (parallel Village Law § 7-725-b; Gen. City Law § 27-b). A special use is presumptively appropriate in the district; the applicant need only show compliance with the standards and conditions set in the local law, typically after a public hearing.",
+    "nonconforming_use_rules": "Pre-existing (legal) nonconforming uses are protected as vested rights but can be lost. New York courts distinguish 'abandonment' (requires the owner's voluntary intent to relinquish) from ordinance-based 'discontinuance' (a local law may terminate the use after a set period of non-use). Thresholds are set by each municipality, commonly six months to two years.",
+    "adu_rules": "Primarily local. New York City adopted the 'City of Yes for Housing Opportunity' text amendment in December 2024 (Local Laws 126 & 127), allowing ADUs in 1- and 2-family homes in qualifying zones with owner-occupancy; applications opened September 2025. Outside NYC, ADU authority remains local.",
+    "home_business_rules": "Local only. The enabling statutes do not set statewide home-occupation standards; home-based businesses are regulated by each municipality's zoning ordinance.",
+    "regulatory_body": "Zoning is administered locally by municipal boards (planning boards and zoning boards of appeals); appeals go to the municipal ZBA and then to the New York State Supreme Court via Article 78. The New York Department of State, Division of Local Government Services, provides guidance but does not adjudicate local zoning matters.",
+    "complaint_process": "Challenge an administrative or zoning-officer determination before the local Zoning Board of Appeals (public hearing). To challenge the ZBA's determination, file a CPLR Article 78 proceeding in the New York State Supreme Court within 30 days of the decision being filed with the municipal clerk (Town Law § 267-c).",
+    "unique_features": [
+      "Distinct dual variance standards codified in Town Law § 267-b: area variances use a five-factor benefit-vs-detriment balancing test (no hardship needed), while use variances require 'unnecessary hardship' proven by dollars-and-cents evidence",
+      "Short, statute-specific 30-day Article 78 deadline (Town Law § 267-c) to seek Supreme Court review, running from filing with the clerk",
+      "New York City operates outside the Town/Village/General City Law framework under its own Zoning Resolution and ULURP"
+    ],
+    "common_disputes": [
+      "Area vs. use variance denials by the ZBA challenged via Article 78",
+      "Loss or scope of legal nonconforming (grandfathered) uses — abandonment vs. discontinuance",
+      "Special use permit and site plan approval conditions, and neighbor challenges (including SEQRA objections)"
+    ],
+    "recent_reform": "New York City's 'City of Yes for Housing Opportunity' zoning text amendment adopted December 2024 (Local Laws 126 and 127), legalizing citywide ADUs in 1- and 2-family homes; applications opened September 2025."
+  },
+  "IL": {
+    "state": "Illinois",
+    "abbreviation": "IL",
+    "zoning_enabling_statute": {
+      "name": "Illinois Municipal Code, Division 13 (Zoning) for municipalities; Counties Code (Division 5-12) for counties",
+      "citation": "65 ILCS 5/11-13-1 et seq. (municipalities); 55 ILCS 5/5-12001 et seq. (counties)"
+    },
+    "primary_land_use_law": "Illinois has no comprehensive statewide land-use planning act; zoning authority is delegated to local governments. Municipalities zone under the Illinois Municipal Code, Division 13 (65 ILCS 5/11-13-1 et seq.), and non-home-rule counties zone under the Counties Code (55 ILCS 5/5-12001 et seq.). Home-rule units (including Chicago and municipalities over 25,000) have broad independent authority under the Illinois Constitution.",
+    "variance_process": "Variations (variances) are decided by the municipal or county Zoning Board of Appeals (ZBA). Illinois authorizes variations where strict application would cause 'practical difficulties or particular hardship.' The applicant generally must show the property cannot yield a reasonable return if used only as zoned, the plight is due to unique circumstances (not self-created), and the variation will not alter the essential character of the locality, following a public hearing.",
+    "appeal_process": "Appeal a zoning/ZBA denial to the Zoning Board of Appeals in the first instance. A final ZBA administrative decision is reviewed under the Administrative Review Law (735 ILCS 5/3-101 et seq.). A complaint for administrative review must be filed in the circuit court within 35 days from the date the decision was served on the affected party.",
+    "special_use_permits": "Special uses (conditional uses / special exceptions) are authorized by 65 ILCS 5/11-13-1.1 (municipalities) and are decided/recommended by the Zoning Board of Appeals following a public hearing, with final action often by the corporate authorities. Under Klaeren v. Village of Lisle, special-use hearings are quasi-judicial with due-process rights (e.g., cross-examination).",
+    "nonconforming_use_rules": "Uses lawful when established but rendered impermissible by a later ordinance are grandfathered as legal nonconforming uses and may continue. They may be lost through abandonment/discontinuance for a period specified in the local ordinance (threshold set locally), typically requiring both intent to abandon and an overt act.",
+    "adu_rules": "No statewide ADU mandate or preemption; ADUs are regulated locally. Chicago adopted an ADU ordinance (revised proposal approved by City Council Sept. 25, 2025, effective April 1, 2026) legalizing ADUs citywide in areas zoned for small apartment buildings and business districts, with alderpersonic discretion to restrict them in single-family neighborhoods. Outside Chicago: local only.",
+    "home_business_rules": "No state home-occupation statute; home occupations are regulated by local zoning ordinances (permitted-use standards, employee/signage/traffic limits). Local only.",
+    "regulatory_body": "Zoning is administered locally by municipal and county zoning boards of appeals and corporate authorities; there is no state zoning agency. Appeals go to the municipal/county ZBA and then to the circuit court under the Administrative Review Law.",
+    "complaint_process": "Challenge a zoning decision before the local Zoning Board of Appeals; a final ZBA decision is then reviewed by filing a complaint under the Administrative Review Law (735 ILCS 5/3-101 et seq.) in the circuit court within 35 days of service of the decision.",
+    "unique_features": [
+      "Home-rule authority: Chicago and other home-rule units (Ill. Const. art. VII) exercise broad independent zoning power outside the standard enabling statutes",
+      "LaSalle/Sinclair factors: courts test the validity of a zoning restriction using the six-factor balancing test from La Salle National Bank v. County of Cook and Sinclair Pipe Line Co. v. Village of Richton Park",
+      "Special use vs. variation distinction, plus Klaeren v. Village of Lisle requiring quasi-judicial due-process protections at special-use hearings"
+    ],
+    "common_disputes": [
+      "Denials of variations for setback, lot-size, or height relief challenged as unconstitutional under the LaSalle/Sinclair factors",
+      "Special-use / conditional-use permit disputes over neighborhood impact and adequacy of the ZBA hearing",
+      "Loss or continuation of legal nonconforming uses through claimed abandonment/discontinuance"
+    ],
+    "recent_reform": "Chicago citywide ADU ordinance (revised proposal approved by City Council Sept. 25, 2025; effective April 1, 2026) legalizing accessory dwelling units, with alderpersonic discretion in single-family zones. No statewide zoning reform statute identified."
+  },
+  "PA": {
+    "state": "Pennsylvania",
+    "abbreviation": "PA",
+    "zoning_enabling_statute": {
+      "name": "Pennsylvania Municipalities Planning Code (MPC), Act 247 of 1968",
+      "citation": "53 P.S. §10101 et seq."
+    },
+    "primary_land_use_law": "The Municipalities Planning Code (MPC) is Pennsylvania's uniform enabling framework delegating planning and land-use regulation to municipalities. It empowers cities, boroughs, incorporated towns, townships, and counties to govern development through zoning, subdivision, and land-development ordinances. The MPC governs all PA municipalities except Philadelphia and Pittsburgh, which operate under their own home-rule/first-class charters. The state sets the procedural rules and municipalities adopt the substantive ordinances.",
+    "variance_process": "Zoning variances are decided by the municipal Zoning Hearing Board (ZHB), the MPC-mandated quasi-judicial body. The applicant applies to the ZHB, which holds a public hearing, and must prove the traditional hardship standard: unnecessary hardship unique to the property (not self-created), that the variance is the minimum needed, and that it will not alter the essential character of the neighborhood or harm public welfare (a lesser 'dimensional variance' standard applies to setback/area relief under Hertzberg).",
+    "appeal_process": "A party aggrieved by a ZHB decision must appeal by verified petition to the county Court of Common Pleas within 30 days after the written decision. This 30-day window is a strict jurisdictional deadline. Grounds: the decision was arbitrary, capricious, an abuse of discretion, or not in accordance with law. From Common Pleas, further appeal lies to the Commonwealth Court of Pennsylvania.",
+    "special_use_permits": "The MPC provides two parallel mechanisms distinguished by who decides: (1) Special Exception — a use permitted by ordinance subject to stated criteria, heard and decided by the Zoning Hearing Board after public hearing; and (2) Conditional Use — the same relief but heard and decided by the municipality's governing body (Board of Supervisors/Commissioners/Council) sitting quasi-judicially. In both, the applicant shows the use meets the objective ordinance criteria; the burden then shifts to objectors to show a high-degree-of-probability detriment.",
+    "nonconforming_use_rules": "Nonconforming uses lawfully existing before the ordinance are grandfathered as a constitutionally protected property right. Termination requires abandonment, which under PA law needs BOTH intent to abandon AND actual discontinuance — mere non-use does not by itself establish abandonment. Ordinances commonly set a discontinuance period (frequently 6 months, sometimes 1 year) that creates a rebuttable presumption of intent to abandon.",
+    "adu_rules": "Local only — no statewide preemption in force as of July 2026. Statewide ADU-by-right legislation was advancing but not enacted: HB 2186 (2025-2026 session), which would require municipalities to allow one ADU per residential lot by right, passed the PA House (~June 2026) and was pending in the Senate. Until signed, ADU regulation is set municipality-by-municipality.",
+    "home_business_rules": "Local only. The MPC does not set statewide home-occupation standards; each municipal zoning ordinance defines and regulates permitted home occupations, typically as a permitted accessory use or via special exception/conditional use.",
+    "regulatory_body": "Zoning is administered locally under the MPC; there is no statewide zoning permit agency. The PA Department of Community and Economic Development (DCED) publishes guidance but does not adjudicate. Appeals go to the municipal Zoning Hearing Board (or governing body for conditional uses), then to the county Court of Common Pleas and Commonwealth Court.",
+    "complaint_process": "Challenge or appeal a zoning decision first at the local level: the Zoning Hearing Board (variances, special exceptions, appeals of the zoning officer) or the governing body (conditional uses). Appeal an adverse decision by verified petition to the county Court of Common Pleas within 30 days of the written decision, then to the Commonwealth Court of Pennsylvania.",
+    "unique_features": [
+      "Statewide delegation via the MPC (Act 247) with Philadelphia and Pittsburgh carved out under their own first-class/home-rule frameworks",
+      "MPC-distinct dual track for discretionary permits: 'special exception' (decided by the Zoning Hearing Board) vs. 'conditional use' (decided by the governing body) — functionally identical relief separated only by the deciding body",
+      "Two-part abandonment test for nonconforming uses requiring proof of BOTH intent and actual discontinuance, so a use is not lost by mere lapse of time"
+    ],
+    "common_disputes": [
+      "Variance denials and the hardship standard — disputes over whether an unnecessary (use) or dimensional hardship justifies relief",
+      "Nonconforming-use / abandonment fights — whether a grandfathered use was abandoned or unlawfully expanded",
+      "Conditional-use and special-exception challenges — objectors contesting high-impact uses (warehouses, solar, quarries, group homes) and application of ordinance criteria"
+    ],
+    "recent_reform": "No statewide preemption enacted yet. The most significant active legislation is the 2025-2026 MPC housing package: HB 2186 (ADU-by-right, passed PA House ~June 2026, pending Senate), plus SB 1281 (expedited high-density housing approval, passed Senate 50-0). As of 2026-07-22 none had been signed into law."
+  },
+  "OH": {
+    "state": "Ohio",
+    "abbreviation": "OH",
+    "zoning_enabling_statute": {
+      "name": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning)",
+      "citation": "Ohio Rev. Code Ch. 713 (municipalities); Ch. 519, §§ 519.02-519.25 (townships); Ch. 303 (counties)"
+    },
+    "primary_land_use_law": "Ohio has no single statewide zoning code; land use is delegated to local governments. Municipal corporations zone under ORC Chapter 713 via a planning commission; townships zone under ORC Chapter 519; counties may adopt zoning under ORC Chapter 303. Home-rule municipalities also derive zoning power from Article XVIII of the Ohio Constitution. Each jurisdiction adopts its own ordinance, districts, and standards.",
+    "variance_process": "Decided by the local Board of Zoning Appeals (BZA), created under ORC 713.11 (municipal) / 519.13-519.15 (township). Ohio distinguishes two standards: AREA variances use the 'practical difficulties' test of Duncan v. Village of Middlefield (1986), weighing the Duncan factors (reasonable return, substantiality, effect on neighbors, feasible alternatives, self-created difficulty). USE variances require the higher 'unnecessary hardship' standard. Applicant files with the local BZA office; a public hearing is held.",
+    "appeal_process": "Appeal a BZA denial to the county Court of Common Pleas under ORC Chapter 2506. DEADLINE: 30 days from the final decision to file the notice of appeal (ORC 2505.07 / 2506.01). The court reviews whether the decision was unconstitutional, illegal, arbitrary, capricious, unreasonable, or unsupported by a preponderance of substantial, reliable, and probative evidence. Further appeal lies to the Ohio Court of Appeals on questions of law.",
+    "special_use_permits": "Conditional uses / special exceptions are administered locally. The BZA (or in some jurisdictions the planning commission) is authorized under ORC 713.11 and 519.14 to hear and decide conditional/special uses expressly listed in the local zoning ordinance, subject to the standards in that ordinance. Criteria are defined by each municipality/township.",
+    "nonconforming_use_rules": "Lawful pre-existing uses are grandfathered. Municipal: ORC 713.15 lets a lawful nonconforming use continue, but a use voluntarily discontinued for two years or more (or a shorter period if the municipality so provides) must thereafter conform. Township: ORC 519.19 similarly protects existing uses. Ohio case law stresses the discontinuance must be VOLUNTARY (State ex rel. Sunset Estate Properties v. Lodi, 2015 — a tenant's abandonment cannot be imputed to the owner).",
+    "adu_rules": "Local only — no statewide ADU preemption as of July 2026. Authority over ADUs rests with individual municipalities and townships. Cincinnati legalized ADUs via Ordinance 0266-2023 (first Ohio city), and Columbus voted in Nov. 2025 to permit ADUs by-right in all residential districts. Most Ohio jurisdictions still restrict them.",
+    "home_business_rules": "Local only — Ohio has no statewide home-occupation statute. Home-based business standards are set by each municipal zoning ordinance or township zoning resolution.",
+    "regulatory_body": "Zoning is administered locally; there is no state zoning agency. Municipalities zone via their planning commission/BZA under ORC Ch. 713; townships via their zoning commission/BZA under ORC Ch. 519; counties under ORC Ch. 303. Appeals go to the local BZA, then to the county Court of Common Pleas (ORC Ch. 2506).",
+    "complaint_process": "Challenge or appeal a zoning decision first to the local Board of Zoning Appeals; appeal an adverse BZA decision to the Court of Common Pleas of the county under ORC Chapter 2506 within 30 days; then to the Ohio Court of Appeals on questions of law.",
+    "unique_features": [
+      "Two-track variance standard: area variances use the lenient 'practical difficulties'/Duncan-factors test (1986), while use variances require the stricter 'unnecessary hardship' standard",
+      "Statutory nonconforming-use protection with a 2-year 'voluntary discontinuance' trigger (ORC 713.15 municipal / 519.19 township), and Ohio Supreme Court authority that involuntary/imputed abandonment cannot terminate the right (Sunset Estate Properties, 2015)",
+      "Bifurcated enabling structure — separate schemes for municipalities (Ch. 713), townships (Ch. 519), and counties (Ch. 303), with township zoning subject to voter referendum and a broad agricultural-use exemption under ORC 519.21"
+    ],
+    "common_disputes": [
+      "Area-variance fights over setbacks, lot coverage, height, and frontage litigated under the Duncan practical-difficulties factors",
+      "Nonconforming-use disputes over whether a grandfathered use was 'voluntarily discontinued' for two years or unlawfully expanded",
+      "Conditional/special-use and rezoning disputes (multifamily, ADUs, cell towers, short-term rentals) and township agricultural-exemption disputes under ORC 519.21"
+    ],
+    "recent_reform": "No statewide Ohio zoning-preemption statute enacted as of July 2026; reform has been municipal — Cincinnati Ordinance 0266-2023 legalized ADUs, and Columbus City Council legislation (Nov. 2025) permits ADUs by-right in all residential districts."
+  },
+  "GA": {
+    "state": "Georgia",
+    "abbreviation": "GA",
+    "zoning_enabling_statute": {
+      "name": "Zoning Procedures Law (Georgia)",
+      "citation": "O.C.G.A. § 36-66-1 et seq."
+    },
+    "primary_land_use_law": "Georgia does not zone at the state level. Under the Zoning Procedures Law (O.C.G.A. Title 36, Ch. 66) and constitutional home-rule authority, the State delegates zoning power to counties and municipalities. The chapter sets uniform PROCEDURAL requirements (notice, hearings, adoption of standards) that any local government must follow before making a 'zoning decision.' Substantive ordinances, districts, and standards are enacted and administered entirely by each local government.",
+    "variance_process": "Handled locally. Local ordinances create a Board of Zoning Appeals (BZA) to hear variance applications. The applicant applies to the local BZA, which decides after a hearing whether unique hardship/practical difficulty justifies deviation from dimensional/setback requirements. A variance is treated as a quasi-judicial decision under Georgia case law. Exact standards are set by each jurisdiction.",
+    "appeal_process": "A quasi-judicial zoning decision (e.g., variance or permit denial by a BZA) is appealed to the SUPERIOR COURT of the county. Effective July 1, 2023, HB 916 (2022) replaced the former certiorari/appeal statutes with a unified 'Petition for Review' procedure. DEADLINE: the petition must be filed within 30 days of entry of the decision. Legislative rezoning is instead challenged by direct action/mandamus/declaratory judgment, not by petition for review.",
+    "special_use_permits": "Handled locally. Many Georgia ordinances provide for 'conditional uses'/'special exceptions' — uses allowed in a district only with special authorization from the governing body (or BZA) after a hearing, often with conditions. There is no uniform state special-use standard; the process and criteria are defined by each local ordinance within the § 36-66 framework.",
+    "nonconforming_use_rules": "Governed by local ordinance; no uniform statewide standard. Georgia ordinances typically grandfather a 'legal nonconforming use' lawful when established, allowing it to continue but generally barring expansion, intensification, or relocation. Abandonment/discontinuance thresholds are set locally — commonly a cessation of the use for a stated period (often six months to one year) causes loss of grandfathered protection.",
+    "adu_rules": "Local only — no statewide ADU statute in force as of 2026-07-22. Whether ADUs are permitted, and their size/occupancy limits, are set by each city/county zoning ordinance (e.g., Atlanta's 2024-2025 update raised detached ADU cap to 1,000 SF). A statewide preemption bill (HB 1166) was advancing in the 2025-2026 session but was not yet enacted. ADUs must still meet the Georgia State Minimum Standard Codes.",
+    "home_business_rules": "Local only. Georgia has no statewide home-occupation statute; home-business rules are established and enforced through each municipal or county zoning ordinance under the home-rule/§ 36-66 framework.",
+    "regulatory_body": "No state zoning agency. Zoning is administered locally by county and municipal governing authorities, planning/zoning departments, and Boards of Zoning Appeals; appeals of quasi-judicial decisions go to the county Superior Court. The Georgia Dept. of Community Affairs supports local planning but does not adjudicate individual zoning decisions.",
+    "complaint_process": "Challenge or appeal first at the local level — apply to or appeal to the local Board of Zoning Appeals for administrative/quasi-judicial matters such as variances. From a BZA decision, file a Petition for Review (post-July-1-2023 procedure) in the county SUPERIOR COURT within 30 days. Legislative rezoning decisions are challenged by direct suit (mandamus/declaratory judgment) in Superior Court.",
+    "unique_features": [
+      "Zoning Procedures Law notice/hearing mandate (O.C.G.A. § 36-66-4): a public hearing is required and notice must be PUBLISHED in a newspaper at least 15 but not more than 45 days before the hearing, plus a sign posted on the property at least 15 days before",
+      "Special statutory notice: notices must prominently state when a proposed zoning decision would allow a halfway house or drug-treatment facility",
+      "Georgia's 2023 overhaul: HB 916 replaced writ-of-certiorari review with a unified 'Petition for Review' (effective July 1, 2023), retaining a 30-day filing window"
+    ],
+    "common_disputes": [
+      "Procedural challenges to rezonings — inadequate/defective notice or hearing under O.C.G.A. § 36-66-4, which can void a zoning decision",
+      "Variance and special-exception denials appealed from the Board of Zoning Appeals to Superior Court",
+      "Nonconforming-use / grandfathering fights — whether a prior use survives expansion, relocation, or abandonment for the ordinance's stated period"
+    ],
+    "recent_reform": "HB 1166 (2025-2026 Regular Session): would bar local zoning decisions from being required for certain residential dwellings of 400 square feet or fewer, effectively allowing small accessory units statewide. Passed the House and referred to the Senate (~March 2026); NOT yet enacted as of 2026-07-22."
+  },
+  "NC": {
+    "state": "North Carolina",
+    "abbreviation": "NC",
+    "zoning_enabling_statute": {
+      "name": "Local Planning and Development Regulation (unified city + county land-use chapter, effective 2019; local compliance July 1, 2021, consolidating former Chapters 153A and 160A)",
+      "citation": "N.C. Gen. Stat. Chapter 160D"
+    },
+    "primary_land_use_law": "North Carolina delegates land-use regulation to cities and counties through the enabling authority of Chapter 160D. There is no statewide zoning code; 160D provides a single unified framework authorizing local governments to adopt zoning, subdivision, and unified development ordinances. Article 7 governs zoning, Article 6 covers quasi-judicial procedures, and Article 4 covers administration and appeals. 160D reorganized the prior city (160A) and county (153A) statutes.",
+    "variance_process": "Decided by the local board of adjustment under G.S. 160D-705 following quasi-judicial procedures in G.S. 160D-406. Standard is 'unnecessary hardship' from strict application of the ordinance, where the hardship results from conditions peculiar to the property, is not self-created, and the variance is consistent with the ordinance's spirit; an applicant need NOT show that no reasonable use is otherwise possible. A concurring vote of four-fifths of the board is required to grant a variance.",
+    "appeal_process": "Appeals of administrative/staff development decisions go to the local board of adjustment, initiated by filing a notice of appeal with the local government clerk. DEADLINE: 30 days from receipt of written notice of the decision (G.S. 160D-405(d)). The board's quasi-judicial decision is then subject to judicial review by petition for writ of certiorari to the superior court in the county (Article 14, G.S. 160D-1402), generally within 30 days of the written decision.",
+    "special_use_permits": "Special use permits (also called conditional use permits) are quasi-judicial approvals decided under G.S. 160D-705(c) by the board designated in the ordinance, following quasi-judicial evidentiary-hearing procedures in G.S. 160D-406 (sworn testimony, findings of fact, competent material substantial evidence). Reasonable conditions may be imposed. Legislative rezonings and conditional-zoning districts are handled through the legislative process, not quasi-judicially.",
+    "nonconforming_use_rules": "Uses lawfully established before a regulation change are protected as nonconforming (grandfathered). Under G.S. 160D-108, statutory vesting for a nonconforming use expires if the use is intentionally and voluntarily discontinued for at least 24 consecutive months; the 24-month clock is tolled during any board-of-adjustment proceeding or civil litigation regarding the use or vesting. Local ordinances set additional detail on expansion/change of nonconformities.",
+    "adu_rules": "State-level intervention exists. 2023 legislation requires local governments to permit at least one accessory dwelling unit per detached single-family dwelling in residential zones and bars owner-occupancy requirements and ADU-specific fees exceeding those for a single-family dwelling. (Attributed to 2023 session-law changes; the precise session-law/bill citation was not conclusively pinned — treat bill number as approximate.) No statewide minimum ADU size; size and placement remain local.",
+    "home_business_rules": "Local only. Chapter 160D does not impose a statewide home-occupation standard; home-occupation permissions, size caps, and signage rules are set by each city or county zoning ordinance.",
+    "regulatory_body": "Zoning is administered locally by city and county planning/zoning departments and their boards of adjustment; there is no state zoning agency. Appeals go to the local board of adjustment and then to the superior court (via certiorari). The UNC School of Government provides authoritative (non-regulatory) guidance on Chapter 160D.",
+    "complaint_process": "Challenge an administrative zoning decision by appealing to the local board of adjustment within 30 days (G.S. 160D-405); challenge a quasi-judicial decision (variance, special use permit, appeal) by petition for writ of certiorari to the superior court under Article 14 (G.S. 160D-1402), generally within 30 days of the written decision. Legislative decisions are challenged by declaratory-judgment action.",
+    "unique_features": [
+      "Chapter 160D is a nationally notable unified land-use statute consolidating city (former 160A) and county (former 153A) development-regulation authority into one chapter, effective 2019 with a July 1, 2021 local compliance deadline",
+      "Statutory codification of the legislative/quasi-judicial distinction: 160D-406 requires formal quasi-judicial evidentiary hearings (sworn testimony, findings, substantial evidence) for variances, special use permits, and appeals",
+      "Statewide ADU mandate (2023) requiring at least one ADU per detached single-family dwelling and prohibiting owner-occupancy conditions and excess ADU fees"
+    ],
+    "common_disputes": [
+      "Variance denials before the board of adjustment over 'unnecessary hardship' and whether the four-fifths supermajority was met",
+      "Nonconforming-use / vested-rights disputes, especially the 24-month discontinuance standard under 160D-108",
+      "Special use / conditional use permit fights over whether decisions rested on competent, material, substantial evidence, and challenges to rezoning decisions"
+    ],
+    "recent_reform": "Wave of 2025-2026 housing/regulatory-reform bills, including HB 926 'Regulatory Reform Act of 2025' (bars municipalities from imposing certain local housing design rules such as minimum square-footage requirements) and SB 445 'Regulatory Reform Act of 2026', building on the 2023 statewide ADU mandate. HB 926 (2025) is the most concrete enacted example identified."
+  },
+  "AZ": {
+    "state": "Arizona",
+    "abbreviation": "AZ",
+    "zoning_enabling_statute": {
+      "name": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2",
+      "citation": "A.R.S. §§ 9-461 et seq.; municipal zoning at §§ 9-462 to 9-462.13; county zoning at §§ 11-811 et seq."
+    },
+    "primary_land_use_law": "Arizona delegates zoning power to municipalities and counties. Under Title 9, Chapter 4, municipalities must adopt a general plan (A.R.S. § 9-461.05) and all zoning and rezoning ordinances must be 'consistent with and conform to' that plan (A.R.S. § 9-462.01). The legislative body may divide the municipality into zones and regulate use, height, bulk, lot size, density, and open space, and must consider individual property rights and personal liberties before adopting a zoning ordinance. Counties operate under a parallel framework in Title 11 (§§ 11-811 et seq.).",
+    "variance_process": "Decided by the municipal Board of Adjustment under A.R.S. § 9-462.06. The board may grant a variance only where, because of special circumstances applicable to the property (size, shape, topography, location, or surroundings), strict application would deprive the property of privileges enjoyed by other property in the same classification. A variance may NOT be granted if the special circumstances are self-imposed, and it may not authorize a use not otherwise permitted in that zone.",
+    "appeal_process": "An appeal from a decision of the zoning administrator goes to the municipal Board of Adjustment (A.R.S. § 9-462.06). A person aggrieved by a decision of the board (or of the legislative body) may, within THIRTY (30) DAYS after the decision, file a complaint for special action in the superior court to review the decision (A.R.S. § 9-462.06). Further appeal proceeds through the Arizona appellate courts.",
+    "special_use_permits": "Handled locally under A.R.S. § 9-462.01, which authorizes uses 'permitted on a conditional basis' (conditional/special use permits) subject to site plan review and approval by the local planning agency. The specific standards, procedure, and approving body are set by each municipality's zoning ordinance; the statute enables but does not standardize them.",
+    "nonconforming_use_rules": "Governed by A.R.S. § 9-462.02. Nothing in a zoning ordinance affects existing property or the right to its continued use for the purpose used when the ordinance took effect, nor reasonable repairs for that purpose (statutory grandfathering). A municipality may acquire nonconforming property by purchase or condemnation to eliminate nonconforming uses (a public purpose). Arizona statute does not fix a statewide abandonment period; thresholds (commonly one year of vacancy) are set by local ordinances.",
+    "adu_rules": "State-level preemption. HB 2720 (2024), codified in Title 9, requires every municipality with a population of at least 75,000 to allow accessory dwelling units on lots where single-family homes are permitted, generally at least one attached and one detached ADU. Statewide caps: max ADU size is the lesser of 75% of the primary home's gross floor area or 1,000 sq ft; the largest setback a city may require is 5 feet; cities may not require additional parking. Cities under 75,000 are not covered by the mandate.",
+    "home_business_rules": "Local only. Arizona has no dedicated statewide home-occupation statute; home-based business standards are set by each municipality's or county's zoning ordinance under the general zoning authority of A.R.S. § 9-462.01 (and Title 11 for counties).",
+    "regulatory_body": "Zoning is administered locally by municipal and county governments; there is no statewide zoning agency. Appeals go to the municipal Board of Adjustment, then to the Arizona Superior Court by special action. The Arizona Department of Housing addresses housing policy but does not administer local zoning.",
+    "complaint_process": "Challenge a zoning administrator's decision or seek a variance before the local Board of Adjustment (A.R.S. § 9-462.06). A party aggrieved by the board's decision files a complaint for special action in the county Superior Court within 30 days; further review proceeds through the Arizona Court of Appeals.",
+    "unique_features": [
+      "Statewide ADU preemption under HB 2720 (2024): cities of 75,000+ must legalize ADUs with capped setbacks (5 ft), size limits (lesser of 75% of primary home or 1,000 sq ft), and no added-parking mandates",
+      "Statewide 'middle housing' preemption under HB 2721 (2024), codified at A.R.S. § 9-462.13: cities of 75,000+ must allow duplexes, triplexes, and townhomes on at least 20% of single-family lots, with ordinances due by Jan. 1, 2026",
+      "Statutory requirement that zoning/rezoning ordinances conform to the adopted general plan (A.R.S. § 9-462.01) and that municipalities weigh property rights before adopting zoning"
+    ],
+    "common_disputes": [
+      "Rezoning and general-plan-consistency challenges, including neighbor opposition to higher-density and 'middle housing' rezonings",
+      "Variance and board-of-adjustment appeals over setbacks, lot size, and use restrictions (and disputes over self-imposed hardship)",
+      "ADU and middle-housing compliance conflicts between the new statewide mandates (HB 2720 / HB 2721) and local neighborhood objections"
+    ],
+    "recent_reform": "HB 2720 (statewide ADU legalization) and HB 2721 (middle housing; codified at A.R.S. § 9-462.13), both signed by Gov. Katie Hobbs in May 2024, with middle-housing ordinances required by Jan. 1, 2026. A 2026 legislative effort to exempt historic neighborhoods from the middle-housing mandate was pending."
+  }
+}

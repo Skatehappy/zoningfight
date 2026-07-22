@@ -1,6 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /app
-Disallow: /app/
-
 Sitemap: https://zoningfight.com/sitemap.xml

@@ -7,6 +7,9 @@
     { "source": "/:state/:dispute", "destination": "/:state/:dispute/index.html" },
     { "source": "/:state", "destination": "/:state/index.html" }
   ],
+  "redirects": [
+    { "source": "/landing.html", "destination": "/", "permanent": true }
+  ],
   "headers": [
     { "source": "/api/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }] }
   ],
