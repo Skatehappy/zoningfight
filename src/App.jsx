@@ -13,7 +13,7 @@ const APP = {
   colorLight: "#4a7a2a",
   payhip: "https://payhip.com/b/Z3JNl",
   support: "support@zoningfight.com",
-  price: "$49",
+  price: "$19",
   font: "'Source Serif 4', Georgia, serif",
   displayFont: "'Playfair Display', serif",
 };
