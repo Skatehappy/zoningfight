@@ -1,5 +1,6 @@
 // api/checklist.js
 // Generates submission checklist via Claude API
+import { MODEL } from './_config.js';
 
 export const config = { runtime: 'edge' };
 
@@ -33,8 +34,9 @@ export default async function handler(req) {
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 500,
+        model: MODEL,
+        max_tokens: 900,
+        thinking: { type: 'disabled' },
         messages: [{
           role: 'user',
           content: `Generate a practical zoning variance submission checklist as a JSON array of strings. Be specific to this situation. Include items like completed application form, letter copies, site plan, survey, photos, filing fee, deed, abutter list, etc. Return ONLY a valid JSON array, no other text.
@@ -46,8 +48,15 @@ Letter excerpt: ${letterExcerpt?.substring(0, 200) || ''}`,
       }),
     });
 
+    // Fail loudly on an API error instead of silently returning an empty
+    // checklist (the pre-migration bug: a dead model 404'd and this returned []).
+    if (!response.ok) {
+      const detail = await response.text();
+      return new Response(JSON.stringify({ error: 'Checklist generation failed', detail }), { status: 502, headers });
+    }
+
     const data = await response.json();
-    const text = data.content?.[0]?.text || '[]';
+    const text = data.content?.find(b => b.type === 'text')?.text || '[]';
     const clean = text.replace(/```json|```/g, '').trim();
 
     let checklist;
