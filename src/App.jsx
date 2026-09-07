@@ -7,7 +7,7 @@ const EMAILJS_PUBLIC_KEY  = "YOUR_EMAILJS_PUBLIC_KEY";
 
 const APP = {
   name: "ZoningFight",
-  tagline: "Variance Letter Writer",
+  tagline: "Variance Letters — Request or Oppose",
   icon: "⚖️",
   color: "#2a4a1a",
   colorLight: "#4a7a2a",
@@ -18,8 +18,14 @@ const APP = {
   displayFont: "'Playfair Display', serif",
 };
 
-const STEPS = ["Intro", "Property", "Variance", "Hardship", "Criteria", "Demand", "Generate", "Letter"];
+const STEPS = ["Intro", "Direction", "Property", "Variance", "Hardship", "Criteria", "Demand", "Generate", "Letter"];
 const FORM_STEPS = ["Property", "Variance", "Hardship", "Criteria", "Demand"];
+
+// Opposing-variance mode reuses the same 5 form-step SLOTS (Property, Variance,
+// Hardship, Criteria, Demand) so the name-based navigation and progress bar keep
+// working — only the fields, titles, and prompt change. These maps drive the
+// opposing branch; the requesting branch is unchanged.
+const STEP_LABELS_OPP = { Property: "Property", Variance: "The Variance", Hardship: "Grounds", Criteria: "Relief", Demand: "Deadline" };
 
 const colors = {
   paper: "#f8faf8",
@@ -86,6 +92,64 @@ const requiredFields = {
 
 const VARIANCE_TYPES = ["Area/Setback Variance", "Use Variance", "Dimensional Variance"];
 const isVarianceType = (t) => VARIANCE_TYPES.includes(t);
+
+// ---- OPPOSING-VARIANCE MODE: fields for a party fighting a variance granted to
+// someone else. Reuses the 5 form-step slots (see STEP_LABELS_OPP). ----
+const OPP_GROUNDS = [
+  "No demonstrated hardship — the property is buildable as-of-right",
+  "Self-created hardship — the applicant's own design choices created the need",
+  "Not the minimum variance necessary — a smaller variance would suffice",
+  "Adverse impact on adjacent property — light, air, drainage, privacy, value",
+  "Contrary to the comprehensive plan or the intent of the zoning ordinance",
+  "Procedural defect — improper notice, lack of quorum, no written findings",
+  "Economic hardship only — financial inconvenience is not legal hardship",
+];
+const OPP_RELIEF = [
+  "Rescission of the variance",
+  "Denial on rehearing",
+  "Appeal to a higher body",
+  "Conditions imposed if the variance stands",
+];
+const stepFieldsOpp = {
+  Property: [
+    { key: "propertyAddress", label: "Your Property Address", type: "text", required: true, placeholder: "Your address (the objector's property)" },
+    { key: "subjectAddress",  label: "Subject Property Address", type: "text", required: true, placeholder: "Where the variance was granted (e.g. neighbor's address)" },
+    { key: "town",            label: "Municipality / County", type: "text", required: false, placeholder: "e.g. Lee County" },
+    { key: "state",           label: "State", type: "text", required: true, placeholder: "Florida" },
+    { key: "zoningDistrict",  label: "Zoning District", type: "text", required: false, placeholder: "e.g. R-1 Single Family Residential" },
+    { key: "relationship",    label: "Your Relationship to the Property", type: "select", required: true,
+      options: ["Abutting property owner (shared lot line)", "Directly across the street", "Within the notice radius", "Nearby owner in the neighborhood", "Other affected party"] },
+  ],
+  Variance: [
+    { key: "varianceGranted", label: "What Variance Was Granted", type: "textarea", required: true,
+      placeholder: "e.g. Side setback reduced from the required 25 ft to 12 ft to permit a two-story addition" },
+    { key: "varianceNumbers", label: "Specific Numbers", type: "text", required: false,
+      placeholder: "e.g. reduced side setback from 25 ft to 12 ft" },
+    { key: "dateGranted",     label: "Date the Variance Was Granted", type: "text", required: false, placeholder: "e.g. April 2026" },
+    { key: "caseNumber",      label: "Case / Application Number (if known)", type: "text", required: false, placeholder: "e.g. ZBA-2026-0142" },
+    { key: "grantingBoard",   label: "Board That Granted It", type: "text", required: true, placeholder: "e.g. Lee County Zoning Board of Appeals" },
+  ],
+  Hardship: [ // slot repurposed as "Grounds for Opposition"
+    { key: "oppGrounds",      label: "Grounds for Opposition (select all that apply)", type: "checkgroup", required: true, options: OPP_GROUNDS },
+    { key: "oppGroundsDetail",label: "Describe the Specific Impact on Your Property", type: "textarea", required: true,
+      placeholder: "e.g. Loss of light and air to my east-facing windows, altered drainage toward my lot, and loss of privacy to my rear yard." },
+  ],
+  Criteria: [ // slot repurposed as "Relief Sought"
+    { key: "oppRelief",       label: "Relief Sought (select all that apply)", type: "checkgroup", required: true, options: OPP_RELIEF },
+    { key: "oppAppealBody",   label: "If Appealing to a Higher Body, Name It", type: "text", required: false, placeholder: "e.g. Board of County Commissioners" },
+  ],
+  Demand: [ // slot repurposed as "Deadline & Details"
+    { key: "oppDeadline",     label: "Appeal Deadline (if known)", type: "text", required: false, placeholder: "e.g. within 30 days of the decision" },
+    { key: "additionalInfo",  label: "Anything Else to Include", type: "textarea", required: false, placeholder: "Any other relevant details..." },
+  ],
+};
+const requiredFieldsOpp = {
+  Property: ["propertyAddress", "subjectAddress", "state", "relationship"],
+  Variance: ["varianceGranted", "grantingBoard"],
+  Hardship: ["oppGrounds", "oppGroundsDetail"],
+  Criteria: ["oppRelief"],
+  Demand: [],
+};
 
 const conditionalFields = {
   "Building Permit Denial": [
@@ -177,7 +241,25 @@ function Field({ field, value, onChange }) {
         {field.label}
         {field.required && <span style={{ color: colors.goldLight, marginLeft: "4px" }}>*</span>}
       </label>
-      {field.type === "select" ? (
+      {field.type === "checkgroup" ? (
+        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+          {field.options.map(o => {
+            const sel = (value || "").split("|").filter(Boolean);
+            const on = sel.includes(o);
+            return (
+              <label key={o} style={{ display: "flex", gap: "10px", alignItems: "flex-start", cursor: "pointer", background: colors.white, border: `1px solid ${on ? colors.goldLight : colors.border}`, borderRadius: "8px", padding: "11px 13px" }}>
+                <input
+                  type="checkbox"
+                  checked={on}
+                  onChange={() => onChange((on ? sel.filter(x => x !== o) : [...sel, o]).join("|"))}
+                  style={{ marginTop: "3px", accentColor: colors.goldLight }}
+                />
+                <span style={{ fontSize: "14px", color: colors.inkLight, lineHeight: "1.45" }}>{o}</span>
+              </label>
+            );
+          })}
+        </div>
+      ) : field.type === "select" ? (
         <select
           value={value || ""}
           onChange={e => onChange(e.target.value)}
@@ -288,7 +370,13 @@ export default function App() {
 
   const handleChange = (key, value) => setFormData(prev => ({ ...prev, [key]: value }));
 
+  const isOpposing = formData.direction === "opposing";
+  const activeStepFields = isOpposing ? stepFieldsOpp : stepFields;
+
   const isStepValid = (stepName) => {
+    if (isOpposing) {
+      return (requiredFieldsOpp[stepName] || []).every(k => formData[k] && formData[k].trim());
+    }
     const variance = isVarianceType(formData.varianceType);
     if (!variance) {
       if (stepName === "Variance") return !!formData.varianceType?.trim();
@@ -443,7 +531,30 @@ Rules:
 - Format: formal letter with [DATE] placeholder, via certified mail
 - Output ONLY the letter, no preamble`;
 
+  const opposingPrompt = `You are an expert land use and zoning attorney representing a property owner who OPPOSES a variance that has been granted to another party.
+
+Write a formal objection letter that argues the variance should be rescinded, denied on rehearing, or overturned on appeal.
+
+Your arguments must attack the legal basis for the variance:
+- The applicant failed to demonstrate unnecessary hardship as required by statute. Economic inconvenience, personal preference, and self-created conditions do not constitute legal hardship.
+- Any hardship claimed was self-created by the applicant's own design decisions, which is a bar to variance relief in nearly every jurisdiction.
+- The variance granted exceeds the minimum necessary to afford relief.
+- The variance causes substantial detriment to adjacent properties and the public good.
+- The variance is contrary to the intent and purpose of the zoning ordinance and the comprehensive plan.
+- Where applicable, cite procedural defects: inadequate notice, absence of written findings of fact, or failure to make the statutory findings on the record.
+
+Establish the writer's standing as an aggrieved party — an abutting or nearby owner with a particularized injury distinct from the general public.
+
+Be specific about the physical impact on the objector's property: loss of light and air, drainage, privacy, sightlines, and property value.
+
+Professional, precise, factual tone. Do not use emotional appeals. 550-750 words.
+
+Format: formal letter with [DATE] placeholder, addressed to the board that granted the variance, sent via certified mail, with a reference line citing the case or application number.
+
+Output ONLY the letter, no preamble.`;
+
   const pickSystemPrompt = (varianceType) => {
+    if (formData.direction === "opposing") return opposingPrompt;
     if (!varianceType) return systemPrompt;
     if (varianceType === "Building Permit Denial") return buildingPermitPrompt;
     if (varianceType === "Cease and Desist / Stop Work Order") return stopWorkPrompt;
@@ -456,6 +567,34 @@ Rules:
   };
 
   const buildPrompt = (tone) => {
+    if (formData.direction === "opposing") {
+      const grounds = (formData.oppGrounds || "").split("|").filter(Boolean).map(g => `- ${g}`).join("\n");
+      const relief = (formData.oppRelief || "").split("|").filter(Boolean).map(r => `- ${r}`).join("\n");
+      const oppBase = `
+OBJECTOR'S PROPERTY ADDRESS: ${formData.propertyAddress}
+SUBJECT PROPERTY (where the variance was granted): ${formData.subjectAddress}
+MUNICIPALITY / COUNTY: ${formData.town || "not provided"}
+STATE: ${formData.state}
+ZONING DISTRICT: ${formData.zoningDistrict || "not specified"}
+OBJECTOR'S RELATIONSHIP / STANDING: ${formData.relationship || "nearby affected owner"}
+VARIANCE THAT WAS GRANTED: ${formData.varianceGranted}
+SPECIFIC NUMBERS: ${formData.varianceNumbers || "not specified"}
+DATE GRANTED: ${formData.dateGranted || "not specified"}
+CASE / APPLICATION NUMBER: ${formData.caseNumber || "not provided"}
+BOARD THAT GRANTED IT: ${formData.grantingBoard}
+GROUNDS FOR OPPOSITION:
+${grounds || "- No demonstrated hardship"}
+SPECIFIC IMPACT ON OBJECTOR'S PROPERTY: ${formData.oppGroundsDetail}
+RELIEF SOUGHT:
+${relief || "- Rescission of the variance"}
+HIGHER BODY (if appealing): ${formData.oppAppealBody || "not specified"}
+APPEAL DEADLINE: ${formData.oppDeadline || "not specified"}
+ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
+      if (tone === "assertive") {
+        return `Write a MORE ASSERTIVE objection letter. Stronger language, explicit legal citations, more forceful arguments that the variance must be overturned. Different wording from standard:\n${oppBase}`;
+      }
+      return `Write a STANDARD PROFESSIONAL objection letter arguing the granted variance should be rescinded/overturned:\n${oppBase}`;
+    }
     const base = `
 PROPERTY ADDRESS: ${formData.propertyAddress}
 TOWN/MUNICIPALITY: ${formData.town || "not provided"}
@@ -507,9 +646,10 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             accessCode,
+            direction: formData.direction || "requesting",
             address: formData.propertyAddress,
             state: formData.state,
-            varianceType: formData.varianceType,
+            varianceType: isOpposing ? "Opposing a granted variance" : formData.varianceType,
             letterExcerpt: reviewed.substring(0, 300),
           }),
         });
@@ -575,7 +715,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
       doc.text(line, margin, y);
       y += lineHeight;
     });
-    doc.save("ZoningFight-variance-letter.pdf");
+    doc.save(isOpposing ? "ZoningFight-variance-objection.pdf" : "ZoningFight-variance-letter.pdf");
   };
 
   const reset = () => {
@@ -625,7 +765,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
               Your Zoning Board Said No. Fight Back.
             </h1>
             <p style={{ fontSize: "17px", color: colors.inkMuted, maxWidth: "480px", margin: "0 auto 40px", lineHeight: "1.7" }}>
-              AI-generated letters for variance denials, building permits, stop-work orders, non-conforming use, CUPs, code interpretation, sign permits, and code enforcement. Attorney-quality. 5 minutes. {APP.price}.
+              AI-generated letters to <strong>request</strong> a variance — or to <strong>oppose</strong> one granted to a neighbor. Also building permits, stop-work orders, non-conforming use, CUPs, code interpretation, sign permits, and code enforcement. Attorney-quality. 5 minutes. {APP.price}.
             </p>
             <div style={{ maxWidth: "400px", margin: "0 auto", background: colors.white, border: `1px solid ${colors.border}`, borderRadius: "12px", padding: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}>
               <div style={{ fontSize: "14px", color: colors.inkLight, marginBottom: "16px", fontWeight: "600" }}>Enter Your Access Code</div>
@@ -648,6 +788,34 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
           </div>
         )}
 
+        {/* DIRECTION */}
+        {currentStep === "Direction" && (
+          <div style={{ maxWidth: "640px", margin: "0 auto", textAlign: "center" }}>
+            <h2 style={{ fontFamily: APP.displayFont, fontSize: "28px", color: colors.ink, marginBottom: "10px", fontWeight: "800" }}>What do you need?</h2>
+            <p style={{ fontSize: "15px", color: colors.inkMuted, marginBottom: "28px", lineHeight: "1.6" }}>
+              ZoningFight writes letters for both sides of a variance — pick your situation.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              {[
+                { key: "requesting", title: "I'm requesting a variance", desc: "I want permission for something my zoning doesn't allow." },
+                { key: "opposing",   title: "I'm opposing a variance",   desc: "My neighbor or another party was granted one, and I want to fight it." },
+              ].map(opt => (
+                <button
+                  key={opt.key}
+                  onClick={() => { handleChange("direction", opt.key); setStep(s => s + 1); }}
+                  style={{ textAlign: "left", background: colors.white, border: `2px solid ${formData.direction === opt.key ? colors.goldLight : colors.border}`, borderRadius: "12px", padding: "22px 26px", cursor: "pointer", fontFamily: APP.font, transition: "all 0.2s", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
+                >
+                  <div style={{ fontSize: "18px", fontWeight: "700", color: colors.ink, marginBottom: "6px", fontFamily: APP.displayFont }}>{opt.title}</div>
+                  <div style={{ fontSize: "14px", color: colors.inkMuted, lineHeight: "1.55" }}>{opt.desc}</div>
+                </button>
+              ))}
+            </div>
+            <button onClick={() => setStep(0)} style={{ marginTop: "24px", background: "transparent", border: "none", color: colors.inkFaint, cursor: "pointer", fontSize: "13px", fontFamily: APP.font }}>
+              ← Back
+            </button>
+          </div>
+        )}
+
         {/* FORM STEPS */}
         {FORM_STEPS.includes(currentStep) && (
           <div>
@@ -666,7 +834,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
                   const idx = FORM_STEPS.indexOf(currentStep);
                   return (
                     <div key={s} style={{ fontSize: "10px", color: i <= idx ? colors.goldLight : colors.borderLight, letterSpacing: "0.07em", textTransform: "uppercase" }}>
-                      {s}
+                      {isOpposing ? STEP_LABELS_OPP[s] : s}
                     </div>
                   );
                 })}
@@ -676,24 +844,34 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
             {/* Step title */}
             <div style={{ marginBottom: "28px" }}>
               <h2 style={{ fontFamily: APP.displayFont, fontSize: "26px", color: colors.ink, marginBottom: "6px", fontWeight: "700" }}>
-                {currentStep === "Property" && "Your Property"}
-                {currentStep === "Variance" && "The Variance"}
-                {currentStep === "Hardship" && "The Hardship"}
-                {currentStep === "Criteria" && "Town Criteria"}
-                {currentStep === "Demand" && "Hearing Details"}
+                {!isOpposing && currentStep === "Property" && "Your Property"}
+                {!isOpposing && currentStep === "Variance" && "The Variance"}
+                {!isOpposing && currentStep === "Hardship" && "The Hardship"}
+                {!isOpposing && currentStep === "Criteria" && "Town Criteria"}
+                {!isOpposing && currentStep === "Demand" && "Hearing Details"}
+                {isOpposing && currentStep === "Property" && "The Properties"}
+                {isOpposing && currentStep === "Variance" && "The Granted Variance"}
+                {isOpposing && currentStep === "Hardship" && "Grounds for Opposition"}
+                {isOpposing && currentStep === "Criteria" && "Relief Sought"}
+                {isOpposing && currentStep === "Demand" && "Deadline & Details"}
               </h2>
               <p style={{ fontSize: "14px", color: colors.inkMuted, lineHeight: "1.6" }}>
-                {currentStep === "Property" && "The property location and zoning details."}
-                {currentStep === "Variance" && "What you're requesting and what the current rules require."}
-                {currentStep === "Hardship" && "The hardship that makes the variance necessary."}
-                {currentStep === "Criteria" && "Your town's specific evaluation criteria for variances."}
-                {currentStep === "Demand" && "Hearing date and any additional details."}
+                {!isOpposing && currentStep === "Property" && "The property location and zoning details."}
+                {!isOpposing && currentStep === "Variance" && "What you're requesting and what the current rules require."}
+                {!isOpposing && currentStep === "Hardship" && "The hardship that makes the variance necessary."}
+                {!isOpposing && currentStep === "Criteria" && "Your town's specific evaluation criteria for variances."}
+                {!isOpposing && currentStep === "Demand" && "Hearing date and any additional details."}
+                {isOpposing && currentStep === "Property" && "Your property, the property that got the variance, and your standing to object."}
+                {isOpposing && currentStep === "Variance" && "What was granted, to whom, and by which board."}
+                {isOpposing && currentStep === "Hardship" && "Why the variance should not have been granted."}
+                {isOpposing && currentStep === "Criteria" && "What you are asking the board to do."}
+                {isOpposing && currentStep === "Demand" && "Appeal deadline and anything else to include."}
               </p>
             </div>
 
             {/* Fields */}
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-              {(currentStep === "Variance" ? buildVarianceFields(stepFields.Variance, formData.varianceType) : (stepFields[currentStep] || [])).map(f => (
+              {((!isOpposing && currentStep === "Variance") ? buildVarianceFields(stepFields.Variance, formData.varianceType) : (activeStepFields[currentStep] || [])).map(f => (
                 <Field key={f.key} field={f} value={formData[f.key]} onChange={v => handleChange(f.key, v)} />
               ))}
             </div>
