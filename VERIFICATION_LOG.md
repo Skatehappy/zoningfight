@@ -115,3 +115,41 @@ Standard: Three-Gate v7
 - **Subject:** §65900 authorizes a city/county to create a board of zoning adjustment or zoning administrator by ordinance; §65901 grants that body authority to hear and decide conditional use permits and variances.
 - **Source:** law.justia.com Cal. Gov. Code §§65900-65909.5; Stockton Citizens for Sensible Planning v. City of Stockton (quoting §65901(a)).
 - **Action:** no code change — citations confirmed correct; earlier "retrieval inconclusive" flag resolved. Perplexity-verified 2026-07-19.
+
+---
+
+## T5 — Florida special-exception controlling authority (Consolidated Directive)
+Retrieval date: 2026-09-08
+Method: WebSearch (Perplexity MCP server connected but its tools were not exposed
+to the session's tool interface; per directive §1 step 3, fell back to WebSearch
+and logged. Not a block.)
+
+### Irvine v. Duval County Planning Commission, 495 So. 2d 167 (Fla. 1986)
+- **Verdict:** VERIFIED — real, citation and year correct.
+- **Proposition confirmed:** Once the applicant meets the initial burden of showing
+  the application satisfies the criteria for the special exception, the burden shifts
+  to the commission to show, by competent substantial evidence in the record, that the
+  application fails those standards and is adverse to the public interest.
+- **Sources:** law.justia.com/cases/florida/supreme-court/1986/67092-0.html ;
+  courtlistener.com/opinion/1929909/irvine-v-duval-county-planning-commission/
+- **Action:** SHIP in frames/FL-special-exception.json (burden allocation section).
+
+### Jesus Fellowship, Inc. v. Miami-Dade County, 752 So. 2d 708 (Fla. 3d DCA 2000)
+- **Verdict:** VERIFIED — real, citation and year correct.
+- **Proposition confirmed:** Once the applicant makes the required showing, the
+  application must be granted unless the opposition carries its burden of showing the
+  standards are not met and the proposal is adverse to the public interest.
+- **Source:** caselaw.findlaw.com/court/fl-district-court-of-appeal/1200847.html
+- **Action:** SHIP as supporting authority (both-prongs section).
+
+### Dusseau v. Metropolitan Dade County Bd. of County Commissioners, 794 So. 2d 1270 (Fla. 2001)
+- **Verdict:** VERIFIED — real, citation and year correct (decided May 17, 2001).
+- **Proposition confirmed:** Quasi-judicial special-exception decisions are reviewed on
+  the record by certiorari, with deference to the agency's findings; a court cannot
+  reweigh evidence. Supports the record-preservation section (a denial unsupported by
+  record evidence is the applicant's remedy).
+- **Sources:** leagle.com/decision/20012064794so2d127011951 ;
+  law.justia.com/cases/florida/supreme-court/2001/sc95217.html
+- **Action:** SHIP as supporting authority (record-preservation section).
+
+**Dropped citations:** none — all three verified.
