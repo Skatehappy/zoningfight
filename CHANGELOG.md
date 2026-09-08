@@ -31,7 +31,24 @@ One entry per task. Build order: T1 → T3 → T2 → T4 → T5 → T7.
   CODE_INVALID. Non-definitive failures reassure the buyer the code is not used. No
   error string contains "purchase", "buy", or "checkout" (Gate B7).
 
-### T4 — Input clarity and caps (engine)
+### T2 — Draft persistence
+- `App.jsx`: debounced (500ms) autosave to `localStorage` `zf_draft_v1`; restore
+  banner with **Keep it** / **Discard draft**; cleared only after a successful commit;
+  256KB cap with most-recent-write retention; the license code is never persisted
+  (it lives in its own state, not in `formData`). Gate B9 enforces this.
+
+### Frontend integration (App.jsx)
+- T1 client flow wired: per-session nonce, gate uses read-only `peekCode`, and
+  generation runs validate → reserve → generate → render → **commit** (release on any
+  pre-render error, draft preserved). Payhip verify/usage-mark removed from the UI path.
+- T3 error display maps codes to messages with a support link (no purchase/buy/checkout).
+- T5 UI: 5 application types with restored **Other**; pre-selection disclosure
+  (variance vs special exception, once per session); special-exception flow with the
+  user-entered **Criteria From Your Ordinance** repeating group (1–8 rows), guided
+  retrieval panel (verified Municode landing links / copyable search string), and the
+  required **Deciding Body** field.
+
+### T4 — Input clarity and caps (engine + UI)
 - `src/lib/validate.js`: per-field caps (Regulation Section Numbers 200, Additional
   Information 4000, criterion 400, evidence 1200, short 200, long 1500) + total-payload
   guard (30k). Validation runs before reserve.
