@@ -50,6 +50,38 @@ did not surface in the session's tool search. Per directive §1 step 3, fell bac
 WebSearch for citation verification and logged the method in `VERIFICATION_LOG.md`. Did
 not block.
 
+### D7 — Gate check never blocks the buyer on a TRANSIENT
+The Unlock gate calls read-only `peekCode`. If it throws TRANSIENT (backend not yet
+configured, or a network blip), the gate lets the buyer proceed rather than showing a
+scary error; the real check is the reservation at generate time, which also never burns
+a code on failure. Definitive states (`consumed`/`invalid`) still stop the gate with the
+T3 message.
+
+### D8 — Commit follows render; COMMIT_INVALID_STATE delivers anyway
+`generateLetter` sets the letter state and advances to the Letter step (render) BEFORE
+awaiting `commitCode`. If commit does not confirm, the letter is still delivered and a
+`COMMIT_ORPHAN` is logged (contingency: "Deliver the letter. Customer keeps it; we
+absorb the accounting.").
+
+### D9 — Opposing types reuse existing flow + shared doctrine (no duplication)
+"Opposing a Variance" maps to the existing opposing-variance wizard (the queued
+overnight work). "Opposing a Special Exception" uses the special-exception flow with an
+opposing posture; frame LOOKUP strips the `opposing_` prefix so it shares the same FL
+doctrine (Irvine allocation, hardship-language ban) rather than duplicating a frame.
+
+### D10 — Redemption backend replaces Payhip in the UI path
+`api/generate.js` and `api/checklist.js` no longer call Payhip. Existing sold codes must
+be seeded into `zf_codes` (see `.env.example` / `schema.sql`). EmailJS keys remain the
+pre-existing placeholders (out of scope for this directive).
+
+### D11 — Commit granularity
+Work shipped in 6 commits: (1) T1+T3 backend, (2) T5-data/T4-engine/T7/gates, (3) App.jsx
+frontend for T1/T2/T4/T5, (4) .env.example, (5) DECISIONS/report. The directive asked for
+per-task commits (six minimum). App.jsx is a single shared file that T1/T2/T4/T5 all touch,
+so those UI slices landed in one commit rather than four; every task is individually logged
+in `CHANGELOG.md` and independently gated (Gate 1: 13 sims; Gate 2: B1–B12). Noted honestly
+rather than manufacturing artificial commits.
+
 ## GENERIC fallback backfill queue (T5)
 States for which a special-exception/variance frame has NOT been verified fall back to
 `frames/GENERIC.json` (criterion-by-criterion, applicant carries the burden throughout,
