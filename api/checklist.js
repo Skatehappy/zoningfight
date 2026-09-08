@@ -4,23 +4,7 @@ import { MODEL } from './_config.js';
 
 export const config = { runtime: 'edge' };
 
-// Authorize by a live reservation (or the smoke-test bypass). The checklist is
-// generated while the reservation is still live (before the client commits the
-// code post-render), so this reuses the same reservation the letter used.
-async function reservationIsLive(reservationToken) {
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_KEY;
-  if (!url || !key || !reservationToken) return false;
-  try {
-    const r = await fetch(`${url}/rest/v1/rpc/zf_verify_reservation`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', apikey: key, Authorization: `Bearer ${key}` },
-      body: JSON.stringify({ p_reservation_token: reservationToken }),
-    });
-    if (!r.ok) return false;
-    return (await r.json())?.valid === true;
-  } catch { return false; }
-}
+const VALID_CODES = (process.env.ACCESS_CODES || '').split(',').map(c => c.trim()).filter(Boolean);
 
 export default async function handler(req) {
   const headers = {
@@ -34,13 +18,13 @@ export default async function handler(req) {
   if (req.method !== 'POST') return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405, headers });
 
   try {
-    const { accessCode, reservationToken, address, state, varianceType, letterExcerpt, direction } = await req.json();
+    const { accessCode, address, state, varianceType, letterExcerpt, direction } = await req.json();
     const isOpposing = direction === 'opposing';
 
     const TEST_KEYS = (process.env.TEST_KEYS || 'SMOKE-TEST-2026-BAO').split(',').map(k => k.trim().toUpperCase()).filter(Boolean);
-    const isTestKey = TEST_KEYS.includes(String(accessCode || '').trim().toUpperCase()) || reservationToken === 'test-token-0000';
-    if (!isTestKey && !(await reservationIsLive(reservationToken))) {
-      return new Response(JSON.stringify({ error: 'Invalid or expired reservation' }), { status: 401, headers });
+    const isTestKey = TEST_KEYS.includes(String(accessCode || '').trim().toUpperCase());
+    if (!isTestKey && (!accessCode || !VALID_CODES.includes(accessCode.toUpperCase()))) {
+      return new Response(JSON.stringify({ error: 'Invalid access code' }), { status: 401, headers });
     }
 
     const apiKey = process.env.ANTHROPIC_API_KEY;

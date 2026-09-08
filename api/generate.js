@@ -1,6 +1,5 @@
 // api/generate.js
 import { MODEL } from './_config.js';
-import { lintLetter } from './_lint.js';
 
 // Node serverless runtime (NOT edge). Edge caps at ~25s on Hobby and ignores
 // maxDuration, which 504'd ~25s Opus letters. Node honors maxDuration:60. This
@@ -9,9 +8,7 @@ import { lintLetter } from './_lint.js';
 // the function until the timeout).
 export const config = { maxDuration: 60 };
 
-// Permanent smoke-test bypass (mirrors src/lib/redeem.js).
-const SMOKE_TEST_KEY = 'SMOKE-TEST-2026-BAO';
-const TEST_TOKEN = 'test-token-0000';
+const PRODUCT_LINK = 'Z3JNl';
 
 function cors(res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -30,110 +27,95 @@ async function readBody(req) {
   return raw ? JSON.parse(raw) : {};
 }
 
-// Structured error responder — the client maps errorCode to a T3 message.
-// Generation failures NEVER burn a code (commit is client-side, post-render).
-function fail(res, status, errorCode, detail) {
-  return res.status(status).json({ errorCode, detail });
-}
-
-// Confirm a live reservation before spending Anthropic tokens. Read-only.
-async function reservationIsLive(reservationToken) {
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_KEY;
-  if (!url || !key) {
-    // Backend not wired yet. Treat as transient (code never burned); the app
-    // cannot generate real letters until Supabase env is configured (Gate 3).
-    return false;
-  }
-  try {
-    const r = await fetch(`${url}/rest/v1/rpc/zf_verify_reservation`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', apikey: key, Authorization: `Bearer ${key}` },
-      body: JSON.stringify({ p_reservation_token: reservationToken }),
-    });
-    if (!r.ok) return false;
-    const out = await r.json();
-    return out?.valid === true;
-  } catch {
-    return false;
-  }
-}
-
 export default async function handler(req, res) {
   cors(res);
+
   if (req.method === 'OPTIONS') return res.status(204).end();
-  if (req.method !== 'POST') return res.status(405).json({ errorCode: 'TRANSIENT', detail: 'method' });
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   try {
-    const {
-      reservationToken, accessCode,
-      systemPrompt, userPrompt, reviewMode, draftLetter,
-      criteria,            // [{criterion, evidence}] — no-fabrication lint (T5)
-      forbiddenPhrases,    // from the selected frame (T5)
-      enforceForbidden,    // true for special-exception / opposing-special-exception
-    } = await readBody(req);
+    const { accessCode, systemPrompt, userPrompt, reviewMode, draftLetter } = await readBody(req);
 
+    if (!accessCode || !accessCode.trim()) {
+      return res.status(401).json({ error: 'Access code required' });
+    }
+
+    const payhipApiKey = process.env.PAYHIP_API_KEY;
     const anthropicKey = process.env.ANTHROPIC_API_KEY;
-    if (!anthropicKey) return fail(res, 500, 'TRANSIENT', 'Service not configured');
+    if (!payhipApiKey || !anthropicKey) {
+      return res.status(500).json({ error: 'Service not configured' });
+    }
 
-    const isTest =
-      String(accessCode || '').trim().toUpperCase() === SMOKE_TEST_KEY ||
-      reservationToken === TEST_TOKEN;
+    const isCheckCall = systemPrompt === 'Reply: VALID';
+    const TEST_KEYS = (process.env.TEST_KEYS || 'SMOKE-TEST-2026-BAO').split(',').map(k => k.trim().toUpperCase()).filter(Boolean);
+    const isTestKey = TEST_KEYS.includes(String(accessCode || '').trim().toUpperCase());
 
-    // Authorize generation by a live reservation (or the smoke bypass).
-    if (!isTest) {
-      if (!reservationToken) return fail(res, 401, 'TRANSIENT', 'no reservation');
-      const live = await reservationIsLive(reservationToken);
-      if (!live) return fail(res, 401, 'TRANSIENT', 'reservation not live');
+    if (!isCheckCall && !isTestKey) {
+      const payhipRes = await fetch(
+        `https://payhip.com/api/v1/license/verify?product_link=${PRODUCT_LINK}&license_key=${encodeURIComponent(accessCode.trim())}`,
+        { method: 'GET', headers: { 'payhip-api-key': payhipApiKey } }
+      );
+      const payhipData = payhipRes.ok ? await payhipRes.json().catch(() => null) : null;
+      if (!payhipData || !payhipData.data) {
+        return res.status(401).json({ error: 'Invalid access code. Check your Payhip receipt email.' });
+      }
+      if (payhipData.data.uses >= 1) {
+        return res.status(401).json({ error: 'This code has already been used. Each code generates one letter.' });
+      }
     }
 
     let messages;
     if (reviewMode && draftLetter) {
-      messages = [{ role: 'user', content: `Review and improve this letter. Fix vague language, ensure all arguments are explicitly stated, remove emotional appeals, tighten redundancy. Do NOT introduce any quoted ordinance criteria that were not already present. Return ONLY the improved letter:\n\n${draftLetter}` }];
+      messages = [{ role: 'user', content: `Review and improve this appeal letter. Fix vague language, ensure all arguments are explicitly stated, remove emotional appeals, tighten redundancy. Return ONLY the improved letter:\n\n${draftLetter}` }];
     } else {
       messages = [{ role: 'user', content: userPrompt }];
     }
 
-    const callAnthropic = async () => {
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': anthropicKey,
-          'anthropic-version': '2023-06-01',
-        },
-        body: JSON.stringify({
-          model: MODEL,
-          max_tokens: 3000,
-          thinking: { type: 'disabled' },
-          system: systemPrompt || undefined,
-          messages,
-        }),
-      });
-      if (!response.ok) return { httpError: (await response.text()).slice(0, 500) };
-      const data = await response.json();
-      // Extract the text block by type, not position (adaptive thinking can
-      // place a thinking block first).
-      const text = data.content?.find(b => b.type === 'text')?.text;
-      if (!text) return { httpError: `no text block (stop_reason: ${data.stop_reason || 'unknown'})` };
-      return { text };
-    };
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': anthropicKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: MODEL,
+        max_tokens: 3000,
+        thinking: { type: 'disabled' },
+        system: (!isCheckCall && systemPrompt) ? systemPrompt : undefined,
+        messages,
+      }),
+    });
 
-    // Generate, lint, and REGENERATE ONCE on a lint failure. A second lint
-    // failure fails TRANSIENT with the code released (client releases). A lint
-    // failure never burns a code. Markers are stripped for delivery.
-    let lastLintReason = null;
-    for (let attempt = 0; attempt < 2; attempt++) {
-      const gen = await callAnthropic();
-      if (gen.httpError) return fail(res, 502, 'TRANSIENT', gen.httpError);
-      const lint = lintLetter(gen.text, { criteria, forbiddenPhrases, enforceForbidden });
-      if (lint.ok) return res.status(200).json({ text: lint.cleanText });
-      lastLintReason = lint.reason;
-      // Log the full output server-side (never shown to the buyer).
-      console.error(`[lint] attempt ${attempt + 1} failed: ${lint.reason}\n---\n${gen.text}\n---`);
+    if (!response.ok) {
+      const err = await response.text();
+      return res.status(502).json({ error: 'AI generation failed', detail: err });
     }
-    return fail(res, 422, 'TRANSIENT', `lint:${lastLintReason}`);
+
+    const data = await response.json();
+    // Extract the text block by type, not by position. With adaptive thinking a
+    // model can place a "thinking" block at content[0], so content[0].text is
+    // undefined even on a 200. Fail loudly on a missing text block — never return
+    // undefined — and because this throws BEFORE the mark-usage call below, the
+    // buyer's one-use license is NOT burned on a parse miss.
+    const text = data.content?.find(b => b.type === 'text')?.text;
+    if (!text) throw new Error(`No text block in API response (stop_reason: ${data.stop_reason || 'unknown'})`);
+
+    // Mark license as used. Awaited (not fire-and-forget): on Node serverless,
+    // work after res is sent is not guaranteed to run. Only for real buyer codes.
+    if (!isCheckCall && !isTestKey) {
+      try {
+        await fetch(`https://payhip.com/api/v1/license/usage`, {
+          method: 'PUT',
+          headers: { 'payhip-api-key': payhipApiKey, 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `product_link=${PRODUCT_LINK}&license_key=${encodeURIComponent(accessCode.trim())}`,
+        });
+      } catch { /* letter already generated; don't fail the response on a usage-mark hiccup */ }
+    }
+
+    return res.status(200).json({ text });
+
   } catch (err) {
-    return fail(res, 500, 'TRANSIENT', err.message);
+    return res.status(500).json({ error: err.message });
   }
 }

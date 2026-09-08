@@ -1,13 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import { peekCode, reserveCode, commitCode, releaseCode } from "./lib/redeem.js";
-import { errorFor, inputTooLong, SUPPORT_EMAIL } from "./lib/errors.js";
-import { checkPayload, CAPS } from "./lib/validate.js";
-import { selectFrame } from "./lib/frames.js";
-import { buildFramePrompt } from "./lib/prompt.js";
-import { cleanCriteria, MAX_ROWS, MIN_ROWS, CRITERION_CAP, EVIDENCE_CAP } from "./lib/criteria.js";
-import { stateAbbr } from "../frames/select.mjs";
-import { lookupHost, searchString } from "./lib/hosts.js";
 
 const EMAILJS_SERVICE_ID  = "YOUR_EMAILJS_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_EMAILJS_TEMPLATE_ID";
@@ -26,24 +18,8 @@ const APP = {
   displayFont: "'Playfair Display', serif",
 };
 
-const STEPS = ["Intro", "Direction", "Property", "Variance", "Hardship", "Criteria", "Demand", "Special", "Generate", "Letter"];
+const STEPS = ["Intro", "Direction", "Property", "Variance", "Hardship", "Criteria", "Demand", "Generate", "Letter"];
 const FORM_STEPS = ["Property", "Variance", "Hardship", "Criteria", "Demand"];
-
-// T2 — draft persistence
-const DRAFT_KEY = "zf_draft_v1";
-const DRAFT_MAX_BYTES = 256 * 1024;
-
-// T5 — application types. `flow` routes to the existing variance/opposing wizard
-// or the new special-exception flow. `posture` and `appType` feed the frame layer.
-const APP_TYPES = [
-  { key: "variance",                    title: "Request a Variance",              desc: "Ask for relief from a zoning rule based on a hardship unique to your property.", flow: "variance", posture: "requesting", appType: "variance", prove: "A legal hardship — unique to your land and not self-created.", decides: "Zoning board of appeals / board of adjustment." },
-  { key: "special_exception",           title: "Request a Special Exception",     desc: "Ask for a use the code already allows in your district if you meet its listed criteria.", flow: "special", posture: "requesting", appType: "special_exception", prove: "That your proposal meets each criterion the ordinance lists.", decides: "The body your local code names (varies)." },
-  { key: "opposing_variance",           title: "Oppose a Variance",               desc: "Fight a variance granted to a neighbor or another party.", flow: "opposing", posture: "opposing", appType: "opposing_variance", prove: "That the applicant did not meet the hardship standard / the grant harms you.", decides: "The board that granted it, or a higher body." },
-  { key: "opposing_special_exception",  title: "Oppose a Special Exception",      desc: "Fight a special exception / conditional use granted to another party.", flow: "special", posture: "opposing", appType: "opposing_special_exception", prove: "That the criteria are unmet AND the proposal is adverse to the public interest.", decides: "The body your local code names (varies)." },
-  { key: "other",                       title: "Other (describe)",                desc: "A different zoning matter — you describe it in your own words.", flow: "variance", posture: "requesting", appType: "other", prove: "Whatever your matter requires — you set it out.", decides: "Depends on your matter." },
-];
-const appTypeByKey = (k) => APP_TYPES.find(t => t.key === k) || null;
-const SE_TERMS = ["Special Exception", "Special Permit", "Conditional Use", "Special Use Permit"];
 
 // Opposing-variance mode reuses the same 5 form-step SLOTS (Property, Variance,
 // Hardship, Criteria, Demand) so the name-based navigation and progress bar keep
@@ -102,7 +78,7 @@ const stepFields = {
   ],
   Demand: [
     { key: "hearingDate",     label: "Hearing Date",          type: "text",     required: false, placeholder: "e.g. May 15, 2026" },
-    { key: "additionalInfo",  label: "Additional Information", type: "textarea", required: false, placeholder: "Any other relevant details...", cap: CAPS.additionalInfo },
+    { key: "additionalInfo",  label: "Anything Else to Include", type: "textarea", required: false, placeholder: "Any other relevant details..." },
   ],
 };
 
@@ -147,9 +123,8 @@ const stepFieldsOpp = {
   Variance: [
     { key: "varianceGranted", label: "What Variance Was Granted", type: "textarea", required: true,
       placeholder: "e.g. Side setback reduced from the required 25 ft to 12 ft to permit a two-story addition" },
-    { key: "regulationSections", label: "Regulation Section Numbers", type: "text", required: false,
-      placeholder: "e.g., Section 4.2.1; Article VI", cap: CAPS.regulationSections,
-      helper: "The section or article numbers from the zoning regulations that apply. Short is fine — background goes in Additional Information below." },
+    { key: "varianceNumbers", label: "Specific Numbers", type: "text", required: false,
+      placeholder: "e.g. reduced side setback from 25 ft to 12 ft" },
     { key: "dateGranted",     label: "Date the Variance Was Granted", type: "text", required: false, placeholder: "e.g. April 2026" },
     { key: "caseNumber",      label: "Case / Application Number (if known)", type: "text", required: false, placeholder: "e.g. ZBA-2026-0142" },
     { key: "grantingBoard",   label: "Board That Granted It", type: "text", required: true, placeholder: "e.g. Lee County Zoning Board of Appeals" },
@@ -165,7 +140,7 @@ const stepFieldsOpp = {
   ],
   Demand: [ // slot repurposed as "Deadline & Details"
     { key: "oppDeadline",     label: "Appeal Deadline (if known)", type: "text", required: false, placeholder: "e.g. within 30 days of the decision" },
-    { key: "additionalInfo",  label: "Additional Information", type: "textarea", required: false, placeholder: "Any other relevant details...", cap: CAPS.additionalInfo },
+    { key: "additionalInfo",  label: "Anything Else to Include", type: "textarea", required: false, placeholder: "Any other relevant details..." },
   ],
 };
 const requiredFieldsOpp = {
@@ -219,23 +194,6 @@ const conditionalFields = {
   ],
 };
 
-// T5 — Special Exception flow fields (single form). The ordinance criteria are
-// NOT here — they are the user-entered repeating group (CriteriaRows).
-const seFields = [
-  { key: "state",           label: "State",                       type: "text",   required: true,  placeholder: "Florida" },
-  { key: "municipality",    label: "Municipality / County",       type: "text",   required: true,  placeholder: "e.g. Lee County" },
-  { key: "decidingBody",    label: "Deciding Body (who decides)",  type: "text",   required: true,  placeholder: "e.g. Board of County Commissioners",
-    helper: "Required — no default. In Florida this may be the board of adjustment, planning commission, county commission, or city council depending on your local code. Guessing addresses the letter to the wrong board." },
-  { key: "propertyAddress", label: "Property / Parcel",            type: "text",   required: true,  placeholder: "123 Oak Street (or parcel ID)" },
-  { key: "zoningDistrict",  label: "Zoning District",              type: "text",   required: false, placeholder: "e.g. AG-2, RS-1" },
-  { key: "terminology",     label: "What does your code call it?", type: "select", required: true,  options: SE_TERMS,
-    helper: "Use the exact term your local code uses." },
-  { key: "regulationSections", label: "Regulation Section Numbers", type: "text",  required: false, placeholder: "e.g., Section 4.2.1; Article VI", cap: CAPS.regulationSections,
-    helper: "The section or article numbers from your ordinance that list the special-exception criteria. Short is fine — background goes in Additional Information." },
-  { key: "additionalInfo",  label: "Additional Information",       type: "textarea", required: false, placeholder: "Any other relevant background...", cap: CAPS.additionalInfo },
-];
-const seRequired = ["state", "municipality", "decidingBody", "propertyAddress", "terminology"];
-
 function buildVarianceFields(baseFields, varianceType) {
   const cond = conditionalFields[varianceType];
   if (!cond) return baseFields;
@@ -275,38 +233,14 @@ const btnStyle = (active) => ({
   boxShadow: active ? `0 2px 12px ${colors.goldLight}55` : "none",
 });
 
-// T4: every free-text field gets an explicit cap + visible counter. The cap is
-// enforced with maxLength (hard stop) and the counter turns red as it fills.
-function fieldCap(field) {
-  if (field.cap) return field.cap;
-  if (field.type === "textarea") return CAPS.longText;
-  if (field.type === "text") return CAPS.shortText;
-  return null;
-}
-
-function Counter({ value, cap }) {
-  if (!cap) return null;
-  const n = (value || "").length;
-  const near = n > cap * 0.9;
-  return (
-    <div style={{ textAlign: "right", fontSize: "11px", marginTop: "4px", color: n > cap ? colors.errorText : near ? colors.gold : colors.inkFaint }}>
-      {n} / {cap}
-    </div>
-  );
-}
-
 function Field({ field, value, onChange }) {
   const [focused, setFocused] = useState(false);
-  const cap = fieldCap(field);
   return (
     <div style={{ marginBottom: "4px" }}>
       <label style={{ display: "block", marginBottom: "7px", fontSize: "13px", color: colors.inkMuted }}>
         {field.label}
         {field.required && <span style={{ color: colors.goldLight, marginLeft: "4px" }}>*</span>}
       </label>
-      {field.helper && (
-        <div style={{ fontSize: "12px", color: colors.inkFaint, marginBottom: "8px", lineHeight: "1.5" }}>{field.helper}</div>
-      )}
       {field.type === "checkgroup" ? (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           {field.options.map(o => {
@@ -337,130 +271,26 @@ function Field({ field, value, onChange }) {
           {field.options.map(o => <option key={o} value={o}>{o}</option>)}
         </select>
       ) : field.type === "textarea" ? (
-        <>
-          <textarea
-            value={value || ""}
-            onChange={e => onChange(e.target.value)}
-            placeholder={field.placeholder}
-            rows={4}
-            maxLength={cap || undefined}
-            onFocus={() => setFocused(true)}
-            onBlur={() => setFocused(false)}
-            style={{ ...inputStyle(focused), resize: "vertical", lineHeight: "1.7", minHeight: "112px" }}
-          />
-          <Counter value={value} cap={cap} />
-        </>
+        <textarea
+          value={value || ""}
+          onChange={e => onChange(e.target.value)}
+          placeholder={field.placeholder}
+          rows={4}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          style={{ ...inputStyle(focused), resize: "vertical", lineHeight: "1.7", minHeight: "112px" }}
+        />
       ) : (
-        <>
-          <input
-            type="text"
-            value={value || ""}
-            onChange={e => onChange(e.target.value)}
-            placeholder={field.placeholder}
-            maxLength={cap || undefined}
-            onFocus={() => setFocused(true)}
-            onBlur={() => setFocused(false)}
-            style={inputStyle(focused)}
-          />
-          <Counter value={value} cap={cap} />
-        </>
+        <input
+          type="text"
+          value={value || ""}
+          onChange={e => onChange(e.target.value)}
+          placeholder={field.placeholder}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          style={inputStyle(focused)}
+        />
       )}
-    </div>
-  );
-}
-
-// T5 — the user-entered ordinance criteria (the app supplies none).
-function CriteriaRows({ rows, onChange }) {
-  const list = rows && rows.length ? rows : [{ criterion: "", evidence: "" }];
-  const set = (i, key, val) => {
-    const next = list.map((r, idx) => idx === i ? { ...r, [key]: val } : r);
-    onChange(next);
-  };
-  const add = () => { if (list.length < MAX_ROWS) onChange([...list, { criterion: "", evidence: "" }]); };
-  const remove = (i) => { if (list.length > MIN_ROWS) onChange(list.filter((_, idx) => idx !== i)); };
-  return (
-    <div>
-      <div style={{ fontSize: "12px", color: colors.inkFaint, marginBottom: "14px", lineHeight: "1.55" }}>
-        Copy each criterion from your town's regulations. We format and argue your case — the substance is yours.
-      </div>
-      {list.map((r, i) => (
-        <div key={i} style={{ background: colors.paperWarm, border: `1px solid ${colors.borderLight}`, borderRadius: "10px", padding: "16px 18px", marginBottom: "14px" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
-            <div style={{ fontSize: "12px", fontWeight: "700", color: colors.gold, letterSpacing: "0.05em" }}>CRITERION {i + 1}</div>
-            {list.length > MIN_ROWS && (
-              <button onClick={() => remove(i)} style={{ background: "transparent", border: "none", color: colors.inkFaint, cursor: "pointer", fontSize: "12px" }}>✕ remove</button>
-            )}
-          </div>
-          <Field field={{ label: "(a) The criterion, word for word from your ordinance", type: "textarea", cap: CRITERION_CAP }}
-                 value={r.criterion} onChange={v => set(i, "criterion", v)} />
-          <div style={{ height: "10px" }} />
-          <Field field={{ label: "(b) How your proposal satisfies it", type: "textarea", cap: EVIDENCE_CAP }}
-                 value={r.evidence} onChange={v => set(i, "evidence", v)} />
-        </div>
-      ))}
-      {list.length < MAX_ROWS && (
-        <button onClick={add} style={{ background: "transparent", border: `1px dashed ${colors.border}`, color: colors.inkMuted, borderRadius: "8px", padding: "11px", width: "100%", cursor: "pointer", fontSize: "13px", fontFamily: APP.font }}>
-          + Add another criterion ({list.length}/{MAX_ROWS})
-        </button>
-      )}
-    </div>
-  );
-}
-
-// T5 — where to get the ordinance. The app never fetches it; it shows her where.
-function GuidedRetrieval({ state, municipality }) {
-  const host = lookupHost(state, municipality);
-  const search = searchString(state, municipality);
-  return (
-    <div style={{ background: "#f4f8ff", border: "1px solid #cfe0f5", borderRadius: "10px", padding: "18px 22px", marginBottom: "22px" }}>
-      <div style={{ fontSize: "13px", fontWeight: "700", color: "#2a5a8a", marginBottom: "10px" }}>📄 Where to find your criteria</div>
-      {host ? (
-        <div style={{ fontSize: "13px", color: colors.inkLight, marginBottom: "10px", lineHeight: "1.6" }}>
-          Open your municipality's code, then pick the zoning / land development title:<br />
-          <a href={host.landing_url} target="_blank" rel="noreferrer" style={{ color: "#2a5a8a", fontWeight: "600", wordBreak: "break-all" }}>{host.landing_url}</a>
-          {host.notes && <div style={{ fontSize: "11px", color: colors.inkFaint, marginTop: "4px" }}>{host.notes}</div>}
-        </div>
-      ) : (
-        <div style={{ fontSize: "13px", color: colors.inkLight, marginBottom: "10px", lineHeight: "1.6" }}>
-          We don't have a verified link for your municipality. Search this (copy it):
-          <div style={{ background: colors.white, border: `1px solid ${colors.border}`, borderRadius: "6px", padding: "9px 12px", marginTop: "6px", fontFamily: "monospace", fontSize: "12px", userSelect: "all" }}>{search}</div>
-        </div>
-      )}
-      <ul style={{ fontSize: "12px", color: colors.inkMuted, lineHeight: "1.7", margin: "8px 0 0", paddingLeft: "18px" }}>
-        <li>Look in your land development code or zoning code, in the article on special exceptions or conditional uses.</li>
-        <li>Search within it for: <code>special exception</code>, <code>conditional use</code>, <code>standards of review</code>, <code>criteria</code>.</li>
-        <li>You want the enumerated list — usually lettered or numbered — of conditions the board applies.</li>
-        <li>Copy each one word for word; paraphrasing weakens the showing.</li>
-        <li>The section number goes in <strong>Regulation Section Numbers</strong> above.</li>
-      </ul>
-      <div style={{ fontSize: "12px", color: colors.inkLight, marginTop: "12px", padding: "10px 12px", background: colors.white, borderRadius: "6px", lineHeight: "1.55" }}>
-        <strong>Can't find it?</strong> Call your municipality's planning or zoning department and ask which code section lists the criteria for a special exception. They will tell you.
-      </div>
-    </div>
-  );
-}
-
-// T5 — pre-selection disclosure: variance vs special exception, once per session.
-function PreSelectionDisclosure({ onClose }) {
-  return (
-    <div style={{ position: "fixed", inset: 0, background: "rgba(15,26,15,0.55)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 50, padding: "20px" }}>
-      <div style={{ background: colors.white, borderRadius: "14px", padding: "30px 34px", maxWidth: "560px", boxShadow: "0 12px 48px rgba(0,0,0,0.3)" }}>
-        <h3 style={{ fontFamily: APP.displayFont, fontSize: "22px", color: colors.ink, marginTop: 0, marginBottom: "14px" }}>First: a variance is not a special exception</h3>
-        <p style={{ fontSize: "14px", color: colors.inkMuted, lineHeight: "1.65", marginBottom: "14px" }}>
-          They ask for different things and require you to prove different things. Picking the right one matters — in Florida the two carry different burdens of proof, and the wrong caption can forfeit an advantage you're entitled to.
-        </p>
-        <div style={{ display: "flex", gap: "14px", marginBottom: "16px", flexWrap: "wrap" }}>
-          <div style={{ flex: "1 1 220px", background: colors.paperWarm, borderRadius: "10px", padding: "14px 16px" }}>
-            <div style={{ fontWeight: "700", color: colors.ink, marginBottom: "6px", fontSize: "14px" }}>Variance</div>
-            <div style={{ fontSize: "12px", color: colors.inkMuted, lineHeight: "1.55" }}>Permission to break a rule. You must prove a <strong>hardship</strong> unique to your land. You carry that burden.</div>
-          </div>
-          <div style={{ flex: "1 1 220px", background: colors.paperWarm, borderRadius: "10px", padding: "14px 16px" }}>
-            <div style={{ fontWeight: "700", color: colors.ink, marginBottom: "6px", fontSize: "14px" }}>Special Exception</div>
-            <div style={{ fontSize: "12px", color: colors.inkMuted, lineHeight: "1.55" }}>A use the code already allows if you meet its <strong>listed criteria</strong>. No hardship needed — and in Florida the burden can shift to the board once you make your showing.</div>
-          </div>
-        </div>
-        <button onClick={onClose} style={{ ...btnStyle(true), width: "100%", justifyContent: "center", padding: "13px" }}>Got it — choose my type →</button>
-      </div>
     </div>
   );
 }
@@ -494,13 +324,8 @@ export default function App() {
   const [copied, setCopied] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [emailSending, setEmailSending] = useState(false);
-  const [error, setError] = useState(null);           // T3: {message, showSupport} | string | null
+  const [error, setError] = useState("");
   const [retryCount, setRetryCount] = useState(0);
-  const [reservationToken, setReservationToken] = useState(null); // T1
-  const [showDraftBanner, setShowDraftBanner] = useState(false);  // T2
-  const [disclosureSeen, setDisclosureSeen] = useState(false);    // T5 pre-selection
-  const draftTimer = useRef(null);
-  const restoredRef = useRef(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -511,20 +336,8 @@ export default function App() {
     }
   }, []);
 
-  // T2: restore a saved draft (localStorage, NOT the license code) and offer a
-  // dismissible banner. The draft is cleared only after a successful commit.
   useEffect(() => {
-    try {
-      const s = localStorage.getItem(DRAFT_KEY);
-      if (s) {
-        const parsed = JSON.parse(s);
-        if (parsed && typeof parsed === "object" && Object.keys(parsed).length) {
-          setFormData(parsed);
-          setShowDraftBanner(true);
-        }
-      }
-    } catch {}
-    restoredRef.current = true;
+    try { const s = sessionStorage.getItem("zf_form"); if (s) setFormData(JSON.parse(s)); } catch {}
     const params = new URLSearchParams(window.location.search);
     const stateParam = params.get("state");
     const disputeParam = params.get("dispute");
@@ -551,26 +364,9 @@ export default function App() {
     if (Object.keys(updates).length) setFormData(prev => ({ ...prev, ...updates }));
   }, []);
 
-  // T2: debounced autosave (500ms). Never persists the license code (it lives in
-  // its own `accessCode` state, not in formData). 256KB cap — on overflow keep
-  // the most recent write, log, never silently drop the whole draft.
   useEffect(() => {
-    if (!restoredRef.current) return;
-    if (draftTimer.current) clearTimeout(draftTimer.current);
-    draftTimer.current = setTimeout(() => {
-      try {
-        const json = JSON.stringify(formData || {});
-        if (json.length > DRAFT_MAX_BYTES) {
-          console.warn(`[draft] ${json.length}B exceeds ${DRAFT_MAX_BYTES}B cap — keeping latest write`);
-        }
-        localStorage.setItem(DRAFT_KEY, json);
-      } catch (e) { console.warn("[draft] save failed", e); }
-    }, 500);
-    return () => draftTimer.current && clearTimeout(draftTimer.current);
+    try { sessionStorage.setItem("zf_form", JSON.stringify(formData)); } catch {}
   }, [formData]);
-
-  const clearDraft = () => { try { localStorage.removeItem(DRAFT_KEY); } catch {} };
-  const discardDraft = () => { setFormData({}); clearDraft(); setShowDraftBanner(false); };
 
   const handleChange = (key, value) => setFormData(prev => ({ ...prev, [key]: value }));
 
@@ -589,42 +385,34 @@ export default function App() {
     return (requiredFields[stepName] || []).every(k => formData[k] && formData[k].trim());
   };
 
-  // T5: special-exception flow validity — all required fields + >=1 criterion row.
-  const seStepValid = () => {
-    if (!seRequired.every(k => (formData[k] || "").trim())) return false;
-    return cleanCriteria(formData.criteriaRows).length >= MIN_ROWS;
-  };
-
-  // T1/T3: gate check is a READ-ONLY peek (no reservation lock). It maps to the
-  // T3 taxonomy. A TRANSIENT (backend unconfigured/network) never blocks the
-  // buyer at the gate — the real check is the reservation at generate time.
   const verifyCode = async (code, silent = false) => {
     if (!code || !code.trim()) { setCodeError("Please enter your access code."); return; }
     setCodeError("");
     try {
-      const status = await peekCode(code.trim());
-      if (status === "consumed") { setCodeValid(false); if (!silent) setCodeError(errorFor("CODE_CONSUMED").message); return; }
-      if (status === "invalid")  { setCodeValid(false); if (!silent) setCodeError(errorFor("CODE_INVALID").message); return; }
-      setCodeValid(true);
-      if (!silent) setStep(1);
+      const res = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ accessCode: code, systemPrompt: "Reply: VALID", userPrompt: "check" }),
+      });
+      if (res.status === 401) {
+        if (!silent) setCodeError("Invalid access code. Check your Payhip receipt email.");
+        setCodeValid(false);
+      } else {
+        setCodeValid(true);
+        if (!silent) setStep(1);
+      }
     } catch {
-      setCodeValid(true);           // transient — let them through, reserve later
-      if (!silent) setStep(1);
+      if (!silent) setCodeError("Could not verify. Check your connection.");
     }
   };
 
-  // Structured-error-aware API call. Throws an Error whose .code is a T3 code.
-  const callAPI = async (systemPrompt, userPrompt, reviewMode, draftLetter, extra = {}) => {
+  const callAPI = async (systemPrompt, userPrompt, reviewMode, draftLetter) => {
     const res = await fetch("/api/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ accessCode, reservationToken, systemPrompt, userPrompt, reviewMode: !!reviewMode, draftLetter: draftLetter || "", ...extra }),
+      body: JSON.stringify({ accessCode, systemPrompt, userPrompt, reviewMode: !!reviewMode, draftLetter: draftLetter || "" }),
     });
-    if (!res.ok) {
-      let code = "TRANSIENT";
-      try { code = (await res.json()).errorCode || "TRANSIENT"; } catch {}
-      const err = new Error(code); err.code = code; throw err;
-    }
+    if (!res.ok) { const err = await res.json(); throw new Error(err.error || "Generation failed"); }
     return (await res.json()).text;
   };
 
@@ -790,7 +578,7 @@ STATE: ${formData.state}
 ZONING DISTRICT: ${formData.zoningDistrict || "not specified"}
 OBJECTOR'S RELATIONSHIP / STANDING: ${formData.relationship || "nearby affected owner"}
 VARIANCE THAT WAS GRANTED: ${formData.varianceGranted}
-REGULATION SECTION NUMBERS RELIED ON: ${formData.regulationSections || "not specified"}
+SPECIFIC NUMBERS: ${formData.varianceNumbers || "not specified"}
 DATE GRANTED: ${formData.dateGranted || "not specified"}
 CASE / APPLICATION NUMBER: ${formData.caseNumber || "not provided"}
 BOARD THAT GRANTED IT: ${formData.grantingBoard}
@@ -835,115 +623,47 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
     return `Write a STANDARD PROFESSIONAL letter:\n${fullBase}`;
   };
 
-  const activeAppType = () =>
-    appTypeByKey(formData.applicationType) ||
-    (formData.direction === "opposing" ? appTypeByKey("opposing_variance") : appTypeByKey("variance"));
-
-  // T4: collect {label,value,limit} for the active flow — validated BEFORE reserve.
-  const collectEntries = (isSpecial) => {
-    const e = [];
-    if (isSpecial) {
-      for (const f of seFields) e.push({ label: f.label, value: formData[f.key], limit: fieldCap(f) || CAPS.shortText });
-      (formData.criteriaRows || []).forEach((r, i) => {
-        e.push({ label: `Criterion ${i + 1}`, value: r.criterion, limit: CRITERION_CAP });
-        e.push({ label: `Criterion ${i + 1} evidence`, value: r.evidence, limit: EVIDENCE_CAP });
-      });
-    } else {
-      const fields = isOpposing
-        ? Object.values(stepFieldsOpp).flat()
-        : [...Object.values(stepFields).flat(), ...(conditionalFields[formData.varianceType] || [])];
-      for (const f of fields) if (formData[f.key]) e.push({ label: f.label, value: formData[f.key], limit: fieldCap(f) || CAPS.longText });
-    }
-    return e;
-  };
-
   const generateLetter = async () => {
-    const at = activeAppType();
-    const isSpecial = at.flow === "special";
-
-    setError(null);
-    setLetter(""); setAltLetter(""); setChecklist([]);
-
-    // T4 — validate client-side FIRST. Invalid input never touches a reservation.
-    const v = checkPayload(collectEntries(isSpecial));
-    if (!v.ok) { setError(inputTooLong(v.label, v.count, v.limit)); return; }
-
     setLoading(true);
-
-    // T1 — reserve. On a code-state error, show it and do NOT proceed.
-    let token;
+    setError("");
+    setLetter("");
+    setAltLetter("");
+    setChecklist([]);
     try {
-      setLoadingMsg("Checking your code...");
-      token = await reserveCode(accessCode);
-      setReservationToken(token);
-    } catch (e) {
-      setError(errorFor(e.code || "TRANSIENT"));
-      setLoading(false); setLoadingMsg("");
-      return;
-    }
-
-    try {
-      let reviewed, alt, frameExtra = {};
-
-      if (isSpecial) {
-        const sel = selectFrame(formData.state, at.appType);
-        if (sel.fallback) console.log(`[DECISIONS backfill] GENERIC fallback: ${sel.key}`);
-        const opts = { formData, criteriaRows: formData.criteriaRows || [], applicationType: at.appType, posture: at.posture };
-        const built = buildFramePrompt(sel.frame, { ...opts, tone: "standard" });
-        frameExtra = { criteria: built.criteria, forbiddenPhrases: built.forbiddenPhrases, enforceForbidden: built.enforceForbidden };
-        setLoadingMsg("Drafting your letter...");
-        const draft = await callAPI(built.system, built.user, false, "", { reservationToken: token, ...frameExtra });
-        setLoadingMsg("Running quality review...");
-        reviewed = await callAPI("", "", true, draft, { reservationToken: token, ...frameExtra });
-        setLoadingMsg("Generating assertive version...");
-        const builtA = buildFramePrompt(sel.frame, { ...opts, tone: "assertive" });
-        alt = await callAPI(builtA.system, builtA.user, false, "", { reservationToken: token, ...frameExtra });
-      } else {
-        const effectivePrompt = pickSystemPrompt(formData.varianceType);
-        setLoadingMsg("Drafting your letter...");
-        const draft = await callAPI(effectivePrompt, buildPrompt("standard"), false, "", { reservationToken: token });
-        setLoadingMsg("Running quality review...");
-        reviewed = await callAPI("", "", true, draft, { reservationToken: token });
-        setLoadingMsg("Generating assertive version...");
-        alt = await callAPI(effectivePrompt, buildPrompt("assertive"), false, "", { reservationToken: token });
-      }
-
+      const effectivePrompt = pickSystemPrompt(formData.varianceType);
+      setLoadingMsg("Drafting your letter...");
+      const draft = await callAPI(effectivePrompt, buildPrompt("standard"), false, "");
+      setLoadingMsg("Running quality review...");
+      const reviewed = await callAPI("", "", true, draft);
       setLetter(reviewed);
+      setLoadingMsg("Generating assertive version...");
+      const alt = await callAPI(effectivePrompt, buildPrompt("assertive"), false, "");
       setAltLetter(alt);
-
       setLoadingMsg("Building checklist...");
       try {
         const clRes = await fetch("/api/checklist", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            accessCode, reservationToken: token,
-            direction: at.posture,
+            accessCode,
+            direction: formData.direction || "requesting",
             address: formData.propertyAddress,
             state: formData.state,
-            varianceType: isSpecial ? at.title : (isOpposing ? "Opposing a granted variance" : formData.varianceType),
+            varianceType: isOpposing ? "Opposing a granted variance" : formData.varianceType,
             letterExcerpt: reviewed.substring(0, 300),
           }),
         });
-        if (clRes.ok) setChecklist((await clRes.json()).checklist || []);
+        if (clRes.ok) {
+          const d = await clRes.json();
+          setChecklist(d.checklist || []);
+        }
       } catch {}
-
-      // Deliver: render the letter, THEN commit (commit follows render).
       setStep(STEPS.indexOf("Letter"));
       setRetryCount(0);
-
-      const committed = await commitCode(token, at.appType, stateAbbr(formData.state));
-      if (!committed) console.warn("[COMMIT_ORPHAN] letter delivered but commit did not confirm — customer keeps it");
-      clearDraft();
-      setShowDraftBanner(false);
-      setReservationToken(null);
     } catch (e) {
-      // Pre-render failure: release the code (best-effort; TTL is the guarantee)
-      // and keep the draft so nothing is lost.
-      await releaseCode(token);
-      setReservationToken(null);
-      setRetryCount(retryCount + 1);
-      setError(errorFor(e.code || "TRANSIENT"));
+      const n = retryCount + 1;
+      setRetryCount(n);
+      setError(`Generation failed: ${e.message}. Please try again.`);
     }
     setLoading(false);
     setLoadingMsg("");
@@ -964,7 +684,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
       }, EMAILJS_PUBLIC_KEY);
       setEmailSent(true);
     } catch {
-      setError({ message: "Email send failed. Please copy the letter manually.", showSupport: false });
+      setError("Email send failed. Please copy the letter manually.");
     }
     setEmailSending(false);
   };
@@ -1003,13 +723,11 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
     setFormData({});
     setLetter("");
     setAltLetter("");
-    setError(null);
+    setError("");
     setEmailSent(false);
     setChecklist([]);
     setRetryCount(0);
-    setReservationToken(null);
-    clearDraft();
-    setShowDraftBanner(false);
+    try { sessionStorage.removeItem("zf_form"); } catch {}
   };
 
   const currentStep = STEPS[step];
@@ -1036,19 +754,6 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
       </div>
 
       <div style={{ maxWidth: "720px", margin: "0 auto", padding: "40px 24px 80px" }}>
-
-        {/* T2 — draft restored banner */}
-        {showDraftBanner && currentStep !== "Letter" && (
-          <div style={{ background: "#fff8e6", border: "1px solid #e8d48a", borderRadius: "8px", padding: "12px 16px", marginBottom: "24px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
-            <div style={{ fontSize: "13px", color: colors.inkLight }}>
-              📝 We restored your unfinished draft. Your access code is never saved.
-            </div>
-            <div style={{ display: "flex", gap: "8px" }}>
-              <button onClick={() => setShowDraftBanner(false)} style={{ background: "transparent", border: `1px solid ${colors.border}`, color: colors.inkMuted, padding: "6px 12px", borderRadius: "6px", cursor: "pointer", fontSize: "12px", fontFamily: APP.font }}>Keep it</button>
-              <button onClick={discardDraft} style={{ background: "transparent", border: `1px solid ${colors.errorBorder}`, color: colors.errorText, padding: "6px 12px", borderRadius: "6px", cursor: "pointer", fontSize: "12px", fontFamily: APP.font }}>Discard draft</button>
-            </div>
-          </div>
-        )}
 
         {/* INTRO / ACCESS GATE */}
         {currentStep === "Intro" && (
@@ -1083,74 +788,31 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
           </div>
         )}
 
-        {/* DIRECTION — application-type selection (T5) */}
+        {/* DIRECTION */}
         {currentStep === "Direction" && (
           <div style={{ maxWidth: "640px", margin: "0 auto", textAlign: "center" }}>
-            {!disclosureSeen && <PreSelectionDisclosure onClose={() => setDisclosureSeen(true)} />}
             <h2 style={{ fontFamily: APP.displayFont, fontSize: "28px", color: colors.ink, marginBottom: "10px", fontWeight: "800" }}>What do you need?</h2>
             <p style={{ fontSize: "15px", color: colors.inkMuted, marginBottom: "28px", lineHeight: "1.6" }}>
-              Pick your situation. A variance and a special exception are different requests — see the guide if you're unsure.{" "}
-              <button onClick={() => setDisclosureSeen(false)} style={{ background: "transparent", border: "none", color: colors.goldLight, cursor: "pointer", fontSize: "14px", textDecoration: "underline", padding: 0 }}>Compare them</button>.
+              ZoningFight writes letters for both sides of a variance — pick your situation.
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-              {APP_TYPES.map(opt => (
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              {[
+                { key: "requesting", title: "I'm requesting a variance", desc: "I want permission for something my zoning doesn't allow." },
+                { key: "opposing",   title: "I'm opposing a variance",   desc: "My neighbor or another party was granted one, and I want to fight it." },
+              ].map(opt => (
                 <button
                   key={opt.key}
-                  onClick={() => {
-                    setFormData(prev => ({ ...prev, applicationType: opt.key, direction: opt.posture, terminology: prev.terminology || (opt.flow === "special" ? "Special Exception" : prev.terminology) }));
-                    setStep(STEPS.indexOf(opt.flow === "special" ? "Special" : "Property"));
-                  }}
-                  style={{ textAlign: "left", background: colors.white, border: `2px solid ${formData.applicationType === opt.key ? colors.goldLight : colors.border}`, borderRadius: "12px", padding: "18px 22px", cursor: "pointer", fontFamily: APP.font, transition: "all 0.2s", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
+                  onClick={() => { handleChange("direction", opt.key); setStep(s => s + 1); }}
+                  style={{ textAlign: "left", background: colors.white, border: `2px solid ${formData.direction === opt.key ? colors.goldLight : colors.border}`, borderRadius: "12px", padding: "22px 26px", cursor: "pointer", fontFamily: APP.font, transition: "all 0.2s", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
                 >
-                  <div style={{ fontSize: "17px", fontWeight: "700", color: colors.ink, marginBottom: "5px", fontFamily: APP.displayFont }}>{opt.title}</div>
-                  <div style={{ fontSize: "13px", color: colors.inkMuted, lineHeight: "1.5" }}>{opt.desc}</div>
+                  <div style={{ fontSize: "18px", fontWeight: "700", color: colors.ink, marginBottom: "6px", fontFamily: APP.displayFont }}>{opt.title}</div>
+                  <div style={{ fontSize: "14px", color: colors.inkMuted, lineHeight: "1.55" }}>{opt.desc}</div>
                 </button>
               ))}
             </div>
             <button onClick={() => setStep(0)} style={{ marginTop: "24px", background: "transparent", border: "none", color: colors.inkFaint, cursor: "pointer", fontSize: "13px", fontFamily: APP.font }}>
               ← Back
             </button>
-          </div>
-        )}
-
-        {/* SPECIAL EXCEPTION FLOW (T5) */}
-        {currentStep === "Special" && (
-          <div>
-            <div style={{ marginBottom: "24px" }}>
-              <h2 style={{ fontFamily: APP.displayFont, fontSize: "26px", color: colors.ink, marginBottom: "6px", fontWeight: "700" }}>
-                {activeAppType().title}
-              </h2>
-              <p style={{ fontSize: "14px", color: colors.inkMuted, lineHeight: "1.6" }}>
-                Tell us the jurisdiction and paste your ordinance's criteria. We supply none of the criteria — the substance is yours.
-              </p>
-            </div>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-              {seFields.map(f => (
-                <Field key={f.key} field={f} value={formData[f.key]} onChange={v => handleChange(f.key, v)} />
-              ))}
-            </div>
-
-            <div style={{ height: "26px" }} />
-            <GuidedRetrieval state={formData.state} municipality={formData.municipality} />
-
-            <div style={{ fontSize: "15px", fontWeight: "700", color: colors.ink, margin: "6px 0 12px", fontFamily: APP.displayFont }}>
-              Criteria From Your Ordinance <span style={{ color: colors.goldLight }}>*</span>
-            </div>
-            <CriteriaRows rows={formData.criteriaRows} onChange={rows => handleChange("criteriaRows", rows)} />
-
-            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "32px" }}>
-              <button onClick={() => setStep(STEPS.indexOf("Direction"))} style={{ ...btnStyle(true), background: "transparent", border: `1px solid ${colors.border}`, color: colors.inkMuted, boxShadow: "none" }}>
-                ← Back
-              </button>
-              <button
-                onClick={() => setStep(STEPS.indexOf("Generate"))}
-                disabled={!seStepValid()}
-                style={btnStyle(seStepValid())}
-              >
-                Continue →
-              </button>
-            </div>
           </div>
         )}
 
@@ -1216,10 +878,10 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
 
             {/* Nav buttons */}
             <div style={{ display: "flex", justifyContent: "space-between", marginTop: "36px" }}>
-              <button onClick={() => setStep(currentStep === "Property" ? STEPS.indexOf("Direction") : step - 1)} style={{ ...btnStyle(true), background: "transparent", border: `1px solid ${colors.border}`, color: colors.inkMuted, boxShadow: "none" }}>
+              <button onClick={() => setStep(s => s - 1)} style={{ ...btnStyle(true), background: "transparent", border: `1px solid ${colors.border}`, color: colors.inkMuted, boxShadow: "none" }}>
                 ← Back
               </button>
-              <button onClick={() => setStep(currentStep === "Demand" ? STEPS.indexOf("Generate") : step + 1)} disabled={!isStepValid(currentStep)} style={btnStyle(isStepValid(currentStep))}>
+              <button onClick={() => setStep(s => s + 1)} disabled={!isStepValid(currentStep)} style={btnStyle(isStepValid(currentStep))}>
                 Continue →
               </button>
             </div>
@@ -1245,17 +907,14 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
                 {loading ? <><Spinner /> {loadingMsg || "Generating..."}</> : "Generate My Letter ✦"}
               </button>
               {error && (
-                <div style={{ marginTop: "16px", padding: "13px 16px", background: colors.errorBg, border: `1px solid ${colors.errorBorder}`, borderRadius: "8px", color: colors.errorText, fontSize: "13px", lineHeight: "1.55" }}>
-                  {typeof error === "string" ? error : error.message}
-                  {typeof error === "object" && error.showSupport && (
-                    <> <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: colors.goldLight }}>Contact support</a>.</>
-                  )}
+                <div style={{ marginTop: "16px", padding: "13px 16px", background: colors.errorBg, border: `1px solid ${colors.errorBorder}`, borderRadius: "8px", color: colors.errorText, fontSize: "13px" }}>
+                  {error}
                   <button onClick={generateLetter} style={{ marginLeft: "12px", background: "transparent", border: "none", color: colors.goldLight, cursor: "pointer", fontSize: "13px" }}>Try again →</button>
                 </div>
               )}
               <div style={{ marginTop: "14px", fontSize: "12px", color: colors.inkFaint }}>Two-pass AI review · Standard + Assertive versions · Checklist included</div>
             </div>
-            <button onClick={() => setStep(STEPS.indexOf(activeAppType().flow === "special" ? "Special" : "Demand"))} style={{ marginTop: "28px", background: "transparent", border: "none", color: colors.inkFaint, cursor: "pointer", fontSize: "13px", fontFamily: APP.font }}>
+            <button onClick={() => setStep(s => s - 1)} style={{ marginTop: "28px", background: "transparent", border: "none", color: colors.inkFaint, cursor: "pointer", fontSize: "13px", fontFamily: APP.font }}>
               ← Edit my answers
             </button>
           </div>

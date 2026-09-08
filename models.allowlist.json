@@ -1,6 +1,0 @@
-{
-  "allowlist": ["claude-opus-5", "claude-opus-4-8"],
-  "default": "claude-opus-5",
-  "source_of_truth": "api/_config.js (export const MODEL)",
-  "note": "The Anthropic model id lives in exactly ONE place: api/_config.js. No other file may contain an inline model string (Gate B8). Production override is the ANTHROPIC_MODEL env var (no code deploy). scripts/verify-model.mjs pings the resolved model and fails loudly if it is missing or not in this allowlist."
-}

@@ -7,7 +7,6 @@ dotenv.config();
 import { STATES } from './data/states.js';
 import { DISPUTES } from './data/disputes.js';
 import { APP_CONFIG } from './data/config.js';
-import { MODEL } from '../api/_config.js'; // single source of the model string (T7)
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -87,7 +86,7 @@ async function generateOne(state, dispute) {
 
   try {
     const response = await client.messages.create({
-      model: MODEL,
+      model: 'claude-opus-4-7',
       max_tokens: 4000,
       messages: [{ role: 'user', content: prompt }]
     });
