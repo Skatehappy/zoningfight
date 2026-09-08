@@ -1,0 +1,10 @@
+#!/bin/sh
+# ZoningFight pre-commit — GATE 2 (static) + fast sims. Enable once with:
+#   git config core.hooksPath .githooks
+# Network sim (sim-host-urls) is skipped here; CI runs the full Gate 1.
+set -e
+echo "[pre-commit] Gate 2 static checks…"
+node scripts/gate2.mjs
+echo "[pre-commit] Gate 1 sims (SKIP_NETWORK)…"
+SKIP_NETWORK=1 node scripts/verify.mjs
+echo "[pre-commit] green."

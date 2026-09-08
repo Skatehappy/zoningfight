@@ -30,3 +30,30 @@ One entry per task. Build order: T1 → T3 → T2 → T4 → T5 → T7.
   TRANSIENT / INPUT_TOO_LONG / INPUT_INVALID / CODE_IN_USE / CODE_CONSUMED /
   CODE_INVALID. Non-definitive failures reassure the buyer the code is not used. No
   error string contains "purchase", "buy", or "checkout" (Gate B7).
+
+### T4 — Input clarity and caps (engine)
+- `src/lib/validate.js`: per-field caps (Regulation Section Numbers 200, Additional
+  Information 4000, criterion 400, evidence 1200, short 200, long 1500) + total-payload
+  guard (30k). Validation runs before reserve.
+
+### T5 — Application types and state-keyed frames (data + engine)
+- `frames/FL-special-exception.json` (burden-shifting, Irvine/Jesus Fellowship/Dusseau,
+  7-section order, forbidden phrases, record preservation), `frames/FL-variance.json`
+  (Herrera, applicant carries), `frames/GENERIC.json` (criterion-by-criterion, no
+  burden shift, no authority) — FL only this pass; all else falls back to GENERIC.
+- `frames/select.mjs` (pure selection, opposing postures share requesting doctrine),
+  `src/lib/frames.js` (client registry), `src/lib/criteria.js` (repeating group ->
+  ⟦ ⟧-marked prompt scaffold, blank placeholder), `src/lib/prompt.js` (frame-driven
+  section-ordered prompt), `api/_lint.js` (forbidden-phrase + no-fabrication rails).
+- `hosts/code-hosts.json`: 9 verified FL Municode LANDING pages (no constructed code
+  paths); unlisted municipalities get a copyable search string, never a fabricated link.
+
+### T7 — Model string guard
+- `models.allowlist.json` + `scripts/verify-model.mjs` (allowlist check + live ping).
+  Single model constant remains `api/_config.js`; SEO script now imports it (removed the
+  last inline model string). Gate B8 enforces no inline model strings.
+
+### Gates + sims
+- Gate 1: `npm run verify` runs all 13 sims + the model guard (14/14 green).
+- Gate 2: `scripts/gate2.mjs` B1–B12 (12/12 green); `.githooks/pre-commit` + CI workflow
+  share it. B2 uses Node 22 `node:sqlite`.

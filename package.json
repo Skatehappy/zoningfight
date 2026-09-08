@@ -18,6 +18,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "verify": "node scripts/verify.mjs",
+    "gate2": "node scripts/gate2.mjs",
+    "verify:model": "node scripts/verify-model.mjs",
     "generate:content": "node scripts/generate-content.js",
     "generate:pages": "node scripts/build-pages.js",
     "generate:all": "npm run generate:content && npm run generate:pages"
