@@ -64,3 +64,7 @@
 ### Tier 3 Batch C — MT ND NE NH NJ NV OH OK OR RI (2026-09-09)
 - SE downgrades CC->AC: ND, NE, NV. Confirmed CC: NH, NJ, OH, OK, OR, RI. Confirmed AC: MT.
   NH/OH entitlement-flavored (§6-adjacent). 20 frames stamped.
+
+### Tier 3 Batch D — SC SD TN TX VA VT WA WV WY (2026-09-09)
+- SE downgrades CC->AC: SD, WY. Confirmed CC: SC, TN, TX, VT, WA, WV. Confirmed AC: VA.
+  TN -> §6 candidate. 18 frames stamped. Tier 3 complete (39 states).

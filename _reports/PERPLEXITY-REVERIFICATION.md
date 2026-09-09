@@ -239,3 +239,20 @@ ME), 2 confirmed AC (MA MO). IN noted as entitlement-flavored (§6-adjacent).**
 
 Variances all confirmed `applicant_carries`. **Batch C: 3 downgrades (ND NE NV), 6 confirmed CC (NH NJ OH OK
 OR RI), 1 confirmed AC (MT). NH & OH entitlement-flavored (§6-adjacent).**
+
+### Batch D — SC SD TN TX VA VT WA WV WY (2026-09-09)
+
+| State | Prior SE | Perplexity finding | Action |
+|---|---|---|---|
+| SC | criteria_compliance | Once objective §6-29-800 criteria proven, denial can't rest on unstructured preference (*Bishop/Fontaine*); limited discretion. | **Keep** — confirmed. |
+| SD | criteria_compliance | **Discretionary, not automatic entitlement** (*Meier v. Aurora County*: performance standards don't exhaust discretion); only a limited production-shift, persuasion stays with applicant. | **Downgrade → applicant_carries**. |
+| TN | criteria_compliance | Special exception is a permitted use, **must be granted once conditions met**; after compliance applicant has **no further burden** on health/safety/welfare (*McCallen* line) — a limited shift. | **Keep** CC; **§6 candidate** (limited shift). |
+| TX | criteria_compliance | Board-of-adjustment special exception = limited, standards-bound discretion (Tex. Loc. Gov't §211.009); council SUP is legislative (frame is BoA context). | **Keep** — confirmed. |
+| VA | applicant_carries | SUP/CUP are **legislative**, presumed reasonable, **fairly-debatable** (*Concerned Taxpayers*, 249 Va. 320); broad discretion. (Its "burden shift" is a judicial-review rule, not a hearing entitlement.) | **Keep** applicant_carries — confirmed. |
+| VT | criteria_compliance | Standards-based limited discretion (24 V.S.A. §4414(3)); may not deny a compliant application on disfavor; de novo Env. Div. review; no shift. | **Keep** — confirmed. |
+| WA | criteria_compliance | Limited discretion under LUPA; denial of a compliant application is vulnerable (RCW 36.70C.130); no opponent burden-shift. | **Keep** — confirmed. |
+| WV | criteria_compliance | Issuance is a **duty** governed by ordinance standards; variance standards can't be imposed (*Harding v. BZA*); limited discretion. | **Keep** — confirmed (entitlement-flavored). |
+| WY | criteria_compliance | **Not** automatic entitlement; compliance doesn't compel approval where ordinance adds discretionary findings; no shift. | **Downgrade → applicant_carries**. |
+
+Variances all confirmed `applicant_carries`. **Batch D: 2 downgrades (SD WY), 6 confirmed CC (SC TN TX VT WA
+WV), 1 confirmed AC (VA). TN → §6 candidate; SD (Meier) & WV (Harding) noted.**

@@ -86,3 +86,8 @@ CT/DC), logged §6-adjacent, not promoted.
 Discretionary/non-entitlement special-use states → SE CC→AC (label-only; identical letter). NH/NJ/OH/OK/OR/RI
 confirmed CC (limited-discretion/entitlement); MT confirmed AC. NH & OH have appellate "must grant once
 criteria met" (Jensen's; Gerzeny) — entitlement-flavored, §6-adjacent, not promoted.
+
+### D-PRV-7 — Tier 3 Batch D: 2 downgrades (SD WY)
+Discretionary/non-entitlement states → SE CC→AC (label-only; identical letter). SC/TN/TX/VT/WA/WV confirmed
+CC; VA confirmed AC (legislative fairly-debatable). TN logged as §6 candidate (McCallen limited shift);
+VA's "burden shift" is a judicial-review rule (not a hearing entitlement), so it does NOT promote the frame.

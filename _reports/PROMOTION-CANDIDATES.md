@@ -112,3 +112,19 @@ Adopting either category is a **schema design decision**, plus Rob's approval, p
   **not** a Florida-style burden shift. **Type: APPELLATE** (e.g., Ind. Code §36-7-4-918.2 + case law).
 - **Status:** Not promoted. Belongs to the same schema-design question as CT/DC (a possible
   `limited_discretion_entitlement` category). Reserved for Rob.
+
+### TN — Tennessee (limited post-compliance burden shift) [Tier 3]
+- **Frame:** `TN-special-exception.json` · **Current:** `criteria_compliance` · **Proposed:** possible `prima_facie_shifting`
+- **Finding:** once the applicant shows the special-exception conditions are met, appellate authority
+  (*McCallen v. City of Memphis* line, TN Ct. App.) states the applicant bears **no further burden** to prove
+  the use won't harm health/safety/welfare — a limited shift to opponents. **Type: APPELLATE.**
+- **Status:** Not promoted. Single-query only; needs all three §3 questions (exact cite, proposition, good
+  law) + Rob's approval. The shift is *limited* (persuasion may remain with applicant), so it may not be a
+  full Florida-style shift.
+
+### Entitlement-flavored family (Tier 3 notes, NOT promoted)
+`IN`, `NH` (*Jensen's, Inc. v. City of Dover*, 130 N.H. 761), `OH` (*Gerzeny/Sun Oil*), `WV`
+(*Harding v. BZA*), and `SD` (*Meier v. Aurora County* — production-shift only) show appellate "must grant
+once criteria met" / limited-discretion language. These belong to the **same `limited_discretion_entitlement`
+schema-design question as CT and DC** (Tier 2), **not** a Florida-style burden shift. Kept as
+`criteria_compliance`. Reserved for Rob's design decision.

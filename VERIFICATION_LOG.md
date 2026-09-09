@@ -262,3 +262,9 @@ to the backfill's WebSearch findings. Full detail in _reports/PERPLEXITY-REVERIF
   (substantial discretion / ambiguous entitlement).
 - **Confirmed criteria_compliance:** NH, NJ, OH, OK, OR, RI. **Confirmed applicant_carries:** MT.
 - NH (Jensen's) & OH (Gerzeny) entitlement-flavored → §6-adjacent. Variances applicant_carries. Frames stamped.
+
+### 2026-09-09 — Tier 3 Batch D (SC SD TN TX VA VT WA WV WY)
+- **Downgrades (SE CC → AC):** SD (Meier: discretionary, not entitlement), WY (not automatic entitlement).
+- **Confirmed criteria_compliance:** SC, TN, TX, VT, WA, WV. **Confirmed applicant_carries:** VA (legislative
+  / fairly-debatable, Concerned Taxpayers).
+- TN (McCallen limited shift) → §6 candidate; SD (Meier) & WV (Harding) noted. Variances applicant_carries.
