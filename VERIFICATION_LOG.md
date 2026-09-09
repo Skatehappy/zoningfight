@@ -194,3 +194,38 @@ zero citations. Every shipped citation independently verified (existence + propo
 ## §8 Acceptance (live model, 2026-09-09): 20/20 GREEN across 10 sampled jurisdictions
 AL CO GA IL MD NC NY PA TX WY — special_exception letters: 0 hardship terms (filled criteria);
 0 fabricated criteria + placeholder present (blank criteria). Shift states (MD NC NY PA) verified.
+
+## Perplexity Re-Verification (branch state-frame-backfill, 2026-09-09)
+Method: Perplexity MCP `perplexity_ask` (Sonar Pro), search_context_size=high. Independent second source
+to the backfill's WebSearch findings. Full detail in _reports/PERPLEXITY-REVERIFICATION.md.
+
+### 2026-09-09 — MD Schultz v. Pritts, 291 Md. 1 (1981) [Tier 1]
+- **Frame:** frames/MD-special-exception.json (prima_facie_shifting)
+- **Verdict:** DOUBLE-VERIFIED (WebSearch + Perplexity). Exists (291 Md. 1, 432 A.2d 1319); proposition
+  confirmed; good law — clarified not overruled by Loyola College, 406 Md. 54 (2008).
+- **Action:** keep; verified_via updated to "WebSearch, Perplexity".
+
+### 2026-09-09 — NY North Shore Steak House, 30 N.Y.2d 238 (1972) [Tier 1]
+- **Frame:** frames/NY-special-exception.json (prima_facie_shifting)
+- **Verdict:** DOUBLE-VERIFIED. Exists; proposition confirmed; good law — reaffirmed Retail Property Trust,
+  98 N.Y.2d 190 (2002) and Twin County, 90 N.Y.2d 1000 (1997).
+- **Action:** keep; verified_via updated.
+
+### 2026-09-09 — NC Humble Oil, 284 N.C. 458, 202 S.E.2d 129 (1974) [Tier 1]
+- **Frame:** frames/NC-special-exception.json (prima_facie_shifting)
+- **Verdict:** DOUBLE-VERIFIED. Exists (both parallel cites); proposition confirmed (burden of production
+  shift); good law — reaffirmed SBA Communications, 366 N.C. 86 (2012); §160D-705(c) recodifies, does not
+  displace.
+- **Action:** keep; verified_via updated.
+
+### 2026-09-09 — PA Bray v. ZBA, 410 A.2d 909 (Pa. Commw. 1980) [Tier 1]
+- **Frame:** frames/PA-special-exception.json (prima_facie_shifting)
+- **Verdict:** DOUBLE-VERIFIED. Exists (48 Pa. Commw. 523); proposition confirmed (persuasion vs. presentment
+  distinction); good law — reaffirmed Siya Real Estate, 210 A.3d 1152 (2019); narrowed not overruled.
+- **Action:** keep; verified_via updated.
+
+### 2026-09-09 — FL Irvine / Jesus Fellowship / Dusseau [FROZEN §2 — report only]
+- **Frames:** frames/FL-special-exception.json (NOT modified — frozen at 1cd2287).
+- **Verdict:** all three CONFIRMED via Perplexity (exist, proposition, good law). Irvine reaffirmed Broward
+  County v. International, 787 So. 2d 838 (2001); Jesus Fellowship applied through Publix (2020); Dusseau
+  current. No orphaned findings. No edit (prod frame).

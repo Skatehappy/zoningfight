@@ -35,3 +35,14 @@
 - §8 sampled acceptance: 20/20 green (10 jurisdictions incl. all shift states) — 0 hardship
   terms, 0 fabricated criteria. §9 regression: bogus->401, legacy->200, FL frozen. DONE for
   Rob's Gate 3 review (branch state-frame-backfill, unpushed).
+
+## Perplexity Re-Verification (branch: state-frame-backfill)
+
+### Tier 1 — MD NY NC PA burden shifts (2026-09-09)
+- Independent second-source re-verification via Perplexity MCP (Sonar Pro). All four burden-shift citations
+  confirmed on existence, proposition, and good-law status. Zero downgrades.
+- Frame changes: `verified_via` on MD/NY/NC/PA special-exception frames updated "WebSearch" ->
+  "WebSearch, Perplexity". No burden, citation, or proposition changes.
+- FL (frozen) Irvine/Jesus Fellowship/Dusseau verified for the record; frames unchanged (byte-identical to
+  1cd2287).
+- Reports: _reports/PERPLEXITY-REVERIFICATION.md, _reports/PROMOTION-CANDIDATES.md (scaffold).

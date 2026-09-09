@@ -44,3 +44,19 @@ or an appellate cite is verified. Understated per §0.
 ### D-SFB-7 — Discretionary special-permit states -> applicant_carries
 MA, MO, MT, VA set to applicant_carries (board/body retains discretion to deny even if criteria
 met; VA treats special use permits as legislative/"fairly debatable"). Not criteria_compliance.
+
+## Perplexity Re-Verification (branch state-frame-backfill, 2026-09-09)
+
+### D-PRV-1 — Tier 1: all four burden shifts CONFIRMED, zero downgrades
+MD (Schultz v. Pritts), NY (North Shore Steak House), NC (Humble Oil), PA (Bray) each survived all three
+§3 questions (exists / proposition / good law) against Perplexity as an independent second source. Each
+proposition was returned as "substantially correct" with a refinement (applicant still bears burden of
+compliance with ordinance criteria; production vs. persuasion distinction) that the frames' existing
+`burden_allocation` hedge ("state the shift only as far as that verified authority supports; do not
+overstate it") already honors. Per §5, "confirmed" → keep. No proposition text edited (§10 = downgrades
+only). `verified_via` stamped "WebSearch, Perplexity" on the four frames; this is verification metadata,
+not a substantive change.
+
+### D-PRV-2 — FL frozen citations confirmed; not edited (§2)
+Irvine, Jesus Fellowship, Dusseau all confirmed via Perplexity. FL remains byte-identical to 1cd2287. No
+FL citation failed, so §2's "report-only if fails" branch was not triggered.
