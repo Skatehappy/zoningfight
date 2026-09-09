@@ -1,0 +1,44 @@
+{
+  "state": "SC",
+  "application_type": "variance",
+  "terminology_default": "Variance",
+  "terminology_options": [
+    "Variance"
+  ],
+  "burden": "applicant_carries",
+  "governing_authority": [],
+  "section_order": [
+    "caption_request",
+    "hardship_showing",
+    "criteria_compliance",
+    "record_preservation",
+    "signature_block"
+  ],
+  "sections": {
+    "caption_request": {
+      "title": "Caption and Request",
+      "instruction": "Formal caption: deciding body as entered by the user, parcel/address, zoning district, and the request using the local term the user selected. One paragraph."
+    },
+    "hardship_showing": {
+      "title": "Hardship Showing",
+      "instruction": "The applicant carries the burden throughout. Argue the legal hardship from the user's facts, showing it is exceptional and unique to this property and not self-created, consistent with the applicable state variance standard. Use only facts the user supplied."
+    },
+    "criteria_compliance": {
+      "title": "Criterion-by-Criterion Compliance",
+      "instruction": "The applicant carries the burden throughout — make NO burden-shift assertion. One numbered subsection per user-entered criterion row, IN ORDER. Recite each criterion VERBATIM inside the criterion markers exactly as shown in the ABSOLUTE RULES (nothing else between them), then argue it is satisfied using the user's evidence. NEVER invent or paraphrase criterion text. Blank evidence -> visible bracketed placeholder, never fabricated."
+    },
+    "record_preservation": {
+      "title": "Record Preservation",
+      "instruction": "Request that this letter and its attachments be entered into the hearing record. These proceedings are quasi-judicial and reviewed on the record by certiorari; a denial unsupported by competent substantial record evidence is the applicant's remedy. One paragraph."
+    },
+    "signature_block": {
+      "title": "Signature Block",
+      "instruction": "Professional signature block for the applicant with a [DATE] placeholder."
+    }
+  },
+  "forbidden_phrases": [],
+  "record_preservation": true,
+  "verified_on": "2026-09-09",
+  "verified_via": "WebSearch",
+  "validation_status": "verified"
+}

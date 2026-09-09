@@ -18,3 +18,7 @@
 ### Batch 3 — MA MI MN MS MO MT NE NV NH NJ (2026-09-09)
 - 20 frames, zero citations, no burden shift. Discretionary states (MA MO MT) =
   applicant_carries; rest criteria_compliance. Gate green.
+
+### Batch 4 — NM NY NC ND OH OK OR PA RI SC (2026-09-09)
+- 20 frames. Three verified burden shifts: NY (North Shore Steak House), NC (Humble Oil),
+  PA (Bray). Other 7 criteria_compliance, zero cites. Gate green.

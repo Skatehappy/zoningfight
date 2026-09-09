@@ -1,0 +1,61 @@
+{
+  "state": "NY",
+  "application_type": "special_exception",
+  "terminology_default": "Special Use Permit",
+  "terminology_options": [
+    "Special Use Permit",
+    "Special Permit"
+  ],
+  "burden": "prima_facie_shifting",
+  "governing_authority": [
+    {
+      "cite": "Matter of North Shore Steak House v. Board of Appeals of Inc. Vil. of Thomaston, 30 N.Y.2d 238 (1972)",
+      "proposition": "The inclusion of a use as a permitted special exception is a legislative finding that the use is in harmony with the general zoning plan and will not adversely affect the neighborhood; a strong presumption favors the use, and the applicant’s burden is significantly lighter than that for a variance — the use is contemplated by the ordinance subject only to conditions attached to minimize its impact."
+    }
+  ],
+  "section_order": [
+    "caption_request",
+    "authorization",
+    "criteria_compliance",
+    "burden_allocation",
+    "record_preservation",
+    "signature_block"
+  ],
+  "sections": {
+    "caption_request": {
+      "title": "Caption and Request",
+      "instruction": "Formal caption: deciding body as entered by the user, parcel/address, zoning district, and the request using the local term the user selected. One paragraph."
+    },
+    "authorization": {
+      "title": "Authorization",
+      "instruction": "State that the requested use/relief is provided for in this district under the user's Regulation Section Numbers. Use only what the user provided; blank -> bracketed placeholder."
+    },
+    "criteria_compliance": {
+      "title": "Criterion-by-Criterion Compliance",
+      "instruction": "This is the prima facie showing. One numbered subsection per user-entered criterion row, IN ORDER. Recite each criterion VERBATIM inside the criterion markers exactly as shown in the ABSOLUTE RULES (nothing else between them), then argue, using the user's evidence, that the criterion is met. NEVER invent, paraphrase into, or supply criterion text the user did not type. Blank evidence -> visible bracketed placeholder, never fabricated."
+    },
+    "signature_block": {
+      "title": "Signature Block",
+      "instruction": "Professional signature block for the applicant with a [DATE] placeholder."
+    },
+    "burden_allocation": {
+      "title": "Burden Allocation",
+      "instruction": "Having made the prima facie showing, cite Matter of North Shore Steak House v. Board of Appeals of Inc. Vil. of Thomaston, 30 N.Y.2d 238 (1972) and state that, under that authority (see the governing authority proposition above), the burden has shifted — the application must be granted unless the opposition demonstrates, by competent substantial evidence in the record, that the standards are not met. State the shift only as far as that verified authority supports; do not overstate it."
+    },
+    "record_preservation": {
+      "title": "Record Preservation",
+      "instruction": "Request that this letter and its attachments be entered into the hearing record. These proceedings are quasi-judicial and reviewed on the record by certiorari; a denial unsupported by competent substantial record evidence is the applicant's remedy. One paragraph."
+    }
+  },
+  "forbidden_phrases": [
+    "unnecessary hardship",
+    "practical difficulty",
+    "hardship unique to",
+    "undue hardship",
+    "exceptional difficulty"
+  ],
+  "record_preservation": true,
+  "verified_on": "2026-09-09",
+  "verified_via": "WebSearch",
+  "validation_status": "verified"
+}

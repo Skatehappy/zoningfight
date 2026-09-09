@@ -171,4 +171,67 @@ export const JURISDICTIONS = [
     se_term: 'Conditional Use', se_options: ['Conditional Use'],
     se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
     var_authority: [], var_status: 'verified' },
+
+  // ---- Batch 4 (WebSearch-resolved 2026-09-09) — 3 verified burden shifts ----
+  { abbr: 'NM', name: 'New Mexico',
+    se_term: 'Conditional Use', se_options: ['Conditional Use', 'Special Use Permit'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'NY', name: 'New York',
+    se_term: 'Special Use Permit', se_options: ['Special Use Permit', 'Special Permit'],
+    se_burden: 'prima_facie_shifting', se_status: 'verified',
+    se_authority: [{
+      cite: 'Matter of North Shore Steak House v. Board of Appeals of Inc. Vil. of Thomaston, 30 N.Y.2d 238 (1972)',
+      proposition: 'The inclusion of a use as a permitted special exception is a legislative finding that the use is in harmony with the general zoning plan and will not adversely affect the neighborhood; a strong presumption favors the use, and the applicant’s burden is significantly lighter than that for a variance — the use is contemplated by the ordinance subject only to conditions attached to minimize its impact.',
+    }],
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'NC', name: 'North Carolina',
+    se_term: 'Special Use Permit', se_options: ['Special Use Permit', 'Conditional Use'],
+    se_burden: 'prima_facie_shifting', se_status: 'verified',
+    se_authority: [{
+      cite: 'Humble Oil & Refining Co. v. Board of Aldermen of Chapel Hill, 284 N.C. 458, 202 S.E.2d 129 (1974)',
+      proposition: 'When an applicant produces competent, material, and substantial evidence establishing the facts and conditions the ordinance requires for issuance, prima facie the applicant is entitled to the permit; the burden then shifts to the opponents to present competent, material, and substantial evidence to the contrary, and absent such evidence the applicant is entitled to the permit as a matter of law.',
+    }],
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'ND', name: 'North Dakota',
+    se_term: 'Conditional Use', se_options: ['Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'OH', name: 'Ohio',
+    se_term: 'Conditional Use', se_options: ['Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'OK', name: 'Oklahoma',
+    se_term: 'Special Exception', se_options: ['Special Exception', 'Special Permit'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'OR', name: 'Oregon',
+    se_term: 'Conditional Use', se_options: ['Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'PA', name: 'Pennsylvania',
+    se_term: 'Special Exception', se_options: ['Special Exception'],
+    se_burden: 'prima_facie_shifting', se_status: 'verified',
+    se_authority: [{
+      cite: 'Bray v. Zoning Bd. of Adjustment, 410 A.2d 909 (Pa. Commw. Ct. 1980)',
+      proposition: 'Once the applicant proves compliance with the specific, objective criteria of the ordinance, a presumption arises that the use is consistent with the health, safety, and general welfare of the community, and the burden shifts to the objectors to present evidence and persuade the board that the proposed use will have a generally detrimental effect.',
+    }],
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'RI', name: 'Rhode Island',
+    se_term: 'Special Use Permit', se_options: ['Special Use Permit', 'Special Exception'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'SC', name: 'South Carolina',
+    se_term: 'Special Exception', se_options: ['Special Exception'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
 ];

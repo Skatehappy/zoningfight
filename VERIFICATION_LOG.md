@@ -158,3 +158,19 @@ Retrieval date: 2026-09-09 · Method: WebSearch
 - MN has a strong "entitled if standards met" doctrine (Minn. Stat. 462.3595/394.301) but
   no single verified appellate cite in-batch; understated to criteria_compliance, zero cites.
 - Confirmed citations this batch: none.
+
+## State Frame Backfill — Batch 4 (NM NY NC ND OH OK OR PA RI SC)
+Retrieval + verification date: 2026-09-09 · Method: WebSearch
+
+**CONFIRMED CITATIONS (verified existence + proposition):**
+- **Matter of North Shore Steak House v. Board of Appeals of Inc. Vil. of Thomaston, 30 N.Y.2d 238 (1972)**
+  (NY Court of Appeals) — inclusion as a special use = legislative finding of harmony; strong
+  presumption favors the use; applicant's burden much lighter than a variance. → NY prima_facie_shifting.
+- **Humble Oil & Refining Co. v. Board of Aldermen of Chapel Hill, 284 N.C. 458, 202 S.E.2d 129 (1974)**
+  (NC Supreme Court) — prima facie entitlement on competent/material/substantial evidence; burden
+  shifts to opponents; absent contrary evidence, entitled as a matter of law. → NC prima_facie_shifting.
+- **Bray v. Zoning Bd. of Adjustment, 410 A.2d 909 (Pa. Commw. Ct. 1980)** — on proving the specific
+  objective criteria, presumption of consistency with health/safety/welfare arises; burden shifts to
+  objectors to show generally detrimental effect. → PA prima_facie_shifting.
+- Other 7 (NM ND OH OK OR RI SC): criteria_compliance, zero citations. NM again showed only the generic
+  "burden shifts to opponents" treatise line (no verified NM appellate cite) → understated.

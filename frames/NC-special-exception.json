@@ -1,0 +1,61 @@
+{
+  "state": "NC",
+  "application_type": "special_exception",
+  "terminology_default": "Special Use Permit",
+  "terminology_options": [
+    "Special Use Permit",
+    "Conditional Use"
+  ],
+  "burden": "prima_facie_shifting",
+  "governing_authority": [
+    {
+      "cite": "Humble Oil & Refining Co. v. Board of Aldermen of Chapel Hill, 284 N.C. 458, 202 S.E.2d 129 (1974)",
+      "proposition": "When an applicant produces competent, material, and substantial evidence establishing the facts and conditions the ordinance requires for issuance, prima facie the applicant is entitled to the permit; the burden then shifts to the opponents to present competent, material, and substantial evidence to the contrary, and absent such evidence the applicant is entitled to the permit as a matter of law."
+    }
+  ],
+  "section_order": [
+    "caption_request",
+    "authorization",
+    "criteria_compliance",
+    "burden_allocation",
+    "record_preservation",
+    "signature_block"
+  ],
+  "sections": {
+    "caption_request": {
+      "title": "Caption and Request",
+      "instruction": "Formal caption: deciding body as entered by the user, parcel/address, zoning district, and the request using the local term the user selected. One paragraph."
+    },
+    "authorization": {
+      "title": "Authorization",
+      "instruction": "State that the requested use/relief is provided for in this district under the user's Regulation Section Numbers. Use only what the user provided; blank -> bracketed placeholder."
+    },
+    "criteria_compliance": {
+      "title": "Criterion-by-Criterion Compliance",
+      "instruction": "This is the prima facie showing. One numbered subsection per user-entered criterion row, IN ORDER. Recite each criterion VERBATIM inside the criterion markers exactly as shown in the ABSOLUTE RULES (nothing else between them), then argue, using the user's evidence, that the criterion is met. NEVER invent, paraphrase into, or supply criterion text the user did not type. Blank evidence -> visible bracketed placeholder, never fabricated."
+    },
+    "signature_block": {
+      "title": "Signature Block",
+      "instruction": "Professional signature block for the applicant with a [DATE] placeholder."
+    },
+    "burden_allocation": {
+      "title": "Burden Allocation",
+      "instruction": "Having made the prima facie showing, cite Humble Oil & Refining Co. v. Board of Aldermen of Chapel Hill, 284 N.C. 458, 202 S.E.2d 129 (1974) and state that, under that authority (see the governing authority proposition above), the burden has shifted — the application must be granted unless the opposition demonstrates, by competent substantial evidence in the record, that the standards are not met. State the shift only as far as that verified authority supports; do not overstate it."
+    },
+    "record_preservation": {
+      "title": "Record Preservation",
+      "instruction": "Request that this letter and its attachments be entered into the hearing record. These proceedings are quasi-judicial and reviewed on the record by certiorari; a denial unsupported by competent substantial record evidence is the applicant's remedy. One paragraph."
+    }
+  },
+  "forbidden_phrases": [
+    "unnecessary hardship",
+    "practical difficulty",
+    "hardship unique to",
+    "undue hardship",
+    "exceptional difficulty"
+  ],
+  "record_preservation": true,
+  "verified_on": "2026-09-09",
+  "verified_via": "WebSearch",
+  "validation_status": "verified"
+}
