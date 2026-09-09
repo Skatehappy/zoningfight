@@ -46,3 +46,8 @@
 - FL (frozen) Irvine/Jesus Fellowship/Dusseau verified for the record; frames unchanged (byte-identical to
   1cd2287).
 - Reports: _reports/PERPLEXITY-REVERIFICATION.md, _reports/PROMOTION-CANDIDATES.md (scaffold).
+
+### Tier 2 — understated candidates UT WI MN CT DC NM LA (2026-09-09)
+- Verified actual state standard for each via Perplexity. 0 downgrades, 0 promotions, no frame edits.
+- UT/WI (statutory mandatory-grant) and CT/DC (limited-discretion entitlement) logged as §6 promotion
+  candidates. MN/NM/LA classifications re-confirmed. See _reports/PROMOTION-CANDIDATES.md.

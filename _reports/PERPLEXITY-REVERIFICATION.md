@@ -103,3 +103,69 @@ If any had failed it would be reported as a production decision, not edited. All
 - ***Herrera v. City of Miami*, 600 So. 2d 561 (Fla. 3d DCA 1992)** — carried forward from the frozen commit;
   applicant-carries hardship doctrine, not a burden shift. Not separately re-queried this pass (FL frozen;
   no affirmative burden-shift claim to re-verify). Frame unaffected.
+
+---
+
+## TIER 2 — Understated Candidates (findings only; §6 governs disposition)
+
+Current state for all seven: special_exception = `criteria_compliance`, variance = `applicant_carries`,
+zero citations. Question asked: what is the actual state standard, and is it stronger than current?
+Per §5, "Perplexity suggests a shift" on a `criteria_compliance` frame → **keep as-is, log as §6 candidate,
+do not promote.** No Tier-2 frame was edited.
+
+### UT — statutory mandatory-grant (STRONGER than current)
+Utah Code §10-9a-507(2) (county analog §17-27a-506): a land use authority **"shall approve a conditional
+use if reasonable conditions are proposed, or can be imposed, to mitigate the reasonably anticipated
+detrimental effects"**; denial only if effects **"cannot be substantially mitigated."** This is a statutory
+entitlement, not discretionary. Perplexity found **no** Utah appellate case expressly allocating the
+applicant/authority evidentiary burden. → **§6 candidate (STATUTORY).** Keep `criteria_compliance`.
+
+### WI — statutory mandatory-grant + substantial-evidence-to-deny (STRONGER)
+2017 Wis. Act 67, Wis. Stat. §59.69(5e) (counties) / §62.23(7)(de) (cities): if the applicant demonstrates
+by **substantial evidence** that the application meets the ordinance's requirements, the municipality
+**"shall grant"** the CUP; a denial must itself rest on substantial evidence identifying an unmet
+requirement. *Enbridge Energy Co. v. Dane County* applies the framework (Perplexity flagged the exact
+reporter cite as needing confirmation before any filing). → **§6 candidate (STATUTORY, + appellate pending
+cite verification).** Keep `criteria_compliance`.
+
+### CT — limited-discretion entitlement, NOT a burden shift
+*Irwin v. Planning & Zoning Comm'n*, 244 Conn. 619, 626–28 (1998): the commission has discretion to
+determine whether the regulation's standards are met, but **once it determines they are met it "lacks
+discretion to deny."** *St. Joseph High School v. P&Z Comm'n*, 302 Conn. 288 (2011) applies the same.
+Perplexity: this is **"not a formal burden shift to opponents"** — applicant bears the initial burden; the
+commission's discretion is merely *exhausted* once compliance is shown. → **§6 candidate for a possible
+"limited-discretion entitlement" category (design decision, not a shift). Appellate authority exists
+(Irwin).** Keep `criteria_compliance`. (Consistent with backfill D-SFB-3.)
+
+### DC — limited-discretion entitlement, NOT a burden shift
+*Stewart v. D.C. Bd. of Zoning Adjustment*, 305 A.2d 516, 518 (D.C. 1973): applicant bears the burden of
+proving compliance; once shown, the BZA's discretion is limited to whether the specified conditions are met
+and it **"ordinarily must grant"** the exception. *First Baptist Church v. BZA*, 432 A.2d 695 (D.C. 1981);
+*Gladden v. BZA*, 659 A.2d 249 (D.C. 1995). Perplexity: **not** a burden shift; applicant retains the
+initial burden. → **§6 candidate for the same "entitlement" category. Appellate authority exists (Stewart).**
+Keep `criteria_compliance`. (Consistent with backfill D-SFB-3.)
+
+### MN — confirmed correctly classified (no shift)
+Minn. Stat. §462.3595, subd. 1: **applicant bears the initial burden** to show the CUP standards are met.
+*RDNT, LLC v. City of Bloomington*, 861 N.W.2d 71 (Minn. 2015); *C.R. Investments v. Village of Shoreview*,
+304 N.W.2d 320 (Minn. 1981): a denial must be **legally sufficient and have a factual basis in the record.**
+Perplexity **expressly rejects** the notion that a CUP "must be granted unless the municipality proves
+noncompliance." A CUP applicant is in a stronger position than a variance applicant, but that is exactly what
+`criteria_compliance` (SE) vs `applicant_carries` (variance) already encodes. → **Not a promotion candidate.**
+Classification confirmed.
+
+### NM — confirmed correctly classified (no shift)
+Applicant bears the **burden of persuasion** on the elements for issuance; whole-record review is a
+*judicial-review* standard, not a burden shift. **No** NM statute or published Supreme Court/Court of Appeals
+case establishes an applicant→opponent shift (NMSA 1978 §3-21-1 has no such rule; *Albuquerque Commons
+P'ship v. City Council*, 2008-NMSC-025 distinguishes map-changes from special-use permits). → **Not a
+promotion candidate.** SE `criteria_compliance` / variance `applicant_carries` confirmed.
+
+### LA — confirmed correctly classified (no shift)
+No burden shift. Zoning decisions carry a **presumption of validity**; the **challenger** bears the burden on
+judicial review (arbitrary-and-capricious / substantial-evidence). Special-use permits get the same review
+as other zoning enactments. **No** Louisiana Supreme Court / Court of Appeal case establishes a statewide
+special-exception burden shift. → **Not a promotion candidate.** Classification confirmed.
+
+**Tier 2 result: 0 downgrades. 4 §6 candidates (UT, WI statutory; CT, DC entitlement-not-shift). 3 confirmed
+correct (MN, NM, LA). No promotions this pass.**

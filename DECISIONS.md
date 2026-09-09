@@ -60,3 +60,11 @@ not a substantive change.
 ### D-PRV-2 — FL frozen citations confirmed; not edited (§2)
 Irvine, Jesus Fellowship, Dusseau all confirmed via Perplexity. FL remains byte-identical to 1cd2287. No
 FL citation failed, so §2's "report-only if fails" branch was not triggered.
+
+### D-PRV-3 — Tier 2: 4 §6 candidates surfaced, none promoted; 3 confirmed correct
+UT and WI carry statutory mandatory-grant language (Utah Code §10-9a-507(2); 2017 Wis. Act 67). CT and DC
+carry a limited-discretion *entitlement* doctrine (Irwin, 244 Conn. 619; Stewart, 305 A.2d 516). Per §5/§6,
+all four are logged as promotion candidates in _reports/PROMOTION-CANDIDATES.md and NOT promoted: statutory
+mandatory-grant and limited-discretion entitlement are each a different argument structure than a Florida-
+style case-law burden shift and may warrant their own burden category — a schema design decision reserved
+for Rob. MN, NM, LA re-confirmed as correctly classified (no shift). No Tier-2 frame edited.

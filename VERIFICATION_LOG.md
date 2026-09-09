@@ -229,3 +229,15 @@ to the backfill's WebSearch findings. Full detail in _reports/PERPLEXITY-REVERIF
 - **Verdict:** all three CONFIRMED via Perplexity (exist, proposition, good law). Irvine reaffirmed Broward
   County v. International, 787 So. 2d 838 (2001); Jesus Fellowship applied through Publix (2020); Dusseau
   current. No orphaned findings. No edit (prod frame).
+
+### 2026-09-09 — Tier 2 understated candidates (UT WI MN CT DC NM LA)
+- **Method:** Perplexity `perplexity_ask`, one state-level query each (no municipality named).
+- **UT:** Utah Code §10-9a-507(2) statutory mandatory-grant. Stronger than current; §6 candidate (statutory).
+- **WI:** 2017 Act 67, §59.69(5e)/§62.23(7)(de) "shall grant" + substantial-evidence-to-deny. §6 candidate
+  (statutory + Enbridge appellate, cite unverified).
+- **CT:** Irwin v. P&Z, 244 Conn. 619 (1998) limited-discretion entitlement, NOT a shift. §6 candidate.
+- **DC:** Stewart v. BZA, 305 A.2d 516 (1973) limited-discretion entitlement, NOT a shift. §6 candidate.
+- **MN:** applicant bears burden (§462.3595; RDNT; C.R. Investments); no shift. Classification CONFIRMED.
+- **NM:** applicant bears persuasion; whole-record review; no shift. Classification CONFIRMED.
+- **LA:** presumption of validity; challenger's burden on review; no shift. Classification CONFIRMED.
+- **Verdict:** 0 downgrades, 0 promotions. Candidates → _reports/PROMOTION-CANDIDATES.md. Frames unchanged.
