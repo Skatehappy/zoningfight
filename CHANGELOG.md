@@ -22,3 +22,11 @@
 ### Batch 4 — NM NY NC ND OH OK OR PA RI SC (2026-09-09)
 - 20 frames. Three verified burden shifts: NY (North Shore Steak House), NC (Humble Oil),
   PA (Bray). Other 7 criteria_compliance, zero cites. Gate green.
+
+### Batch 5 — SD TN TX UT VT VA WA WV WI WY (2026-09-09)
+- 20 frames. VA = applicant_carries (legislative/discretionary); rest criteria_compliance.
+  UT/WI statutory-shift candidates understated. Gate green, build OK.
+
+### Backfill complete: 100 new state frames (50 jurisdictions x 2), FL frozen.
+- 4 verified burden shifts added (MD, NY, NC, PA). All others criteria_compliance/
+  applicant_carries, zero citations. Branch: state-frame-backfill. Not pushed (Rob Gate 3).

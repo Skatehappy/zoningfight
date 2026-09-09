@@ -174,3 +174,19 @@ Retrieval + verification date: 2026-09-09 · Method: WebSearch
   objectors to show generally detrimental effect. → PA prima_facie_shifting.
 - Other 7 (NM ND OH OK OR RI SC): criteria_compliance, zero citations. NM again showed only the generic
   "burden shifts to opponents" treatise line (no verified NM appellate cite) → understated.
+
+## State Frame Backfill — Batch 5 (SD TN TX UT VT VA WA WV WI WY)
+Retrieval date: 2026-09-09 · Method: WebSearch
+- No verified appellate burden shift. VA = applicant_carries (special use permits are
+  legislative/discretionary; "fairly debatable" standard). Rest criteria_compliance.
+- STATUTORY applicant-favorable mandatory-grant candidates (understated to criteria_compliance
+  per §5's appellate-cite requirement; logged for review): UT (Utah Code 10-9a-507 — grant
+  unless city proves non-mitigable detriment), WI (Wis. Stat. 59.69(5e)/62.23(7)(de) — shall
+  grant if requirements met on substantial evidence).
+- Confirmed citations this batch: none.
+
+## Backfill complete — summary
+51 jurisdictions (FL + 50). Verified appellate burden shifts (prima_facie_shifting):
+FL (frozen, Irvine), MD (Schultz v. Pritts), NY (North Shore Steak House), NC (Humble Oil),
+PA (Bray) = 4 generated + FL. All other jurisdictions criteria_compliance or applicant_carries,
+zero citations. Every shipped citation independently verified (existence + proposition).

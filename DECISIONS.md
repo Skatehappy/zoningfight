@@ -31,3 +31,16 @@ authorization, criteria_compliance, burden_allocation, record_preservation, sign
 FL-specific "both_prongs" section is NOT generalized to other shift states. Burden-allocation
 template made state-neutral ("granted unless the opposition shows the standards are unmet;
 state the shift only as far as the verified authority supports").
+
+### D-SFB-6 — Statutory burden-shift candidates NOT adopted (UT, WI); MN, CT, DC, LA, NM candidates
+Per §5, prima_facie_shifting requires an APPELLATE citation. Utah (Utah Code 10-9a-507) and
+Wisconsin (Wis. Stat. 59.69(5e)/62.23(7)(de)) have STATUTORY applicant-favorable mandatory-grant
+rules but no appellate cite adopted -> understated to criteria_compliance. Similarly MN, CT, DC,
+LA, NM showed strong criteria-compliance / entitlement language (often the generic "burden shifts
+to opponents" treatise line) without a verified appellate holding -> criteria_compliance, zero
+cites. All are upgrade candidates for a future pass if statutory authority is deemed sufficient
+or an appellate cite is verified. Understated per §0.
+
+### D-SFB-7 — Discretionary special-permit states -> applicant_carries
+MA, MO, MT, VA set to applicant_carries (board/body retains discretion to deny even if criteria
+met; VA treats special use permits as legislative/"fairly debatable"). Not criteria_compliance.

@@ -234,4 +234,60 @@ export const JURISDICTIONS = [
     se_term: 'Special Exception', se_options: ['Special Exception'],
     se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
     var_authority: [], var_status: 'verified' },
+
+  // ---- Batch 5 (WebSearch-resolved 2026-09-09) ----
+  // UT and WI have STATUTORY applicant-favorable mandatory-grant rules (Utah Code
+  // 10-9a-507; Wis. Stat. 59.69(5e)/62.23(7)(de)), but §5 requires an APPELLATE cite
+  // for prima_facie_shifting. Understated to criteria_compliance; logged in DECISIONS
+  // as statutory-shift upgrade candidates. VA special use permits are legislative/
+  // discretionary -> applicant_carries.
+  { abbr: 'SD', name: 'South Dakota',
+    se_term: 'Conditional Use', se_options: ['Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'TN', name: 'Tennessee',
+    se_term: 'Special Exception', se_options: ['Special Exception', 'Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'TX', name: 'Texas',
+    se_term: 'Special Exception', se_options: ['Special Exception', 'Specific Use Permit'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'UT', name: 'Utah',
+    se_term: 'Conditional Use', se_options: ['Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'VT', name: 'Vermont',
+    se_term: 'Conditional Use', se_options: ['Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'VA', name: 'Virginia',
+    se_term: 'Special Use Permit', se_options: ['Special Use Permit', 'Special Exception'],
+    se_burden: 'applicant_carries', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'WA', name: 'Washington',
+    se_term: 'Conditional Use', se_options: ['Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'WV', name: 'West Virginia',
+    se_term: 'Conditional Use', se_options: ['Conditional Use', 'Special Exception'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'WI', name: 'Wisconsin',
+    se_term: 'Conditional Use', se_options: ['Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'WY', name: 'Wyoming',
+    se_term: 'Special Exception', se_options: ['Special Exception', 'Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
 ];
