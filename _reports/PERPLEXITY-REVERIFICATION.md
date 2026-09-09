@@ -256,3 +256,37 @@ OR RI), 1 confirmed AC (MT). NH & OH entitlement-flavored (§6-adjacent).**
 
 Variances all confirmed `applicant_carries`. **Batch D: 2 downgrades (SD WY), 6 confirmed CC (SC TN TX VT WA
 WV), 1 confirmed AC (VA). TN → §6 candidate; SD (Meier) & WV (Harding) noted.**
+
+---
+
+## ACCEPTANCE (§8)
+
+| # | Criterion | Result |
+|---|---|---|
+| 8.1 | Every `prima_facie_shifting` frame has ≥1 citation confirmed by **both** WebSearch and Perplexity, good law | **PASS** — FL(3), MD, NC, NY, PA; all Tier-1 double-verified good law; verify gate enforces ≥1 cite |
+| 8.2 | Every downgraded frame has no orphaned citations | **PASS** — all 13 downgrades were zero-cite `criteria_compliance` → zero-cite `applicant_carries`; no citations created or orphaned. (FL-variance's *Herrera* cite is pre-existing **frozen** content, not an orphan.) |
+| 8.3 | FL frames byte-identical to `1cd2287` | **PASS** — verify gate confirms |
+| 8.4 | GENERIC unchanged — no shift, no citations | **PASS** — byte-identical to branch base `67083a8`; burden `applicant_carries`, 0 cites, no burden-shift sections |
+| 8.5 | Re-run sampled letter tests on changed jurisdictions — 0 hardship terms, 0 fabricated criteria | **PASS** — live model, GA/IL/WY: T1(no-hardship)=PASS, T2(no-fabrication)=PASS. (AL/CO, unchanged, also PASS.) Structurally: `buildFramePrompt` never reads `frame.burden`; a CC→AC downgrade cannot change letter output. |
+| 8.6 | Full gate green | **PASS** — `npm run verify`: 102 state frames, 0 flagged, 1 generic, ALL GREEN |
+
+### Final burden distribution (103 frames)
+
+| Burden | Count | Notes |
+|---|---|---|
+| `prima_facie_shifting` | 5 | FL, MD, NC, NY, PA — the only frames asserting a shift; all double-verified |
+| `criteria_compliance` | 29 | special_exception, limited-discretion/entitlement states |
+| `applicant_carries` | 69 | 51 variances + 17 special_exception (broad-discretion states) + GENERIC |
+
+**special_exception (51):** 29 `criteria_compliance`, 17 `applicant_carries`, 5 `prima_facie_shifting`.
+**This pass: 13 SE downgrades** CC→AC (AR CA GA HI IL KS MI MS ND NE NV SD WY) — pure classification
+corrections, provably zero letter-output change. **0 upgrades/promotions** (§6 candidates reported only).
+
+### Summary of the whole pass
+- **Tier 1 (4 burden shifts):** 4/4 confirmed on existence + proposition + good law. 0 downgrades.
+- **FL (frozen):** 3 citations confirmed; frames untouched.
+- **Tier 2 (7 understated):** 0 downgrades; 4 §6 candidates (UT/WI statutory, CT/DC entitlement); 3 confirmed.
+- **Tier 3 (39 states):** 13 downgrades, 26 confirmed; §6 candidates AK, TN (+ entitlement family IN/NH/OH/WV/SD).
+- **Promotion candidates:** all report-only in PROMOTION-CANDIDATES.md; none applied (upgrades never auto-apply).
+- **Deliverables:** this report, PROMOTION-CANDIDATES.md, VERIFICATION_LOG.md, DECISIONS.md, CHANGELOG.md.
+- **Not pushed, not merged** — branch `state-frame-backfill` only; awaits Rob's review + Gate 3.
