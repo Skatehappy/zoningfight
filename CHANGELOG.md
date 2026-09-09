@@ -14,3 +14,7 @@
 - 20 frames. MD special_exception = prima_facie_shifting (Schultz v. Pritts, 291 Md. 1
   (1981), verified). All others criteria_compliance/applicant_carries, zero citations.
 - Shift template made state-neutral (no FL-specific both_prongs section). Gate green, build OK.
+
+### Batch 3 — MA MI MN MS MO MT NE NV NH NJ (2026-09-09)
+- 20 frames, zero citations, no burden shift. Discretionary states (MA MO MT) =
+  applicant_carries; rest criteria_compliance. Gate green.

@@ -148,3 +148,13 @@ Retrieval + verification date: 2026-09-09 · Method: WebSearch
 - All other 9 batch-2 states: terminology resolved, NO verified appellate burden shift →
   criteria_compliance, zero citations. (LA has a partial burden-favorable rule for
   non-objective standards but no clean verified appellate cite; understated to criteria_compliance.)
+
+## State Frame Backfill — Batch 3 (MA MI MN MS MO MT NE NV NH NJ)
+Retrieval date: 2026-09-09 · Method: WebSearch
+- Terminology resolved for all 10. No verified appellate burden shift in any.
+- Discretionary special-permit states set to applicant_carries (board may deny even if
+  criteria met): MA (MGL 40A, discretionary), MO (Mo. Sup. Ct. expanded denial authority),
+  MT ("matter of grace... discretion of the council"). Remaining 7 criteria_compliance.
+- MN has a strong "entitled if standards met" doctrine (Minn. Stat. 462.3595/394.301) but
+  no single verified appellate cite in-batch; understated to criteria_compliance, zero cites.
+- Confirmed citations this batch: none.
