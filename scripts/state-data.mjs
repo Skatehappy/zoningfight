@@ -63,4 +63,59 @@ export const JURISDICTIONS = [
     se_term: 'Special Use Permit', se_options: ['Special Use Permit', 'Conditional Use'],
     se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
     var_authority: [], var_status: 'verified' },
+
+  // ---- Batch 2 (WebSearch-resolved 2026-09-09) ----
+  { abbr: 'HI', name: 'Hawaii',
+    se_term: 'Special Use Permit', se_options: ['Special Use Permit', 'Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'ID', name: 'Idaho',
+    se_term: 'Conditional Use', se_options: ['Conditional Use', 'Special Use Permit'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'IL', name: 'Illinois',
+    se_term: 'Special Use Permit', se_options: ['Special Use Permit', 'Special Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'IN', name: 'Indiana',
+    se_term: 'Special Exception', se_options: ['Special Exception', 'Special Use', 'Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'IA', name: 'Iowa',
+    se_term: 'Special Exception', se_options: ['Special Exception', 'Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'KS', name: 'Kansas',
+    se_term: 'Conditional Use', se_options: ['Conditional Use', 'Special Use Permit'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'KY', name: 'Kentucky',
+    se_term: 'Conditional Use', se_options: ['Conditional Use'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'LA', name: 'Louisiana',
+    se_term: 'Conditional Use', se_options: ['Conditional Use', 'Special Exception'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'ME', name: 'Maine',
+    se_term: 'Conditional Use', se_options: ['Conditional Use', 'Special Exception'],
+    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    var_authority: [], var_status: 'verified' },
+
+  { abbr: 'MD', name: 'Maryland',
+    se_term: 'Special Exception', se_options: ['Special Exception', 'Conditional Use'],
+    se_burden: 'prima_facie_shifting', se_status: 'verified',
+    se_authority: [{
+      cite: 'Schultz v. Pritts, 291 Md. 1 (1981)',
+      proposition: 'A special exception use enjoys a presumption that it is in the interest of the general welfare and is valid; the applicant need not affirmatively prove benefit to the community — showing the proposed use would be conducted without real detriment to the neighborhood meets the applicant’s burden — and the exception may be denied only on facts showing adverse effects above and beyond those inherently associated with such use irrespective of its location within the zone.',
+    }],
+    var_authority: [], var_status: 'verified' },
 ];

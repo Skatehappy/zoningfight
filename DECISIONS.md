@@ -23,3 +23,11 @@ future verified upgrade.
 
 ### D-SFB-4 — opposing_variance / opposing_special_exception deferred (§3)
 Not generated this pass. Deferred.
+
+### D-SFB-5 — Maryland adopted as prima_facie_shifting (batch 2)
+Schultz v. Pritts, 291 Md. 1 (1981) verified (existence + proposition). MD special_exception
+set to prima_facie_shifting with that single cite. Generic shift structure used (caption,
+authorization, criteria_compliance, burden_allocation, record_preservation, signature) — the
+FL-specific "both_prongs" section is NOT generalized to other shift states. Burden-allocation
+template made state-neutral ("granted unless the opposition shows the standards are unmet;
+state the shift only as far as the verified authority supports").

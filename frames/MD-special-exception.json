@@ -1,0 +1,61 @@
+{
+  "state": "MD",
+  "application_type": "special_exception",
+  "terminology_default": "Special Exception",
+  "terminology_options": [
+    "Special Exception",
+    "Conditional Use"
+  ],
+  "burden": "prima_facie_shifting",
+  "governing_authority": [
+    {
+      "cite": "Schultz v. Pritts, 291 Md. 1 (1981)",
+      "proposition": "A special exception use enjoys a presumption that it is in the interest of the general welfare and is valid; the applicant need not affirmatively prove benefit to the community — showing the proposed use would be conducted without real detriment to the neighborhood meets the applicant’s burden — and the exception may be denied only on facts showing adverse effects above and beyond those inherently associated with such use irrespective of its location within the zone."
+    }
+  ],
+  "section_order": [
+    "caption_request",
+    "authorization",
+    "criteria_compliance",
+    "burden_allocation",
+    "record_preservation",
+    "signature_block"
+  ],
+  "sections": {
+    "caption_request": {
+      "title": "Caption and Request",
+      "instruction": "Formal caption: deciding body as entered by the user, parcel/address, zoning district, and the request using the local term the user selected. One paragraph."
+    },
+    "authorization": {
+      "title": "Authorization",
+      "instruction": "State that the requested use/relief is provided for in this district under the user's Regulation Section Numbers. Use only what the user provided; blank -> bracketed placeholder."
+    },
+    "criteria_compliance": {
+      "title": "Criterion-by-Criterion Compliance",
+      "instruction": "This is the prima facie showing. One numbered subsection per user-entered criterion row, IN ORDER. Recite each criterion VERBATIM inside the criterion markers exactly as shown in the ABSOLUTE RULES (nothing else between them), then argue, using the user's evidence, that the criterion is met. NEVER invent, paraphrase into, or supply criterion text the user did not type. Blank evidence -> visible bracketed placeholder, never fabricated."
+    },
+    "signature_block": {
+      "title": "Signature Block",
+      "instruction": "Professional signature block for the applicant with a [DATE] placeholder."
+    },
+    "burden_allocation": {
+      "title": "Burden Allocation",
+      "instruction": "Having made the prima facie showing, cite Schultz v. Pritts, 291 Md. 1 (1981) and state that, under that authority (see the governing authority proposition above), the burden has shifted — the application must be granted unless the opposition demonstrates, by competent substantial evidence in the record, that the standards are not met. State the shift only as far as that verified authority supports; do not overstate it."
+    },
+    "record_preservation": {
+      "title": "Record Preservation",
+      "instruction": "Request that this letter and its attachments be entered into the hearing record. These proceedings are quasi-judicial and reviewed on the record by certiorari; a denial unsupported by competent substantial record evidence is the applicant's remedy. One paragraph."
+    }
+  },
+  "forbidden_phrases": [
+    "unnecessary hardship",
+    "practical difficulty",
+    "hardship unique to",
+    "undue hardship",
+    "exceptional difficulty"
+  ],
+  "record_preservation": true,
+  "verified_on": "2026-09-09",
+  "verified_via": "WebSearch",
+  "validation_status": "verified"
+}

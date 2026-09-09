@@ -41,13 +41,9 @@ const SEC = {
 function burdenAllocationSection(cite) {
   return {
     title: 'Burden Allocation',
-    instruction: `Having made the prima facie showing, cite ${cite} and state that the burden has shifted to the deciding body to demonstrate, by competent substantial evidence in the hearing record, that the standards are not met.`,
+    instruction: `Having made the prima facie showing, cite ${cite} and state that, under that authority (see the governing authority proposition above), the burden has shifted — the application must be granted unless the opposition demonstrates, by competent substantial evidence in the record, that the standards are not met. State the shift only as far as that verified authority supports; do not overstate it.`,
   };
 }
-const BOTH_PRONGS = {
-  title: 'Both Prongs',
-  instruction: 'State expressly that, to deny, the opposition must establish BOTH that the criteria are unmet AND that the proposal is adverse to the public interest — both, not either.',
-};
 
 function hardshipShowingSection(cite) {
   const tail = cite
@@ -72,10 +68,12 @@ export function buildSpecialException(rec, verifiedOn) {
   };
   let section_order;
   if (shift) {
+    // Generic shift structure. FL's frozen frame additionally has a FL-specific
+    // "both_prongs" section (Irvine/Jesus Fellowship); that is NOT generalized to
+    // other states, whose shift doctrine differs.
     sections.burden_allocation = burdenAllocationSection(primaryCite);
-    sections.both_prongs = BOTH_PRONGS;
     sections.record_preservation = SEC.record_preservation;
-    section_order = ['caption_request', 'authorization', 'criteria_compliance', 'burden_allocation', 'both_prongs', 'record_preservation', 'signature_block'];
+    section_order = ['caption_request', 'authorization', 'criteria_compliance', 'burden_allocation', 'record_preservation', 'signature_block'];
   } else {
     section_order = ['caption_request', 'authorization', 'criteria_compliance', 'signature_block'];
   }

@@ -133,3 +133,18 @@ Resolved: special-exception terminology + burden doctrine, state-level only (no 
   shifts to opponents" — this is NOT a state-specific appellate holding, so per §5
   burden-shift skepticism it was NOT adopted. All 10 → criteria_compliance, zero citations.
 - **Confirmed citations this batch: none** (zero-citation frames, which is acceptable per §0).
+
+## State Frame Backfill — Batch 2 (HI ID IL IN IA KS KY LA ME MD)
+Retrieval + verification date: 2026-09-09 · Method: WebSearch
+
+**CONFIRMED CITATION (first verified cite in the backfill):**
+- **Schultz v. Pritts, 291 Md. 1 (1981)** — Court of Appeals of Maryland (highest court).
+  Verified via a separate confirmatory search: exists (VLEX, mdcourts.gov opinion, Lawpipe/
+  StrongSuit briefs, and numerous Baltimore/Harford County BZA decisions applying it) AND
+  stands for the proposition encoded: a special exception enjoys a presumption of validity;
+  the applicant need not prove affirmative benefit; denial only on facts showing adverse
+  effects "above and beyond those inherently associated with such use irrespective of
+  location." → MD special_exception = prima_facie_shifting.
+- All other 9 batch-2 states: terminology resolved, NO verified appellate burden shift →
+  criteria_compliance, zero citations. (LA has a partial burden-favorable rule for
+  non-objective standards but no clean verified appellate cite; understated to criteria_compliance.)
