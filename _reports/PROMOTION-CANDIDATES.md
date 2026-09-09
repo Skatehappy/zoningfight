@@ -103,3 +103,12 @@ Adopting either category is a **schema design decision**, plus Rob's approval, p
 - **Note:** Perplexity described a post-compliance burden shift but **could not identify the controlling
   appellate case by name**. **Not a solid candidate** — recorded only so a future pass can chase the cite.
   No promotion.
+
+### IN — Indiana (limited-discretion entitlement — NOT a burden shift) [Tier 3]
+- **Frame:** `IN-special-exception.json` · **Current:** `criteria_compliance`
+- **Finding:** Indiana treats a special exception as a permitted use the board **must** approve once the
+  ordinance criteria are proven (discretion limited to whether criteria are met); opponents need not
+  disprove. This is entitlement-flavored — the same "limited-discretion entitlement" family as CT and DC,
+  **not** a Florida-style burden shift. **Type: APPELLATE** (e.g., Ind. Code §36-7-4-918.2 + case law).
+- **Status:** Not promoted. Belongs to the same schema-design question as CT/DC (a possible
+  `limited_discretion_entitlement` category). Reserved for Rob.

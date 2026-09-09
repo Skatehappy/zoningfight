@@ -76,3 +76,8 @@ this is a label-only correction: SE criteria_compliance and applicant_carries ge
 (both "applicant carries throughout, no shift"); only prima_facie_shifting changes output. AL/AZ/CO/DE/IA
 confirmed criteria_compliance. AK logged as §6 candidate (Griswold appellate shift); DE possible shift left
 unverified. No promotions.
+
+### D-PRV-5 — Tier 3 Batch B: 4 downgrades (IL KS MI MS)
+Broad-discretion special-use states → SE CC→AC (label-only; identical letter output). ID/IN/KY/ME confirmed
+CC; MA/MO confirmed AC. IN's "approval mandatory once criteria met" is entitlement-flavored (same family as
+CT/DC), logged §6-adjacent, not promoted.

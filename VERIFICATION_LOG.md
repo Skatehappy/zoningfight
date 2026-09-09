@@ -250,3 +250,9 @@ to the backfill's WebSearch findings. Full detail in _reports/PERPLEXITY-REVERIF
 - **Confirmed criteria_compliance:** AL, AZ, CO, DE, IA. **§6 candidate:** AK (Griswold — appellate shift).
   DE possible shift left UNVERIFIED (no named case). All variances = applicant_carries confirmed.
 - Frames stamped verified_via "WebSearch, Perplexity".
+
+### 2026-09-09 — Tier 3 Batch B (ID IL IN KS KY MA ME MI MO MS)
+- **Downgrades (SE CC → AC):** IL (LaSalle broad residual discretion), KS (Golden/legislative), MI
+  (MCL 125.3502 discretionary), MS (applicant proves by preponderance, no entitlement).
+- **Confirmed criteria_compliance:** ID, IN, KY, ME. **Confirmed applicant_carries:** MA, MO.
+- IN entitlement-flavored → §6-adjacent (with CT/DC). All variances applicant_carries. Frames stamped.

@@ -203,3 +203,21 @@ to letter output. Every re-verified frame is stamped `verified_via: "WebSearch, 
 
 All ten variances confirmed `applicant_carries`. **Batch A: 4 downgrades (AR CA GA HI), 6 confirmed, 1 §6
 candidate (AK), 1 unverified-shift note (DE).**
+
+### Batch B — ID IL IN KS KY MA ME MI MO MS (2026-09-09)
+
+| State | Prior SE | Perplexity finding | Action |
+|---|---|---|---|
+| ID | criteria_compliance | Standards-based discretion (Idaho Code §67-6512 / LLUPA); no broad policy discretion; no shift. | **Keep** — confirmed. |
+| IL | criteria_compliance | Special use may be denied despite compliance on LaSalle/Sinclair location-specific effects; **broad residual discretion**. | **Downgrade → applicant_carries** (§5 ambiguous→understate). |
+| IN | criteria_compliance | Special exception is a permitted use; **approval mandatory once criteria met** (limited discretion); opponents need not disprove. Stronger, but not a shift. | **Keep** criteria_compliance; entitlement-flavored §6-adjacent note. |
+| KS | criteria_compliance | **Broad discretion**; Golden factors, presumption of reasonableness, challenger's burden; no entitlement from compliance. | **Downgrade → applicant_carries**. |
+| KY | criteria_compliance | Limited standards-based discretion (KRS 100.237); no broad veto; no shift. | **Keep** — confirmed. |
+| MA | applicant_carries | Special permit is **discretionary**, not automatic; applicant carries throughout; no shift. | **Keep** applicant_carries — confirmed. |
+| ME | criteria_compliance | "Strict compliance with the ordinance" standards (30-A §4353); standards-based, not broad discretion; no shift. | **Keep** — confirmed. |
+| MI | criteria_compliance | Special land use is **discretionary** (MCL 125.3502 "deny, approve, or approve with conditions"); compliance ≠ compelled approval. | **Downgrade → applicant_carries**. |
+| MO | applicant_carries | Applicant carries initial and ultimate burden; compliance limits but doesn't compel; no shift. | **Keep** applicant_carries — confirmed. |
+| MS | criteria_compliance | Applicant proves by preponderance; **compliance does not entitle**; body may deny on substantial evidence. | **Downgrade → applicant_carries**. |
+
+Variances all confirmed `applicant_carries`. **Batch B: 4 downgrades (IL KS MI MS), 4 confirmed CC (ID IN KY
+ME), 2 confirmed AC (MA MO). IN noted as entitlement-flavored (§6-adjacent).**
