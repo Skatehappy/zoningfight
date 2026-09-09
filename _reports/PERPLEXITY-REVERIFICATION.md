@@ -169,3 +169,37 @@ special-exception burden shift. → **Not a promotion candidate.** Classificatio
 
 **Tier 2 result: 0 downgrades. 4 §6 candidates (UT, WI statutory; CT, DC entitlement-not-shift). 3 confirmed
 correct (MN, NM, LA). No promotions this pass.**
+
+---
+
+## TIER 3 — Burden Classification of the Remaining Frames (§3 Tier 3, §7 batches of ten)
+
+These frames carry **no citations**; the risk is misclassification, not fabrication. Method: one state-level
+`perplexity_ask` per state (no municipality named), asking whether proof of compliance with the ordinance's
+standards *entitles* the applicant (→ `criteria_compliance`) or the board keeps *broad discretion* to deny a
+compliant application (→ `applicant_carries`), and whether any appellate **burden shift** exists (→ §6
+candidate, never promoted). Variance = `applicant_carries` (hardship) confirmed alongside.
+
+**Structural note (materiality):** for `special_exception` frames, `criteria_compliance` and
+`applicant_carries` generate the **identical** letter — both instruct "the applicant carries the burden
+throughout; make NO burden-shift assertion." Only `prima_facie_shifting` adds a burden-allocation section +
+citations. A Tier-3 downgrade is therefore a pure *classification* correction (understate-safe) with no change
+to letter output. Every re-verified frame is stamped `verified_via: "WebSearch, Perplexity"`.
+
+### Batch A — AK AL AR AZ CA CO DE GA HI IA (2026-09-09)
+
+| State | Prior SE | Perplexity finding | Action |
+|---|---|---|---|
+| AK | criteria_compliance | Appellate **burden shift** — *Griswold v. Homer Advisory Planning Comm'n* (applicant proves criteria → burden shifts to opponents). | **Keep** criteria_compliance; **§6 candidate** (appellate, needs 3-question verify). Letter asserts no shift, so no overstatement. |
+| AL | criteria_compliance | Limited, standards-based discretion; no clear burden-shift doctrine. | **Keep** — confirmed. |
+| AR | criteria_compliance | **Broad discretion**; compliance does not entitle; PPX labels SE `applicant_carries`. | **Downgrade → applicant_carries** (§0/§5). |
+| AZ | criteria_compliance | Criteria-bound discretion; PPX labels `criteria_compliance`; no shift. | **Keep** — confirmed. |
+| CA | criteria_compliance | CUP is a **broad-discretion** approval (findings + substantial evidence, *Topanga*); no general shift. | **Downgrade → applicant_carries**. |
+| CO | criteria_compliance | `criteria_compliance` (qualified); discretion limited by ordinance; no zoning shift. | **Keep** — confirmed. |
+| DE | criteria_compliance | criteria_compliance; a possible post-compliance shift, but PPX **could not name the controlling case** with confidence. | **Keep**; noted as **unverified** shift (not a solid §6 candidate). |
+| GA | criteria_compliance | **Not** a categorical "compliant → must approve" state; many special-use decisions treated as **legislative/broad discretion**. | **Downgrade → applicant_carries** (understate). |
+| HI | criteria_compliance | Agency **retains broad discretion** to deny; compliance does not clearly entitle. | **Downgrade → applicant_carries**. |
+| IA | criteria_compliance | Limited standards-based discretion (Iowa Code §414.12 / §335); no verified shift. | **Keep** — confirmed. |
+
+All ten variances confirmed `applicant_carries`. **Batch A: 4 downgrades (AR CA GA HI), 6 confirmed, 1 §6
+candidate (AK), 1 unverified-shift note (DE).**

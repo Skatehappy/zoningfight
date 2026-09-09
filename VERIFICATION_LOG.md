@@ -241,3 +241,12 @@ to the backfill's WebSearch findings. Full detail in _reports/PERPLEXITY-REVERIF
 - **NM:** applicant bears persuasion; whole-record review; no shift. Classification CONFIRMED.
 - **LA:** presumption of validity; challenger's burden on review; no shift. Classification CONFIRMED.
 - **Verdict:** 0 downgrades, 0 promotions. Candidates → _reports/PROMOTION-CANDIDATES.md. Frames unchanged.
+
+### 2026-09-09 — Tier 3 Batch A (AK AL AR AZ CA CO DE GA HI IA)
+- **Method:** Perplexity `perplexity_ask`, one state-level query each (no municipality named).
+- **Downgrades (SE criteria_compliance → applicant_carries):** AR (broad discretion), CA (CUP broad
+  discretion), GA (legislative/broad discretion), HI (broad discretion). Understate-safe; letter output
+  unchanged (SE criteria_compliance ≡ applicant_carries in generation).
+- **Confirmed criteria_compliance:** AL, AZ, CO, DE, IA. **§6 candidate:** AK (Griswold — appellate shift).
+  DE possible shift left UNVERIFIED (no named case). All variances = applicant_carries confirmed.
+- Frames stamped verified_via "WebSearch, Perplexity".

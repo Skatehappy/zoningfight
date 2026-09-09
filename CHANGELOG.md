@@ -51,3 +51,8 @@
 - Verified actual state standard for each via Perplexity. 0 downgrades, 0 promotions, no frame edits.
 - UT/WI (statutory mandatory-grant) and CT/DC (limited-discretion entitlement) logged as §6 promotion
   candidates. MN/NM/LA classifications re-confirmed. See _reports/PROMOTION-CANDIDATES.md.
+
+### Tier 3 Batch A — AK AL AR AZ CA CO DE GA HI IA (2026-09-09)
+- SE downgrades criteria_compliance -> applicant_carries: AR, CA, GA, HI (broad-discretion states;
+  label-only, letter output unchanged). AL/AZ/CO/DE/IA confirmed. AK -> §6 candidate (Griswold).
+- All 20 frames stamped verified_via "WebSearch, Perplexity".

@@ -88,3 +88,18 @@ shift**:
 
 Adopting either category is a **schema design decision**, plus Rob's approval, plus (for WI) verifying the
 *Enbridge* reporter cite through all three §3 questions. **Nothing is promoted in this pass.**
+
+## From Tier 3
+
+### AK — Alaska (appellate burden shift)
+- **Frame:** `AK-special-exception.json` · **Current:** `criteria_compliance` · **Proposed:** `prima_facie_shifting`
+- **Authority:** *Griswold v. Homer Advisory Planning Comm'n* (Alaska Supreme Court) — applicant proves the
+  ordinance criteria, then the burden shifts to opponents on contrary facts. **Type: APPELLATE.**
+- **Status:** Surfaced by a single Perplexity query only. **Not promoted.** Requires the full three §3
+  questions (exists / proposition / good law, incl. exact reporter cite) + Rob's approval before promotion.
+
+### DE — Delaware (possible shift, UNVERIFIED)
+- **Frame:** `DE-special-exception.json` · **Current:** `criteria_compliance`
+- **Note:** Perplexity described a post-compliance burden shift but **could not identify the controlling
+  appellate case by name**. **Not a solid candidate** — recorded only so a future pass can chase the cite.
+  No promotion.

@@ -68,3 +68,11 @@ all four are logged as promotion candidates in _reports/PROMOTION-CANDIDATES.md 
 mandatory-grant and limited-discretion entitlement are each a different argument structure than a Florida-
 style case-law burden shift and may warrant their own burden category — a schema design decision reserved
 for Rob. MN, NM, LA re-confirmed as correctly classified (no shift). No Tier-2 frame edited.
+
+### D-PRV-4 — Tier 3 Batch A: 4 downgrades (AR CA GA HI)
+Perplexity found broad board/agency discretion (no compliance-entitlement) for AR, CA (CUP), GA
+(legislative), HI — so SE `criteria_compliance` → `applicant_carries` per §0 (understate) / §5. Materially
+this is a label-only correction: SE criteria_compliance and applicant_carries generate the identical letter
+(both "applicant carries throughout, no shift"); only prima_facie_shifting changes output. AL/AZ/CO/DE/IA
+confirmed criteria_compliance. AK logged as §6 candidate (Griswold appellate shift); DE possible shift left
+unverified. No promotions.
