@@ -221,3 +221,21 @@ candidate (AK), 1 unverified-shift note (DE).**
 
 Variances all confirmed `applicant_carries`. **Batch B: 4 downgrades (IL KS MI MS), 4 confirmed CC (ID IN KY
 ME), 2 confirmed AC (MA MO). IN noted as entitlement-flavored (§6-adjacent).**
+
+### Batch C — MT ND NE NH NJ NV OH OK OR RI (2026-09-09)
+
+| State | Prior SE | Perplexity finding | Action |
+|---|---|---|---|
+| MT | applicant_carries | CUP is discretionary, "not a vested right"; applicant carries; no shift (*Flathead Citizens*; *Whitefish 57*). | **Keep** applicant_carries — confirmed. |
+| ND | criteria_compliance | Approval **discretionary, not mandatory upon checklist compliance**; evaluative discretion. | **Downgrade → applicant_carries**. |
+| NE | criteria_compliance | **Non-entitlement / discretionary** model; quasi-judicial discretion; applicant carries; no shift. | **Downgrade → applicant_carries**. |
+| NH | criteria_compliance | Once ordinance criteria met, board **generally must grant** (*Jensen's, Inc. v. City of Dover*, 130 N.H. 761); not variance-style discretion. | **Keep** — confirmed (entitlement-flavored). |
+| NJ | criteria_compliance | Conditional-use compliance avoids *Medici*; **limited board discretion**; compliance generally requires approval (*Coventry Square*). | **Keep** — confirmed. |
+| NV | criteria_compliance | Substantial local discretion; **uncertain** whether a fully compliant application must be approved (NRS 278.315 "as regulations may prescribe"). | **Downgrade → applicant_carries** (§5 ambiguous→understate). |
+| OH | criteria_compliance | Once objective criteria proved, board **lacks discretion to deny on generalized policy** (*Gerzeny/Sun Oil* line); limited discretion. | **Keep** — confirmed (entitlement-flavored). |
+| OK | criteria_compliance | Applicant proves criteria; discretion **constrained** once all criteria established; may not deny on generalized policy. | **Keep** — confirmed. |
+| OR | criteria_compliance | If criteria mandatory + compliance shown, decision-maker **lacks unfettered discretion**; denial needs a valid criterion + substantial evidence (LUBA). | **Keep** — confirmed. |
+| RI | criteria_compliance | RIGL 45-24-42 "specific and objective criteria"; **limited-discretion** — board may not deny compliant application on policy (*Toohey v. Kilday*). | **Keep** — confirmed. |
+
+Variances all confirmed `applicant_carries`. **Batch C: 3 downgrades (ND NE NV), 6 confirmed CC (NH NJ OH OK
+OR RI), 1 confirmed AC (MT). NH & OH entitlement-flavored (§6-adjacent).**

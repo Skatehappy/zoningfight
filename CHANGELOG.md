@@ -60,3 +60,7 @@
 ### Tier 3 Batch B — ID IL IN KS KY MA ME MI MO MS (2026-09-09)
 - SE downgrades CC->AC: IL, KS, MI, MS. Confirmed CC: ID, IN, KY, ME. Confirmed AC: MA, MO.
   IN entitlement-flavored (§6-adjacent). 20 frames stamped verified_via "WebSearch, Perplexity".
+
+### Tier 3 Batch C — MT ND NE NH NJ NV OH OK OR RI (2026-09-09)
+- SE downgrades CC->AC: ND, NE, NV. Confirmed CC: NH, NJ, OH, OK, OR, RI. Confirmed AC: MT.
+  NH/OH entitlement-flavored (§6-adjacent). 20 frames stamped.

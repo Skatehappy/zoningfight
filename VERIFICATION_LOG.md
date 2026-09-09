@@ -256,3 +256,9 @@ to the backfill's WebSearch findings. Full detail in _reports/PERPLEXITY-REVERIF
   (MCL 125.3502 discretionary), MS (applicant proves by preponderance, no entitlement).
 - **Confirmed criteria_compliance:** ID, IN, KY, ME. **Confirmed applicant_carries:** MA, MO.
 - IN entitlement-flavored → §6-adjacent (with CT/DC). All variances applicant_carries. Frames stamped.
+
+### 2026-09-09 — Tier 3 Batch C (MT ND NE NH NJ NV OH OK OR RI)
+- **Downgrades (SE CC → AC):** ND (discretionary, not mandatory), NE (non-entitlement model), NV
+  (substantial discretion / ambiguous entitlement).
+- **Confirmed criteria_compliance:** NH, NJ, OH, OK, OR, RI. **Confirmed applicant_carries:** MT.
+- NH (Jensen's) & OH (Gerzeny) entitlement-flavored → §6-adjacent. Variances applicant_carries. Frames stamped.

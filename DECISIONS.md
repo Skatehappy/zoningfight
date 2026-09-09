@@ -81,3 +81,8 @@ unverified. No promotions.
 Broad-discretion special-use states → SE CC→AC (label-only; identical letter output). ID/IN/KY/ME confirmed
 CC; MA/MO confirmed AC. IN's "approval mandatory once criteria met" is entitlement-flavored (same family as
 CT/DC), logged §6-adjacent, not promoted.
+
+### D-PRV-6 — Tier 3 Batch C: 3 downgrades (ND NE NV)
+Discretionary/non-entitlement special-use states → SE CC→AC (label-only; identical letter). NH/NJ/OH/OK/OR/RI
+confirmed CC (limited-discretion/entitlement); MT confirmed AC. NH & OH have appellate "must grant once
+criteria met" (Jensen's; Gerzeny) — entitlement-flavored, §6-adjacent, not promoted.
