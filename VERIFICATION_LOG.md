@@ -115,3 +115,21 @@ Standard: Three-Gate v7
 - **Subject:** §65900 authorizes a city/county to create a board of zoning adjustment or zoning administrator by ordinance; §65901 grants that body authority to hear and decide conditional use permits and variances.
 - **Source:** law.justia.com Cal. Gov. Code §§65900-65909.5; Stockton Citizens for Sensible Planning v. City of Stockton (quoting §65901(a)).
 - **Action:** no code change — citations confirmed correct; earlier "retrieval inconclusive" flag resolved. Perplexity-verified 2026-07-19.
+
+---
+
+## State Frame Backfill — Batch 1 (AL AK AZ AR CA CO CT DE DC GA)
+Retrieval date: 2026-09-09 · Method: WebSearch
+(Perplexity MCP server shows Connected but its `perplexity_ask` tool is not reachable
+through the session's tool interface — same as prior sessions; per directive §1.3 fell
+back to WebSearch and logged. Re-add not attempted mid-session as tools are enumerated
+at session start.)
+
+Resolved: special-exception terminology + burden doctrine, state-level only (no municipality named).
+- AL Special Exception · AK/AZ/DE Conditional Use · AR Conditional Use/Special Exception ·
+  CA Conditional Use · CO Special Use · CT Special Permit · DC Special Exception · GA Special Use Permit.
+- **Burden shift: none verified for any of the 10.** Several sources repeated the generic
+  treatise line "once the applicant shows every criterion is met, the burden effectively
+  shifts to opponents" — this is NOT a state-specific appellate holding, so per §5
+  burden-shift skepticism it was NOT adopted. All 10 → criteria_compliance, zero citations.
+- **Confirmed citations this batch: none** (zero-citation frames, which is acceptable per §0).

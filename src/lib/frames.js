@@ -1,14 +1,19 @@
-// src/lib/frames.js — client-side frame registry (Vite bundles the JSON).
-import FL_SE from '../../frames/FL-special-exception.json';
-import FL_VAR from '../../frames/FL-variance.json';
-import GENERIC from '../../frames/GENERIC.json';
+// src/lib/frames.js — client-side frame registry. All frames ship as STATIC
+// bundled JSON: Vite's eager glob import inlines every frames/*.json at build
+// time (no runtime fetch, no cache table, no database). Selection is a sync
+// object lookup.
 import { selectFrame as _select } from '../../frames/select.mjs';
 
-export const REGISTRY = {
-  'FL:special_exception': FL_SE,
-  'FL:variance': FL_VAR,
-  GENERIC,
-};
+const modules = import.meta.glob('../../frames/*.json', { eager: true });
+
+export const REGISTRY = {};
+for (const mod of Object.values(modules)) {
+  const frame = mod.default || mod;
+  if (!frame || !frame.state) continue;
+  if (frame.state === 'GENERIC') { REGISTRY.GENERIC = frame; continue; }
+  // key format "{ABBR}:{application_type}", e.g. "CT:special_exception"
+  REGISTRY[`${frame.state}:${frame.application_type}`] = frame;
+}
 
 export function selectFrame(state, applicationType) {
   return _select(REGISTRY, state, applicationType);

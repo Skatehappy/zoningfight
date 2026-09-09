@@ -20,6 +20,7 @@
     "preview": "vite preview",
     "generate:content": "node scripts/generate-content.js",
     "generate:pages": "node scripts/build-pages.js",
-    "generate:all": "npm run generate:content && npm run generate:pages"
+    "generate:all": "npm run generate:content && npm run generate:pages",
+    "verify": "node scripts/verify-frames.mjs"
   }
 }
