@@ -114,3 +114,18 @@ Every prima_facie_shifting frame must carry ≥1 verified citation. A frame with
 | WV | variance | applicant_carries | 0 | verified |
 | WY | special_exception | criteria_compliance | 0 | verified |
 | WY | variance | applicant_carries | 0 | verified |
+
+---
+
+## §8 Acceptance tests (live model, 2026-09-09) — ALL GREEN
+Sampled 10 jurisdictions across the alphabet (AL CO GA IL MD NC NY PA TX WY; includes all 4
+burden-shift states). Per special_exception frame: (1) filled criteria -> zero hardship terms;
+(2) blank criteria -> bracketed placeholder, no invented criteria, no leftover markers.
+
+**Result: 20/20 checks passed.** Every sampled special-exception letter contained zero hardship
+terminology; every blank-criteria run produced a placeholder with no fabricated ordinance criteria.
+
+## §9 Regression (prod, branch not pushed) — GREEN
+- Bogus code -> 401 (fail-closed license verify holds).
+- Legacy variance path (no frame) -> 200.
+- FL frames byte-identical to commit 1cd2287 (gate B/§8.6).

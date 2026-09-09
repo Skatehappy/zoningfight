@@ -190,3 +190,7 @@ Retrieval date: 2026-09-09 · Method: WebSearch
 FL (frozen, Irvine), MD (Schultz v. Pritts), NY (North Shore Steak House), NC (Humble Oil),
 PA (Bray) = 4 generated + FL. All other jurisdictions criteria_compliance or applicant_carries,
 zero citations. Every shipped citation independently verified (existence + proposition).
+
+## §8 Acceptance (live model, 2026-09-09): 20/20 GREEN across 10 sampled jurisdictions
+AL CO GA IL MD NC NY PA TX WY — special_exception letters: 0 hardship terms (filled criteria);
+0 fabricated criteria + placeholder present (blank criteria). Shift states (MD NC NY PA) verified.

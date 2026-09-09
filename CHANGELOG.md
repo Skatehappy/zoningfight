@@ -30,3 +30,8 @@
 ### Backfill complete: 100 new state frames (50 jurisdictions x 2), FL frozen.
 - 4 verified burden shifts added (MD, NY, NC, PA). All others criteria_compliance/
   applicant_carries, zero citations. Branch: state-frame-backfill. Not pushed (Rob Gate 3).
+
+### Acceptance + regression (2026-09-09)
+- §8 sampled acceptance: 20/20 green (10 jurisdictions incl. all shift states) — 0 hardship
+  terms, 0 fabricated criteria. §9 regression: bogus->401, legacy->200, FL frozen. DONE for
+  Rob's Gate 3 review (branch state-frame-backfill, unpushed).
