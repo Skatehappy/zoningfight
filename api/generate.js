@@ -1,5 +1,6 @@
 // api/generate.js
 import { MODEL } from './_config.js';
+import { lintLetter } from './_lint.js';
 
 // Node serverless runtime (NOT edge). Edge caps at ~25s on Hobby and ignores
 // maxDuration, which 504'd ~25s Opus letters. Node honors maxDuration:60. This
@@ -34,7 +35,8 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   try {
-    const { accessCode, systemPrompt, userPrompt, reviewMode, draftLetter, markUsed } = await readBody(req);
+    const { accessCode, systemPrompt, userPrompt, reviewMode, draftLetter, markUsed,
+            criteria, forbiddenPhrases, enforceForbidden } = await readBody(req);
 
     if (!accessCode || !accessCode.trim()) {
       return res.status(401).json({ error: 'Access code required' });
@@ -94,42 +96,46 @@ export default async function handler(req, res) {
       messages = [{ role: 'user', content: userPrompt }];
     }
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': anthropicKey,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 3000,
-        thinking: { type: 'disabled' },
-        system: (!isCheckCall && systemPrompt) ? systemPrompt : undefined,
-        messages,
-      }),
-    });
+    const callAnthropic = async () => {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': anthropicKey,
+          'anthropic-version': '2023-06-01',
+        },
+        body: JSON.stringify({
+          model: MODEL,
+          max_tokens: 3000,
+          thinking: { type: 'disabled' },
+          system: (!isCheckCall && systemPrompt) ? systemPrompt : undefined,
+          messages,
+        }),
+      });
+      if (!response.ok) return { httpError: await response.text() };
+      const data = await response.json();
+      // Extract the text block by type, not position (adaptive thinking can put a
+      // thinking block first). Missing text => treat as a generation failure.
+      const t = data.content?.find(b => b.type === 'text')?.text;
+      if (!t) return { httpError: `No text block (stop_reason: ${data.stop_reason || 'unknown'})` };
+      return { text: t };
+    };
 
-    if (!response.ok) {
-      const err = await response.text();
-      return res.status(502).json({ error: 'AI generation failed', detail: err });
+    // Generate, LINT (forbidden hardship phrases + no-fabrication for special
+    // exceptions), and regenerate ONCE on a lint failure. Markers are always
+    // stripped from the delivered text. The code is NOT marked used here — the
+    // client sends { markUsed:true } after the letter renders.
+    let lastReason = null;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      const gen = await callAnthropic();
+      if (gen.httpError) return res.status(502).json({ error: 'AI generation failed', detail: String(gen.httpError).slice(0, 500) });
+      const lint = lintLetter(gen.text, { criteria, forbiddenPhrases, enforceForbidden });
+      if (lint.ok) return res.status(200).json({ text: lint.cleanText });
+      lastReason = lint.reason;
+      console.error(`[lint] attempt ${attempt + 1} failed: ${lint.reason}`);
     }
-
-    const data = await response.json();
-    // Extract the text block by type, not by position. With adaptive thinking a
-    // model can place a "thinking" block at content[0], so content[0].text is
-    // undefined even on a 200. Fail loudly on a missing text block — never return
-    // undefined — and because this throws BEFORE the mark-usage call below, the
-    // buyer's one-use license is NOT burned on a parse miss.
-    const text = data.content?.find(b => b.type === 'text')?.text;
-    if (!text) throw new Error(`No text block in API response (stop_reason: ${data.stop_reason || 'unknown'})`);
-
-    // NOTE: the code is NOT marked used here. Generation runs up to 3x per letter
-    // (draft/review/assertive); marking on any of them would consume the code
-    // before — and regardless of whether — the customer receives the finished
-    // letter. The client sends a single { markUsed:true } call after the letter
-    // renders (handled above). verify() above still blocks reuse across sessions.
-    return res.status(200).json({ text });
+    // Second lint failure: reject. Code was never marked used, so nothing is burned.
+    return res.status(422).json({ error: 'Generation failed', detail: `lint:${lastReason}` });
 
   } catch (err) {
     return res.status(500).json({ error: err.message });
