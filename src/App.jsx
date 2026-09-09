@@ -660,6 +660,18 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
       } catch {}
       setStep(STEPS.indexOf("Letter"));
       setRetryCount(0);
+
+      // Mark the code used ONLY now — after the finished letter has been
+      // delivered and rendered. A failure here is intentionally ignored: the
+      // customer already has the letter. Never runs on a failed generation
+      // (this line is only reached after all passes succeed).
+      try {
+        await fetch("/api/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ accessCode, markUsed: true }),
+        });
+      } catch { /* letter delivered; usage-mark is best-effort */ }
     } catch (e) {
       const n = retryCount + 1;
       setRetryCount(n);

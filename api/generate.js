@@ -34,7 +34,7 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   try {
-    const { accessCode, systemPrompt, userPrompt, reviewMode, draftLetter } = await readBody(req);
+    const { accessCode, systemPrompt, userPrompt, reviewMode, draftLetter, markUsed } = await readBody(req);
 
     if (!accessCode || !accessCode.trim()) {
       return res.status(401).json({ error: 'Access code required' });
@@ -49,6 +49,23 @@ export default async function handler(req, res) {
     const isCheckCall = systemPrompt === 'Reply: VALID';
     const TEST_KEYS = (process.env.TEST_KEYS || 'SMOKE-TEST-2026-BAO').split(',').map(k => k.trim().toUpperCase()).filter(Boolean);
     const isTestKey = TEST_KEYS.includes(String(accessCode || '').trim().toUpperCase());
+
+    // Delivery-confirmed usage mark. The client calls this ONCE, after the final
+    // letter has rendered — so the code is consumed only after successful
+    // delivery, not on the generation attempt. No model call here. A failure is
+    // swallowed: the customer already has the letter (we absorb the accounting).
+    if (markUsed) {
+      if (!isTestKey && accessCode && accessCode.trim()) {
+        try {
+          await fetch(`https://payhip.com/api/v1/license/usage`, {
+            method: 'PUT',
+            headers: { 'payhip-api-key': payhipApiKey, 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `product_link=${PRODUCT_LINK}&license_key=${encodeURIComponent(accessCode.trim())}`,
+          });
+        } catch { /* letter already delivered; do not fail on a usage-mark hiccup */ }
+      }
+      return res.status(200).json({ ok: true });
+    }
 
     if (!isCheckCall && !isTestKey) {
       const payhipRes = await fetch(
@@ -101,18 +118,11 @@ export default async function handler(req, res) {
     const text = data.content?.find(b => b.type === 'text')?.text;
     if (!text) throw new Error(`No text block in API response (stop_reason: ${data.stop_reason || 'unknown'})`);
 
-    // Mark license as used. Awaited (not fire-and-forget): on Node serverless,
-    // work after res is sent is not guaranteed to run. Only for real buyer codes.
-    if (!isCheckCall && !isTestKey) {
-      try {
-        await fetch(`https://payhip.com/api/v1/license/usage`, {
-          method: 'PUT',
-          headers: { 'payhip-api-key': payhipApiKey, 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: `product_link=${PRODUCT_LINK}&license_key=${encodeURIComponent(accessCode.trim())}`,
-        });
-      } catch { /* letter already generated; don't fail the response on a usage-mark hiccup */ }
-    }
-
+    // NOTE: the code is NOT marked used here. Generation runs up to 3x per letter
+    // (draft/review/assertive); marking on any of them would consume the code
+    // before — and regardless of whether — the customer receives the finished
+    // letter. The client sends a single { markUsed:true } call after the letter
+    // renders (handled above). verify() above still blocks reuse across sessions.
     return res.status(200).json({ text });
 
   } catch (err) {
