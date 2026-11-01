@@ -205,3 +205,35 @@ Source: Illinois Compiled Statutes on ilga.gov (`https://www.ilga.gov/Documents/
 | Chicago Municipal Code "Title seventeen" | REMOVED | Not fetched from an official source; the parenthetical was dropped. | — |
 | La Salle National Bank v. County of Cook, 12 Ill. 2d 40 (1957); Sinclair Pipe Line Co. v. Village of Richton Park, 19 Ill. 2d 370 (1960) | VERIFIED | Six La Salle factors for zoning validity; Sinclair added community need and care in planning. | courtlistener via Perplexity |
 | MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A) | VERIFIED | See the rows above. | Official (palegis.us MPC) |
+
+### Earning pages 6-10 (NY code-violation defense, GA conditional-use denial, PA spot zoning, OH setback variance, FL variance appeal) + OH state data
+Case citations were resolved through CourtListener citation lookup (`https://www.courtlistener.com/c/<reporter>/<vol>/<page>/`), and holdings through Perplexity restricted to Justia and CourtListener.
+
+| Citation as it now appears | Status | What it says | Source |
+|---|---|---|---|
+| NYC Admin. Code § 28-201.1 | VERIFIED | Unlawful acts, including failure to comply with a commissioner's order or violating the Zoning Resolution or laws the Department of Buildings enforces. | Secondary: codelibrary.amlegal.com (via Perplexity) |
+| General City Law Article 5-A; Town Law Article 16; Village Law Article 7 | VERIFIED | City zoning boards of appeals (§ 81-a is in Article 5-A); town and village zoning articles. | Secondary: law.justia.com/codes/new-york/gct/article-5-a/81-a/ (via Perplexity) |
+| O.C.G.A. section five-four-one / five-four-five / five-four-six (certiorari) | REMOVED | Title 5 certiorari was replaced by a petition-for-review procedure for petitions filed on or after July 1, 2023. Zoning review is now governed by § 36-66-5.1. | Secondary: law.justia.com Title 5 Ch. 3 (via Perplexity); FindLaw no longer carries the old sections |
+| O.C.G.A. § 36-66-5.1(a)(2) | VERIFIED | Quasi-judicial decisions are reviewed by the superior court on the record by petition for review under Title 5; (b) 30 days. | Secondary: https://codes.findlaw.com/ga/title-36-local-government/ga-code-sect-36-66-5-1/ |
+| City of Cumming v. Flowers, 300 Ga. 820 (2017) | CORRECTED (holding) | Review of quasi-judicial zoning decisions is confined to the record before the decision-maker (then by certiorari). The page's "not by declaratory judgment" framing was replaced with the current statutory path. | https://www.courtlistener.com/opinion/5749640/city-of-cumming-v-flowers/ |
+| O.C.G.A. § 36-33-5 | VERIFIED | Ante litem notice to a municipality within six months of the event. | Secondary: https://codes.findlaw.com/ga/title-36-local-government/ga-code-sect-36-33-5/ |
+| O.C.G.A. § 36-11-1 | VERIFIED | Claims against counties presented within 12 months. | Secondary: .../ga-code-sect-36-11-1/ |
+| 53 P.S. § 10916.1 | CORRECTED | Substantive validity challenges by a landowner go to the ZHB (§ 909.1(a)) or the governing body with a curative amendment (§ 609.1). The page described it as a procedural challenge with a 30-day window; corrected. | Official: palegis.us MPC |
+| 53 P.S. § 11002-A(b); 42 Pa.C.S. § 5571.1 | VERIFIED | Procedural-defect challenges to an ordinance go directly to common pleas in accordance with 42 Pa.C.S. § 5571.1 (cross-referenced in MPC § 1002-A(b)). | Official: palegis.us MPC |
+| Cleaver v. Board of Adjustment, 414 Pa. 367 (1964) | CORRECTED (holding) | "Generally speaking, spot zoning is the arbitrary and unreasonable classification and zoning of a small parcel of land." The "per se invalid" framing was removed. | https://law.justia.com/cases/pennsylvania/supreme-court/1964/414-pa-367-0.html |
+| In re Realen Valley Forge Greenes Associates, 838 A.2d 718 (Pa. 2003) | VERIFIED | Agricultural zoning freezing a parcel as green space was unlawful "reverse spot zoning". | https://www.courtlistener.com/opinion/2399302/in-re-appeal-of-realen-valley-forge-greenes-associates/ |
+| The "Yecko Bros." case reference | REMOVED | The citation resolves (420 Pa. 386), but its holding was not confirmed as spot-zoning authority. | — |
+| R.C. § 519.14 | VERIFIED | Township BZA: appeals; variances where special conditions make literal enforcement an unnecessary hardship; conditional zoning certificates. | Official: https://codes.ohio.gov/ohio-revised-code/section-519.14 |
+| R.C. § 713.11 / ORC 713.11 | CORRECTED (wording) | Municipal legislative authority may create a board to hear appeals and permit exceptions and variations. | Official: .../section-713.11 |
+| ORC 519.13 | VERIFIED | Township BZA appointment (five members). | Official: .../section-519.13 |
+| R.C. § 2506.01 / ORC Chapter 2506 | VERIFIED | Final orders of political-subdivision boards reviewable by common pleas as provided in Chapter 2505. | Official: .../section-2506.01 |
+| R.C. § 2505.07 / ORC 2505.07 | CORRECTED (trigger) | 30 days after entry of the final order. "Filing with the board and the clerk" and "from the decision" wording was tightened. | Official: .../section-2505.07 |
+| ORC 519.19 | VERIFIED | Township nonconforming uses continue unless voluntarily discontinued for two years or more. | Official: .../section-519.19 |
+| ORC 519.21 | VERIFIED | Townships may not prohibit agricultural use (with exceptions). | Official: .../section-519.21 |
+| The "Sunset Estate / Lodi" tenant-abandonment claim | REMOVED | The citation resolves (142 Ohio St.3d 351), but the stated holding was not confirmed. The sentence now rests on R.C. 519.19. | — |
+| Kisil v. City of Sandusky, 12 Ohio St.3d 30 (1984); Duncan v. Village of Middlefield, 23 Ohio St.3d 83 (1986) | VERIFIED (added) | Use variances: unnecessary hardship; area variances: practical difficulties (Duncan factors). The unverifiable "Cleveland–Ward" name was replaced. | https://www.courtlistener.com/opinion/6867580/kisil-v-city-of-sandusky/ ; .../6868059/duncan-v-village-of-middlefield/ |
+| Fla. Stat. § 162.11 / Chapter 162 | CORRECTED (trigger) | Appeal of an enforcement board's final order to circuit court within 30 days of execution of the order. | Official: https://www.flsenate.gov/Laws/Statutes/2025/162.11 |
+| Fla. Stat. § 166.041 | VERIFIED | Procedures for adoption of municipal ordinances and resolutions. | Official: https://www.flsenate.gov/Laws/Statutes/2025/166.041 |
+| Fla. Stat. Chapter 86 | VERIFIED | Declaratory judgments. | Official: https://www.flsenate.gov/Laws/Statutes/2025/Chapter86 |
+| Bernard v. Town Council of Palm Beach, 569 So. 2d 853 (Fla. 4th DCA 1990) | VERIFIED | Variance hardship. | https://www.courtlistener.com/opinion/1622648/bernard-v-town-council-of-palm-beach/ |
+| Board of County Commissioners of Brevard County v. Snyder, 627 So. 2d 469 (Fla. 1993) | CORRECTED (holding) | Site-specific rezonings are quasi-judicial. It was cited as variance-hardship authority; the attribution was split. | https://www.courtlistener.com/opinion/1910929/bd-of-cty-comrs-of-brevard-v-snyder/ |
