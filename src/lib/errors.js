@@ -8,7 +8,7 @@
 // buyer their code has not been used, because the original outage led a
 // customer to buy a second code as the perceived fix.
 
-export const SUPPORT_EMAIL = 'support@zoningfight.com';
+export const SUPPORT_EMAIL = 'support@buyappsonce.com';
 
 // Codes whose message should surface a support link.
 const WITH_SUPPORT = new Set(['CODE_CONSUMED', 'CODE_INVALID']);
