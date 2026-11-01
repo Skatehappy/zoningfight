@@ -44,5 +44,14 @@ if (missing.length) {
   for (const m of [...missing].sort()) console.error('  ' + m);
   fail(missing.length + ' unlogged citation(s)');
 }
-console.log('GATE GREEN — A1 files ok; A9 citation-log parity: all ' + tokens.size + ' citations logged.');
+// ── A10: citation lock (S7) + G4T test code (S6) ──────────────────────────────
+import { execFileSync } from 'child_process';
+const VC = join(ROOT, 'api', '_verified-citations.json');
+const before = existsSync(VC) ? readFileSync(VC, 'utf8') : '';
+try { execFileSync('node', ['scripts/build-verified-citations.mjs'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A10: build-verified-citations failed — ' + e.message); }
+// the date stamp changes daily; compare everything else
+const strip = s => s.replace(/"generated": "[^"]*"/, '');
+if (strip(before) !== strip(readFileSync(VC, 'utf8'))) fail('A10: api/_verified-citations.json was stale (rebuilt now) — commit it');
+try { execFileSync('node', ['scripts/test-citelock.mjs'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A10: citation-lock/G4T mock test failed\n' + (e.stdout || '') + (e.stderr || '')); }
+console.log('GATE GREEN — A1 files ok; A9 citation-log parity: all ' + tokens.size + ' citations logged; A10 citation lock + G4T mock test pass.');
 process.exit(0);

@@ -1,6 +1,9 @@
 // api/generate.js
 import { MODEL } from './_config.js';
 import { lintLetter } from './_lint.js';
+import { isTestCode, takeTestBudget } from './_g4t.js';
+import { verifiedFor, citationRules, lintCitations } from './_citelint.js';
+import VERIFIED from './_verified-citations.json' with { type: 'json' };
 
 // Node serverless runtime (NOT edge). Edge caps at ~25s on Hobby and ignores
 // maxDuration, which 504'd ~25s Opus letters. Node honors maxDuration:60. This
@@ -61,7 +64,7 @@ export default async function handler(req, res) {
 
   try {
     const { accessCode, systemPrompt, userPrompt, reviewMode, draftLetter, markUsed,
-            criteria, forbiddenPhrases, enforceForbidden } = await readBody(req);
+            criteria, forbiddenPhrases, enforceForbidden, state, letterType } = await readBody(req);
 
     if (!accessCode || !accessCode.trim()) {
       return res.status(401).json({ error: 'Access code required' });
@@ -75,15 +78,20 @@ export default async function handler(req, res) {
 
     const isCheckCall = systemPrompt === 'Reply: VALID';
 
-    const lic = await verifyLicense(accessCode, PRODUCT_LINK, payhipApiKey);
-    if (!lic.ok) return res.status(lic.status).json({ error: lic.error });
+    // G4T test code (inert unless G4_TEST_CODE_SECRET is set): no Payhip verify, no usage mark.
+    const testCode = isTestCode(accessCode);
+    if (!testCode) {
+      const lic = await verifyLicense(accessCode, PRODUCT_LINK, payhipApiKey);
+      if (!lic.ok) return res.status(lic.status).json({ error: lic.error });
+    }
 
     // Delivery-confirmed usage mark. The client calls this ONCE, after the final
     // letter has rendered — so the code is consumed only after successful
     // delivery, not on the generation attempt. No model call here. A failure is
     // swallowed: the customer already has the letter (we absorb the accounting).
     if (markUsed) {
-      if (accessCode && accessCode.trim()) {
+      if (testCode) console.error('[g4t] markUsed skipped (test code)');
+      if (accessCode && accessCode.trim() && !testCode) {
         try {
           await fetch(`https://payhip.com/api/v1/license/usage`, {
             method: 'PUT',
@@ -95,6 +103,17 @@ export default async function handler(req, res) {
       return res.status(200).json({ ok: true });
     }
 
+    if (testCode) {
+      const b = takeTestBudget();
+      console.error(`[g4t] test code use ${b.used}/${b.cap} state=${String(state || '').slice(0, 20)} type=${String(letterType || '').slice(0, 40)}${isCheckCall ? ' check' : reviewMode ? ' review' : ' draft'}`);
+      if (!b.ok) return res.status(429).json({ error: 'Test code daily cap reached' });
+    }
+
+    // Citation lock (S7): the model may cite only authorities VERIFIED for this state, or ones the user typed.
+    const verified = verifiedFor(VERIFIED, state);
+    const userText = reviewMode && draftLetter ? `${userPrompt || ''}
+${draftLetter}` : (userPrompt || '');
+
     let messages;
     if (reviewMode && draftLetter) {
       messages = [{ role: 'user', content: `Review and improve this appeal letter. Fix vague language, ensure all arguments are explicitly stated, remove emotional appeals, tighten redundancy. Return ONLY the improved letter:\n\n${draftLetter}` }];
@@ -102,7 +121,10 @@ export default async function handler(req, res) {
       messages = [{ role: 'user', content: userPrompt }];
     }
 
-    const callAnthropic = async () => {
+    const callAnthropic = async (avoid = []) => {
+      const avoidNote = avoid.length ? `
+Do NOT cite any of the following (they are not verified): ${avoid.join('; ')}. Rewrite without them.` : '';
+      const sys = isCheckCall ? undefined : ((systemPrompt || '') + citationRules(verified) + avoidNote).trim();
       const response = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
         headers: {
@@ -114,7 +136,7 @@ export default async function handler(req, res) {
           model: MODEL,
           max_tokens: 3000,
           thinking: { type: 'disabled' },
-          system: (!isCheckCall && systemPrompt) ? systemPrompt : undefined,
+          system: sys,
           messages,
         }),
       });
@@ -132,11 +154,24 @@ export default async function handler(req, res) {
     // stripped from the delivered text. The code is NOT marked used here — the
     // client sends { markUsed:true } after the letter renders.
     let lastReason = null;
+    let avoid = [];
+    let fallback = null;   // citation-stripped first draft, used if the single regeneration itself fails
     for (let attempt = 0; attempt < 2; attempt++) {
-      const gen = await callAnthropic();
+      const gen = await callAnthropic(avoid);
+      if (gen.httpError && fallback) return res.status(200).json({ text: fallback });
       if (gen.httpError) return res.status(502).json({ error: 'AI generation failed', detail: String(gen.httpError).slice(0, 500) });
       const lint = lintLetter(gen.text, { criteria, forbiddenPhrases, enforceForbidden });
-      if (lint.ok) return res.status(200).json({ text: lint.cleanText });
+      if (lint.ok) {
+        if (isCheckCall) return res.status(200).json({ text: lint.cleanText });
+        const cl = lintCitations(lint.cleanText, verified.keys, userText);
+        if (cl.ok) return res.status(200).json({ text: lint.cleanText });
+        // Log citation strings only (never letter text / user input).
+        console.error(`[citelint] state=${verified.abbr || 'n/a'} attempt=${attempt + 1} misses=${cl.bad.length} cites=${JSON.stringify(cl.bad.map(s => s.slice(0, 80)))} action=${attempt === 0 ? 'regenerate' : 'strip'}`);
+        if (attempt === 1) return res.status(200).json({ text: cl.stripped });
+        avoid = cl.bad;
+        fallback = cl.stripped;
+        continue;
+      }
       lastReason = lint.reason;
       console.error(`[lint] attempt ${attempt + 1} failed: ${lint.reason}`);
     }

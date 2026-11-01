@@ -1,0 +1,719 @@
+{
+ "generated": "2026-11-01",
+ "any": [
+  {
+   "k": "S:8-2",
+   "s": "CGS §8-2"
+  },
+  {
+   "k": "S:8-7",
+   "s": "CGS §8-7"
+  },
+  {
+   "k": "S:163.3202",
+   "s": "FL Statutes Chapter 163 / §163.3202"
+  },
+  {
+   "k": "CH:163",
+   "s": "FL Statutes Chapter 163 / §163.3202"
+  },
+  {
+   "k": "S:1983",
+   "s": "42 U.S.C. §1983"
+  },
+  {
+   "k": "S:1988",
+   "s": "42 U.S.C. §1988"
+  },
+  {
+   "k": "S:519.13",
+   "s": "ORC 519.13"
+  },
+  {
+   "k": "S:519.19",
+   "s": "ORC 519.19"
+  },
+  {
+   "k": "S:519.21",
+   "s": "ORC 519.21"
+  },
+  {
+   "k": "S:1094.5",
+   "s": "CCP § 1094.5 / §§ 1094.5"
+  },
+  {
+   "k": "S:1094.6",
+   "s": "CCP § 1094.6"
+  },
+  {
+   "k": "S:1085",
+   "s": "CCP § 1085 / §1085"
+  },
+  {
+   "k": "S:1021.5",
+   "s": "CCP § 1021.5 / §1021.5"
+  },
+  {
+   "k": "S:21000",
+   "s": "Pub. Res. Code § 21000"
+  },
+  {
+   "k": "S:21167",
+   "s": "Pub. Res. Code §21167"
+  },
+  {
+   "k": "S:15305",
+   "s": "CEQA Guidelines § 15305 (14 CCR)"
+  },
+  {
+   "k": "S:211.003",
+   "s": "Section 211.003; Section 211.008; Section 211.009"
+  },
+  {
+   "k": "S:211.008",
+   "s": "Section 211.003; Section 211.008; Section 211.009"
+  },
+  {
+   "k": "S:211.009",
+   "s": "Section 211.003; Section 211.008; Section 211.009"
+  }
+ ],
+ "states": {
+  "NY": [
+   {
+    "k": "S:267",
+    "s": "NY Town Law §267"
+   },
+   {
+    "k": "S:267-b",
+    "s": "NY Town Law §267-b"
+   },
+   {
+    "k": "S:274-b",
+    "s": "NY Town Law §274-b"
+   },
+   {
+    "k": "S:261-285",
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+   },
+   {
+    "k": "S:7-700",
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+   },
+   {
+    "k": "S:20",
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+   },
+   {
+    "k": "ART:16",
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+   },
+   {
+    "k": "ART:7",
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+   },
+   {
+    "k": "ART:2-A",
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+   },
+   {
+    "k": "S:261",
+    "s": "Town Law Article 16 zoning enabling; § 261 zoning power."
+   },
+   {
+    "k": "S:267-c",
+    "s": "Art. 78 review within 30 days of filing in clerk's office (Town Law § 267-c[1])."
+   },
+   {
+    "k": "ART:78",
+    "s": "Art. 78 review within 30 days of filing in clerk's office (Town Law § 267-c[1])."
+   },
+   {
+    "k": "S:267-a",
+    "s": "Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a"
+   },
+   {
+    "k": "S:7-712-a",
+    "s": "Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a"
+   },
+   {
+    "k": "S:81-a",
+    "s": "Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a"
+   },
+   {
+    "k": "S:7-712-b",
+    "s": "Town Law § 267-b / § 267-b(2)(b); Village Law § 7-712-b; General City Law § 81-b"
+   },
+   {
+    "k": "S:81-b",
+    "s": "Town Law § 267-b / § 267-b(2)(b); Village Law § 7-712-b; General City Law § 81-b"
+   },
+   {
+    "k": "S:7-725-b",
+    "s": "Town Law § 274-b; Village Law § 7-725-b; Gen. City Law § 27-b"
+   },
+   {
+    "k": "S:27-b",
+    "s": "Town Law § 274-b; Village Law § 7-725-b; Gen. City Law § 27-b"
+   },
+   {
+    "k": "S:239-m",
+    "s": "General Municipal Law § 239-m"
+   },
+   {
+    "k": "S:50-e",
+    "s": "General Municipal Law § 50-e"
+   },
+   {
+    "k": "S:617.5",
+    "s": "6 NYCRR § 617.5"
+   },
+   {
+    "k": "C:otto",
+    "s": "Matter of Otto v. Steinhilber, 282 N.Y. 71 (1939)"
+   },
+   {
+    "k": "C:people",
+    "s": "People v. Miller, 304 N.Y. 105 (1952); Matter of Toys 'R' Us v. Silva, 89 N.Y.2d 411 (1996)"
+   },
+   {
+    "k": "S:28-201.1",
+    "s": "NYC Admin. Code § 28-201.1"
+   },
+   {
+    "k": "ART:5-A",
+    "s": "General City Law Article 5-A; Town Law Article 16; Village Law Article 7"
+   }
+  ],
+  "CA": [
+   {
+    "k": "S:65900",
+    "s": "CA Government Code §65900"
+   },
+   {
+    "k": "S:65901",
+    "s": "CA Government Code §65901"
+   },
+   {
+    "k": "S:65000",
+    "s": "Planning and Zoning Law — Cal. Gov. Code § 65000 et seq. (Title 7, Division 1)"
+   },
+   {
+    "k": "TITLE:7",
+    "s": "Planning and Zoning Law — Cal. Gov. Code § 65000 et seq. (Title 7, Division 1)"
+   },
+   {
+    "k": "S:65906",
+    "s": "Gov. Code § 65906 variance standard; does not apply to CUPs."
+   },
+   {
+    "k": "S:1094.6",
+    "s": "CCP § 1094.6 — writ of mandate within 90 days after decision final."
+   },
+   {
+    "k": "S:66310",
+    "s": "State ADU law Gov. Code § 66310 et seq. (SB 477, eff. 2024); ministerial approval."
+   },
+   {
+    "k": "S:65589.5",
+    "s": "HAA Gov. Code § 65589.5 (1982); Builder's Remedy."
+   },
+   {
+    "k": "S:65860",
+    "s": "Gov. Code §65860"
+   },
+   {
+    "k": "S:65009",
+    "s": "Gov. Code §65009 / §65009(c)"
+   },
+   {
+    "k": "S:65913.4",
+    "s": "Gov. Code § 65913.4"
+   },
+   {
+    "k": "S:7920.000",
+    "s": "Gov. Code §7920.000"
+   },
+   {
+    "k": "C:scenic",
+    "s": "Topanga Association for a Scenic Community v. County of Los Angeles (1974) 11 Cal.3d 506"
+   },
+   {
+    "k": "C:arnel",
+    "s": "Arnel Development Co. v. City of Costa Mesa (1980) 28 Cal.3d 511"
+   },
+   {
+    "k": "C:foothill",
+    "s": "Foothill Communities Coalition v. County of Orange (2014) 222 Cal.App.4th 1302"
+   }
+  ],
+  "TX": [
+   {
+    "k": "CH:211",
+    "s": "Texas Zoning Enabling Act (Municipal Zoning Authority) — Tex. Local Gov't Code Ch. 211 (Subtitle A, Title 7)"
+   },
+   {
+    "k": "TITLE:7",
+    "s": "Texas Zoning Enabling Act (Municipal Zoning Authority) — Tex. Local Gov't Code Ch. 211 (Subtitle A, Title 7)"
+   },
+   {
+    "k": "S:211.011",
+    "s": "§ 211.011: writ of certiorari within 10 days after decision filed."
+   },
+   {
+    "k": "S:211.009",
+    "s": "§ 211.009: BOA authority; no use variances; special exceptions need no hardship."
+   },
+   {
+    "k": "S:211.004",
+    "s": "Tex. Loc. Gov't Code § 211.004"
+   },
+   {
+    "k": "S:211.005",
+    "s": "Tex. Loc. Gov't Code § 211.005 / § 211.005(b) / Section 211.005"
+   },
+   {
+    "k": "S:211.0061",
+    "s": "Tex. Loc. Gov't Code § 211.0061"
+   },
+   {
+    "k": "S:211.007",
+    "s": "Tex. Loc. Gov't Code § 211.007 / § 211.007(c)"
+   },
+   {
+    "k": "S:37.009",
+    "s": "Tex. Civ. Prac. & Rem. Code Ch. 37 / § 37.009"
+   },
+   {
+    "k": "CH:37",
+    "s": "Tex. Civ. Prac. & Rem. Code Ch. 37 / § 37.009"
+   },
+   {
+    "k": "CH:551",
+    "s": "Tex. Gov't Code Ch. 551"
+   },
+   {
+    "k": "S:2007.003",
+    "s": "Tex. Gov't Code Chapter 2007 / § 2007.003 / § 2007.026"
+   },
+   {
+    "k": "S:2007.026",
+    "s": "Tex. Gov't Code Chapter 2007 / § 2007.003 / § 2007.026"
+   },
+   {
+    "k": "CH:2007",
+    "s": "Tex. Gov't Code Chapter 2007 / § 2007.003 / § 2007.026"
+   },
+   {
+    "k": "S:17",
+    "s": "Tex. Const. art. I, § 17 / Article I, Section 17"
+   },
+   {
+    "k": "C:pharr",
+    "s": "City of Pharr v. Tippitt, 616 S.W.2d 173 (Tex. 1981)"
+   }
+  ],
+  "FL": [
+   {
+    "k": "S:163.3161",
+    "s": "Community Planning Act (Local Government Comprehensive Planning and Land Development Regulation Act) — Fla. Stat. Ch. 16"
+   },
+   {
+    "k": "CH:163",
+    "s": "Community Planning Act (Local Government Comprehensive Planning and Land Development Regulation Act) — Fla. Stat. Ch. 16"
+   },
+   {
+    "k": "S:163.3194",
+    "s": "§ 163.3194 consistency requirement."
+   },
+   {
+    "k": "S:70.001",
+    "s": "Bert Harris Act § 70.001 inordinate-burden claims."
+   },
+   {
+    "k": "S:162.11",
+    "s": "Fla. Stat. § 162.11 / Chapter 162"
+   },
+   {
+    "k": "CH:162",
+    "s": "Fla. Stat. § 162.11 / Chapter 162"
+   },
+   {
+    "k": "S:166.041",
+    "s": "Fla. Stat. § 166.041"
+   },
+   {
+    "k": "CH:86",
+    "s": "Fla. Stat. Chapter 86"
+   },
+   {
+    "k": "C:bernard",
+    "s": "Bernard v. Town Council of Palm Beach, 569 So. 2d 853 (Fla. 4th DCA 1990)"
+   },
+   {
+    "k": "C:brevard",
+    "s": "Board of County Commissioners of Brevard County v. Snyder, 627 So. 2d 469 (Fla. 1993)"
+   }
+  ],
+  "IL": [
+   {
+    "k": "S:65ILCS5/11-13-1",
+    "s": "Illinois Municipal Code, Division 13 (Zoning) for municipalities; Counties Code (Division 5-12) for counties — 65 ILCS 5"
+   },
+   {
+    "k": "S:55ILCS5/5-12001",
+    "s": "Illinois Municipal Code, Division 13 (Zoning) for municipalities; Counties Code (Division 5-12) for counties — 65 ILCS 5"
+   },
+   {
+    "k": "S:65ILCS5",
+    "s": "65 ILCS 5 Municipal Code Division 13 zoning."
+   },
+   {
+    "k": "C:klaeren",
+    "s": "Klaeren v. Village of Lisle quasi-judicial special-use hearings."
+   },
+   {
+    "k": "S:65ILCS5/11-13-5",
+    "s": "65 ILCS 5/11-13-5"
+   },
+   {
+    "k": "S:65ILCS5/11-13-4",
+    "s": "65 ILCS 5/11-13-4"
+   },
+   {
+    "k": "S:55ILCS5/5-12009",
+    "s": "55 ILCS 5/5-12009"
+   },
+   {
+    "k": "S:65ILCS5/11-13-1.1",
+    "s": "65 ILCS 5/11-13-1.1"
+   },
+   {
+    "k": "S:735ILCS5/3-101",
+    "s": "735 ILCS 5/3-101 et seq. / 735 ILCS 5/3-103"
+   },
+   {
+    "k": "S:735ILCS5/3-103",
+    "s": "735 ILCS 5/3-101 et seq. / 735 ILCS 5/3-103"
+   },
+   {
+    "k": "C:sinclair",
+    "s": "La Salle National Bank v. County of Cook, 12 Ill. 2d 40 (1957); Sinclair Pipe Line Co. v. Village of Richton Park, 19 Ill. 2d 370 (1960)"
+   },
+   {
+    "k": "S:908",
+    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)"
+   },
+   {
+    "k": "S:1001",
+    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)"
+   },
+   {
+    "k": "S:1002",
+    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)"
+   },
+   {
+    "k": "S:1003",
+    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)"
+   },
+   {
+    "k": "S:65ILCS5/11-13-14",
+    "s": "65 ILCS 5/11-13-14"
+   }
+  ],
+  "PA": [
+   {
+    "k": "S:10101",
+    "s": "Pennsylvania Municipalities Planning Code (MPC), Act 247 of 1968 — 53 P.S. §10101 et seq."
+   },
+   {
+    "k": "S:10901",
+    "s": "53 P.S. § 10901 et seq. (Article IX)"
+   },
+   {
+    "k": "S:10910.2",
+    "s": "53 P.S. § 10910.2 / Section 910.2"
+   },
+   {
+    "k": "S:910.2",
+    "s": "53 P.S. § 10910.2 / Section 910.2"
+   },
+   {
+    "k": "S:908",
+    "s": "Section 908 / Section 908(1)"
+   },
+   {
+    "k": "S:909.1",
+    "s": "Section 909.1"
+   },
+   {
+    "k": "S:913.3",
+    "s": "Section 913.3"
+   },
+   {
+    "k": "S:11001-A",
+    "s": "53 P.S. § 11001-A / Section 1001-A"
+   },
+   {
+    "k": "S:11001",
+    "s": "53 P.S. § 11001-A / Section 1001-A"
+   },
+   {
+    "k": "S:1001",
+    "s": "53 P.S. § 11001-A / Section 1001-A"
+   },
+   {
+    "k": "S:11002-A",
+    "s": "53 P.S. § 11002-A / Section 1002-A"
+   },
+   {
+    "k": "S:11002",
+    "s": "53 P.S. § 11002-A / Section 1002-A"
+   },
+   {
+    "k": "S:1002",
+    "s": "53 P.S. § 11002-A / Section 1002-A"
+   },
+   {
+    "k": "S:1003",
+    "s": "Section 1003-A / Section 1003-A(d)"
+   },
+   {
+    "k": "S:2503",
+    "s": "42 Pa.C.S. § 2503"
+   },
+   {
+    "k": "C:hertzberg",
+    "s": "Hertzberg v. Zoning Board of Adjustment, 554 Pa. 249 (1998)"
+   },
+   {
+    "k": "C:valley",
+    "s": "Valley View Civic Association v. Zoning Board of Adjustment, 501 Pa. 550 (1983)"
+   },
+   {
+    "k": "S:10916.1",
+    "s": "53 P.S. § 10916.1"
+   },
+   {
+    "k": "S:5571.1",
+    "s": "53 P.S. § 11002-A(b); 42 Pa.C.S. § 5571.1"
+   },
+   {
+    "k": "C:cleaver",
+    "s": "Cleaver v. Board of Adjustment, 414 Pa. 367 (1964)"
+   }
+  ],
+  "OH": [
+   {
+    "k": "S:519.02",
+    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit"
+   },
+   {
+    "k": "CH:713",
+    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit"
+   },
+   {
+    "k": "CH:519",
+    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit"
+   },
+   {
+    "k": "CH:303",
+    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit"
+   },
+   {
+    "k": "C:duncan",
+    "s": "Duncan v. Village of Middlefield (1986): area variance on 'practical difficulties'; lesser standard than use variances."
+   },
+   {
+    "k": "CH:2506",
+    "s": "ORC Chapter 2506 governs appeals of BZA decisions to Common Pleas; 30 days to appeal."
+   },
+   {
+    "k": "S:713.15",
+    "s": "ORC 713.15: nonconforming use may continue but if voluntarily discontinued 2+ years must conform."
+   },
+   {
+    "k": "S:519.14",
+    "s": "R.C. § 519.14"
+   },
+   {
+    "k": "S:713.11",
+    "s": "R.C. § 713.11 / ORC 713.11"
+   },
+   {
+    "k": "S:2506.01",
+    "s": "R.C. § 2506.01 / ORC Chapter 2506"
+   },
+   {
+    "k": "S:2505.07",
+    "s": "R.C. § 2505.07 / ORC 2505.07"
+   },
+   {
+    "k": "C:kisil",
+    "s": "Kisil v. City of Sandusky, 12 Ohio St.3d 30 (1984); Duncan v. Village of Middlefield, 23 Ohio St.3d 83 (1986)"
+   }
+  ],
+  "GA": [
+   {
+    "k": "S:36-66-1",
+    "s": "Zoning Procedures Law (Georgia) — O.C.G.A. § 36-66-1 et seq."
+   },
+   {
+    "k": "S:36-66-4",
+    "s": "O.C.G.A. § 36-66-4 requires a hearing and published notice 15-45 days before, plus an on-site sign 15 days before; speci"
+   },
+   {
+    "k": "CH:66",
+    "s": "O.C.G.A. § 36-66-1 et seq. / Title 36, Ch. 66 (Zoning Procedures Law)"
+   },
+   {
+    "k": "TITLE:36",
+    "s": "O.C.G.A. § 36-66-1 et seq. / Title 36, Ch. 66 (Zoning Procedures Law)"
+   },
+   {
+    "k": "S:36-66-5",
+    "s": "O.C.G.A. § 36-66-5"
+   },
+   {
+    "k": "S:36-66-5.1",
+    "s": "O.C.G.A. § 36-66-5.1 / § 36-66-5.1(a)(1) / § 36-66-5.1(b)"
+   },
+   {
+    "k": "S:36-67A-3",
+    "s": "O.C.G.A. § 36-67A-3"
+   },
+   {
+    "k": "S:9-15-14",
+    "s": "O.C.G.A. § 9-15-14"
+   },
+   {
+    "k": "C:barrett",
+    "s": "Barrett v. Hamby, 235 Ga. 262 (1975)"
+   },
+   {
+    "k": "C:guhl",
+    "s": "Guhl v. Holcomb Bridge Road Corp., 238 Ga. 322 (1977)"
+   },
+   {
+    "k": "C:cumming",
+    "s": "City of Cumming v. Flowers, 300 Ga. 820 (2017)"
+   },
+   {
+    "k": "S:36-33-5",
+    "s": "O.C.G.A. § 36-33-5"
+   },
+   {
+    "k": "S:36-11-1",
+    "s": "O.C.G.A. § 36-11-1"
+   }
+  ],
+  "NC": [
+   {
+    "k": "CH:160D",
+    "s": "Local Planning and Development Regulation (unified city + county land-use chapter, effective 2019; local compliance July"
+   },
+   {
+    "k": "S:160D-405",
+    "s": "N.C. Gen. Stat. § 160D-405"
+   },
+   {
+    "k": "S:160D-406",
+    "s": "N.C. Gen. Stat. § 160D-406"
+   },
+   {
+    "k": "S:160D-705",
+    "s": "N.C. Gen. Stat. § 160D-705(d)"
+   },
+   {
+    "k": "S:160D-1402",
+    "s": "N.C. Gen. Stat. § 160D-1402 / § 160D-1402(c) / Article 14"
+   },
+   {
+    "k": "ART:14",
+    "s": "N.C. Gen. Stat. § 160D-1402 / § 160D-1402(c) / Article 14"
+   },
+   {
+    "k": "S:160D-1405",
+    "s": "N.C. Gen. Stat. § 160D-1405(d)"
+   },
+   {
+    "k": "ART:4",
+    "s": "Article 4; Article 6; Article 7 (Chapter 160D)"
+   },
+   {
+    "k": "ART:6",
+    "s": "Article 4; Article 6; Article 7 (Chapter 160D)"
+   },
+   {
+    "k": "ART:7",
+    "s": "Article 4; Article 6; Article 7 (Chapter 160D)"
+   },
+   {
+    "k": "S:6-21.7",
+    "s": "N.C. Gen. Stat. § 6-21.7"
+   }
+  ],
+  "AZ": [
+   {
+    "k": "S:9-461",
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+   },
+   {
+    "k": "S:9-462",
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+   },
+   {
+    "k": "S:11-811",
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+   },
+   {
+    "k": "CH:4",
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+   },
+   {
+    "k": "CH:6",
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+   },
+   {
+    "k": "ART:6",
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+   },
+   {
+    "k": "ART:2",
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+   },
+   {
+    "k": "TITLE:9",
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+   },
+   {
+    "k": "TITLE:11",
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+   },
+   {
+    "k": "S:9-462.06",
+    "s": "A.R.S. § 9-462.06 Board of Adjustment hears variances and appeals; no variance if hardship self-imposed; special action "
+   },
+   {
+    "k": "S:9-462.02",
+    "s": "A.R.S. § 9-462.02: existing lawful uses grandfathered; municipality may condemn to eliminate nonconforming uses."
+   },
+   {
+    "k": "S:9-462.13",
+    "s": "HB 2721 (2024) middle housing, A.R.S. § 9-462.13: cities of 75,000+ must allow duplex/triplex/townhome on 20% of single-"
+   },
+   {
+    "k": "S:11-816",
+    "s": "A.R.S. § 11-816 / § 11-816(D)"
+   },
+   {
+    "k": "S:9-461.05",
+    "s": "A.R.S. § 9-461.05"
+   },
+   {
+    "k": "S:9-462.01",
+    "s": "A.R.S. § 9-462.01 / § 9-462.01(F)"
+   }
+  ]
+ }
+}

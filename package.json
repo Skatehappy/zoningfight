@@ -21,6 +21,8 @@
     "generate:content": "node scripts/generate-content.js",
     "generate:pages": "node scripts/build-pages.js",
     "generate:all": "npm run generate:content && npm run generate:pages",
-    "verify": "node scripts/verify-frames.mjs"
+    "verify": "node scripts/verify-frames.mjs",
+    "build:citations": "node scripts/build-verified-citations.mjs",
+    "test:citelock": "node scripts/test-citelock.mjs"
   }
 }
