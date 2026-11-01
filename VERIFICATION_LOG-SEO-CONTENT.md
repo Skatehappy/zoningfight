@@ -285,3 +285,40 @@ Case citations were resolved through CourtListener citation lookup (`https://www
 | A.R.S. section twelve-nine-oh-two / twelve-nine-oh-four (as the zoning review path) | REMOVED | The ALRA does not govern where the act provides its own review procedure (§ 9-462.06(K)). | Official: https://www.azleg.gov/ars/12/00902.htm |
 | A.R.S. § 9-461.05 | VERIFIED | Municipal general plans. | Official: https://www.azleg.gov/ars/9/00461-05.htm |
 | A.R.S. § 9-462.01 / § 9-462.01(F) | CORRECTED (wording) | Zoning powers; conditional uses with site plan review; (F) zoning must be consistent with and conform to the general plan. The unverified "weigh property rights" clause was removed. | Official: https://www.azleg.gov/ars/9/00462-01.htm |
+
+## Phase B — non-earning kept pages (2026-11-01)
+
+Sources key: **Official** = the legislature's own site; **Secondary** = FindLaw / Justia / CourtListener mirrors. Rows marked REMOVED were taken off the page because they could not be verified; they are written in non-matching form on purpose.
+
+### Illinois (IL) — nonconforming-use-letter, zoning-code-violation-defense
+Source: Illinois Compiled Statutes on ilga.gov (`https://www.ilga.gov/Documents/legislation/ilcs/documents/<doc>.htm`) — Official.
+
+| Citation as it now appears | Status | What it says | Source |
+|---|---|---|---|
+| 65 ILCS 5/11-13-15 | VERIFIED | Proper local authorities, or an owner/tenant within 1,200 feet who shows substantial effect, may sue to prevent, restrain, correct or abate a zoning violation; court may issue restraining order or preliminary/permanent injunction; a prevailing owner/tenant plaintiff recovers reasonable attorney's fees. No fine schedule and no demolition-order language, so those claims were removed from the page. | Official: 006500050K11-13-15.htm |
+| 65 ILCS 5/11-13-12 | CORRECTED | Appeal to the board of appeals within 45 days of the action complained of; the appeal stays proceedings absent a certificate of imminent peril. The pages said 30 days; corrected to 45. | Official: 006500050K11-13-12.htm |
+| 65 ILCS 5/1-2.1-1 | VERIFIED | Division 2.1 (administrative adjudication) applies to home rule municipalities and to non-home-rule municipalities that adopt it; § 1-2.1-2 authorizes a system of administrative adjudication of municipal code violations. | Official: 006500050K1-2.1-1.htm ; 006500050K1-2.1-2.htm |
+| 735 ILCS 5/3-110 | VERIFIED | Scope of review: the court hears and determines on the entire record; no new evidence; agency fact findings prima facie true. | Official: 073500050K3-110.htm |
+| 735 ILCS 5/3-103 | VERIFIED | Administrative review is commenced by complaint and summons within 35 days after service of the decision. The page's "45-day deadline for administrative review" was corrected to 35. | Official: 073500050K3-103.htm |
+| 735 ILCS 5/2-701 | VERIFIED | Declaratory judgments in cases of actual controversy, including construction of a municipal ordinance. | Official: 073500050K2-701.htm |
+| 745 ILCS 10/8-101 | VERIFIED | No civil action against a local entity or its employees for injury unless commenced within one year of the injury/accrual (patient-care actions: two years). | Official: 074500100K8-101.htm |
+| The Skokie Town House Builders v. Morton Grove case reference | REMOVED | The case exists (16 Ill.2d 183, 1959) but its holding as nonconforming-use authority was not confirmed. | — |
+| The $75 to $750 per day fine range | REMOVED | No statutory source found for the range; page now says fines are set by the municipal ordinance. | — |
+
+### Ohio (OH) — conditional-use-permit-denial, rezoning-application-letter, spot-zoning-challenge
+Source: Ohio Revised Code on codes.ohio.gov (`https://codes.ohio.gov/ohio-revised-code/section-<n>`) — Official. Case holdings via Perplexity restricted to law.justia.com, courtlistener.com and casetext.com.
+
+| Citation as it now appears | Status | What it says | Source |
+|---|---|---|---|
+| R.C. 2506.04 | VERIFIED | Court may find the decision unconstitutional, illegal, arbitrary, capricious, unreasonable, or unsupported by the preponderance of substantial, reliable, and probative evidence on the whole record; may affirm, reverse, vacate, modify or remand; further appeal on questions of law. The page's quotation order was corrected. | Official: section-2506.04 |
+| R.C. 2506.03 | VERIFIED | Hearing confined to the transcript unless it is incomplete or the appellant was denied specified hearing rights. | Official: section-2506.03 |
+| R.C. 2335.39 | CORRECTED | Fee recovery for an eligible party in an action or appeal involving the state (net-worth limits). It does not reach local zoning boards; the pages' fee-shifting claims were removed or reversed. | Official: section-2335.39 |
+| R.C. 519.12 | CORRECTED | Township zoning amendments: hearing 20-40 days after motion/resolution/application; notice published at least 10 days before; first-class mail notice at least 10 days before for amendments affecting ten or fewer parcels (owners within, contiguous to and across the street); referendum petition presented to the trustees within 30 days after adoption, signed by electors equal to at least 35 percent of the gubernatorial vote in the unincorporated area. The pages said 20 days' notice, 500 feet, and 8 percent; all corrected. | Official: section-519.12 |
+| R.C. 713.12 | VERIFIED | Municipal zoning amendments: public hearing after at least 30 days' newspaper notice; 20-day mailed notice for ten or fewer parcels. | Official: section-713.12 |
+| R.C. 1925.02 | VERIFIED | Small claims division: civil actions for recovery of taxes and money only, not exceeding $6,000. | Official: section-1925.02 |
+| R.C. 149.43 | VERIFIED | Ohio Public Records Act (definition of public record, request and response duties). | Official: section-149.43 |
+| R.C. 2721.03 | VERIFIED | Any person whose rights are affected by a statute, municipal ordinance or township resolution may obtain a declaration of construction or validity. | Official: section-2721.03 |
+| R.C. 2721.12 | VERIFIED | In actions involving validity of a municipal ordinance the municipality is made a party; if a statute or ordinance is alleged unconstitutional the Attorney General is served; a township is made a party in actions on a township resolution. | Official: section-2721.12 |
+| Central Motors Corp. v. Pepper Pike, 73 Ohio St.3d 581 (1995) | VERIFIED (holding reworded) | Upheld a townhouse-only, 2.5 units/acre ordinance because the challenger did not show beyond fair debate that it failed to advance a legitimate interest. | justia/courtlistener via Perplexity: https://law.justia.com/cases/ohio/supreme-court-of-ohio/1995/1995-ohio-289.html |
+| The Schomaeker v. First National Bank case reference | REMOVED | 66 Ohio St.2d 304 (1981) concerns a planning commission's use variance, not a rule that a board must grant a conditional use; removed. | courtlistener/justia via Perplexity |
+| The Cassell v. Lexington Township BZA and Willott v. Beachwood references | REMOVED | Cassell (163 Ohio St. 340, 1955) concerns a zoning regulation lacking a comprehensive plan or standards, not spot zoning; Willott's holding could not be confirmed. Both removed. | courtlistener/justia via Perplexity |
