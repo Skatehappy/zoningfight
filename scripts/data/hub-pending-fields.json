@@ -1,0 +1,24 @@
+{
+  "AZ": [
+    "special_use_permits"
+  ],
+  "CA": [
+    "appeal_process"
+  ],
+  "IL": [
+    "appeal_process",
+    "special_use_permits"
+  ],
+  "NC": [
+    "appeal_process"
+  ],
+  "NY": [
+    "special_use_permits"
+  ],
+  "OH": [
+    "appeal_process",
+    "nonconforming_use_rules",
+    "special_use_permits",
+    "variance_process"
+  ]
+}

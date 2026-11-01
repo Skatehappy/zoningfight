@@ -43,6 +43,11 @@ h2{font-family:'Fraunces',Georgia,serif;font-size:32px;font-weight:900;margin-bo
 .state-link:hover{background:#1a3a5c;color:#fff}
 footer{background:#0f0f0f;color:rgba(255,255,255,0.5);text-align:center;padding:32px 24px;font-size:12px}
 footer a{color:rgba(255,255,255,0.7);text-decoration:none}
+.merged-topics{display:grid;gap:16px;margin-bottom:64px}
+.merged-topic{background:#fff;border:1px solid #dde3ec;border-radius:10px;padding:24px;scroll-margin-top:80px}
+.merged-topic h3{font-family:'Fraunces',Georgia,serif;font-size:21px;font-weight:700;margin-bottom:10px}
+.merged-topic p{font-size:15px;color:#3a3a3a;line-height:1.7;margin-bottom:10px}
+.merged-cta{color:#1a3a5c;font-weight:700;text-decoration:none}
 .cta-section{text-align:center;padding:64px 24px;background:#fff;border-radius:14px;margin-bottom:48px}
 .cta-section h2{margin-bottom:16px}
 .cta-section p{color:#6b6b6b;margin-bottom:24px}
@@ -68,27 +73,27 @@ footer a{color:rgba(255,255,255,0.7);text-decoration:none}
 
   <h2>Arizona Dispute Types</h2>
   <div class="dispute-grid">
-    <a class="dispute-card" href="/arizona/zoning-variance-appeal-letter">
+    <a class="dispute-card" href="#zoning-variance-appeal-letter">
       <div class="dispute-icon">📐</div>
       <div class="dispute-name">Zoning Variance Appeal Letter</div>
       <div class="dispute-arrow">→</div>
     </a>
-    <a class="dispute-card" href="/arizona/zoning-decision-appeal">
+    <a class="dispute-card" href="#zoning-decision-appeal">
       <div class="dispute-icon">🏛️</div>
       <div class="dispute-name">Zoning Decision Appeal</div>
       <div class="dispute-arrow">→</div>
     </a>
-    <a class="dispute-card" href="/arizona/special-use-permit-appeal">
+    <a class="dispute-card" href="#special-use-permit-appeal">
       <div class="dispute-icon">📋</div>
       <div class="dispute-name">Special Use Permit Appeal</div>
       <div class="dispute-arrow">→</div>
     </a>
-    <a class="dispute-card" href="/arizona/setback-variance-request">
+    <a class="dispute-card" href="#setback-variance-request">
       <div class="dispute-icon">📏</div>
       <div class="dispute-name">Setback Variance Request</div>
       <div class="dispute-arrow">→</div>
     </a>
-    <a class="dispute-card" href="/arizona/conditional-use-permit-denial">
+    <a class="dispute-card" href="#conditional-use-permit-denial">
       <div class="dispute-icon">🚫</div>
       <div class="dispute-name">Conditional Use Permit Denial</div>
       <div class="dispute-arrow">→</div>
@@ -98,7 +103,7 @@ footer a{color:rgba(255,255,255,0.7);text-decoration:none}
       <div class="dispute-name">Zoning Board Hearing Objection</div>
       <div class="dispute-arrow">→</div>
     </a>
-    <a class="dispute-card" href="/arizona/spot-zoning-challenge">
+    <a class="dispute-card" href="#spot-zoning-challenge">
       <div class="dispute-icon">🎯</div>
       <div class="dispute-name">Spot Zoning Challenge</div>
       <div class="dispute-arrow">→</div>
@@ -113,11 +118,57 @@ footer a{color:rgba(255,255,255,0.7);text-decoration:none}
       <div class="dispute-name">Zoning Code Violation Defense</div>
       <div class="dispute-arrow">→</div>
     </a>
-    <a class="dispute-card" href="/arizona/rezoning-application-letter">
+    <a class="dispute-card" href="#rezoning-application-letter">
       <div class="dispute-icon">🗺️</div>
       <div class="dispute-name">Rezoning Application Support Letter</div>
       <div class="dispute-arrow">→</div>
     </a></div>
+
+  <h2>Arizona Dispute Guides</h2>
+  <div class="merged-topics">
+    <section class="merged-topic" id="zoning-variance-appeal-letter">
+      <h3>📐 Zoning Variance Appeal Letter in Arizona</h3>
+      <p data-field="variance_process"><strong>Variances:</strong> Decided by the municipal Board of Adjustment under A.R.S. § 9-462.06. The board may grant a variance only where, because of special circumstances applicable to the property (size, shape, topography, location, or surroundings), strict application would deprive the property of privileges enjoyed by other property in the same classification. A variance may NOT be granted if the special circumstances are self-imposed, and it may not authorize a use not otherwise permitted in that zone.</p>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> An appeal from a decision of the zoning administrator goes to the municipal Board of Adjustment (A.R.S. § 9-462.06). A person aggrieved by a decision of the board (or of the legislative body) may, within THIRTY (30) DAYS after the decision, file a complaint for special action in the superior court to review the decision (A.R.S. § 9-462.06). Further appeal proceeds through the Arizona appellate courts.</p>
+      <p><a class="merged-cta" href="/app?state=arizona&amp;dispute=zoning-variance-appeal-letter">Generate my Arizona zoning variance appeal letter letter →</a></p>
+    </section>
+    <section class="merged-topic" id="zoning-decision-appeal">
+      <h3>🏛️ Zoning Decision Appeal in Arizona</h3>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> An appeal from a decision of the zoning administrator goes to the municipal Board of Adjustment (A.R.S. § 9-462.06). A person aggrieved by a decision of the board (or of the legislative body) may, within THIRTY (30) DAYS after the decision, file a complaint for special action in the superior court to review the decision (A.R.S. § 9-462.06). Further appeal proceeds through the Arizona appellate courts.</p>
+      <p data-field="variance_process"><strong>Variances:</strong> Decided by the municipal Board of Adjustment under A.R.S. § 9-462.06. The board may grant a variance only where, because of special circumstances applicable to the property (size, shape, topography, location, or surroundings), strict application would deprive the property of privileges enjoyed by other property in the same classification. A variance may NOT be granted if the special circumstances are self-imposed, and it may not authorize a use not otherwise permitted in that zone.</p>
+      <p><a class="merged-cta" href="/app?state=arizona&amp;dispute=zoning-decision-appeal">Generate my Arizona zoning decision appeal letter →</a></p>
+    </section>
+    <section class="merged-topic" id="special-use-permit-appeal">
+      <h3>📋 Special Use Permit Appeal in Arizona</h3>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> An appeal from a decision of the zoning administrator goes to the municipal Board of Adjustment (A.R.S. § 9-462.06). A person aggrieved by a decision of the board (or of the legislative body) may, within THIRTY (30) DAYS after the decision, file a complaint for special action in the superior court to review the decision (A.R.S. § 9-462.06). Further appeal proceeds through the Arizona appellate courts.</p>
+      <p data-field="variance_process"><strong>Variances:</strong> Decided by the municipal Board of Adjustment under A.R.S. § 9-462.06. The board may grant a variance only where, because of special circumstances applicable to the property (size, shape, topography, location, or surroundings), strict application would deprive the property of privileges enjoyed by other property in the same classification. A variance may NOT be granted if the special circumstances are self-imposed, and it may not authorize a use not otherwise permitted in that zone.</p>
+      <p><a class="merged-cta" href="/app?state=arizona&amp;dispute=special-use-permit-appeal">Generate my Arizona special use permit appeal letter →</a></p>
+    </section>
+    <section class="merged-topic" id="setback-variance-request">
+      <h3>📏 Setback Variance Request in Arizona</h3>
+      <p data-field="variance_process"><strong>Variances:</strong> Decided by the municipal Board of Adjustment under A.R.S. § 9-462.06. The board may grant a variance only where, because of special circumstances applicable to the property (size, shape, topography, location, or surroundings), strict application would deprive the property of privileges enjoyed by other property in the same classification. A variance may NOT be granted if the special circumstances are self-imposed, and it may not authorize a use not otherwise permitted in that zone.</p>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> An appeal from a decision of the zoning administrator goes to the municipal Board of Adjustment (A.R.S. § 9-462.06). A person aggrieved by a decision of the board (or of the legislative body) may, within THIRTY (30) DAYS after the decision, file a complaint for special action in the superior court to review the decision (A.R.S. § 9-462.06). Further appeal proceeds through the Arizona appellate courts.</p>
+      <p><a class="merged-cta" href="/app?state=arizona&amp;dispute=setback-variance-request">Generate my Arizona setback variance request letter →</a></p>
+    </section>
+    <section class="merged-topic" id="conditional-use-permit-denial">
+      <h3>🚫 Conditional Use Permit Denial in Arizona</h3>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> An appeal from a decision of the zoning administrator goes to the municipal Board of Adjustment (A.R.S. § 9-462.06). A person aggrieved by a decision of the board (or of the legislative body) may, within THIRTY (30) DAYS after the decision, file a complaint for special action in the superior court to review the decision (A.R.S. § 9-462.06). Further appeal proceeds through the Arizona appellate courts.</p>
+      <p data-field="variance_process"><strong>Variances:</strong> Decided by the municipal Board of Adjustment under A.R.S. § 9-462.06. The board may grant a variance only where, because of special circumstances applicable to the property (size, shape, topography, location, or surroundings), strict application would deprive the property of privileges enjoyed by other property in the same classification. A variance may NOT be granted if the special circumstances are self-imposed, and it may not authorize a use not otherwise permitted in that zone.</p>
+      <p><a class="merged-cta" href="/app?state=arizona&amp;dispute=conditional-use-permit-denial">Generate my Arizona conditional use permit denial letter →</a></p>
+    </section>
+    <section class="merged-topic" id="spot-zoning-challenge">
+      <h3>🎯 Spot Zoning Challenge in Arizona</h3>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> An appeal from a decision of the zoning administrator goes to the municipal Board of Adjustment (A.R.S. § 9-462.06). A person aggrieved by a decision of the board (or of the legislative body) may, within THIRTY (30) DAYS after the decision, file a complaint for special action in the superior court to review the decision (A.R.S. § 9-462.06). Further appeal proceeds through the Arizona appellate courts.</p>
+      <p data-field="nonconforming_use_rules"><strong>Nonconforming (grandfathered) uses:</strong> Governed by A.R.S. § 9-462.02. Nothing in a zoning ordinance affects existing property or the right to its continued use for the purpose used when the ordinance took effect, nor reasonable repairs for that purpose (statutory grandfathering). A municipality may acquire nonconforming property by purchase or condemnation to eliminate nonconforming uses (a public purpose). Arizona statute does not fix a statewide abandonment period; thresholds (commonly one year of vacancy) are set by local ordinances.</p>
+      <p><a class="merged-cta" href="/app?state=arizona&amp;dispute=spot-zoning-challenge">Generate my Arizona spot zoning challenge letter →</a></p>
+    </section>
+    <section class="merged-topic" id="rezoning-application-letter">
+      <h3>🗺️ Rezoning Application Support Letter in Arizona</h3>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> An appeal from a decision of the zoning administrator goes to the municipal Board of Adjustment (A.R.S. § 9-462.06). A person aggrieved by a decision of the board (or of the legislative body) may, within THIRTY (30) DAYS after the decision, file a complaint for special action in the superior court to review the decision (A.R.S. § 9-462.06). Further appeal proceeds through the Arizona appellate courts.</p>
+      <p data-field="variance_process"><strong>Variances:</strong> Decided by the municipal Board of Adjustment under A.R.S. § 9-462.06. The board may grant a variance only where, because of special circumstances applicable to the property (size, shape, topography, location, or surroundings), strict application would deprive the property of privileges enjoyed by other property in the same classification. A variance may NOT be granted if the special circumstances are self-imposed, and it may not authorize a use not otherwise permitted in that zone.</p>
+      <p><a class="merged-cta" href="/app?state=arizona&amp;dispute=rezoning-application-letter">Generate my Arizona rezoning application support letter letter →</a></p>
+    </section>
+  </div>
 
   <h2>How It Works</h2>
   <div class="steps">

@@ -43,6 +43,11 @@ h2{font-family:'Fraunces',Georgia,serif;font-size:32px;font-weight:900;margin-bo
 .state-link:hover{background:#1a3a5c;color:#fff}
 footer{background:#0f0f0f;color:rgba(255,255,255,0.5);text-align:center;padding:32px 24px;font-size:12px}
 footer a{color:rgba(255,255,255,0.7);text-decoration:none}
+.merged-topics{display:grid;gap:16px;margin-bottom:64px}
+.merged-topic{background:#fff;border:1px solid #dde3ec;border-radius:10px;padding:24px;scroll-margin-top:80px}
+.merged-topic h3{font-family:'Fraunces',Georgia,serif;font-size:21px;font-weight:700;margin-bottom:10px}
+.merged-topic p{font-size:15px;color:#3a3a3a;line-height:1.7;margin-bottom:10px}
+.merged-cta{color:#1a3a5c;font-weight:700;text-decoration:none}
 .cta-section{text-align:center;padding:64px 24px;background:#fff;border-radius:14px;margin-bottom:48px}
 .cta-section h2{margin-bottom:16px}
 .cta-section p{color:#6b6b6b;margin-bottom:24px}
@@ -68,17 +73,17 @@ footer a{color:rgba(255,255,255,0.7);text-decoration:none}
 
   <h2>Georgia Dispute Types</h2>
   <div class="dispute-grid">
-    <a class="dispute-card" href="/georgia/zoning-variance-appeal-letter">
+    <a class="dispute-card" href="#zoning-variance-appeal-letter">
       <div class="dispute-icon">📐</div>
       <div class="dispute-name">Zoning Variance Appeal Letter</div>
       <div class="dispute-arrow">→</div>
     </a>
-    <a class="dispute-card" href="/georgia/zoning-decision-appeal">
+    <a class="dispute-card" href="#zoning-decision-appeal">
       <div class="dispute-icon">🏛️</div>
       <div class="dispute-name">Zoning Decision Appeal</div>
       <div class="dispute-arrow">→</div>
     </a>
-    <a class="dispute-card" href="/georgia/special-use-permit-appeal">
+    <a class="dispute-card" href="#special-use-permit-appeal">
       <div class="dispute-icon">📋</div>
       <div class="dispute-name">Special Use Permit Appeal</div>
       <div class="dispute-arrow">→</div>
@@ -88,7 +93,7 @@ footer a{color:rgba(255,255,255,0.7);text-decoration:none}
       <div class="dispute-name">Setback Variance Request</div>
       <div class="dispute-arrow">→</div>
     </a>
-    <a class="dispute-card" href="/georgia/conditional-use-permit-denial">
+    <a class="dispute-card" href="#conditional-use-permit-denial">
       <div class="dispute-icon">🚫</div>
       <div class="dispute-name">Conditional Use Permit Denial</div>
       <div class="dispute-arrow">→</div>
@@ -108,16 +113,56 @@ footer a{color:rgba(255,255,255,0.7);text-decoration:none}
       <div class="dispute-name">Nonconforming Use Letter</div>
       <div class="dispute-arrow">→</div>
     </a>
-    <a class="dispute-card" href="/georgia/zoning-code-violation-defense">
+    <a class="dispute-card" href="#zoning-code-violation-defense">
       <div class="dispute-icon">🛡️</div>
       <div class="dispute-name">Zoning Code Violation Defense</div>
       <div class="dispute-arrow">→</div>
     </a>
-    <a class="dispute-card" href="/georgia/rezoning-application-letter">
+    <a class="dispute-card" href="#rezoning-application-letter">
       <div class="dispute-icon">🗺️</div>
       <div class="dispute-name">Rezoning Application Support Letter</div>
       <div class="dispute-arrow">→</div>
     </a></div>
+
+  <h2>Georgia Dispute Guides</h2>
+  <div class="merged-topics">
+    <section class="merged-topic" id="zoning-variance-appeal-letter">
+      <h3>📐 Zoning Variance Appeal Letter in Georgia</h3>
+      <p data-field="variance_process"><strong>Variances:</strong> Handled locally. Local ordinances create a Board of Zoning Appeals (BZA) to hear variance applications. The applicant applies to the local BZA, which decides after a hearing whether unique hardship/practical difficulty justifies deviation from dimensional/setback requirements. A variance is treated as a quasi-judicial decision under Georgia case law. Exact standards are set by each jurisdiction.</p>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> A quasi-judicial zoning decision (e.g., variance or permit denial by a BZA) is appealed to the SUPERIOR COURT of the county. Effective July 1, 2023, HB 916 (2022) replaced the former certiorari/appeal statutes with a unified &#039;Petition for Review&#039; procedure. DEADLINE: the petition must be filed within 30 days of entry of the decision. Legislative rezoning is instead challenged by direct action/mandamus/declaratory judgment, not by petition for review.</p>
+      <p><a class="merged-cta" href="/app?state=georgia&amp;dispute=zoning-variance-appeal-letter">Generate my Georgia zoning variance appeal letter letter →</a></p>
+    </section>
+    <section class="merged-topic" id="zoning-decision-appeal">
+      <h3>🏛️ Zoning Decision Appeal in Georgia</h3>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> A quasi-judicial zoning decision (e.g., variance or permit denial by a BZA) is appealed to the SUPERIOR COURT of the county. Effective July 1, 2023, HB 916 (2022) replaced the former certiorari/appeal statutes with a unified &#039;Petition for Review&#039; procedure. DEADLINE: the petition must be filed within 30 days of entry of the decision. Legislative rezoning is instead challenged by direct action/mandamus/declaratory judgment, not by petition for review.</p>
+      <p data-field="variance_process"><strong>Variances:</strong> Handled locally. Local ordinances create a Board of Zoning Appeals (BZA) to hear variance applications. The applicant applies to the local BZA, which decides after a hearing whether unique hardship/practical difficulty justifies deviation from dimensional/setback requirements. A variance is treated as a quasi-judicial decision under Georgia case law. Exact standards are set by each jurisdiction.</p>
+      <p><a class="merged-cta" href="/app?state=georgia&amp;dispute=zoning-decision-appeal">Generate my Georgia zoning decision appeal letter →</a></p>
+    </section>
+    <section class="merged-topic" id="special-use-permit-appeal">
+      <h3>📋 Special Use Permit Appeal in Georgia</h3>
+      <p data-field="special_use_permits"><strong>Special / conditional use:</strong> Handled locally. Many Georgia ordinances provide for &#039;conditional uses&#039;/&#039;special exceptions&#039; — uses allowed in a district only with special authorization from the governing body (or BZA) after a hearing, often with conditions. There is no uniform state special-use standard; the process and criteria are defined by each local ordinance within the § 36-66 framework.</p>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> A quasi-judicial zoning decision (e.g., variance or permit denial by a BZA) is appealed to the SUPERIOR COURT of the county. Effective July 1, 2023, HB 916 (2022) replaced the former certiorari/appeal statutes with a unified &#039;Petition for Review&#039; procedure. DEADLINE: the petition must be filed within 30 days of entry of the decision. Legislative rezoning is instead challenged by direct action/mandamus/declaratory judgment, not by petition for review.</p>
+      <p><a class="merged-cta" href="/app?state=georgia&amp;dispute=special-use-permit-appeal">Generate my Georgia special use permit appeal letter →</a></p>
+    </section>
+    <section class="merged-topic" id="conditional-use-permit-denial">
+      <h3>🚫 Conditional Use Permit Denial in Georgia</h3>
+      <p data-field="special_use_permits"><strong>Special / conditional use:</strong> Handled locally. Many Georgia ordinances provide for &#039;conditional uses&#039;/&#039;special exceptions&#039; — uses allowed in a district only with special authorization from the governing body (or BZA) after a hearing, often with conditions. There is no uniform state special-use standard; the process and criteria are defined by each local ordinance within the § 36-66 framework.</p>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> A quasi-judicial zoning decision (e.g., variance or permit denial by a BZA) is appealed to the SUPERIOR COURT of the county. Effective July 1, 2023, HB 916 (2022) replaced the former certiorari/appeal statutes with a unified &#039;Petition for Review&#039; procedure. DEADLINE: the petition must be filed within 30 days of entry of the decision. Legislative rezoning is instead challenged by direct action/mandamus/declaratory judgment, not by petition for review.</p>
+      <p><a class="merged-cta" href="/app?state=georgia&amp;dispute=conditional-use-permit-denial">Generate my Georgia conditional use permit denial letter →</a></p>
+    </section>
+    <section class="merged-topic" id="zoning-code-violation-defense">
+      <h3>🛡️ Zoning Code Violation Defense in Georgia</h3>
+      <p data-field="nonconforming_use_rules"><strong>Nonconforming (grandfathered) uses:</strong> Governed by local ordinance; no uniform statewide standard. Georgia ordinances typically grandfather a &#039;legal nonconforming use&#039; lawful when established, allowing it to continue but generally barring expansion, intensification, or relocation. Abandonment/discontinuance thresholds are set locally — commonly a cessation of the use for a stated period (often six months to one year) causes loss of grandfathered protection.</p>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> A quasi-judicial zoning decision (e.g., variance or permit denial by a BZA) is appealed to the SUPERIOR COURT of the county. Effective July 1, 2023, HB 916 (2022) replaced the former certiorari/appeal statutes with a unified &#039;Petition for Review&#039; procedure. DEADLINE: the petition must be filed within 30 days of entry of the decision. Legislative rezoning is instead challenged by direct action/mandamus/declaratory judgment, not by petition for review.</p>
+      <p><a class="merged-cta" href="/app?state=georgia&amp;dispute=zoning-code-violation-defense">Generate my Georgia zoning code violation defense letter →</a></p>
+    </section>
+    <section class="merged-topic" id="rezoning-application-letter">
+      <h3>🗺️ Rezoning Application Support Letter in Georgia</h3>
+      <p data-field="appeal_process"><strong>Appealing a denial:</strong> A quasi-judicial zoning decision (e.g., variance or permit denial by a BZA) is appealed to the SUPERIOR COURT of the county. Effective July 1, 2023, HB 916 (2022) replaced the former certiorari/appeal statutes with a unified &#039;Petition for Review&#039; procedure. DEADLINE: the petition must be filed within 30 days of entry of the decision. Legislative rezoning is instead challenged by direct action/mandamus/declaratory judgment, not by petition for review.</p>
+      <p data-field="special_use_permits"><strong>Special / conditional use:</strong> Handled locally. Many Georgia ordinances provide for &#039;conditional uses&#039;/&#039;special exceptions&#039; — uses allowed in a district only with special authorization from the governing body (or BZA) after a hearing, often with conditions. There is no uniform state special-use standard; the process and criteria are defined by each local ordinance within the § 36-66 framework.</p>
+      <p><a class="merged-cta" href="/app?state=georgia&amp;dispute=rezoning-application-letter">Generate my Georgia rezoning application support letter letter →</a></p>
+    </section>
+  </div>
 
   <h2>How It Works</h2>
   <div class="steps">

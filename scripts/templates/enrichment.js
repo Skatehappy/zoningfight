@@ -119,3 +119,20 @@ export function stateTeaser(state, d){
   if(has(st.name)) return `Zoning under ${st.name}${has(st.citation)?` (${st.citation})`:''}`;
   return `Zoning is administered locally; appeals run through the municipal board then state court`;
 }
+
+import { readFileSync } from 'fs';
+const HUB_PENDING = JSON.parse(readFileSync('scripts/data/hub-pending-fields.json', 'utf8'));
+
+// Short section for a topic merged into the state hub. Uses only verified
+// state-data.json fields (same source as the deep-page enrichment): the first two
+// rights paragraphs in the topic's emphasis order. Fields listed for the state in
+// hub-pending-fields.json cite statutes not yet in VERIFICATION_LOG; they are skipped
+// on the hub until verified.
+export function mergedTopicSection(state, dispute, d){
+  if(!d) return '';
+  const pending=new Set(HUB_PENDING[state.abbr]||[]);
+  const emph=TOPIC_EMPHASIS[dispute.slug]||RIGHTS.map(r=>r[0]);
+  const order=[...emph, ...RIGHTS.map(r=>r[0]).filter(k=>!emph.includes(k))];
+  const labelOf=Object.fromEntries(RIGHTS);
+  return order.map(k=>{ const v=d[k]; if(!has(v)||!labelOf[k]||pending.has(k)) return ''; return `      <p data-field="${k}"><strong>${esc(labelOf[k])}:</strong> ${esc(sent(v))}</p>`; }).filter(Boolean).slice(0,2).join('\n');
+}
