@@ -237,3 +237,51 @@ Case citations were resolved through CourtListener citation lookup (`https://www
 | Fla. Stat. Chapter 86 | VERIFIED | Declaratory judgments. | Official: https://www.flsenate.gov/Laws/Statutes/2025/Chapter86 |
 | Bernard v. Town Council of Palm Beach, 569 So. 2d 853 (Fla. 4th DCA 1990) | VERIFIED | Variance hardship. | https://www.courtlistener.com/opinion/1622648/bernard-v-town-council-of-palm-beach/ |
 | Board of County Commissioners of Brevard County v. Snyder, 627 So. 2d 469 (Fla. 1993) | CORRECTED (holding) | Site-specific rezonings are quasi-judicial. It was cited as variance-hardship authority; the attribution was split. | https://www.courtlistener.com/opinion/1910929/bd-of-cty-comrs-of-brevard-v-snyder/ |
+
+### Earning pages 11-19 (CA setback + spot zoning, GA rezoning + SUP appeal, TX spot zoning + CUP denial, IL hearing objection, NC variance appeal, AZ decision appeal) + CA/NC/AZ state data
+
+| Citation as it now appears | Status | What it says | Source |
+|---|---|---|---|
+| CCP § 1094.5 / §§ 1094.5 | VERIFIED | Administrative mandamus review of quasi-judicial decisions. | Secondary: https://codes.findlaw.com/ca/code-of-civil-procedure/ccp-sect-1094-5/ (leginfo blocks automated fetch) |
+| CCP § 1094.6 | VERIFIED | (b) petition no later than the 90th day after the decision becomes final; a record request within 10 days extends the deadline to the 30th day after the record is delivered. | Secondary: .../ccp-sect-1094-6/ |
+| CCP § 1085 / §1085 | VERIFIED | Traditional writ of mandate. | Secondary: .../ccp-sect-1085/ |
+| CCP § 1021.5 / §1021.5 | VERIFIED | Private-attorney-general fees: enforcement of an important public right; significant benefit; necessity and financial burden of private enforcement. | Secondary: .../ccp-sect-1021-5/ |
+| Gov. Code §65860 | VERIFIED | Zoning ordinances must be consistent with the general plan. | Secondary: https://codes.findlaw.com/ca/government-code/gov-sect-65860/ |
+| Gov. Code §65009 / §65009(c) | CORRECTED (wording) | (c)(1) action commenced and served on the legislative body within 90 days after the legislative body's decision (plans, zoning ordinances, variances, CUPs, etc.). "One of the shortest deadlines in the nation" was removed and "and served" added. | Secondary: .../gov-sect-65009/ |
+| Gov. Code § 65913.4 | VERIFIED | SB 35 streamlined ministerial approval. | Secondary: .../gov-sect-65913-4/ |
+| Gov. Code §7920.000 | VERIFIED | California Public Records Act (recodified). | Secondary: .../gov-sect-7920-000/ |
+| Pub. Res. Code § 21000 | VERIFIED | CEQA legislative findings. | Secondary: .../prc-sect-21000/ |
+| Pub. Res. Code §21167 | CORRECTED (wording) | CEQA limitation periods, e.g. 35 days after a notice of exemption. | Secondary: .../prc-sect-21167/ |
+| CEQA Guidelines § 15305 (14 CCR) | VERIFIED | Class 5: minor alterations in land use limitations, including minor setback variances not creating a new parcel. | Secondary: law.cornell.edu via Perplexity |
+| Topanga Association for a Scenic Community v. County of Los Angeles (1974) 11 Cal.3d 506 | VERIFIED | Findings must bridge the analytic gap between raw evidence and the ultimate decision. | justia/courtlistener via Perplexity |
+| Arnel Development Co. v. City of Costa Mesa (1980) 28 Cal.3d 511 | CORRECTED (holding) | A rezoning, even of particular property, is a legislative act. The page had paired it with the beneficial/detrimental spot-zoning point; that point is now attributed to Foothill. | https://law.justia.com/cases/california/supreme-court/3d/28/511.html |
+| Foothill Communities Coalition v. County of Orange (2014) 222 Cal.App.4th 1302 | VERIFIED | Spot zoning gives a small parcel more or less restrictive zoning than its surroundings; it is not automatically invalid where a public need justifies it. | https://www.courtlistener.com/opinion/2648978/foothill-communities-coalition-v-county-of-orange/ |
+| O.C.G.A. section five-three-twenty | REMOVED | It sets the 30-day time for appeals to superior court from lower-court judgments, not review of rezonings; replaced with § 36-66-5.1. | Secondary: law.justia.com via Perplexity |
+| O.C.G.A. § 36-66-5.1(a) | VERIFIED | Review paths for legislative and quasi-judicial zoning decisions (see the GA rows above). | Secondary: FindLaw |
+| Tex. Loc. Gov't Code Chapter 211 | CORRECTED | The "§§ 211.001–211.016" range was replaced with the chapter cite. | Official: https://tcss.legis.texas.gov/resources/LG/htm/LG.211.htm |
+| Tex. Loc. Gov't Code § 211.004 | VERIFIED | Regulations must be adopted in accordance with a comprehensive plan. | Official: same |
+| Tex. Loc. Gov't Code § 211.005 / § 211.005(b) / Section 211.005 | VERIFIED | (b) uniform for each class or kind of building in a district. | Official: same |
+| Tex. Loc. Gov't Code section two-eleven-point-oh-oh-six(d) (protest) | REMOVED | Repealed by Acts 2025, 89th Leg., ch. 909 (H.B. 24), effective September 1, 2025. Protest rules moved to § 211.0061. | Official: same |
+| Tex. Loc. Gov't Code § 211.0061 | VERIFIED (added) | Protest by owners of 20% of the covered land or of the land within 200 feet requires three-fourths of all members; for residential-density-only changes the threshold is 60% and the vote is a majority of all members. | Official: same |
+| Tex. Loc. Gov't Code § 211.007 / § 211.007(c) | VERIFIED | Written notice of the zoning-commission hearing to owners within 200 feet, before the 10th day before the hearing. | Official: same |
+| Tex. Loc. Gov't Code § 211.011 | CORRECTED (scope) | Review of board of adjustment decisions only: verified petition within 10 days after the decision is filed in the board's office. The page applied it to council rezonings. | Official: same |
+| Section 211.003; Section 211.008; Section 211.009 | VERIFIED | Zoning regulations generally; board of adjustment; board authority. | Official: same |
+| Tex. Civ. Prac. & Rem. Code Ch. 37 / § 37.009 | CORRECTED (wording) | The court may award costs and reasonable and necessary attorney's fees as are equitable and just; not limited to the prevailing party. The unverified "four years" limitation was removed. | Official: https://tcss.legis.texas.gov/resources/CP/htm/CP.37.htm |
+| Tex. Gov't Code Ch. 551 | VERIFIED | Open Meetings Act. | Official: tcss.legis.texas.gov GV.551 |
+| Tex. Gov't Code Chapter 2007 / § 2007.003 / § 2007.026 | CORRECTED | Chapter 2007 does not apply to municipal actions except those with effect in the extraterritorial jurisdiction (§ 2007.003(a)(3), (b)(1)); § 2007.026 fees. The page presented it as a general takings remedy against city CUP denials. | Official: https://tcss.legis.texas.gov/resources/GV/htm/GV.2007.htm |
+| Tex. Const. art. I, § 17 / Article I, Section 17 | VERIFIED | Taking of property for public use; adequate compensation. | Official: Texas Constitution |
+| City of Pharr v. Tippitt, 616 S.W.2d 173 (Tex. 1981) | CORRECTED (factors) | Factors: comprehensive plan, nature and degree of adverse impact on neighbors, suitability of the tract under existing zoning, and substantial relation to public health, safety, morals or general welfare. The page's five-factor list was replaced. | courtlistener via Perplexity |
+| The "Wende" San Antonio board case reference | REMOVED | The stated holding (substantial evidence; no denial on neighborhood opposition alone) could not be confirmed. | — |
+| 65 ILCS 5/11-13-14 | CORRECTED (vote) | A 20% frontage protest requires a favorable vote of two-thirds of the alderpersons or trustees then holding office, not "of all corporate authorities". | Official: https://www.ilga.gov/Documents/legislation/ilcs/documents/006500050K11-13-14.htm |
+| N.C. Gen. Stat. § 160D-405 | VERIFIED | Appeals of administrative decisions to the board within 30 days of notice. | Official: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_160D/GS_160D-405.html |
+| N.C. Gen. Stat. § 160D-406 | VERIFIED | Quasi-judicial procedure: (b) notice of hearing; (i) four-fifths vote to grant a variance. | Official: .../GS_160D-406.html |
+| N.C. Gen. Stat. § 160D-705(d) | VERIFIED | Four variance findings; no change in permitted uses by variance. | Official: .../GS_160D-705.html |
+| N.C. Gen. Stat. § 160D-1402 / § 160D-1402(c) / Article 14 | CORRECTED | (c) standing: owners and applicants, persons with special damages, qualifying associations. The 30-day filing deadline is not in § 160D-1402(c); it is § 160D-1405(d). | Official: .../GS_160D-1402.html |
+| N.C. Gen. Stat. § 160D-1405(d) | VERIFIED (added) | Quasi-judicial petition due by the later of 30 days after the decision is effective or after a written copy is given (plus three days if mailed). | Official: .../GS_160D-1405.html |
+| Article 4; Article 6; Article 7 (Chapter 160D) | VERIFIED | Administration and appeals; quasi-judicial procedures; zoning. | Official: ncleg.gov Chapter 160D |
+| N.C. Gen. Stat. § 6-21.7 | CORRECTED (wording) | The court shall award fees when a city or county violated a statute or case law setting unambiguous limits on its authority. | Official: .../Chapter_6/GS_6-21.7.html |
+| A.R.S. § 9-462.06 / § 9-462.06(D) / § 9-462.06(K) | CORRECTED | (D) appeals to the board "within a reasonable time"; (K) special action in superior court within 30 days. The page gave a flat 30-day board-appeal deadline. | Official: https://www.azleg.gov/ars/9/00462-06.htm |
+| A.R.S. § 11-816 / § 11-816(D) | VERIFIED | County boards of adjustment; (D) appeal to superior court within 30 days, heard de novo. | Official: https://www.azleg.gov/ars/11/00816.htm |
+| A.R.S. section twelve-nine-oh-two / twelve-nine-oh-four (as the zoning review path) | REMOVED | The ALRA does not govern where the act provides its own review procedure (§ 9-462.06(K)). | Official: https://www.azleg.gov/ars/12/00902.htm |
+| A.R.S. § 9-461.05 | VERIFIED | Municipal general plans. | Official: https://www.azleg.gov/ars/9/00461-05.htm |
+| A.R.S. § 9-462.01 / § 9-462.01(F) | CORRECTED (wording) | Zoning powers; conditional uses with site plan review; (F) zoning must be consistent with and conform to the general plan. The unverified "weigh property rights" clause was removed. | Official: https://www.azleg.gov/ars/9/00462-01.htm |
