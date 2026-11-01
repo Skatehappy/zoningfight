@@ -140,3 +140,68 @@ Scope: the 10 states in scripts/data/states.js (not 50).
   - [recent_reform] https://www.azleg.gov/legtext/56leg/2R/bills/HB2721S.pdf (retrieved 2026-07-22)
     - HB 2721 (2024) middle housing, A.R.S. § 9-462.13: cities of 75,000+ must allow duplex/triplex/townhome on 20% of single-family lots; ordinances due Jan. 1, 2026.
 
+
+## Phase B — earning-page citation verification (2026-11-01)
+
+Sources key: **Official** = the legislature's own site or PDF. **Secondary** = FindLaw (codes.findlaw.com), used where the official site blocks automated fetches (Justia 403; nysenate.gov behind Cloudflare). Case citations were confirmed through Perplexity, restricted to law.justia.com, courtlistener.com and law.cornell.edu.
+
+### Pennsylvania (PA) — zoning-variance-appeal-letter
+Source: Pennsylvania Municipalities Planning Code, Act 247 of 1968 as amended, official unconsolidated text (`https://www.palegis.us/statutes/unconsolidated/law-information/view-statute?txtType=PDF&SessYr=1968&SessInd=0&ActNum=0247.`) — Official.
+
+| Citation as it now appears | Status | What it says | Source |
+|---|---|---|---|
+| 53 P.S. § 10901 et seq. (Article IX) | VERIFIED | MPC Article IX, Zoning Hearing Board and other administrative proceedings, begins at Section 901. | Official (palegis.us MPC) |
+| 53 P.S. § 10910.2 / Section 910.2 | VERIFIED | Variance findings: (1) unique physical conditions, (2) no possibility of development in strict conformity, (3) hardship not created by appellant, (4) no alteration of essential character or detriment to public welfare, (5) minimum variance. | Official |
+| Section 908 / Section 908(1) | VERIFIED | Hearing requirements: (1) public and written notice, posting on the tract at least one week before; (9) written decision within 45 days after the last hearing. | Official |
+| Section 909.1 | VERIFIED | Exclusive ZHB jurisdiction: validity challenges, zoning-officer appeals, variances (910.2), special exceptions (912.1), etc. | Official |
+| Section 913.3 | CORRECTED | Parties appellant before the board: landowner, municipal officer or agency, or any person aggrieved (appeals from zoning officer determinations); variances may be requested by a landowner or tenant with permission. The page said it governs appeals of any "zoning decision" generally; reworded. | Official |
+| 53 P.S. § 11001-A / Section 1001-A | CORRECTED | Article X-A is the exclusive mode for securing review of Article IX decisions; venue (common pleas of the district where the land is located) is Section 1002-A. Unverified standing clause removed. | Official |
+| 53 P.S. § 11002-A / Section 1002-A | VERIFIED | Appeals to common pleas within 30 days after entry of the decision. | Official |
+| Section 1003-A / Section 1003-A(d) | CORRECTED | Filing an appeal does not stay the action appealed from; appellant may petition for a stay; landowner may petition for appeal bond. The "automatic supersedeas" claim was wrong. | Official |
+| 42 Pa.C.S. § 2503 | VERIFIED | Counsel fees as sanctions, incl. dilatory, obdurate or vexatious conduct (2503(7)) and arbitrary, vexatious or bad-faith commencement (2503(9)). | https://www.palegis.us/statutes/consolidated/view-statute?txtType=HTM&ttl=42&div=0&chapter=25 (via Perplexity) |
+| Hertzberg v. Zoning Board of Adjustment, 554 Pa. 249 (1998) | VERIFIED | Relaxed, context-sensitive unnecessary-hardship showing for dimensional variances. | courtlistener/justia via Perplexity |
+| Valley View Civic Association v. Zoning Board of Adjustment, 501 Pa. 550 (1983) | VERIFIED | Unnecessary hardship standard for variances. | courtlistener/justia via Perplexity |
+
+### Georgia (GA) — spot-zoning-challenge
+Source: O.C.G.A. on codes.findlaw.com — Secondary (Justia returns 403).
+
+| Citation as it now appears | Status | What it says | Source |
+|---|---|---|---|
+| O.C.G.A. § 36-66-1 et seq. / Title 36, Ch. 66 (Zoning Procedures Law) | CORRECTED | Short title § 36-66-1 ("Zoning Procedures Law"). The "§ 36-66-1 through § 36-66-9" range was not verified and was replaced with "et seq." | Secondary: https://codes.findlaw.com/ga/title-36-local-government/ga-code-sect-36-66-1/ |
+| O.C.G.A. § 36-66-4 | VERIFIED | Hearing; newspaper notice at least 15 but not more than 45 days before the hearing; sign on rezoned property 15 days prior. | Secondary: .../ga-code-sect-36-66-4/ |
+| O.C.G.A. § 36-66-5 | VERIFIED | (a) hearing policies and procedures, minimum 10 minutes per side; (b) standards governing the exercise of zoning power. | Secondary: .../ga-code-sect-36-66-5/ |
+| O.C.G.A. § 36-66-5.1 / § 36-66-5.1(a)(1) / § 36-66-5.1(b) | VERIFIED (added) | (a)(1) zoning decisions are legislative, challenged de novo by declaratory judgment/equity in superior court; (a)(2) quasi-judicial decisions reviewed on the record by petition under Title 5; (b) all challenges within 30 days of the written decision. | Secondary: .../ga-code-sect-36-66-5-1/ |
+| O.C.G.A. section five-four-one (certiorari) | REMOVED | Superseded for zoning review by § 36-66-5.1; a rezoning is not reviewed by certiorari. FindLaw no longer carries the section. | — |
+| O.C.G.A. § 36-67A-3 | VERIFIED | Applicant (and opponent) disclosure of campaign contributions of $250 or more within two years, filed within 10 days. | Secondary: .../ga-code-sect-36-67a-3/ |
+| O.C.G.A. § 9-15-14 | VERIFIED | (a) mandatory fees for complete absence of justiciable issue; (b) discretionary fees where an action lacked substantial justification ("substantially frivolous, substantially groundless, or substantially vexatious"), was interposed for delay or harassment, or unnecessarily expanded the proceeding. | Secondary: .../ga-code-sect-9-15-14/ |
+| Barrett v. Hamby, 235 Ga. 262 (1975) | CORRECTED (holding) | Zoning must bear a substantial relation to public health, safety, morality or general welfare. The page's description of it as a spot-zoning invalidation case was reworded. | justia/courtlistener via Perplexity |
+| Guhl v. Holcomb Bridge Road Corp., 238 Ga. 322 (1977) | CORRECTED (name) | The "Guhl factors" balancing test. The page's "M-E-M Corp." variant name was wrong. | justia/courtlistener via Perplexity |
+| The "DeKalb–Flynn" balancing-test name | REMOVED | No Georgia zoning case by that name could be verified. | — |
+
+### New York (NY) — nonconforming-use-letter, setback-variance-request; state data
+Source: NY Town Law, Village Law, General City Law and General Municipal Law on codes.findlaw.com — Secondary (nysenate.gov behind Cloudflare). 6 NYCRR via law.cornell.edu (Secondary) confirmed through Perplexity.
+
+| Citation as it now appears | Status | What it says | Source |
+|---|---|---|---|
+| Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a | VERIFIED | ZBA procedure: appeal within 60 days after filing of the administrative official's determination; hearing notice published at least five days prior; decision within 62 days after the hearing. Village and city parallels exist. | Secondary: https://codes.findlaw.com/ny/town-law/twn-sect-267-a/ ; .../village-law/vil-sect-7-712-a/ ; .../general-city-law/gct-sect-81-a/ |
+| Town Law § 267-b / § 267-b(2)(b); Village Law § 7-712-b; General City Law § 81-b | VERIFIED | ZBA powers; use variance requires unnecessary hardship: (1) no reasonable return, (2) unique hardship, (3) no alteration of essential character, (4) not self-created. | Secondary: .../twn-sect-267-b/ ; .../vil-sect-7-712-b/ ; .../gct-sect-81-b/ |
+| Town Law § 274-b; Village Law § 7-725-b; Gen. City Law § 27-b | VERIFIED | Special use permits. | Secondary: .../twn-sect-274-b/ ; .../vil-sect-7-725-b/ ; .../gct-sect-27-b/ |
+| General Municipal Law § 239-m | VERIFIED | County planning referral for actions within 500 feet of municipal boundaries, county/state parks, county/state roads, county drainage channels, etc. | Secondary: .../general-municipal-law/gmu-sect-239-m/ |
+| General Municipal Law § 50-e | VERIFIED | Notice of claim against a public corporation. | Secondary: .../gmu-sect-50-e/ |
+| 6 NYCRR § 617.5 | VERIFIED | Type II actions include individual setback and lot-line variances and area variances for one-, two- or three-family residences. | Secondary: law.cornell.edu (via Perplexity) |
+| Matter of Otto v. Steinhilber, 282 N.Y. 71 (1939) | CORRECTED | Three-part use-variance test. The page called it a "four-part" test; the four-part test is statutory (Town Law § 267-b(2)(b)). | justia/courtlistener via Perplexity |
+| People v. Miller, 304 N.Y. 105 (1952); Matter of Toys 'R' Us v. Silva, 89 N.Y.2d 411 (1996) | VERIFIED | Nonconforming uses: continuation, limits on expansion and extinguishment. | justia/courtlistener via Perplexity |
+
+### Illinois (IL) — setback-variance-request; state data
+Source: Illinois Compiled Statutes on ilga.gov (`https://www.ilga.gov/Documents/legislation/ilcs/documents/<doc>.htm`) — Official.
+
+| Citation as it now appears | Status | What it says | Source |
+|---|---|---|---|
+| 65 ILCS 5/11-13-5 | CORRECTED (quote) | Municipalities under 500,000: variations where there are "practical difficulties or particular hardship". The quoted "rather than 'mere inconvenience'" was not in the statute. | Official: 006500050K11-13-5.htm |
+| 65 ILCS 5/11-13-4 | VERIFIED (added) | Municipalities of 500,000+: evidence of (1) no reasonable return, (2) unique circumstances, (3) no alteration of essential character. The six-element list was attributed to the SZEA and La Salle; it was replaced with the statutory three. | Official: 006500050K11-13-4.htm |
+| 55 ILCS 5/5-12009 | VERIFIED | County board of appeals; variations for practical difficulties or particular hardship. | Official: 005500050K5-12009.htm |
+| 65 ILCS 5/11-13-1.1 | CORRECTED | Special uses only after a public hearing before a commission or committee designated by the corporate authorities, on evidence meeting ordinance standards. The "decided/recommended by the ZBA" wording was replaced. | Official: 006500050K11-13-1.1.htm |
+| 735 ILCS 5/3-101 et seq. / 735 ILCS 5/3-103 | VERIFIED | Administrative Review Law; complaint within 35 days after the decision was served. | Official: 073500050K3-103.htm |
+| Chicago Municipal Code "Title seventeen" | REMOVED | Not fetched from an official source; the parenthetical was dropped. | — |
+| La Salle National Bank v. County of Cook, 12 Ill. 2d 40 (1957); Sinclair Pipe Line Co. v. Village of Richton Park, 19 Ill. 2d 370 (1960) | VERIFIED | Six La Salle factors for zoning validity; Sinclair added community need and care in planning. | courtlistener via Perplexity |
+| MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A) | VERIFIED | See the rows above. | Official (palegis.us MPC) |
