@@ -3,6 +3,7 @@ Created: 2026-07-22
 Directive: CC-DIRECTIVE-All-Letter-Apps-Content-Enrichment.md (STEP 1)
 Retrieval layer: **WebSearch** (Perplexity MCP not connected this session). Every statute citation, deadline, and body below is backed by a live source URL with a 2026-07-22 retrieval date.
 Scope: the 10 states in scripts/data/states.js (not 50).
+Entry format (gate A15): every entry ends with the token verified_on: YYYY-MM-DD (table rows: last column, headed verified_on; source bullets: end of line). Backfilled 2026-11-01 from git blame (date each entry was last added or changed); no entry was undatable. New entries: run node scripts/verified-log.mjs --stamp to add today as the date. Rendered or generator-fed citations older than 12 months fail the gate; older than 10 months warn.
 
 ---
 
@@ -552,5 +553,3 @@ Text of each opinion read from the Caselaw Access Project (static.case.law) wher
 | Item | Status | Detail | Source | verified_on |
 |---|---|---|---|---|
 | 77 withheld sentences in 30 generated source files | NOT RENDERED | All 30 files are merged combos (47 merged, 301 to the state hub); none has a public page, the hub reads only hub-pending-fields (empty), and neither the letter nor checklist generator reads generated sources or state-data. Rendered held sentences: 0. Held sentences in state-data: 0. Full text leak check over all 66 public files: 0 unlogged citations. | build cross-check | verified_on: 2026-11-01 |
-
-Entry format (gate A15): every entry ends with the token verified_on: YYYY-MM-DD (table rows: last column, headed verified_on; source bullets: end of line). Backfilled 2026-11-01 from git blame (date each entry was last added or changed); no entry was undatable. New entries: run node scripts/verified-log.mjs --stamp to add today as the date. Rendered or generator-fed citations older than 12 months fail the gate; older than 10 months warn.
