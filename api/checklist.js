@@ -1,33 +1,53 @@
 // api/checklist.js
 // Generates submission checklist via Claude API
 import { MODEL } from './_config.js';
+import { verifyLicense } from './_license.js';
+import { isTestCode, takeTestBudget } from './_g4t.js';
 
-export const config = { runtime: 'edge' };
+// Node serverless (classic req/res), same as generate.js — needed for the timing-safe G4T compare.
+export const config = { maxDuration: 30 };
 
-const VALID_CODES = (process.env.ACCESS_CODES || '').split(',').map(c => c.trim()).filter(Boolean);
+const PRODUCT_LINK = 'Z3JNl';
 
-export default async function handler(req) {
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Content-Type': 'application/json',
-  };
+async function readBody(req) {
+  if (req.body !== undefined && req.body !== null) {
+    return typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body;
+  }
+  const chunks = [];
+  for await (const ch of req) chunks.push(typeof ch === 'string' ? Buffer.from(ch) : ch);
+  const raw = Buffer.concat(chunks).toString('utf8');
+  return raw ? JSON.parse(raw) : {};
+}
 
-  if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers });
-  if (req.method !== 'POST') return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405, headers });
+export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Cache-Control', 'no-store');
+
+  if (req.method === 'OPTIONS') return res.status(204).end();
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   try {
-    const { accessCode, address, state, varianceType, letterExcerpt, direction } = await req.json();
+    const { accessCode, address, state, varianceType, letterExcerpt, direction } = await readBody(req);
     const isOpposing = direction === 'opposing';
 
-    const TEST_KEYS = (process.env.TEST_KEYS || 'SMOKE-TEST-2026-BAO').split(',').map(k => k.trim().toUpperCase()).filter(Boolean);
-    const isTestKey = TEST_KEYS.includes(String(accessCode || '').trim().toUpperCase());
-    if (!isTestKey && (!accessCode || !VALID_CODES.includes(accessCode.toUpperCase()))) {
-      return new Response(JSON.stringify({ error: 'Invalid access code' }), { status: 401, headers });
-    }
+    if (!accessCode || !String(accessCode).trim()) return res.status(401).json({ error: 'Access code required' });
 
+    const payhipApiKey = process.env.PAYHIP_API_KEY;
     const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!payhipApiKey || !apiKey) return res.status(500).json({ error: 'Service not configured' });
+
+    // Fail closed: nothing reaches Anthropic unless a Payhip license verifies (or a G4T test code,
+    // inert unless G4_TEST_CODE_SECRET is set). Read-only verify: does NOT mark the code used.
+    if (isTestCode(accessCode)) {
+      const b = takeTestBudget();
+      console.error(`[g4t] checklist test code use ${b.used}/${b.cap}`);
+      if (!b.ok) return res.status(429).json({ error: 'Test code daily cap reached' });
+    } else {
+      const lic = await verifyLicense(accessCode, PRODUCT_LINK, payhipApiKey);
+      if (!lic.ok) return res.status(lic.status).json({ error: lic.error });
+    }
 
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -61,7 +81,7 @@ Letter excerpt: ${letterExcerpt?.substring(0, 200) || ''}`,
     // checklist (the pre-migration bug: a dead model 404'd and this returned []).
     if (!response.ok) {
       const detail = await response.text();
-      return new Response(JSON.stringify({ error: 'Checklist generation failed', detail }), { status: 502, headers });
+      return res.status(502).json({ error: 'Checklist generation failed', detail });
     }
 
     const data = await response.json();
@@ -96,9 +116,9 @@ Letter excerpt: ${letterExcerpt?.substring(0, 200) || ''}`,
           ];
     }
 
-    return new Response(JSON.stringify({ checklist }), { status: 200, headers });
+    return res.status(200).json({ checklist });
 
   } catch (err) {
-    return new Response(JSON.stringify({ error: err.message }), { status: 500, headers });
+    return res.status(500).json({ error: err.message });
   }
 }

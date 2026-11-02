@@ -10,7 +10,8 @@ import { buildFramePrompt } from '../src/lib/prompt.js';
 const here = dirname(fileURLToPath(import.meta.url));
 const framesDir = join(here, '..', 'frames');
 const ENDPOINT = 'https://zoningfight.com/api/generate';
-const SMOKE = 'SMOKE-TEST-2026-BAO';
+const SMOKE = process.env.ACCEPTANCE_CODE; // a G4T-<secret> test code; no hard-coded bypass key
+if (!SMOKE) { console.error('Set ACCEPTANCE_CODE to a G4T-<G4_TEST_CODE_SECRET> test code'); process.exit(1); }
 const HARDSHIP = ['hardship', 'practical difficulty', 'exceptional difficulty', 'undue hardship', 'unnecessary hardship'];
 const SAMPLE = ['AL', 'CO', 'GA', 'IL', 'MD', 'NC', 'NY', 'PA', 'TX', 'WY']; // spread A–W; MD/NC/NY/PA = shift
 

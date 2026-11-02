@@ -2,6 +2,7 @@
 import { MODEL } from './_config.js';
 import { lintLetter } from './_lint.js';
 import { isTestCode, takeTestBudget } from './_g4t.js';
+import { verifyLicense } from './_license.js';
 import { verifiedFor, citationRules, lintCitations } from './_citelint.js';
 import VERIFIED from './_verified-citations.json' with { type: 'json' };
 
@@ -13,31 +14,6 @@ import VERIFIED from './_verified-citations.json' with { type: 'json' };
 export const config = { maxDuration: 60 };
 
 const PRODUCT_LINK = 'Z3JNl';
-
-// Fail-closed Payhip license verify. Runs on EVERY request (gate check and
-// generation). Rejects unless HTTP 200 + data.enabled===true + product_link
-// matches this app. Network error / timeout / non-JSON -> 503 (never "invalid").
-async function verifyLicense(licenseKey, productLink, apiKey) {
-  const key = (licenseKey || '').trim();
-  if (!key) return { ok: false, status: 401, error: 'Invalid license key.' };
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 8000);
-  try {
-    const url = `https://payhip.com/api/v1/license/verify?product_link=${encodeURIComponent(productLink)}&license_key=${encodeURIComponent(key)}`;
-    const res = await fetch(url, { headers: { 'payhip-api-key': apiKey }, signal: controller.signal });
-    if (res.status !== 200) return { ok: false, status: 401, error: 'Invalid license key.' };
-    const json = await res.json();
-    const d = json && json.data;
-    if (!d || d.enabled !== true || d.product_link !== productLink) {
-      return { ok: false, status: 401, error: 'Invalid license key.' };
-    }
-    return { ok: true };
-  } catch (e) {
-    return { ok: false, status: 503, error: 'License verification unavailable — please try again shortly.' };
-  } finally {
-    clearTimeout(timer);
-  }
-}
 
 function cors(res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -102,6 +78,9 @@ export default async function handler(req, res) {
       }
       return res.status(200).json({ ok: true });
     }
+
+    // Access check (client gate): license already verified above. No model call, no usage mark.
+    if (isCheckCall) return res.status(200).json({ text: 'VALID' });
 
     if (testCode) {
       const b = takeTestBudget();

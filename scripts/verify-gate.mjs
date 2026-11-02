@@ -53,5 +53,19 @@ try { execFileSync('node', ['scripts/build-verified-citations.mjs'], { cwd: ROOT
 const strip = s => s.replace(/"generated": "[^"]*"/, '');
 if (strip(before) !== strip(readFileSync(VC, 'utf8'))) fail('A10: api/_verified-citations.json was stale (rebuilt now) — commit it');
 try { execFileSync('node', ['scripts/test-citelock.mjs'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A10: citation-lock/G4T mock test failed\n' + (e.stdout || '') + (e.stderr || '')); }
-console.log('GATE GREEN — A1 files ok; A9 citation-log parity: all ' + tokens.size + ' citations logged; A10 citation lock + G4T mock test pass.');
+// ── A11: auth gate — nothing reaches Anthropic without a passed Payhip (or G4T) check ──
+import { readdirSync } from 'fs';
+for (const f of ['api/generate.js', 'api/checklist.js']) {
+  const src = readFileSync(join(ROOT, f), 'utf8');
+  const a = src.indexOf('api.anthropic.com'), p = src.indexOf('await verifyLicense(');
+  if (a === -1) continue;
+  if (p === -1 || p > a) fail('A11: ' + f + ' reaches api.anthropic.com without a preceding await verifyLicense()');
+}
+const BYPASS = /SMOKE-TEST-\d|TEST_KEYS|ACCESS_CODES|SMOKE_KEY|BYPASS_KEY/i;
+const walk = d => readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? (['node_modules', 'dist', '.git'].includes(e.name) ? [] : walk(join(d, e.name))) : [join(d, e.name)]);
+for (const f of [...walk(join(ROOT, 'api')), ...walk(join(ROOT, 'src')), ...walk(join(ROOT, 'scripts')), join(ROOT, 'vercel.json')].filter(f => existsSync(f) && /.(js|mjs|jsx|json)$/.test(f) && !f.endsWith('verify-gate.mjs') && !f.endsWith('test-auth-gate.mjs'))) {
+  if (BYPASS.test(readFileSync(f, 'utf8'))) fail('A11: hard-coded bypass key / env bypass found in ' + f.slice(ROOT.length + 1));
+}
+try { execFileSync('node', ['scripts/test-auth-gate.mjs'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A11: auth-gate mock test failed\n' + (e.stdout || '') + (e.stderr || '')); }
+console.log('GATE GREEN — A1 files ok; A9 citation-log parity: all ' + tokens.size + ' citations logged; A10 citation lock + G4T mock test pass; A11 auth gate (no Anthropic without Payhip/G4T) pass.');
 process.exit(0);
