@@ -381,3 +381,12 @@ Source: Arizona Revised Statutes on azleg.gov (`https://www.azleg.gov/ars/<title
 | The judicial-review and appeal sections twelve-nine-oh-four, twelve-twenty-oh-one and twelve-twenty-one-oh-one | REMOVED | Not the vehicle for review of a board of adjustment decision (that is the 9-462.06 special action); twelve-twenty-one-oh-one governs appeals to the court of appeals. | — |
 | The Rotter, Outdoor Systems and Ivancovich case references | REMOVED | Holdings and, for Ivancovich, the court (page said Supreme Court but cited the Court of Appeals reporter) could not be confirmed; statements restated from the statute. | — |
 | The $3,500 small-claims figure | REMOVED | Not verified; sentence reworded without a number. | — |
+
+### California (CA) — zoning-code-violation-defense, rezoning-application-letter (partial)
+Source: California Government Code via leginfo.legislature.ca.gov, read through Perplexity because leginfo, Justia and FindLaw block direct fetches (Cloudflare) — treated as Secondary. Only sections whose text came back are un-held; the rest of the California held text stays held.
+
+| Citation as it now appears | Status | What it says | Source |
+|---|---|---|---|
+| Gov. Code § 65090 | VERIFIED | Notice of public hearing published at least 10 days before the hearing in a newspaper of general circulation, or posted in at least three public places if there is none. | Secondary: leginfo codes_displaySection GOV 65090 (via Perplexity) |
+| Gov. Code § 53069.4 | CORRECTED | Local agency sets administrative review procedures by ordinance; where the violation would otherwise be an infraction the administrative fine is capped at the infraction maximums; a final order can be appealed to superior court within 20 days after service (de novo). The pages' hearing-officer, deposit, 20-30 day and filing-fee details could not be confirmed and were removed. | Secondary: leginfo codes_displaySection GOV 53069.4 (via Perplexity) |
+| The county ordinance penalty section (twenty-five-one-thirty-two) as a one thousand dollar daily cap | REMOVED | Could not be confirmed; sentences reworded around the section for administrative citations above. | — |
