@@ -9,7 +9,7 @@ const LOG = ['VERIFICATION_LOG.md', 'VERIFICATION_LOG-SEO-CONTENT.md']
   .replace(/verified_on:\s*\d{4}-\d\d-\d\d/g, '');   // date tokens must not satisfy short numeric cites
 
 import { citations, core } from '../../api/_cites.js';
-function inLog(key, logText) {
+export function inLog(key, logText) {
   const [t, v] = [key.split(':')[0], key.slice(key.indexOf(':') + 1)];
   if (t === 'C') return new RegExp('\\b' + v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i').test(logText);
   const needle = v.replace(/^PA/, '').replace(/^FED/, '').replace(/ILCS/, ' ILCS ').split('-').filter(Boolean)[0] && v;

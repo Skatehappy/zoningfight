@@ -517,12 +517,18 @@
    {
     "k": "S:211.011",
     "s": "§ 211.011: writ of certiorari within 10 days after decision filed.",
-    "v": "2026-11-01"
+    "sub": [
+     "(b)"
+    ],
+    "v": "2026-11-02"
    },
    {
     "k": "S:211.009",
     "s": "§ 211.009: BOA authority; no use variances; special exceptions need no hardship.",
-    "v": "2026-07-22"
+    "sub": [
+     "(c)"
+    ],
+    "v": "2026-11-02"
    },
    {
     "k": "S:211.004",
@@ -548,7 +554,7 @@
     "sub": [
      "(c)"
     ],
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:37.009",
@@ -626,7 +632,10 @@
    {
     "k": "S:211.010",
     "s": "Tex. Loc. Gov't Code § 211.010",
-    "v": "2026-11-01"
+    "sub": [
+     "(b)"
+    ],
+    "v": "2026-11-02"
    },
    {
     "k": "CH:231",
@@ -647,6 +656,22 @@
     "k": "C:brookside",
     "s": "City of Brookside Village v. Comeau, 633 S.W.2d 790 (Tex. 1982)",
     "v": "2026-11-01"
+   },
+   {
+    "k": "S:211.006",
+    "s": "Tex. Loc. Gov't Code § 211.006(a)",
+    "sub": [
+     "(a)"
+    ],
+    "v": "2026-11-02"
+   },
+   {
+    "k": "S:211.008",
+    "s": "Tex. Loc. Gov't Code § 211.008(d)",
+    "sub": [
+     "(d)"
+    ],
+    "v": "2026-11-02"
    }
   ],
   "FL": [
@@ -668,7 +693,10 @@
    {
     "k": "S:70.001",
     "s": "Bert Harris Act § 70.001 inordinate-burden claims.",
-    "v": "2026-07-22"
+    "sub": [
+     "(4)(a)"
+    ],
+    "v": "2026-11-02"
    },
    {
     "k": "S:162.11",
@@ -739,6 +767,19 @@
     "k": "C:dusseau",
     "s": "Dusseau v. Metro. Dade County Bd. of County Comm'rs, 794 So. 2d 1270 (Fla. 2001)",
     "v": "2026-11-01"
+   },
+   {
+    "k": "S:166.04151",
+    "s": "Fla. Stat. § 166.04151(7)(c) (Live Local Act)",
+    "sub": [
+     "(7)(c)"
+    ],
+    "v": "2026-11-02"
+   },
+   {
+    "k": "C:herrera",
+    "s": "Herrera v. City of Miami, 600 So. 2d 561 (Fla. 3d DCA 1992)",
+    "v": "2026-11-02"
    }
   ],
   "IL": [
@@ -820,7 +861,7 @@
    {
     "k": "S:65ILCS5/11-13-14",
     "s": "65 ILCS 5/11-13-14",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:65ILCS5/11-13-15",
@@ -851,6 +892,16 @@
     "k": "S:745ILCS10/8-101",
     "s": "745 ILCS 10/8-101",
     "v": "2026-11-01"
+   },
+   {
+    "k": "S:65ILCS5/11-13-6",
+    "s": "65 ILCS 5/11-13-6",
+    "v": "2026-11-02"
+   },
+   {
+    "k": "S:65ILCS5/11-13-2",
+    "s": "65 ILCS 5/11-13-2",
+    "v": "2026-11-02"
    }
   ],
   "PA": [
@@ -931,7 +982,7 @@
    {
     "k": "S:1003",
     "s": "Section 1003-A / Section 1003-A(d)",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:2503",
@@ -1151,6 +1202,16 @@
    {
     "k": "C:bray",
     "s": "Bray v. Zoning Bd. of Adjustment, 410 A.2d 909 (Pa. Commw. Ct. 1980), 48 Pa. Commw. 523",
+    "v": "2026-11-02"
+   },
+   {
+    "k": "S:11003-A",
+    "s": "53 P.S. § 11003-A (Section 1003-A of the Municipalities Planning Code)",
+    "v": "2026-11-02"
+   },
+   {
+    "k": "S:11003",
+    "s": "53 P.S. § 11003-A (Section 1003-A of the Municipalities Planning Code)",
     "v": "2026-11-02"
    }
   ],

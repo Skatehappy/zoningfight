@@ -83,6 +83,12 @@ try {
   execFileSync('node', ['node_modules/vite/bin/vite.js', 'build'], { cwd: ROOT, stdio: 'pipe' });
   ui = execFileSync('node', ['tests/ui-wiring.test.mjs'], { cwd: ROOT, stdio: 'pipe' }).toString().trim();
 } catch (e) { fail('A14: ui-wiring failed\n' + (e.stdout || '') + (e.stderr || '')); }
+// ── A15 strict: EVERY citation and dollar/percent/day figure on a page, in a generator-fed frame or in ANY source file
+//    (scripts/data/**) maps to a dated log entry; no match = FAIL. Mock tests prove unmapped citation / figure fail. ──
+try { execFileSync('node', ['tests/strict-coverage.test.js'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A15s: strict-coverage mock tests failed\n' + (e.stdout || '') + (e.stderr || '')); }
+let a15s = '';
+try { a15s = execFileSync('node', ['scripts/test-strict-coverage.mjs'], { cwd: ROOT, stdio: 'pipe' }).toString().trim(); } catch (e) { fail('A15s: unmapped citation(s)/figure(s) in pages, frames or sources\n' + (e.stdout || '') + (e.stderr || '')); }
+console.log('A15s ' + a15s.split(/\r?\n/).pop());
 console.log('A15 ' + a15.split(/\r?\n/).pop() + '; A13 stale-claims clean; A14 payhip/isCheckCall/citelock-ext pass; ' + ui);
 console.log('GATE GREEN — A1 files ok; A9 citation-log parity: all ' + tokens.size + ' citations logged; A10 citation lock + G4T mock test pass; A11 auth gate (no Anthropic without Payhip/G4T) pass.');
 process.exit(0);
