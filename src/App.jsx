@@ -625,7 +625,7 @@ export default function App() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ accessCode, systemPrompt, userPrompt, reviewMode: !!reviewMode, draftLetter: draftLetter || "", state: formData.state, letterType: activeAppType().appType, ...extra }),
     });
-    if (!res.ok) { const err = await res.json().catch(() => ({})); throw new Error(err.error || "Generation failed"); }
+    if (!res.ok) { const err = await res.json().catch(() => ({})); const ex = new Error(err.error || "Generation failed"); ex.taxCode = res.status === 401 ? "CODE_INVALID" : res.status === 409 ? "CODE_CONSUMED" : "TRANSIENT"; throw ex; }
     return (await res.json()).text;
   };
 
@@ -936,7 +936,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
       // Pre-render failure: the code was never marked used, so nothing to release.
       // Keep the draft so nothing is lost.
       setRetryCount(retryCount + 1);
-      setError({ message: `${e.message || "Generation failed"}. Please try again.`, showSupport: false });
+      setError(errorFor(e.taxCode || "TRANSIENT"));   // T3 taxonomy: transient = free retry, code intact; invalid/consumed = support
     }
     setLoading(false);
     setLoadingMsg("");
