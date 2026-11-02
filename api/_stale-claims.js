@@ -13,7 +13,7 @@ export const ALL = [
   /magistrate courts? handle|magisterial district court (jurisdiction|limit)|\$12,000 magisterial/i,
   /\$\d[\d,]*\s*(to|[-–\/])\s*\$?\d[\d,]*/,
   /(fines?|penalt(y|ies)|per day|a day|\/day|per unit)[^.]*\$\d|\$\d[^.]*(per day|a day|\/day|per unit|per violation)/i,
-  /Flynn|Yecko|Skokie|Schomaeker|Cassell|Willott|Chrismon|McKinney v|Oregon Hill|Mann Media|Mangum|Rotter|Ivancovich|Outdoor Systems|Dade County|Miami Beach|Sunset Estate|Lodi|Drumore|Bray|Cleveland v\. Ward|M\.E\.M|M-E-M/,
+  /Flynn|Yecko|Skokie|Schomaeker|Cassell|Willott|Chrismon|McKinney v|Oregon Hill|Mann Media|Mangum|Rotter|Ivancovich|Outdoor Systems|Dade County|Miami Beach|Sunset Estate|Lodi|Drumore|Cleveland v\. Ward|M\.E\.M|M-E-M/,
   /\b11-830\b|12-902|12-904|12-2001|supersedeas|mere inconvenience|one of the shortest/i,
 ];
 export const STATE = {

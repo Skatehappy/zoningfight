@@ -218,9 +218,11 @@ export const JURISDICTIONS = [
 
   { abbr: 'PA', name: 'Pennsylvania',
     se_term: 'Special Exception', se_options: ['Special Exception'],
-    // No case authority: the prior PA appellate cite was removed 2026-11-02 (closeout item 1);
-    // applicant-carries framing, no burden-shift assertion.
-    se_burden: 'criteria_compliance', se_authority: [], se_status: 'verified',
+    se_burden: 'prima_facie_shifting', se_status: 'verified',
+    se_authority: [{
+      cite: 'Bray v. Zoning Bd. of Adjustment, 410 A.2d 909 (Pa. Commw. Ct. 1980)',
+      proposition: 'An applicant who shows compliance with the specific, objective requirements of the ordinance identifies the proposal as one the ordinance designates as appropriate in the district, and therefore presumptively consistent with the promotion of health, safety and general welfare; the objectors then carry both the duty to present evidence and the burden of persuasion on general detriment to health, safety and welfare.',
+    }],
     var_authority: [], var_status: 'verified' },
 
   { abbr: 'RI', name: 'Rhode Island',
