@@ -37,7 +37,7 @@ function logged(key) {
 export const unlogged = text => [...citations(text)].filter(([k]) => !logged(k)).map(([, s]) => s);
 
 // Split on sentence ends, but not after abbreviations ("Ariz. Rev. Stat.", "v.", "N.C.").
-function sentences(s) {
+export function sentences(s) {
   const out = []; let start = 0;
   const re = /[.!?]["')\]]?\s+(?=[A-Z"(§])/g; let m;
   while ((m = re.exec(s))) {

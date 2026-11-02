@@ -25,7 +25,7 @@ let r = await call(base);
 assert.equal(r.status, 200); assert.equal(calls.anthropic, 2, 'regenerated exactly once');
 assert(!/Fakeland/.test(r.json.text), 'fake case stripped'); assert(/10910\.2/.test(r.json.text), 'verified cite kept'); assert(/request a hearing/.test(r.json.text));
 assert(/CITATION RULES/.test(calls.systems[0]) && /10910\.2/.test(calls.systems[0]), 'verified list injected server-side');
-assert(/Do NOT cite any of the following/.test(calls.systems[1]) && /Fakeland/.test(calls.systems[1]), 'regen instruction names the miss');
+assert(/Do NOT use any of the following/.test(calls.systems[1]) && /Fakeland/.test(calls.systems[1]), 'regen instruction names the miss');
 
 // 2. fake in first, clean on regeneration -> delivered unchanged, 2 model calls
 calls.anthropic = 0; script = [`Dear Board,\n\n${FAKE}`, `Dear Board,\n\n${GOOD}`];

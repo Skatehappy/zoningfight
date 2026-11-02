@@ -655,7 +655,7 @@ Rules:
 - Invoke the vested rights doctrine — work commenced under a valid permit or with substantial reliance on prior government approval cannot be halted by post-hoc interpretation changes
 - Invoke non-conforming use protections where applicable — pre-existing legal uses are grandfathered against later zoning changes under state zoning enabling acts
 - Cite the state's zoning enabling act and relevant case law on stop-work orders and procedural due process
-- Demand: the specific ordinance citation underlying the stop-work determination; suspension of the order pending administrative review; identification of the appeal path and timeline (most jurisdictions provide 30 days to appeal to the zoning board of appeals)
+- Demand: the specific ordinance citation underlying the stop-work determination; suspension of the order pending administrative review; identification of the appeal path and timeline (state an appeal deadline only if the user supplied it; do not assert a number of days)
 - Warn of remedies: administrative appeal; Article 78 / mandamus; preliminary injunction against improper stoppage to prevent irreparable economic harm; and damages where authorized
 - Set a firm 7-day response deadline given the urgency of a stop-work order
 - Firm and urgent tone
@@ -667,7 +667,7 @@ Rules:
 
 Rules:
 - Open with clear statement: the use at issue was lawfully established on a specific date and is protected as a pre-existing legal non-conforming use
-- Cite the state zoning enabling act provision that protects non-conforming uses (e.g., New York Town Law §267-b; California's common-law vested-rights doctrine and the local zoning ordinance's non-conforming-use provisions (note: California has no single non-conforming-use statute; Government Code §65852.25 covers only post-disaster reconstruction of multifamily dwellings, not general non-conforming use); Connecticut General Statutes §8-2; Florida Chapter 163)
+- Cite the state zoning enabling act provision that protects non-conforming uses (e.g., California's common-law vested-rights doctrine and the local zoning ordinance's non-conforming-use provisions (note: California has no single non-conforming-use statute; Government Code §65852.25 covers only post-disaster reconstruction of multifamily dwellings, not general non-conforming use); Connecticut General Statutes §8-2; Florida Chapter 163)
 - Cite case law establishing that non-conforming uses are vested property rights that cannot be eliminated without just compensation or a lawful amortization period meeting constitutional standards
 - Document the use's establishment date, lawful commencement under then-applicable zoning, and continuous operation — non-conforming status is typically lost only by abandonment or substantial discontinuance
 - If the municipality invokes amortization: challenge the amortization period as unreasonable; amortization must provide a period long enough to recoup investment and must be supported by a legitimate public purpose

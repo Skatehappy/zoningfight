@@ -4,6 +4,7 @@ import { lintLetter } from './_lint.js';
 import { isTestCode, takeTestBudget } from './_g4t.js';
 import { verifyLicense } from './_license.js';
 import { verifiedFor, citationRules, lintCitations } from './_citelint.js';
+import { lintNumbers } from './_numlint.js';
 import VERIFIED from './_verified-citations.json' with { type: 'json' };
 
 // Node serverless runtime (NOT edge). Edge caps at ~25s on Hobby and ignores
@@ -102,7 +103,7 @@ ${draftLetter}` : (userPrompt || '');
 
     const callAnthropic = async (avoid = []) => {
       const avoidNote = avoid.length ? `
-Do NOT cite any of the following (they are not verified): ${avoid.join('; ')}. Rewrite without them.` : '';
+Do NOT use any of the following citations or figures (they are not verified): ${avoid.join('; ')}. Rewrite without them.` : '';
       const sys = isCheckCall ? undefined : ((systemPrompt || '') + citationRules(verified) + avoidNote).trim();
       const response = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
@@ -142,8 +143,10 @@ Do NOT cite any of the following (they are not verified): ${avoid.join('; ')}. R
       const lint = lintLetter(gen.text, { criteria, forbiddenPhrases, enforceForbidden });
       if (lint.ok) {
         if (isCheckCall) return res.status(200).json({ text: lint.cleanText });
-        const cl = lintCitations(lint.cleanText, verified.keys, userText);
-        if (cl.ok) return res.status(200).json({ text: lint.cleanText });
+        const cl0 = lintCitations(lint.cleanText, verified.keys, userText, verified.subs);
+        const nl = lintNumbers(lint.cleanText, verified.abbr, userText);   // dollar/percent/day figures vs verified state data
+        if (cl0.ok && nl.ok) return res.status(200).json({ text: lint.cleanText });
+        const cl = { bad: [...cl0.bad, ...nl.bad], stripped: lintNumbers(cl0.stripped, verified.abbr, userText).stripped };
         // Log citation strings only (never letter text / user input).
         console.error(`[citelint] state=${verified.abbr || 'n/a'} attempt=${attempt + 1} misses=${cl.bad.length} cites=${JSON.stringify(cl.bad.map(s => s.slice(0, 80)))} action=${attempt === 0 ? 'regenerate' : 'strip'}`);
         if (attempt === 1) return res.status(200).json({ text: cl.stripped });

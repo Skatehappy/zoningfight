@@ -67,5 +67,17 @@ for (const f of [...walk(join(ROOT, 'api')), ...walk(join(ROOT, 'src')), ...walk
   if (BYPASS.test(readFileSync(f, 'utf8'))) fail('A11: hard-coded bypass key / env bypass found in ' + f.slice(ROOT.length + 1));
 }
 try { execFileSync('node', ['scripts/test-auth-gate.mjs'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A11: auth-gate mock test failed\n' + (e.stdout || '') + (e.stderr || '')); }
+// ── A13: no stale / unverifiable claim in sources or rendered pages ──
+try { execFileSync('node', ['scripts/test-stale-claims.mjs'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A13: stale claims survive\n' + (e.stdout || '') + (e.stderr || '')); }
+// ── A14: retrofit tests (Payhip contract, isCheckCall, extended citation lock, UI wiring) ──
+for (const t of ['tests/payhip-mock.test.js', 'tests/isCheckCall.test.js', 'tests/citelock-extended.test.js']) {
+  try { execFileSync('node', [t], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A14: ' + t + ' failed\n' + (e.stdout || '') + (e.stderr || '')); }
+}
+let ui = '';
+try {
+  execFileSync('node', ['node_modules/vite/bin/vite.js', 'build'], { cwd: ROOT, stdio: 'pipe' });
+  ui = execFileSync('node', ['tests/ui-wiring.test.mjs'], { cwd: ROOT, stdio: 'pipe' }).toString().trim();
+} catch (e) { fail('A14: ui-wiring failed\n' + (e.stdout || '') + (e.stderr || '')); }
+console.log('A13 stale-claims clean; A14 payhip/isCheckCall/citelock-ext pass; ' + ui);
 console.log('GATE GREEN — A1 files ok; A9 citation-log parity: all ' + tokens.size + ' citations logged; A10 citation lock + G4T mock test pass; A11 auth gate (no Anthropic without Payhip/G4T) pass.');
 process.exit(0);

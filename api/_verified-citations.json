@@ -86,7 +86,10 @@
    },
    {
     "k": "S:267-b",
-    "s": "NY Town Law §267-b"
+    "s": "NY Town Law §267-b",
+    "sub": [
+     "(2)(b)"
+    ]
    },
    {
     "k": "S:274-b",
@@ -102,7 +105,10 @@
    },
    {
     "k": "S:20",
-    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
+    "sub": [
+     "(25)"
+    ]
    },
    {
     "k": "ART:16",
@@ -130,7 +136,11 @@
    },
    {
     "k": "S:267-a",
-    "s": "Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a"
+    "s": "Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a",
+    "sub": [
+     "(7)",
+     "(8)"
+    ]
    },
    {
     "k": "S:7-712-a",
@@ -266,7 +276,10 @@
    },
    {
     "k": "S:3613",
-    "s": "42 U.S.C. § 3613(c)(2)"
+    "s": "42 U.S.C. § 3613(c)(2)",
+    "sub": [
+     "(c)(2)"
+    ]
    },
    {
     "k": "C:rodgers",
@@ -320,7 +333,10 @@
    },
    {
     "k": "S:65009",
-    "s": "Gov. Code §65009 / §65009(c)"
+    "s": "Gov. Code §65009 / §65009(c)",
+    "sub": [
+     "(c)"
+    ]
    },
    {
     "k": "S:65913.4",
@@ -406,7 +422,10 @@
    },
    {
     "k": "S:211.005",
-    "s": "Tex. Loc. Gov't Code § 211.005 / § 211.005(b) / Section 211.005"
+    "s": "Tex. Loc. Gov't Code § 211.005 / § 211.005(b) / Section 211.005",
+    "sub": [
+     "(b)"
+    ]
    },
    {
     "k": "S:211.0061",
@@ -414,7 +433,10 @@
    },
    {
     "k": "S:211.007",
-    "s": "Tex. Loc. Gov't Code § 211.007 / § 211.007(c)"
+    "s": "Tex. Loc. Gov't Code § 211.007 / § 211.007(c)",
+    "sub": [
+     "(c)"
+    ]
    },
    {
     "k": "S:37.009",
@@ -430,7 +452,10 @@
    },
    {
     "k": "S:2007.003",
-    "s": "Tex. Gov't Code Chapter 2007 / § 2007.003 / § 2007.026"
+    "s": "Tex. Gov't Code Chapter 2007 / § 2007.003 / § 2007.026",
+    "sub": [
+     "(a)(3)"
+    ]
    },
    {
     "k": "S:2007.026",
@@ -664,11 +689,17 @@
    },
    {
     "k": "S:908",
-    "s": "Section 908 / Section 908(1)"
+    "s": "Section 908 / Section 908(1)",
+    "sub": [
+     "(1)"
+    ]
    },
    {
     "k": "S:909.1",
-    "s": "Section 909.1"
+    "s": "Section 909.1",
+    "sub": [
+     "(a)"
+    ]
    },
    {
     "k": "S:913.3",
@@ -688,7 +719,10 @@
    },
    {
     "k": "S:11002-A",
-    "s": "53 P.S. § 11002-A / Section 1002-A"
+    "s": "53 P.S. § 11002-A / Section 1002-A",
+    "sub": [
+     "(b)"
+    ]
    },
    {
     "k": "S:11002",
@@ -748,7 +782,11 @@
    },
    {
     "k": "S:603",
-    "s": "53 P.S. § 10603 (Section 603; Section 603(j); Section 603(c)(2))"
+    "s": "53 P.S. § 10603 (Section 603; Section 603(j); Section 603(c)(2))",
+    "sub": [
+     "(c)(2)",
+     "(j)"
+    ]
    },
    {
     "k": "S:10604",
@@ -764,7 +802,10 @@
    },
    {
     "k": "S:609",
-    "s": "53 P.S. § 10609 (Section 609; Section 609(e))"
+    "s": "53 P.S. § 10609 (Section 609; Section 609(e))",
+    "sub": [
+     "(e)"
+    ]
    },
    {
     "k": "S:10609.1",
@@ -804,7 +845,10 @@
    },
    {
     "k": "S:914.1",
-    "s": "MPC section numbers as cited on the PA pages: § 301, § 603, § 603(j), § 604, § 609, § 609(e), Section 914.1(b)"
+    "s": "MPC section numbers as cited on the PA pages: § 301, § 603, § 603(j), § 604, § 609, § 609(e), Section 914.1(b)",
+    "sub": [
+     "(b)"
+    ]
    },
    {
     "k": "S:10508",
@@ -980,7 +1024,13 @@
    },
    {
     "k": "S:36-66-5.1",
-    "s": "O.C.G.A. § 36-66-5.1 / § 36-66-5.1(a)(1) / § 36-66-5.1(b)"
+    "s": "O.C.G.A. § 36-66-5.1 / § 36-66-5.1(a)(1) / § 36-66-5.1(b)",
+    "sub": [
+     "(a)",
+     "(a)(1)",
+     "(a)(2)",
+     "(b)"
+    ]
    },
    {
     "k": "S:36-67A-3",
@@ -1058,11 +1108,17 @@
    },
    {
     "k": "S:160D-705",
-    "s": "N.C. Gen. Stat. § 160D-705(d)"
+    "s": "N.C. Gen. Stat. § 160D-705(d)",
+    "sub": [
+     "(d)"
+    ]
    },
    {
     "k": "S:160D-1402",
-    "s": "N.C. Gen. Stat. § 160D-1402 / § 160D-1402(c) / Article 14"
+    "s": "N.C. Gen. Stat. § 160D-1402 / § 160D-1402(c) / Article 14",
+    "sub": [
+     "(c)"
+    ]
    },
    {
     "k": "ART:14",
@@ -1070,7 +1126,10 @@
    },
    {
     "k": "S:160D-1405",
-    "s": "N.C. Gen. Stat. § 160D-1405(d)"
+    "s": "N.C. Gen. Stat. § 160D-1405(d)",
+    "sub": [
+     "(d)"
+    ]
    },
    {
     "k": "ART:4",
@@ -1106,11 +1165,17 @@
    },
    {
     "k": "S:160D-404",
-    "s": "N.C. Gen. Stat. § 160D-404 / § 160D-404(c)"
+    "s": "N.C. Gen. Stat. § 160D-404 / § 160D-404(c)",
+    "sub": [
+     "(c)"
+    ]
    },
    {
     "k": "S:160D-108",
-    "s": "N.C. Gen. Stat. § 160D-108 / § 160D-108(c) / (d)"
+    "s": "N.C. Gen. Stat. § 160D-108 / § 160D-108(c) / (d)",
+    "sub": [
+     "(c)"
+    ]
    },
    {
     "k": "S:160D-108.1",
@@ -1176,7 +1241,11 @@
    },
    {
     "k": "S:9-462.06",
-    "s": "A.R.S. § 9-462.06 Board of Adjustment hears variances and appeals; no variance if hardship self-imposed; special action "
+    "s": "A.R.S. § 9-462.06 Board of Adjustment hears variances and appeals; no variance if hardship self-imposed; special action ",
+    "sub": [
+     "(d)",
+     "(k)"
+    ]
    },
    {
     "k": "S:9-462.02",
@@ -1188,7 +1257,10 @@
    },
    {
     "k": "S:11-816",
-    "s": "A.R.S. § 11-816 / § 11-816(D)"
+    "s": "A.R.S. § 11-816 / § 11-816(D)",
+    "sub": [
+     "(d)"
+    ]
    },
    {
     "k": "S:9-461.05",
@@ -1196,7 +1268,10 @@
    },
    {
     "k": "S:9-462.01",
-    "s": "A.R.S. § 9-462.01 / § 9-462.01(F)"
+    "s": "A.R.S. § 9-462.01 / § 9-462.01(F)",
+    "sub": [
+     "(f)"
+    ]
    },
    {
     "k": "S:9-462.04",

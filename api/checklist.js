@@ -3,6 +3,11 @@
 import { MODEL } from './_config.js';
 import { verifyLicense } from './_license.js';
 import { isTestCode, takeTestBudget } from './_g4t.js';
+import { verifiedFor, citationRules, lintCitations } from './_citelint.js';
+import { lintNumbers } from './_numlint.js';
+import VERIFIED from './_verified-citations.json' with { type: 'json' };
+
+const NO_FIGURES = '\n\nFIGURE RULES (mandatory): do not state any filing-fee amount, dollar figure, penalty amount or number of days/deadline unless the user supplied it; for fees and deadlines say to confirm the amount or date with the clerk.';
 
 // Node serverless (classic req/res), same as generate.js — needed for the timing-safe G4T compare.
 export const config = { maxDuration: 30 };
@@ -49,6 +54,9 @@ export default async function handler(req, res) {
       if (!lic.ok) return res.status(lic.status).json({ error: lic.error });
     }
 
+    const verified = verifiedFor(VERIFIED, state);
+    const userText = `${address || ''} ${varianceType || ''}`;
+
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
@@ -60,6 +68,7 @@ export default async function handler(req, res) {
         model: MODEL,
         max_tokens: 900,
         thinking: { type: 'disabled' },
+        system: (citationRules(verified) + NO_FIGURES).trim(),
         messages: [{
           role: 'user',
           content: isOpposing
@@ -116,6 +125,12 @@ Letter excerpt: ${letterExcerpt?.substring(0, 200) || ''}`,
           ];
     }
 
+    // Citation lock + numeric-claims check on every item (items with an unverified cite/figure are dropped).
+    if (Array.isArray(checklist)) {
+      checklist = checklist.filter(it => typeof it === 'string'
+        && lintCitations(it, verified.keys, userText, verified.subs).ok
+        && lintNumbers(it, verified.abbr, userText).ok);
+    }
     return res.status(200).json({ checklist });
 
   } catch (err) {

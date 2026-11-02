@@ -24,13 +24,21 @@ const stateOf = (text, heading) => {
 };
 
 const out = { any: new Map(), states: {} };
+const SUBS = new Map();   // "st|k" -> Set of logged subsection suffixes, e.g. "(k)", "(d)(1)"
 const add = (st, k, s) => {
   const m = st ? (out.states[st] ??= new Map()) : out.any;
   if (!m.has(k)) m.set(k, s);
 };
-function addText(text, heading, display) {
+function addText(text, heading, display, fullRow) {
   const st = stateOf(text, heading);
   for (const [k] of citations(text)) add(st, k, display);
+  // full citations incl. subsection ("§ 9-462.06(K)") logged anywhere in the row
+  for (const m of String(fullRow || text).matchAll(/(?:§+|Section|Sec\.)\s*(\d[\w.\-]*?)((?:\([A-Za-z0-9]{1,3}\))+)/g)) {
+    const [k] = [...citations('§ ' + m[1])][0] || [];
+    if (!k) continue;
+    const key = (st || '*') + '|' + k;
+    (SUBS.get(key) ?? SUBS.set(key, new Set()).get(key)).add(m[2].toLowerCase());
+  }
 }
 
 for (const f of FILES) {
@@ -41,7 +49,7 @@ for (const f of FILES) {
     if (/^\|/.test(line)) {
       const cols = line.split('|').slice(1, -1).map(c => c.trim());
       if (cols.length < 2 || !/^(VERIFIED|CORRECTED)/i.test(cols[1])) continue;   // header, separator, REMOVED rows
-      addText(cols[0], heading, cols[0]);
+      addText(cols[0], heading, cols[0], cols.join(' '));
     } else if (/^### \d{4}-\d\d-\d\d — /.test(line)) {                            // old-style entry; counts only if its Verdict is VERIFIED
       oldStyle = { title: line.replace(/^### \d{4}-\d\d-\d\d — /, ''), ok: false };
       oldStyle.pending = true;
@@ -54,7 +62,7 @@ for (const f of FILES) {
     }
   }
 }
-const ser = m => [...m].map(([k, s]) => ({ k, s: s.slice(0, 160) }));
-const json = { generated: new Date().toISOString().slice(0, 10), any: ser(out.any), states: Object.fromEntries(Object.entries(out.states).map(([a, m]) => [a, ser(m)])) };
+const ser = (m, st) => [...m].map(([k, s]) => { const sub = [...new Set([...(SUBS.get((st || '*') + '|' + k) || []), ...(SUBS.get('*|' + k) || [])])].sort(); return sub.length ? { k, s: s.slice(0, 160), sub } : { k, s: s.slice(0, 160) }; });
+const json = { generated: new Date().toISOString().slice(0, 10), any: ser(out.any, null), states: Object.fromEntries(Object.entries(out.states).map(([a, m]) => [a, ser(m, a)])) };
 fs.writeFileSync('api/_verified-citations.json', JSON.stringify(json, null, 1) + '\n');
 console.log('verified citations: any=' + json.any.length + ' ' + Object.entries(json.states).map(([a, v]) => a + '=' + v.length).join(' '));

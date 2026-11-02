@@ -504,3 +504,20 @@ Source: Pennsylvania Municipalities Planning Code, Act 247 of 1968 as amended, o
 | PA Northwestern Distributors, Inc. v. Zoning Hearing Board, 526 Pa. 186 (1991) | VERIFIED | Pa. Supreme Court (Moon Township); an ordinance requiring a lawful nonconforming use to end after an amortization period is confiscatory and unconstitutional without compensation. | Secondary: supreme.justia.com/cases/pennsylvania/supreme-court/1991/526-pa-186-1.html via Perplexity |
 | Silver v. Zoning Board of Adjustment, 435 Pa. 99 (1969) | VERIFIED | Pa. Supreme Court; protected right to natural expansion of a lawful nonconforming use; reasonable restrictions on expansion remain permissible. | Secondary: caselaw.findlaw.com/court/pa-supreme-court/1232453.html via Perplexity |
 | The two Pennsylvania cases cited for spot zoning enforcement deadlines (a 1975 Silver decision and a township board decision) | REMOVED | Reporter cites and holdings could not be confirmed (one was cited for striking down spot zoning, the other for strict enforcement of enforcement-notice deadlines); replaced with the logged Cleaver and Realen decisions and the statutory text. | — |
+
+## Phase B close-out (2026-11-01) - stale source text and unsourced figures
+
+Source: scripts/data/generated/** and state-data.json swept against the CORRECTED/REMOVED rows above (rules in api/_stale-claims.js; gate A13 fails the build if any survive in sources or rendered pages). Rows are written in non-matching form on purpose.
+
+| Item | Status | Detail | Source |
+|---|---|---|---|
+| Court filing-fee amounts, application-fee amounts, survey-cost ranges (all states) | REMOVED | No official fee schedule was checked; fees vary by court and municipality. Sentences containing a dollar figure for a fee were deleted from sources. | - |
+| Small-claims dollar limits (Arizona, California, Georgia magistrate, Pennsylvania district court) | REMOVED | Not re-checked against primary text; sentences that quoted a limit were deleted. | - |
+| Per-day fine and penalty ranges without a statute (Arizona, California, Georgia, Illinois, New York, Ohio, Pennsylvania zoning-violation pages) | REMOVED | No statutory source; only the Florida, Texas Chapter 54 and Pennsylvania civil-enforcement figures logged above remain. | - |
+| Arizona 30-day Board of Adjustment appeal period in headline and body text | CORRECTED | Board appeals are within a reasonable time under subsection D of the Arizona municipal appeals section; the 30 days is the superior-court special action under subsection K (see log row above). | Official (as logged above) |
+| Texas 10- and 30-day board-of-adjustment appeal periods in headline and body text | CORRECTED | 20th day after the decision to the board (see section 211.010 row above); 10 days after the board decision is filed for the court petition (211.011 row above). | Official (as logged above) |
+| Georgia certiorari headline on the code-violation page | REMOVED | Superseded by the petition-for-review procedure (see rows above). | - |
+| Illinois 35/45/30-day mixtures in headlines on pages other than the code-violation page | REMOVED | Headline deleted pending verification; the 45-day board-of-appeals period is kept where logged. | - |
+| New York 60-day and Article 78 headline figures on nonconforming-use, setback, spot-zoning, rezoning and code-violation pages | REMOVED | Not verified; the 30-day ZBA-decision period is kept only where logged above. | - |
+| Ohio, Pennsylvania and California headline deadlines on rezoning, spot-zoning and local-appeal pages | REMOVED | Legislative acts are not reviewed under the administrative-appeal chapter; local appeal periods vary by ordinance. | - |
+| Generator prompt: "most jurisdictions provide 30 days to appeal to the board" and the New York variance-section example for nonconforming uses | REMOVED | The first is false for several states; the second statute is the variance section. | - |
