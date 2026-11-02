@@ -49,37 +49,37 @@
   {
    "k": "S:1094.5",
    "s": "CCP § 1094.5 / §§ 1094.5",
-   "v": "2026-11-01"
+   "v": "2026-11-02"
   },
   {
    "k": "S:1094.6",
    "s": "CCP § 1094.6",
-   "v": "2026-11-01"
+   "v": "2026-11-02"
   },
   {
    "k": "S:1085",
    "s": "CCP § 1085 / §1085",
-   "v": "2026-11-01"
+   "v": "2026-11-02"
   },
   {
    "k": "S:1021.5",
    "s": "CCP § 1021.5 / §1021.5",
-   "v": "2026-11-01"
+   "v": "2026-11-02"
   },
   {
    "k": "S:21000",
    "s": "Pub. Res. Code § 21000",
-   "v": "2026-11-01"
+   "v": "2026-11-02"
   },
   {
    "k": "S:21167",
    "s": "Pub. Res. Code §21167",
-   "v": "2026-11-01"
+   "v": "2026-11-02"
   },
   {
    "k": "S:15305",
    "s": "CEQA Guidelines § 15305 (14 CCR)",
-   "v": "2026-11-01"
+   "v": "2026-11-02"
   },
   {
    "k": "S:211.003",
@@ -115,22 +115,22 @@
     "sub": [
      "(2)(b)"
     ],
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:274-b",
     "s": "NY Town Law §274-b",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:261-285",
     "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
-    "v": "2026-07-22"
+    "v": "2026-11-02"
    },
    {
     "k": "S:7-700",
     "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
-    "v": "2026-07-22"
+    "v": "2026-11-02"
    },
    {
     "k": "S:20",
@@ -138,37 +138,42 @@
     "sub": [
      "(25)"
     ],
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "ART:16",
     "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "ART:7",
     "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "ART:2-A",
     "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
-    "v": "2026-07-22"
+    "v": "2026-11-02"
+   },
+   {
+    "k": "ART:5-A",
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
+    "v": "2026-11-02"
    },
    {
     "k": "S:261",
     "s": "Town Law Article 16 zoning enabling; § 261 zoning power.",
-    "v": "2026-07-22"
+    "v": "2026-11-02"
    },
    {
     "k": "S:267-c",
     "s": "Art. 78 review within 30 days of filing in clerk's office (Town Law § 267-c[1]).",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "ART:78",
     "s": "Art. 78 review within 30 days of filing in clerk's office (Town Law § 267-c[1]).",
-    "v": "2026-07-22"
+    "v": "2026-11-02"
    },
    {
     "k": "S:267-a",
@@ -177,157 +182,152 @@
      "(7)",
      "(8)"
     ],
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:7-712-a",
     "s": "Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:81-a",
     "s": "Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:7-712-b",
     "s": "Town Law § 267-b / § 267-b(2)(b); Village Law § 7-712-b; General City Law § 81-b",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:81-b",
     "s": "Town Law § 267-b / § 267-b(2)(b); Village Law § 7-712-b; General City Law § 81-b",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:7-725-b",
     "s": "Town Law § 274-b; Village Law § 7-725-b; Gen. City Law § 27-b",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:27-b",
     "s": "Town Law § 274-b; Village Law § 7-725-b; Gen. City Law § 27-b",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:239-m",
     "s": "General Municipal Law § 239-m",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:50-e",
     "s": "General Municipal Law § 50-e",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:617.5",
     "s": "6 NYCRR § 617.5",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "C:otto",
     "s": "Matter of Otto v. Steinhilber, 282 N.Y. 71 (1939)",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "C:people",
     "s": "People v. Miller, 304 N.Y. 105 (1952); Matter of Toys 'R' Us v. Silva, 89 N.Y.2d 411 (1996)",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:28-201.1",
     "s": "NYC Admin. Code § 28-201.1",
-    "v": "2026-11-01"
-   },
-   {
-    "k": "ART:5-A",
-    "s": "General City Law Article 5-A; Town Law Article 16; Village Law Article 7",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:263",
     "s": "N.Y. Town Law § 263",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:264",
     "s": "N.Y. Town Law § 264",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:265",
     "s": "N.Y. Town Law § 265",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:272-a",
     "s": "N.Y. Town Law § 272-a",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:7-704",
     "s": "N.Y. Village Law § 7-704",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:7-706",
     "s": "N.Y. Village Law § 7-706",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:7-708",
     "s": "N.Y. Village Law § 7-708",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:7-712-c",
     "s": "N.Y. Village Law § 7-712-c",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:81-c",
     "s": "N.Y. General City Law § 81-c",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:83",
     "s": "N.Y. General City Law § 83",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:239-l",
     "s": "N.Y. Gen. Mun. Law § 239-l",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:217",
     "s": "N.Y. CPLR § 217",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:7801",
     "s": "N.Y. CPLR § 7801",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:7804",
     "s": "N.Y. CPLR § 7804",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "ART:8",
     "s": "ECL Article 8 (SEQRA)",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:197-c",
     "s": "N.Y.C. Charter §§ 197-c, 197-d (ULURP)",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:200",
     "s": "N.Y.C. Charter § 200",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:1988",
@@ -355,22 +355,22 @@
    {
     "k": "C:rodgers",
     "s": "Rodgers v. Village of Tarrytown, 302 N.Y. 115 (1951) (cited on the pages as Rodgers v. Tarrytown)",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "C:our",
     "s": "Matter of Save Our Forest Action Coalition v. City of Kingston, 246 A.D.2d 217 (3d Dep't 1998)",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "C:sun-brite",
     "s": "Sun-Brite Car Wash v. Board of Zoning & Appeals of Town of North Hempstead, 69 N.Y.2d 406 (1987)",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "C:north",
     "s": "Matter of North Shore Steak House v. Board of Appeals of Thomaston, 30 N.Y.2d 238 (1972)",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    }
   ],
   "CA": [
@@ -386,38 +386,43 @@
    },
    {
     "k": "S:65000",
-    "s": "Planning and Zoning Law — Cal. Gov. Code § 65000 et seq. (Title 7, Division 1) verified_on: 2026-07-22",
-    "v": "2026-07-22"
+    "s": "Planning and Zoning Law — Cal. Gov. Code § 65000 et seq. (Title 7, Division 1) [re-verified 2026-11-02: Secondary: https",
+    "v": "2026-11-02"
    },
    {
     "k": "TITLE:7",
-    "s": "Planning and Zoning Law — Cal. Gov. Code § 65000 et seq. (Title 7, Division 1) verified_on: 2026-07-22",
-    "v": "2026-07-22"
+    "s": "Planning and Zoning Law — Cal. Gov. Code § 65000 et seq. (Title 7, Division 1) [re-verified 2026-11-02: Secondary: https",
+    "v": "2026-11-02"
+   },
+   {
+    "k": "S:65800",
+    "s": "[zoning_enabling_statute] https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=650",
+    "v": "2026-11-02"
    },
    {
     "k": "S:65906",
     "s": "Gov. Code § 65906 variance standard; does not apply to CUPs.",
-    "v": "2026-07-22"
+    "v": "2026-11-02"
    },
    {
     "k": "S:1094.6",
     "s": "CCP § 1094.6 — writ of mandate within 90 days after decision final.",
-    "v": "2026-07-22"
+    "v": "2026-11-02"
    },
    {
     "k": "S:66310",
     "s": "State ADU law Gov. Code § 66310 et seq. (SB 477, eff. 2024); ministerial approval.",
-    "v": "2026-07-22"
+    "v": "2026-11-02"
    },
    {
     "k": "S:65589.5",
     "s": "HAA Gov. Code § 65589.5 (1982); Builder's Remedy.",
-    "v": "2026-07-22"
+    "v": "2026-11-02"
    },
    {
     "k": "S:65860",
     "s": "Gov. Code §65860",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:65009",
@@ -425,27 +430,27 @@
     "sub": [
      "(c)"
     ],
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:65913.4",
     "s": "Gov. Code § 65913.4",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:7920.000",
     "s": "Gov. Code §7920.000",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "C:scenic",
     "s": "Topanga Association for a Scenic Community v. County of Los Angeles (1974) 11 Cal.3d 506",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "C:arnel",
     "s": "Arnel Development Co. v. City of Costa Mesa (1980) 28 Cal.3d 511",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "C:foothill",
@@ -455,52 +460,47 @@
    {
     "k": "S:65090",
     "s": "Gov. Code § 65090",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:53069.4",
     "s": "Gov. Code § 53069.4",
-    "v": "2026-11-01"
-   },
-   {
-    "k": "S:65800",
-    "s": "Gov. Code § 65800",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:65091",
     "s": "Gov. Code § 65091",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:65803",
     "s": "Gov. Code § 65803",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:65915",
     "s": "Gov. Code § 65915",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:910",
     "s": "Gov. Code § 910",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:21065",
     "s": "Pub. Res. Code § 21065",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "S:21177",
     "s": "Pub. Res. Code § 21177",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    },
    {
     "k": "C:hansen",
     "s": "Hansen Brothers Enterprises v. Board of Supervisors (1996) 12 Cal.4th 533",
-    "v": "2026-11-01"
+    "v": "2026-11-02"
    }
   ],
   "TX": [
