@@ -533,7 +533,7 @@ Source: scripts/data/generated/** and state-data.json swept against the CORRECTE
 
 Still Secondary because the official sites block automated access: California (leginfo.legislature.ca.gov returns 403), New York (nysenate.gov 403; API needs a key), Georgia code (Justia 403; legis.ga.gov has no section-text endpoint), and all case holdings (CourtListener serves names and citations but not readable opinion text to automation).
 
-### Close-out item 1 - burden-shift letter frames re-checked (2026-11-02)
+### Close-out item 1 - burden-shift letter frames re-checked (2026-11-01)
 
 Text of each opinion read from the Caselaw Access Project (static.case.law) where available; Florida cases are West-only, so they were checked through quotations in later Florida opinions.
 
@@ -547,7 +547,7 @@ Text of each opinion read from the Caselaw Access Project (static.case.law) wher
 | Jesus Fellowship, Inc. v. Miami-Dade County, 752 So. 2d 708 (Fla. 3d DCA 2000) | VERIFIED | Application must be granted unless the opposition shows the requests do not meet the standards and are in fact adverse to the public interest. Quoted in secondary sources only; the frame text is unchanged (FL frame frozen). | bilzin.com; courtlistener quotation (Secondary) |
 | Dusseau v. Metro. Dade County Bd. of County Comm'rs, 794 So. 2d 1270 (Fla. 2001) | VERIFIED | Certiorari review asks whether the decision is supported by competent substantial evidence. | courtlistener (Secondary) |
 
-### Close-out item 2 - held sentences cross-check (2026-11-02)
+### Close-out item 2 - held sentences cross-check (2026-11-01)
 
 | Item | Status | Detail | Source |
 |---|---|---|---|
