@@ -73,11 +73,16 @@ try { execFileSync('node', ['scripts/test-stale-claims.mjs'], { cwd: ROOT, stdio
 for (const t of ['tests/payhip-mock.test.js', 'tests/isCheckCall.test.js', 'tests/citelock-extended.test.js', 'tests/pa-frame.test.js']) {
   try { execFileSync('node', [t], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A14: ' + t + ' failed\n' + (e.stdout || '') + (e.stderr || '')); }
 }
+// ── A15: verified_on freshness (every log entry dated; rendered/generator-fed citations <= 12 months, warn > 10) ──
+try { execFileSync('node', ['tests/verified-dates.test.js'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A15: verified-dates mock tests failed\n' + (e.stdout || '') + (e.stderr || '')); }
+let a15 = '';
+try { a15 = execFileSync('node', ['scripts/test-verified-dates.mjs'], { cwd: ROOT, stdio: 'pipe' }).toString().trim(); } catch (e) { fail('A15: stale or undated log entries\n' + (e.stdout || '') + (e.stderr || '')); }
+for (const l of a15.split(/\r?\n/)) if (l.startsWith('WARN')) console.warn('A15 ' + l);
 let ui = '';
 try {
   execFileSync('node', ['node_modules/vite/bin/vite.js', 'build'], { cwd: ROOT, stdio: 'pipe' });
   ui = execFileSync('node', ['tests/ui-wiring.test.mjs'], { cwd: ROOT, stdio: 'pipe' }).toString().trim();
 } catch (e) { fail('A14: ui-wiring failed\n' + (e.stdout || '') + (e.stderr || '')); }
-console.log('A13 stale-claims clean; A14 payhip/isCheckCall/citelock-ext pass; ' + ui);
+console.log('A15 ' + a15.split(/\r?\n/).pop() + '; A13 stale-claims clean; A14 payhip/isCheckCall/citelock-ext pass; ' + ui);
 console.log('GATE GREEN — A1 files ok; A9 citation-log parity: all ' + tokens.size + ' citations logged; A10 citation lock + G4T mock test pass; A11 auth gate (no Anthropic without Payhip/G4T) pass.');
 process.exit(0);

@@ -5,7 +5,8 @@
 import fs from 'fs';
 
 const LOG = ['VERIFICATION_LOG.md', 'VERIFICATION_LOG-SEO-CONTENT.md']
-  .filter(f => fs.existsSync(f)).map(f => fs.readFileSync(f, 'utf8')).join('\n');
+  .filter(f => fs.existsSync(f)).map(f => fs.readFileSync(f, 'utf8')).join('\n')
+  .replace(/verified_on:\s*\d{4}-\d\d-\d\d/g, '');   // date tokens must not satisfy short numeric cites
 
 import { citations, core } from '../../api/_cites.js';
 function inLog(key, logText) {

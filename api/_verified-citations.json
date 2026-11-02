@@ -3,140 +3,172 @@
  "any": [
   {
    "k": "S:8-2",
-   "s": "CGS §8-2"
+   "s": "CGS §8-2",
+   "v": "2026-07-19"
   },
   {
    "k": "S:8-7",
-   "s": "CGS §8-7"
+   "s": "CGS §8-7",
+   "v": "2026-07-19"
   },
   {
    "k": "S:163.3202",
-   "s": "FL Statutes Chapter 163 / §163.3202"
+   "s": "FL Statutes Chapter 163 / §163.3202",
+   "v": "2026-07-19"
   },
   {
    "k": "CH:163",
-   "s": "FL Statutes Chapter 163 / §163.3202"
+   "s": "FL Statutes Chapter 163 / §163.3202",
+   "v": "2026-07-19"
   },
   {
    "k": "S:1983",
-   "s": "42 U.S.C. §1983"
+   "s": "42 U.S.C. §1983",
+   "v": "2026-07-19"
   },
   {
    "k": "S:1988",
-   "s": "42 U.S.C. §1988"
+   "s": "42 U.S.C. §1988",
+   "v": "2026-07-19"
   },
   {
    "k": "S:519.13",
-   "s": "ORC 519.13"
+   "s": "ORC 519.13",
+   "v": "2026-11-01"
   },
   {
    "k": "S:519.19",
-   "s": "ORC 519.19"
+   "s": "ORC 519.19",
+   "v": "2026-11-01"
   },
   {
    "k": "S:519.21",
-   "s": "ORC 519.21"
+   "s": "ORC 519.21",
+   "v": "2026-11-01"
   },
   {
    "k": "S:1094.5",
-   "s": "CCP § 1094.5 / §§ 1094.5"
+   "s": "CCP § 1094.5 / §§ 1094.5",
+   "v": "2026-11-01"
   },
   {
    "k": "S:1094.6",
-   "s": "CCP § 1094.6"
+   "s": "CCP § 1094.6",
+   "v": "2026-11-01"
   },
   {
    "k": "S:1085",
-   "s": "CCP § 1085 / §1085"
+   "s": "CCP § 1085 / §1085",
+   "v": "2026-11-01"
   },
   {
    "k": "S:1021.5",
-   "s": "CCP § 1021.5 / §1021.5"
+   "s": "CCP § 1021.5 / §1021.5",
+   "v": "2026-11-01"
   },
   {
    "k": "S:21000",
-   "s": "Pub. Res. Code § 21000"
+   "s": "Pub. Res. Code § 21000",
+   "v": "2026-11-01"
   },
   {
    "k": "S:21167",
-   "s": "Pub. Res. Code §21167"
+   "s": "Pub. Res. Code §21167",
+   "v": "2026-11-01"
   },
   {
    "k": "S:15305",
-   "s": "CEQA Guidelines § 15305 (14 CCR)"
+   "s": "CEQA Guidelines § 15305 (14 CCR)",
+   "v": "2026-11-01"
   },
   {
    "k": "S:211.003",
-   "s": "Section 211.003; Section 211.008; Section 211.009"
+   "s": "Section 211.003; Section 211.008; Section 211.009",
+   "v": "2026-11-01"
   },
   {
    "k": "S:211.008",
-   "s": "Section 211.003; Section 211.008; Section 211.009"
+   "s": "Section 211.003; Section 211.008; Section 211.009",
+   "v": "2026-11-01"
   },
   {
    "k": "S:211.009",
-   "s": "Section 211.003; Section 211.008; Section 211.009"
+   "s": "Section 211.003; Section 211.008; Section 211.009",
+   "v": "2026-11-01"
   },
   {
    "k": "C:schultz",
-   "s": "Schultz v. Pritts, 291 Md. 1 (1981)"
+   "s": "Schultz v. Pritts, 291 Md. 1 (1981)",
+   "v": "2026-11-01"
   }
  ],
  "states": {
   "NY": [
    {
     "k": "S:267",
-    "s": "NY Town Law §267"
+    "s": "NY Town Law §267",
+    "v": "2026-07-19"
    },
    {
     "k": "S:267-b",
     "s": "NY Town Law §267-b",
     "sub": [
      "(2)(b)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:274-b",
-    "s": "NY Town Law §274-b"
+    "s": "NY Town Law §274-b",
+    "v": "2026-11-01"
    },
    {
     "k": "S:261-285",
-    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
+    "v": "2026-07-22"
    },
    {
     "k": "S:7-700",
-    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
+    "v": "2026-07-22"
    },
    {
     "k": "S:20",
     "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
     "sub": [
      "(25)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "ART:16",
-    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
+    "v": "2026-11-01"
    },
    {
     "k": "ART:7",
-    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
+    "v": "2026-11-01"
    },
    {
     "k": "ART:2-A",
-    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone"
+    "s": "Town Law Article 16 (towns); Village Law Article 7 (villages); General City Law Article 2-A (cities); New York City zone",
+    "v": "2026-07-22"
    },
    {
     "k": "S:261",
-    "s": "Town Law Article 16 zoning enabling; § 261 zoning power."
+    "s": "Town Law Article 16 zoning enabling; § 261 zoning power.",
+    "v": "2026-07-22"
    },
    {
     "k": "S:267-c",
-    "s": "Art. 78 review within 30 days of filing in clerk's office (Town Law § 267-c[1])."
+    "s": "Art. 78 review within 30 days of filing in clerk's office (Town Law § 267-c[1]).",
+    "v": "2026-11-01"
    },
    {
     "k": "ART:78",
-    "s": "Art. 78 review within 30 days of filing in clerk's office (Town Law § 267-c[1])."
+    "s": "Art. 78 review within 30 days of filing in clerk's office (Town Law § 267-c[1]).",
+    "v": "2026-07-22"
    },
    {
     "k": "S:267-a",
@@ -144,661 +176,817 @@
     "sub": [
      "(7)",
      "(8)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:7-712-a",
-    "s": "Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a"
+    "s": "Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a",
+    "v": "2026-11-01"
    },
    {
     "k": "S:81-a",
-    "s": "Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a"
+    "s": "Town Law § 267-a / § 267-a(7) / § 267-a(8); Village Law § 7-712-a; General City Law § 81-a",
+    "v": "2026-11-01"
    },
    {
     "k": "S:7-712-b",
-    "s": "Town Law § 267-b / § 267-b(2)(b); Village Law § 7-712-b; General City Law § 81-b"
+    "s": "Town Law § 267-b / § 267-b(2)(b); Village Law § 7-712-b; General City Law § 81-b",
+    "v": "2026-11-01"
    },
    {
     "k": "S:81-b",
-    "s": "Town Law § 267-b / § 267-b(2)(b); Village Law § 7-712-b; General City Law § 81-b"
+    "s": "Town Law § 267-b / § 267-b(2)(b); Village Law § 7-712-b; General City Law § 81-b",
+    "v": "2026-11-01"
    },
    {
     "k": "S:7-725-b",
-    "s": "Town Law § 274-b; Village Law § 7-725-b; Gen. City Law § 27-b"
+    "s": "Town Law § 274-b; Village Law § 7-725-b; Gen. City Law § 27-b",
+    "v": "2026-11-01"
    },
    {
     "k": "S:27-b",
-    "s": "Town Law § 274-b; Village Law § 7-725-b; Gen. City Law § 27-b"
+    "s": "Town Law § 274-b; Village Law § 7-725-b; Gen. City Law § 27-b",
+    "v": "2026-11-01"
    },
    {
     "k": "S:239-m",
-    "s": "General Municipal Law § 239-m"
+    "s": "General Municipal Law § 239-m",
+    "v": "2026-11-01"
    },
    {
     "k": "S:50-e",
-    "s": "General Municipal Law § 50-e"
+    "s": "General Municipal Law § 50-e",
+    "v": "2026-11-01"
    },
    {
     "k": "S:617.5",
-    "s": "6 NYCRR § 617.5"
+    "s": "6 NYCRR § 617.5",
+    "v": "2026-11-01"
    },
    {
     "k": "C:otto",
-    "s": "Matter of Otto v. Steinhilber, 282 N.Y. 71 (1939)"
+    "s": "Matter of Otto v. Steinhilber, 282 N.Y. 71 (1939)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:people",
-    "s": "People v. Miller, 304 N.Y. 105 (1952); Matter of Toys 'R' Us v. Silva, 89 N.Y.2d 411 (1996)"
+    "s": "People v. Miller, 304 N.Y. 105 (1952); Matter of Toys 'R' Us v. Silva, 89 N.Y.2d 411 (1996)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:28-201.1",
-    "s": "NYC Admin. Code § 28-201.1"
+    "s": "NYC Admin. Code § 28-201.1",
+    "v": "2026-11-01"
    },
    {
     "k": "ART:5-A",
-    "s": "General City Law Article 5-A; Town Law Article 16; Village Law Article 7"
+    "s": "General City Law Article 5-A; Town Law Article 16; Village Law Article 7",
+    "v": "2026-11-01"
    },
    {
     "k": "S:263",
-    "s": "N.Y. Town Law § 263"
+    "s": "N.Y. Town Law § 263",
+    "v": "2026-11-01"
    },
    {
     "k": "S:264",
-    "s": "N.Y. Town Law § 264"
+    "s": "N.Y. Town Law § 264",
+    "v": "2026-11-01"
    },
    {
     "k": "S:265",
-    "s": "N.Y. Town Law § 265"
+    "s": "N.Y. Town Law § 265",
+    "v": "2026-11-01"
    },
    {
     "k": "S:272-a",
-    "s": "N.Y. Town Law § 272-a"
+    "s": "N.Y. Town Law § 272-a",
+    "v": "2026-11-01"
    },
    {
     "k": "S:7-704",
-    "s": "N.Y. Village Law § 7-704"
+    "s": "N.Y. Village Law § 7-704",
+    "v": "2026-11-01"
    },
    {
     "k": "S:7-706",
-    "s": "N.Y. Village Law § 7-706"
+    "s": "N.Y. Village Law § 7-706",
+    "v": "2026-11-01"
    },
    {
     "k": "S:7-708",
-    "s": "N.Y. Village Law § 7-708"
+    "s": "N.Y. Village Law § 7-708",
+    "v": "2026-11-01"
    },
    {
     "k": "S:7-712-c",
-    "s": "N.Y. Village Law § 7-712-c"
+    "s": "N.Y. Village Law § 7-712-c",
+    "v": "2026-11-01"
    },
    {
     "k": "S:81-c",
-    "s": "N.Y. General City Law § 81-c"
+    "s": "N.Y. General City Law § 81-c",
+    "v": "2026-11-01"
    },
    {
     "k": "S:83",
-    "s": "N.Y. General City Law § 83"
+    "s": "N.Y. General City Law § 83",
+    "v": "2026-11-01"
    },
    {
     "k": "S:239-l",
-    "s": "N.Y. Gen. Mun. Law § 239-l"
+    "s": "N.Y. Gen. Mun. Law § 239-l",
+    "v": "2026-11-01"
    },
    {
     "k": "S:217",
-    "s": "N.Y. CPLR § 217"
+    "s": "N.Y. CPLR § 217",
+    "v": "2026-11-01"
    },
    {
     "k": "S:7801",
-    "s": "N.Y. CPLR § 7801"
+    "s": "N.Y. CPLR § 7801",
+    "v": "2026-11-01"
    },
    {
     "k": "S:7804",
-    "s": "N.Y. CPLR § 7804"
+    "s": "N.Y. CPLR § 7804",
+    "v": "2026-11-01"
    },
    {
     "k": "ART:8",
-    "s": "ECL Article 8 (SEQRA)"
+    "s": "ECL Article 8 (SEQRA)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:197-c",
-    "s": "N.Y.C. Charter §§ 197-c, 197-d (ULURP)"
+    "s": "N.Y.C. Charter §§ 197-c, 197-d (ULURP)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:200",
-    "s": "N.Y.C. Charter § 200"
+    "s": "N.Y.C. Charter § 200",
+    "v": "2026-11-01"
    },
    {
     "k": "S:1988",
-    "s": "42 U.S.C. § 1988"
+    "s": "42 U.S.C. § 1988",
+    "v": "2026-11-01"
    },
    {
     "k": "S:2000c",
-    "s": "42 U.S.C. § 2000cc"
+    "s": "42 U.S.C. § 2000cc",
+    "v": "2026-11-01"
    },
    {
     "k": "S:2000",
-    "s": "42 U.S.C. § 2000cc"
+    "s": "42 U.S.C. § 2000cc",
+    "v": "2026-11-01"
    },
    {
     "k": "S:3613",
     "s": "42 U.S.C. § 3613(c)(2)",
     "sub": [
      "(c)(2)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "C:rodgers",
-    "s": "Rodgers v. Village of Tarrytown, 302 N.Y. 115 (1951) (cited on the pages as Rodgers v. Tarrytown)"
+    "s": "Rodgers v. Village of Tarrytown, 302 N.Y. 115 (1951) (cited on the pages as Rodgers v. Tarrytown)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:our",
-    "s": "Matter of Save Our Forest Action Coalition v. City of Kingston, 246 A.D.2d 217 (3d Dep't 1998)"
+    "s": "Matter of Save Our Forest Action Coalition v. City of Kingston, 246 A.D.2d 217 (3d Dep't 1998)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:sun-brite",
-    "s": "Sun-Brite Car Wash v. Board of Zoning & Appeals of Town of North Hempstead, 69 N.Y.2d 406 (1987)"
+    "s": "Sun-Brite Car Wash v. Board of Zoning & Appeals of Town of North Hempstead, 69 N.Y.2d 406 (1987)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:north",
-    "s": "Matter of North Shore Steak House v. Board of Appeals of Thomaston, 30 N.Y.2d 238 (1972)"
+    "s": "Matter of North Shore Steak House v. Board of Appeals of Thomaston, 30 N.Y.2d 238 (1972)",
+    "v": "2026-11-01"
    }
   ],
   "CA": [
    {
     "k": "S:65900",
-    "s": "CA Government Code §65900"
+    "s": "CA Government Code §65900",
+    "v": "2026-07-19"
    },
    {
     "k": "S:65901",
-    "s": "CA Government Code §65901"
+    "s": "CA Government Code §65901",
+    "v": "2026-07-19"
    },
    {
     "k": "S:65000",
-    "s": "Planning and Zoning Law — Cal. Gov. Code § 65000 et seq. (Title 7, Division 1)"
+    "s": "Planning and Zoning Law — Cal. Gov. Code § 65000 et seq. (Title 7, Division 1) verified_on: 2026-07-22",
+    "v": "2026-07-22"
    },
    {
     "k": "TITLE:7",
-    "s": "Planning and Zoning Law — Cal. Gov. Code § 65000 et seq. (Title 7, Division 1)"
+    "s": "Planning and Zoning Law — Cal. Gov. Code § 65000 et seq. (Title 7, Division 1) verified_on: 2026-07-22",
+    "v": "2026-07-22"
    },
    {
     "k": "S:65906",
-    "s": "Gov. Code § 65906 variance standard; does not apply to CUPs."
+    "s": "Gov. Code § 65906 variance standard; does not apply to CUPs.",
+    "v": "2026-07-22"
    },
    {
     "k": "S:1094.6",
-    "s": "CCP § 1094.6 — writ of mandate within 90 days after decision final."
+    "s": "CCP § 1094.6 — writ of mandate within 90 days after decision final.",
+    "v": "2026-07-22"
    },
    {
     "k": "S:66310",
-    "s": "State ADU law Gov. Code § 66310 et seq. (SB 477, eff. 2024); ministerial approval."
+    "s": "State ADU law Gov. Code § 66310 et seq. (SB 477, eff. 2024); ministerial approval.",
+    "v": "2026-07-22"
    },
    {
     "k": "S:65589.5",
-    "s": "HAA Gov. Code § 65589.5 (1982); Builder's Remedy."
+    "s": "HAA Gov. Code § 65589.5 (1982); Builder's Remedy.",
+    "v": "2026-07-22"
    },
    {
     "k": "S:65860",
-    "s": "Gov. Code §65860"
+    "s": "Gov. Code §65860",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65009",
     "s": "Gov. Code §65009 / §65009(c)",
     "sub": [
      "(c)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:65913.4",
-    "s": "Gov. Code § 65913.4"
+    "s": "Gov. Code § 65913.4",
+    "v": "2026-11-01"
    },
    {
     "k": "S:7920.000",
-    "s": "Gov. Code §7920.000"
+    "s": "Gov. Code §7920.000",
+    "v": "2026-11-01"
    },
    {
     "k": "C:scenic",
-    "s": "Topanga Association for a Scenic Community v. County of Los Angeles (1974) 11 Cal.3d 506"
+    "s": "Topanga Association for a Scenic Community v. County of Los Angeles (1974) 11 Cal.3d 506",
+    "v": "2026-11-01"
    },
    {
     "k": "C:arnel",
-    "s": "Arnel Development Co. v. City of Costa Mesa (1980) 28 Cal.3d 511"
+    "s": "Arnel Development Co. v. City of Costa Mesa (1980) 28 Cal.3d 511",
+    "v": "2026-11-01"
    },
    {
     "k": "C:foothill",
-    "s": "Foothill Communities Coalition v. County of Orange (2014) 222 Cal.App.4th 1302"
+    "s": "Foothill Communities Coalition v. County of Orange (2014) 222 Cal.App.4th 1302",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65090",
-    "s": "Gov. Code § 65090"
+    "s": "Gov. Code § 65090",
+    "v": "2026-11-01"
    },
    {
     "k": "S:53069.4",
-    "s": "Gov. Code § 53069.4"
+    "s": "Gov. Code § 53069.4",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65800",
-    "s": "Gov. Code § 65800"
+    "s": "Gov. Code § 65800",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65091",
-    "s": "Gov. Code § 65091"
+    "s": "Gov. Code § 65091",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65803",
-    "s": "Gov. Code § 65803"
+    "s": "Gov. Code § 65803",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65915",
-    "s": "Gov. Code § 65915"
+    "s": "Gov. Code § 65915",
+    "v": "2026-11-01"
    },
    {
     "k": "S:910",
-    "s": "Gov. Code § 910"
+    "s": "Gov. Code § 910",
+    "v": "2026-11-01"
    },
    {
     "k": "S:21065",
-    "s": "Pub. Res. Code § 21065"
+    "s": "Pub. Res. Code § 21065",
+    "v": "2026-11-01"
    },
    {
     "k": "S:21177",
-    "s": "Pub. Res. Code § 21177"
+    "s": "Pub. Res. Code § 21177",
+    "v": "2026-11-01"
    },
    {
     "k": "C:hansen",
-    "s": "Hansen Brothers Enterprises v. Board of Supervisors (1996) 12 Cal.4th 533"
+    "s": "Hansen Brothers Enterprises v. Board of Supervisors (1996) 12 Cal.4th 533",
+    "v": "2026-11-01"
    }
   ],
   "TX": [
    {
     "k": "CH:211",
-    "s": "Texas Zoning Enabling Act (Municipal Zoning Authority) — Tex. Local Gov't Code Ch. 211 (Subtitle A, Title 7)"
+    "s": "Texas Zoning Enabling Act (Municipal Zoning Authority) — Tex. Local Gov't Code Ch. 211 (Subtitle A, Title 7) verified_on",
+    "v": "2026-11-01"
    },
    {
     "k": "TITLE:7",
-    "s": "Texas Zoning Enabling Act (Municipal Zoning Authority) — Tex. Local Gov't Code Ch. 211 (Subtitle A, Title 7)"
+    "s": "Texas Zoning Enabling Act (Municipal Zoning Authority) — Tex. Local Gov't Code Ch. 211 (Subtitle A, Title 7) verified_on",
+    "v": "2026-07-22"
    },
    {
     "k": "S:211.011",
-    "s": "§ 211.011: writ of certiorari within 10 days after decision filed."
+    "s": "§ 211.011: writ of certiorari within 10 days after decision filed.",
+    "v": "2026-11-01"
    },
    {
     "k": "S:211.009",
-    "s": "§ 211.009: BOA authority; no use variances; special exceptions need no hardship."
+    "s": "§ 211.009: BOA authority; no use variances; special exceptions need no hardship.",
+    "v": "2026-07-22"
    },
    {
     "k": "S:211.004",
-    "s": "Tex. Loc. Gov't Code § 211.004"
+    "s": "Tex. Loc. Gov't Code § 211.004",
+    "v": "2026-11-01"
    },
    {
     "k": "S:211.005",
     "s": "Tex. Loc. Gov't Code § 211.005 / § 211.005(b) / Section 211.005",
     "sub": [
      "(b)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:211.0061",
-    "s": "Tex. Loc. Gov't Code § 211.0061"
+    "s": "Tex. Loc. Gov't Code § 211.0061",
+    "v": "2026-11-01"
    },
    {
     "k": "S:211.007",
     "s": "Tex. Loc. Gov't Code § 211.007 / § 211.007(c)",
     "sub": [
      "(c)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:37.009",
-    "s": "Tex. Civ. Prac. & Rem. Code Ch. 37 / § 37.009"
+    "s": "Tex. Civ. Prac. & Rem. Code Ch. 37 / § 37.009",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:37",
-    "s": "Tex. Civ. Prac. & Rem. Code Ch. 37 / § 37.009"
+    "s": "Tex. Civ. Prac. & Rem. Code Ch. 37 / § 37.009",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:551",
-    "s": "Tex. Gov't Code Ch. 551"
+    "s": "Tex. Gov't Code Ch. 551",
+    "v": "2026-11-01"
    },
    {
     "k": "S:2007.003",
     "s": "Tex. Gov't Code Chapter 2007 / § 2007.003 / § 2007.026",
     "sub": [
      "(a)(3)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:2007.026",
-    "s": "Tex. Gov't Code Chapter 2007 / § 2007.003 / § 2007.026"
+    "s": "Tex. Gov't Code Chapter 2007 / § 2007.003 / § 2007.026",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:2007",
-    "s": "Tex. Gov't Code Chapter 2007 / § 2007.003 / § 2007.026"
+    "s": "Tex. Gov't Code Chapter 2007 / § 2007.003 / § 2007.026",
+    "v": "2026-11-01"
    },
    {
     "k": "S:17",
-    "s": "Tex. Const. art. I, § 17 / Article I, Section 17"
+    "s": "Tex. Const. art. I, § 17 / Article I, Section 17",
+    "v": "2026-11-01"
    },
    {
     "k": "C:pharr",
-    "s": "City of Pharr v. Tippitt, 616 S.W.2d 173 (Tex. 1981)"
+    "s": "City of Pharr v. Tippitt, 616 S.W.2d 173 (Tex. 1981)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:245.002",
-    "s": "Tex. Loc. Gov't Code Chapter 245 / § 245.002"
+    "s": "Tex. Loc. Gov't Code Chapter 245 / § 245.002",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:245",
-    "s": "Tex. Loc. Gov't Code Chapter 245 / § 245.002"
+    "s": "Tex. Loc. Gov't Code Chapter 245 / § 245.002",
+    "v": "2026-11-01"
    },
    {
     "k": "S:54.017",
-    "s": "Tex. Loc. Gov't Code § 54.017"
+    "s": "Tex. Loc. Gov't Code § 54.017",
+    "v": "2026-11-01"
    },
    {
     "k": "S:54.001",
-    "s": "Tex. Loc. Gov't Code § 54.001"
+    "s": "Tex. Loc. Gov't Code § 54.001",
+    "v": "2026-11-01"
    },
    {
     "k": "S:54.012",
-    "s": "Tex. Loc. Gov't Code Chapter 54 / § 54.012"
+    "s": "Tex. Loc. Gov't Code Chapter 54 / § 54.012",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:54",
-    "s": "Tex. Loc. Gov't Code Chapter 54 / § 54.012"
+    "s": "Tex. Loc. Gov't Code Chapter 54 / § 54.012",
+    "v": "2026-11-01"
    },
    {
     "k": "S:211.010",
-    "s": "Tex. Loc. Gov't Code § 211.010"
+    "s": "Tex. Loc. Gov't Code § 211.010",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:231",
-    "s": "Tex. Loc. Gov't Code Chapter 231"
+    "s": "Tex. Loc. Gov't Code Chapter 231",
+    "v": "2026-11-01"
    },
    {
     "k": "C:university",
-    "s": "City of University Park v. Benners, 485 S.W.2d 773 (Tex. 1972)"
+    "s": "City of University Park v. Benners, 485 S.W.2d 773 (Tex. 1972)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:san",
-    "s": "Board of Adjustment of San Antonio v. Wende, 92 S.W.3d 424 (Tex. 2002)"
+    "s": "Board of Adjustment of San Antonio v. Wende, 92 S.W.3d 424 (Tex. 2002)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:brookside",
-    "s": "City of Brookside Village v. Comeau, 633 S.W.2d 790 (Tex. 1982)"
+    "s": "City of Brookside Village v. Comeau, 633 S.W.2d 790 (Tex. 1982)",
+    "v": "2026-11-01"
    }
   ],
   "FL": [
    {
     "k": "S:163.3161",
-    "s": "Community Planning Act (Local Government Comprehensive Planning and Land Development Regulation Act) — Fla. Stat. Ch. 16"
+    "s": "Community Planning Act (Local Government Comprehensive Planning and Land Development Regulation Act) — Fla. Stat. Ch. 16",
+    "v": "2026-07-22"
    },
    {
     "k": "CH:163",
-    "s": "Community Planning Act (Local Government Comprehensive Planning and Land Development Regulation Act) — Fla. Stat. Ch. 16"
+    "s": "Community Planning Act (Local Government Comprehensive Planning and Land Development Regulation Act) — Fla. Stat. Ch. 16",
+    "v": "2026-07-22"
    },
    {
     "k": "S:163.3194",
-    "s": "§ 163.3194 consistency requirement."
+    "s": "§ 163.3194 consistency requirement.",
+    "v": "2026-07-22"
    },
    {
     "k": "S:70.001",
-    "s": "Bert Harris Act § 70.001 inordinate-burden claims."
+    "s": "Bert Harris Act § 70.001 inordinate-burden claims.",
+    "v": "2026-07-22"
    },
    {
     "k": "S:162.11",
-    "s": "Fla. Stat. § 162.11 / Chapter 162"
+    "s": "Fla. Stat. § 162.11 / Chapter 162",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:162",
-    "s": "Fla. Stat. § 162.11 / Chapter 162"
+    "s": "Fla. Stat. § 162.11 / Chapter 162",
+    "v": "2026-11-01"
    },
    {
     "k": "S:166.041",
-    "s": "Fla. Stat. § 166.041"
+    "s": "Fla. Stat. § 166.041",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:86",
-    "s": "Fla. Stat. Chapter 86"
+    "s": "Fla. Stat. Chapter 86",
+    "v": "2026-11-01"
    },
    {
     "k": "C:bernard",
-    "s": "Bernard v. Town Council of Palm Beach, 569 So. 2d 853 (Fla. 4th DCA 1990)"
+    "s": "Bernard v. Town Council of Palm Beach, 569 So. 2d 853 (Fla. 4th DCA 1990)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:brevard",
-    "s": "Board of County Commissioners of Brevard County v. Snyder, 627 So. 2d 469 (Fla. 1993)"
+    "s": "Board of County Commissioners of Brevard County v. Snyder, 627 So. 2d 469 (Fla. 1993)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:162.06",
-    "s": "Fla. Stat. § 162.06"
+    "s": "Fla. Stat. § 162.06",
+    "v": "2026-11-01"
    },
    {
     "k": "S:162.09",
-    "s": "Fla. Stat. § 162.09"
+    "s": "Fla. Stat. § 162.09",
+    "v": "2026-11-01"
    },
    {
     "k": "S:163.3215",
-    "s": "Fla. Stat. § 163.3215"
+    "s": "Fla. Stat. § 163.3215",
+    "v": "2026-11-01"
    },
    {
     "k": "S:163.3184",
-    "s": "Fla. Stat. § 163.3184"
+    "s": "Fla. Stat. § 163.3184",
+    "v": "2026-11-01"
    },
    {
     "k": "S:286.0115",
-    "s": "Fla. Stat. § 286.0115"
+    "s": "Fla. Stat. § 286.0115",
+    "v": "2026-11-01"
    },
    {
     "k": "C:irvine",
-    "s": "Irvine v. Duval County Planning Comm'n, 495 So. 2d 167 (Fla. 1986)"
+    "s": "Irvine v. Duval County Planning Comm'n, 495 So. 2d 167 (Fla. 1986)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:miami-dade",
-    "s": "Jesus Fellowship, Inc. v. Miami-Dade County, 752 So. 2d 708 (Fla. 3d DCA 2000)"
+    "s": "Jesus Fellowship, Inc. v. Miami-Dade County, 752 So. 2d 708 (Fla. 3d DCA 2000)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:dusseau",
-    "s": "Dusseau v. Metro. Dade County Bd. of County Comm'rs, 794 So. 2d 1270 (Fla. 2001)"
+    "s": "Dusseau v. Metro. Dade County Bd. of County Comm'rs, 794 So. 2d 1270 (Fla. 2001)",
+    "v": "2026-11-01"
    }
   ],
   "IL": [
    {
     "k": "S:65ILCS5/11-13-1",
-    "s": "Illinois Municipal Code, Division 13 (Zoning) for municipalities; Counties Code (Division 5-12) for counties — 65 ILCS 5"
+    "s": "Illinois Municipal Code, Division 13 (Zoning) for municipalities; Counties Code (Division 5-12) for counties — 65 ILCS 5",
+    "v": "2026-07-22"
    },
    {
     "k": "S:55ILCS5/5-12001",
-    "s": "Illinois Municipal Code, Division 13 (Zoning) for municipalities; Counties Code (Division 5-12) for counties — 65 ILCS 5"
+    "s": "Illinois Municipal Code, Division 13 (Zoning) for municipalities; Counties Code (Division 5-12) for counties — 65 ILCS 5",
+    "v": "2026-07-22"
    },
    {
     "k": "S:65ILCS5",
-    "s": "65 ILCS 5 Municipal Code Division 13 zoning."
+    "s": "65 ILCS 5 Municipal Code Division 13 zoning.",
+    "v": "2026-07-22"
    },
    {
     "k": "C:klaeren",
-    "s": "Klaeren v. Village of Lisle quasi-judicial special-use hearings."
+    "s": "Klaeren v. Village of Lisle quasi-judicial special-use hearings.",
+    "v": "2026-07-22"
    },
    {
     "k": "S:65ILCS5/11-13-5",
-    "s": "65 ILCS 5/11-13-5"
+    "s": "65 ILCS 5/11-13-5",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65ILCS5/11-13-4",
-    "s": "65 ILCS 5/11-13-4"
+    "s": "65 ILCS 5/11-13-4",
+    "v": "2026-11-01"
    },
    {
     "k": "S:55ILCS5/5-12009",
-    "s": "55 ILCS 5/5-12009"
+    "s": "55 ILCS 5/5-12009",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65ILCS5/11-13-1.1",
-    "s": "65 ILCS 5/11-13-1.1"
+    "s": "65 ILCS 5/11-13-1.1",
+    "v": "2026-11-01"
    },
    {
     "k": "S:735ILCS5/3-101",
-    "s": "735 ILCS 5/3-101 et seq. / 735 ILCS 5/3-103"
+    "s": "735 ILCS 5/3-101 et seq. / 735 ILCS 5/3-103",
+    "v": "2026-11-01"
    },
    {
     "k": "S:735ILCS5/3-103",
-    "s": "735 ILCS 5/3-101 et seq. / 735 ILCS 5/3-103"
+    "s": "735 ILCS 5/3-101 et seq. / 735 ILCS 5/3-103",
+    "v": "2026-11-01"
    },
    {
     "k": "C:sinclair",
-    "s": "La Salle National Bank v. County of Cook, 12 Ill. 2d 40 (1957); Sinclair Pipe Line Co. v. Village of Richton Park, 19 Ill. 2d 370 (1960)"
+    "s": "La Salle National Bank v. County of Cook, 12 Ill. 2d 40 (1957); Sinclair Pipe Line Co. v. Village of Richton Park, 19 Ill. 2d 370 (1960)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:908",
-    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)"
+    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:1001",
-    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)"
+    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:1002",
-    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)"
+    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:1003",
-    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)"
+    "s": "MPC section numbers as cited on the PA page: § 908, § 1001, § 1002, § 1003 (Sections 908, 1001-A, 1002-A, 1003-A)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65ILCS5/11-13-14",
-    "s": "65 ILCS 5/11-13-14"
+    "s": "65 ILCS 5/11-13-14",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65ILCS5/11-13-15",
-    "s": "65 ILCS 5/11-13-15"
+    "s": "65 ILCS 5/11-13-15",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65ILCS5/11-13-12",
-    "s": "65 ILCS 5/11-13-12"
+    "s": "65 ILCS 5/11-13-12",
+    "v": "2026-11-01"
    },
    {
     "k": "S:65ILCS5/1-2.1-1",
-    "s": "65 ILCS 5/1-2.1-1"
+    "s": "65 ILCS 5/1-2.1-1",
+    "v": "2026-11-01"
    },
    {
     "k": "S:735ILCS5/3-110",
-    "s": "735 ILCS 5/3-110"
+    "s": "735 ILCS 5/3-110",
+    "v": "2026-11-01"
    },
    {
     "k": "S:735ILCS5/2-701",
-    "s": "735 ILCS 5/2-701"
+    "s": "735 ILCS 5/2-701",
+    "v": "2026-11-01"
    },
    {
     "k": "S:745ILCS10/8-101",
-    "s": "745 ILCS 10/8-101"
+    "s": "745 ILCS 10/8-101",
+    "v": "2026-11-01"
    }
   ],
   "PA": [
    {
     "k": "S:10101",
-    "s": "Pennsylvania Municipalities Planning Code (MPC), Act 247 of 1968 — 53 P.S. §10101 et seq."
+    "s": "Pennsylvania Municipalities Planning Code (MPC), Act 247 of 1968 — 53 P.S. §10101 et seq. verified_on: 2026-07-22",
+    "v": "2026-07-22"
    },
    {
     "k": "S:10901",
-    "s": "53 P.S. § 10901 et seq. (Article IX)"
+    "s": "53 P.S. § 10901 et seq. (Article IX)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10910.2",
-    "s": "53 P.S. § 10910.2 / Section 910.2"
+    "s": "53 P.S. § 10910.2 / Section 910.2",
+    "v": "2026-11-01"
    },
    {
     "k": "S:910.2",
-    "s": "53 P.S. § 10910.2 / Section 910.2"
+    "s": "53 P.S. § 10910.2 / Section 910.2",
+    "v": "2026-11-01"
    },
    {
     "k": "S:908",
     "s": "Section 908 / Section 908(1)",
     "sub": [
      "(1)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:909.1",
     "s": "Section 909.1",
     "sub": [
      "(a)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:913.3",
-    "s": "Section 913.3"
+    "s": "Section 913.3",
+    "v": "2026-11-01"
    },
    {
     "k": "S:11001-A",
-    "s": "53 P.S. § 11001-A / Section 1001-A"
+    "s": "53 P.S. § 11001-A / Section 1001-A",
+    "v": "2026-11-01"
    },
    {
     "k": "S:11001",
-    "s": "53 P.S. § 11001-A / Section 1001-A"
+    "s": "53 P.S. § 11001-A / Section 1001-A",
+    "v": "2026-11-01"
    },
    {
     "k": "S:1001",
-    "s": "53 P.S. § 11001-A / Section 1001-A"
+    "s": "53 P.S. § 11001-A / Section 1001-A",
+    "v": "2026-11-01"
    },
    {
     "k": "S:11002-A",
     "s": "53 P.S. § 11002-A / Section 1002-A",
     "sub": [
      "(b)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:11002",
-    "s": "53 P.S. § 11002-A / Section 1002-A"
+    "s": "53 P.S. § 11002-A / Section 1002-A",
+    "v": "2026-11-01"
    },
    {
     "k": "S:1002",
-    "s": "53 P.S. § 11002-A / Section 1002-A"
+    "s": "53 P.S. § 11002-A / Section 1002-A",
+    "v": "2026-11-01"
    },
    {
     "k": "S:1003",
-    "s": "Section 1003-A / Section 1003-A(d)"
+    "s": "Section 1003-A / Section 1003-A(d)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:2503",
-    "s": "42 Pa.C.S. § 2503"
+    "s": "42 Pa.C.S. § 2503",
+    "v": "2026-11-01"
    },
    {
     "k": "C:hertzberg",
-    "s": "Hertzberg v. Zoning Board of Adjustment, 554 Pa. 249 (1998)"
+    "s": "Hertzberg v. Zoning Board of Adjustment, 554 Pa. 249 (1998)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:valley",
-    "s": "Valley View Civic Association v. Zoning Board of Adjustment, 501 Pa. 550 (1983)"
+    "s": "Valley View Civic Association v. Zoning Board of Adjustment, 501 Pa. 550 (1983)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10916.1",
-    "s": "53 P.S. § 10916.1"
+    "s": "53 P.S. § 10916.1",
+    "v": "2026-11-01"
    },
    {
     "k": "S:5571.1",
-    "s": "53 P.S. § 11002-A(b); 42 Pa.C.S. § 5571.1"
+    "s": "53 P.S. § 11002-A(b); 42 Pa.C.S. § 5571.1",
+    "v": "2026-11-01"
    },
    {
     "k": "C:cleaver",
-    "s": "Cleaver v. Board of Adjustment, 414 Pa. 367 (1964)"
+    "s": "Cleaver v. Board of Adjustment, 414 Pa. 367 (1964)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10107",
-    "s": "53 P.S. § 10107 (Section 107 definitions)"
+    "s": "53 P.S. § 10107 (Section 107 definitions)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:107",
-    "s": "53 P.S. § 10107 (Section 107 definitions)"
+    "s": "53 P.S. § 10107 (Section 107 definitions)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10301",
-    "s": "53 P.S. § 10301 (Section 301)"
+    "s": "53 P.S. § 10301 (Section 301)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:301",
-    "s": "53 P.S. § 10301 (Section 301)"
+    "s": "53 P.S. § 10301 (Section 301)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10603",
-    "s": "53 P.S. § 10603 (Section 603; Section 603(j); Section 603(c)(2))"
+    "s": "53 P.S. § 10603 (Section 603; Section 603(j); Section 603(c)(2))",
+    "v": "2026-11-01"
    },
    {
     "k": "S:603",
@@ -806,241 +994,298 @@
     "sub": [
      "(c)(2)",
      "(j)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:10604",
-    "s": "53 P.S. § 10604 (Section 604)"
+    "s": "53 P.S. § 10604 (Section 604)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:604",
-    "s": "53 P.S. § 10604 (Section 604)"
+    "s": "53 P.S. § 10604 (Section 604)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10609",
-    "s": "53 P.S. § 10609 (Section 609; Section 609(e))"
+    "s": "53 P.S. § 10609 (Section 609; Section 609(e))",
+    "v": "2026-11-01"
    },
    {
     "k": "S:609",
     "s": "53 P.S. § 10609 (Section 609; Section 609(e))",
     "sub": [
      "(e)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:10609.1",
-    "s": "53 P.S. § 10609.1"
+    "s": "53 P.S. § 10609.1",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10613",
-    "s": "53 P.S. § 10613 (Section 613)"
+    "s": "53 P.S. § 10613 (Section 613)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:613",
-    "s": "53 P.S. § 10613 (Section 613)"
+    "s": "53 P.S. § 10613 (Section 613)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10616.1",
-    "s": "53 P.S. § 10616.1"
+    "s": "53 P.S. § 10616.1",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10617.2",
-    "s": "53 P.S. § 10617.2"
+    "s": "53 P.S. § 10617.2",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10908",
-    "s": "53 P.S. § 10908 (Section 908; 908(1); 908(9))"
+    "s": "53 P.S. § 10908 (Section 908; 908(1); 908(9))",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10909.1",
-    "s": "53 P.S. § 10909.1 (Section 909.1)"
+    "s": "53 P.S. § 10909.1 (Section 909.1)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10913.2",
-    "s": "53 P.S. § 10913.2"
+    "s": "53 P.S. § 10913.2",
+    "v": "2026-11-01"
    },
    {
     "k": "S:10914.1",
-    "s": "53 P.S. § 10914.1"
+    "s": "53 P.S. § 10914.1",
+    "v": "2026-11-01"
    },
    {
     "k": "S:914.1",
     "s": "MPC section numbers as cited on the PA pages: § 301, § 603, § 603(j), § 604, § 609, § 609(e), Section 914.1(b)",
     "sub": [
      "(b)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:10508",
-    "s": "53 P.S. § 10508"
+    "s": "53 P.S. § 10508",
+    "v": "2026-11-01"
    },
    {
     "k": "S:11004-A",
-    "s": "53 P.S. § 11004-A"
+    "s": "53 P.S. § 11004-A",
+    "v": "2026-11-01"
    },
    {
     "k": "S:11004",
-    "s": "53 P.S. § 11004-A"
+    "s": "53 P.S. § 11004-A",
+    "v": "2026-11-01"
    },
    {
     "k": "S:11005-A",
-    "s": "53 P.S. § 11005-A"
+    "s": "53 P.S. § 11005-A",
+    "v": "2026-11-01"
    },
    {
     "k": "S:11005",
-    "s": "53 P.S. § 11005-A"
+    "s": "53 P.S. § 11005-A",
+    "v": "2026-11-01"
    },
    {
     "k": "S:11006-A",
-    "s": "53 P.S. § 11006-A"
+    "s": "53 P.S. § 11006-A",
+    "v": "2026-11-01"
    },
    {
     "k": "S:11006",
-    "s": "53 P.S. § 11006-A"
+    "s": "53 P.S. § 11006-A",
+    "v": "2026-11-01"
    },
    {
     "k": "S:5571",
-    "s": "42 Pa.C.S. § 5571"
+    "s": "42 Pa.C.S. § 5571",
+    "v": "2026-11-01"
    },
    {
     "k": "S:5572",
-    "s": "42 Pa.C.S. § 5572"
+    "s": "42 Pa.C.S. § 5572",
+    "v": "2026-11-01"
    },
    {
     "k": "S:8303",
-    "s": "42 Pa.C.S. § 8303"
+    "s": "42 Pa.C.S. § 8303",
+    "v": "2026-11-01"
    },
    {
     "k": "TITLE:14",
-    "s": "Philadelphia Zoning Code, Title 14; Pittsburgh Zoning Code, Title 9"
+    "s": "Philadelphia Zoning Code, Title 14; Pittsburgh Zoning Code, Title 9",
+    "v": "2026-11-01"
    },
    {
     "k": "TITLE:9",
-    "s": "Philadelphia Zoning Code, Title 14; Pittsburgh Zoning Code, Title 9"
+    "s": "Philadelphia Zoning Code, Title 14; Pittsburgh Zoning Code, Title 9",
+    "v": "2026-11-01"
    },
    {
     "k": "C:hanna",
-    "s": "Hanna v. Board of Adjustment, 408 Pa. 306 (1962)"
+    "s": "Hanna v. Board of Adjustment, 408 Pa. 306 (1962)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:zoning",
-    "s": "PA Northwestern Distributors, Inc. v. Zoning Hearing Board, 526 Pa. 186 (1991)"
+    "s": "PA Northwestern Distributors, Inc. v. Zoning Hearing Board, 526 Pa. 186 (1991)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:silver",
-    "s": "Silver v. Zoning Board of Adjustment, 435 Pa. 99 (1969)"
+    "s": "Silver v. Zoning Board of Adjustment, 435 Pa. 99 (1969)",
+    "v": "2026-11-01"
    }
   ],
   "OH": [
    {
     "k": "S:519.02",
-    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit"
+    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit",
+    "v": "2026-07-22"
    },
    {
     "k": "CH:713",
-    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit"
+    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit",
+    "v": "2026-07-22"
    },
    {
     "k": "CH:519",
-    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit"
+    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit",
+    "v": "2026-07-22"
    },
    {
     "k": "CH:303",
-    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit"
+    "s": "Ohio Revised Code Chapter 713 (municipal zoning) and Chapter 519 (township zoning) — Ohio Rev. Code Ch. 713 (municipalit",
+    "v": "2026-07-22"
    },
    {
     "k": "C:duncan",
-    "s": "Duncan v. Village of Middlefield (1986): area variance on 'practical difficulties'; lesser standard than use variances."
+    "s": "Duncan v. Village of Middlefield (1986): area variance on 'practical difficulties'; lesser standard than use variances.",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:2506",
-    "s": "ORC Chapter 2506 governs appeals of BZA decisions to Common Pleas; 30 days to appeal."
+    "s": "ORC Chapter 2506 governs appeals of BZA decisions to Common Pleas; 30 days to appeal.",
+    "v": "2026-11-01"
    },
    {
     "k": "S:713.15",
-    "s": "ORC 713.15: nonconforming use may continue but if voluntarily discontinued 2+ years must conform."
+    "s": "ORC 713.15: nonconforming use may continue but if voluntarily discontinued 2+ years must conform.",
+    "v": "2026-07-22"
    },
    {
     "k": "S:519.14",
-    "s": "R.C. § 519.14"
+    "s": "R.C. § 519.14",
+    "v": "2026-11-01"
    },
    {
     "k": "S:713.11",
-    "s": "R.C. § 713.11 / ORC 713.11"
+    "s": "R.C. § 713.11 / ORC 713.11",
+    "v": "2026-11-01"
    },
    {
     "k": "S:2506.01",
-    "s": "R.C. § 2506.01 / ORC Chapter 2506"
+    "s": "R.C. § 2506.01 / ORC Chapter 2506",
+    "v": "2026-11-01"
    },
    {
     "k": "S:2505.07",
-    "s": "R.C. § 2505.07 / ORC 2505.07"
+    "s": "R.C. § 2505.07 / ORC 2505.07",
+    "v": "2026-11-01"
    },
    {
     "k": "C:kisil",
-    "s": "Kisil v. City of Sandusky, 12 Ohio St.3d 30 (1984); Duncan v. Village of Middlefield, 23 Ohio St.3d 83 (1986)"
+    "s": "Kisil v. City of Sandusky, 12 Ohio St.3d 30 (1984); Duncan v. Village of Middlefield, 23 Ohio St.3d 83 (1986)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:2506.04",
-    "s": "R.C. 2506.04"
+    "s": "R.C. 2506.04",
+    "v": "2026-11-01"
    },
    {
     "k": "S:2506.03",
-    "s": "R.C. 2506.03"
+    "s": "R.C. 2506.03",
+    "v": "2026-11-01"
    },
    {
     "k": "S:2335.39",
-    "s": "R.C. 2335.39"
+    "s": "R.C. 2335.39",
+    "v": "2026-11-01"
    },
    {
     "k": "S:519.12",
-    "s": "R.C. 519.12"
+    "s": "R.C. 519.12",
+    "v": "2026-11-01"
    },
    {
     "k": "S:713.12",
-    "s": "R.C. 713.12"
+    "s": "R.C. 713.12",
+    "v": "2026-11-01"
    },
    {
     "k": "S:1925.02",
-    "s": "R.C. 1925.02"
+    "s": "R.C. 1925.02",
+    "v": "2026-11-01"
    },
    {
     "k": "S:149.43",
-    "s": "R.C. 149.43"
+    "s": "R.C. 149.43",
+    "v": "2026-11-01"
    },
    {
     "k": "S:2721.03",
-    "s": "R.C. 2721.03"
+    "s": "R.C. 2721.03",
+    "v": "2026-11-01"
    },
    {
     "k": "S:2721.12",
-    "s": "R.C. 2721.12"
+    "s": "R.C. 2721.12",
+    "v": "2026-11-01"
    },
    {
     "k": "C:central",
-    "s": "Central Motors Corp. v. Pepper Pike, 73 Ohio St.3d 581 (1995)"
+    "s": "Central Motors Corp. v. Pepper Pike, 73 Ohio St.3d 581 (1995)",
+    "v": "2026-11-01"
    }
   ],
   "GA": [
    {
     "k": "S:36-66-1",
-    "s": "Zoning Procedures Law (Georgia) — O.C.G.A. § 36-66-1 et seq."
+    "s": "Zoning Procedures Law (Georgia) — O.C.G.A. § 36-66-1 et seq. verified_on: 2026-07-22",
+    "v": "2026-11-01"
    },
    {
     "k": "S:36-66-4",
-    "s": "O.C.G.A. § 36-66-4 requires a hearing and published notice 15-45 days before, plus an on-site sign 15 days before; speci"
+    "s": "O.C.G.A. § 36-66-4 requires a hearing and published notice 15-45 days before, plus an on-site sign 15 days before; speci",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:66",
-    "s": "O.C.G.A. § 36-66-1 et seq. / Title 36, Ch. 66 (Zoning Procedures Law)"
+    "s": "O.C.G.A. § 36-66-1 et seq. / Title 36, Ch. 66 (Zoning Procedures Law)",
+    "v": "2026-11-01"
    },
    {
     "k": "TITLE:36",
-    "s": "O.C.G.A. § 36-66-1 et seq. / Title 36, Ch. 66 (Zoning Procedures Law)"
+    "s": "O.C.G.A. § 36-66-1 et seq. / Title 36, Ch. 66 (Zoning Procedures Law)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:36-66-5",
-    "s": "O.C.G.A. § 36-66-5"
+    "s": "O.C.G.A. § 36-66-5",
+    "v": "2026-11-01"
    },
    {
     "k": "S:36-66-5.1",
@@ -1050,218 +1295,267 @@
      "(a)(1)",
      "(a)(2)",
      "(b)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:36-67A-3",
-    "s": "O.C.G.A. § 36-67A-3"
+    "s": "O.C.G.A. § 36-67A-3",
+    "v": "2026-11-01"
    },
    {
     "k": "S:9-15-14",
-    "s": "O.C.G.A. § 9-15-14"
+    "s": "O.C.G.A. § 9-15-14",
+    "v": "2026-11-01"
    },
    {
     "k": "C:barrett",
-    "s": "Barrett v. Hamby, 235 Ga. 262 (1975)"
+    "s": "Barrett v. Hamby, 235 Ga. 262 (1975)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:guhl",
-    "s": "Guhl v. Holcomb Bridge Road Corp., 238 Ga. 322 (1977)"
+    "s": "Guhl v. Holcomb Bridge Road Corp., 238 Ga. 322 (1977)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:cumming",
-    "s": "City of Cumming v. Flowers, 300 Ga. 820 (2017)"
+    "s": "City of Cumming v. Flowers, 300 Ga. 820 (2017)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:36-33-5",
-    "s": "O.C.G.A. § 36-33-5"
+    "s": "O.C.G.A. § 36-33-5",
+    "v": "2026-11-01"
    },
    {
     "k": "S:36-11-1",
-    "s": "O.C.G.A. § 36-11-1"
+    "s": "O.C.G.A. § 36-11-1",
+    "v": "2026-11-01"
    },
    {
     "k": "S:36-67A-1",
-    "s": "O.C.G.A. § 36-67A-1"
+    "s": "O.C.G.A. § 36-67A-1",
+    "v": "2026-11-01"
    },
    {
     "k": "S:36-67A-2",
-    "s": "O.C.G.A. § 36-67A-2"
+    "s": "O.C.G.A. § 36-67A-2",
+    "v": "2026-11-01"
    },
    {
     "k": "S:13-6-11",
-    "s": "O.C.G.A. § 13-6-11"
+    "s": "O.C.G.A. § 13-6-11",
+    "v": "2026-11-01"
    },
    {
     "k": "S:50-14-1",
-    "s": "O.C.G.A. § 50-14-1"
+    "s": "O.C.G.A. § 50-14-1",
+    "v": "2026-11-01"
    },
    {
     "k": "S:9-4-1",
-    "s": "O.C.G.A. § 9-4-1"
+    "s": "O.C.G.A. § 9-4-1",
+    "v": "2026-11-01"
    },
    {
     "k": "S:50-14-5",
-    "s": "O.C.G.A. § 50-14-5"
+    "s": "O.C.G.A. § 50-14-5",
+    "v": "2026-11-01"
    },
    {
     "k": "C:wmm",
-    "s": "WMM Properties v. Cobb County, 255 Ga. 436 (1986)"
+    "s": "WMM Properties v. Cobb County, 255 Ga. 436 (1986)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:corey",
-    "s": "Corey Outdoor Advertising v. Board of Zoning Adjustments of Atlanta, 254 Ga. 221 (1985)"
+    "s": "Corey Outdoor Advertising v. Board of Zoning Adjustments of Atlanta, 254 Ga. 221 (1985)",
+    "v": "2026-11-01"
    }
   ],
   "NC": [
    {
     "k": "CH:160D",
-    "s": "Local Planning and Development Regulation (unified city + county land-use chapter, effective 2019; local compliance July"
+    "s": "Local Planning and Development Regulation (unified city + county land-use chapter, effective 2019; local compliance July",
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-405",
-    "s": "N.C. Gen. Stat. § 160D-405"
+    "s": "N.C. Gen. Stat. § 160D-405",
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-406",
-    "s": "N.C. Gen. Stat. § 160D-406"
+    "s": "N.C. Gen. Stat. § 160D-406",
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-705",
     "s": "N.C. Gen. Stat. § 160D-705(d)",
     "sub": [
      "(d)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-1402",
     "s": "N.C. Gen. Stat. § 160D-1402 / § 160D-1402(c) / Article 14",
     "sub": [
      "(c)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "ART:14",
-    "s": "N.C. Gen. Stat. § 160D-1402 / § 160D-1402(c) / Article 14"
+    "s": "N.C. Gen. Stat. § 160D-1402 / § 160D-1402(c) / Article 14",
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-1405",
     "s": "N.C. Gen. Stat. § 160D-1405(d)",
     "sub": [
      "(d)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "ART:4",
-    "s": "Article 4; Article 6; Article 7 (Chapter 160D)"
+    "s": "Article 4; Article 6; Article 7 (Chapter 160D)",
+    "v": "2026-11-01"
    },
    {
     "k": "ART:6",
-    "s": "Article 4; Article 6; Article 7 (Chapter 160D)"
+    "s": "Article 4; Article 6; Article 7 (Chapter 160D)",
+    "v": "2026-11-01"
    },
    {
     "k": "ART:7",
-    "s": "Article 4; Article 6; Article 7 (Chapter 160D)"
+    "s": "Article 4; Article 6; Article 7 (Chapter 160D)",
+    "v": "2026-11-01"
    },
    {
     "k": "S:6-21.7",
-    "s": "N.C. Gen. Stat. § 6-21.7"
+    "s": "N.C. Gen. Stat. § 6-21.7",
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-601",
-    "s": "N.C. Gen. Stat. § 160D-601"
+    "s": "N.C. Gen. Stat. § 160D-601",
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-602",
-    "s": "N.C. Gen. Stat. § 160D-602"
+    "s": "N.C. Gen. Stat. § 160D-602",
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-605",
-    "s": "N.C. Gen. Stat. § 160D-605"
+    "s": "N.C. Gen. Stat. § 160D-605",
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-703",
-    "s": "N.C. Gen. Stat. § 160D-703"
+    "s": "N.C. Gen. Stat. § 160D-703",
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-404",
     "s": "N.C. Gen. Stat. § 160D-404 / § 160D-404(c)",
     "sub": [
      "(c)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-108",
     "s": "N.C. Gen. Stat. § 160D-108 / § 160D-108(c) / (d)",
     "sub": [
      "(c)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-108.1",
-    "s": "N.C. Gen. Stat. § 160D-108.1"
+    "s": "N.C. Gen. Stat. § 160D-108.1",
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-1403",
-    "s": "N.C. Gen. Stat. § 160D-1403"
+    "s": "N.C. Gen. Stat. § 160D-1403",
+    "v": "2026-11-01"
    },
    {
     "k": "S:160D-1403.1",
-    "s": "N.C. Gen. Stat. § 160D-1403.1"
+    "s": "N.C. Gen. Stat. § 160D-1403.1",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:153A",
-    "s": "Chapter 153A and Chapter 160A zoning provisions"
+    "s": "Chapter 153A and Chapter 160A zoning provisions",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:160A",
-    "s": "Chapter 153A and Chapter 160A zoning provisions"
+    "s": "Chapter 153A and Chapter 160A zoning provisions",
+    "v": "2026-11-01"
    },
    {
     "k": "C:cg&t",
-    "s": "CG&T Corp. v. Board of Adjustment of Wilmington, 105 N.C. App. 32 (1992)"
+    "s": "CG&T Corp. v. Board of Adjustment of Wilmington, 105 N.C. App. 32 (1992)",
+    "v": "2026-11-01"
    },
    {
     "k": "C:refining",
-    "s": "Humble Oil & Refining Co. v. Board of Aldermen, 284 N.C. 458, 202 S.E.2d 129 (1974)"
+    "s": "Humble Oil & Refining Co. v. Board of Aldermen, 284 N.C. 458, 202 S.E.2d 129 (1974)",
+    "v": "2026-11-01"
    }
   ],
   "AZ": [
    {
     "k": "S:9-461",
-    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §",
+    "v": "2026-07-22"
    },
    {
     "k": "S:9-462",
-    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §",
+    "v": "2026-07-22"
    },
    {
     "k": "S:11-811",
-    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §",
+    "v": "2026-11-01"
    },
    {
     "k": "CH:4",
-    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §",
+    "v": "2026-07-22"
    },
    {
     "k": "CH:6",
-    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §",
+    "v": "2026-07-22"
    },
    {
     "k": "ART:6",
-    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §",
+    "v": "2026-07-22"
    },
    {
     "k": "ART:2",
-    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §",
+    "v": "2026-07-22"
    },
    {
     "k": "TITLE:9",
-    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §",
+    "v": "2026-07-22"
    },
    {
     "k": "TITLE:11",
-    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §"
+    "s": "Municipal Zoning (A.R.S. Title 9, Chapter 4, Article 6.1); county zoning under Title 11, Chapter 6, Article 2 — A.R.S. §",
+    "v": "2026-07-22"
    },
    {
     "k": "S:9-462.06",
@@ -1269,61 +1563,74 @@
     "sub": [
      "(d)",
      "(k)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:9-462.02",
-    "s": "A.R.S. § 9-462.02: existing lawful uses grandfathered; municipality may condemn to eliminate nonconforming uses."
+    "s": "A.R.S. § 9-462.02: existing lawful uses grandfathered; municipality may condemn to eliminate nonconforming uses.",
+    "v": "2026-11-01"
    },
    {
     "k": "S:9-462.13",
-    "s": "HB 2721 (2024) middle housing, A.R.S. § 9-462.13: cities of 75,000+ must allow duplex/triplex/townhome on 20% of single-"
+    "s": "HB 2721 (2024) middle housing, A.R.S. § 9-462.13: cities of 75,000+ must allow duplex/triplex/townhome on 20% of single-",
+    "v": "2026-07-22"
    },
    {
     "k": "S:11-816",
     "s": "A.R.S. § 11-816 / § 11-816(D)",
     "sub": [
      "(d)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:9-461.05",
-    "s": "A.R.S. § 9-461.05"
+    "s": "A.R.S. § 9-461.05",
+    "v": "2026-11-01"
    },
    {
     "k": "S:9-462.01",
     "s": "A.R.S. § 9-462.01 / § 9-462.01(F)",
     "sub": [
      "(f)"
-    ]
+    ],
+    "v": "2026-11-01"
    },
    {
     "k": "S:9-462.04",
-    "s": "A.R.S. § 9-462.04"
+    "s": "A.R.S. § 9-462.04",
+    "v": "2026-11-01"
    },
    {
     "k": "S:9-461.06",
-    "s": "A.R.S. § 9-461.06"
+    "s": "A.R.S. § 9-461.06",
+    "v": "2026-11-01"
    },
    {
     "k": "S:9-462.05",
-    "s": "A.R.S. § 9-462.05"
+    "s": "A.R.S. § 9-462.05",
+    "v": "2026-11-01"
    },
    {
     "k": "S:9-500.21",
-    "s": "A.R.S. § 9-500.21"
+    "s": "A.R.S. § 9-500.21",
+    "v": "2026-11-01"
    },
    {
     "k": "S:12-348",
-    "s": "A.R.S. § 12-348"
+    "s": "A.R.S. § 12-348",
+    "v": "2026-11-01"
    },
    {
     "k": "S:12-751",
-    "s": "A.R.S. § 12-751"
+    "s": "A.R.S. § 12-751",
+    "v": "2026-11-01"
    },
    {
     "k": "S:12-1134",
-    "s": "A.R.S. § 12-1134"
+    "s": "A.R.S. § 12-1134",
+    "v": "2026-11-01"
    }
   ]
  }

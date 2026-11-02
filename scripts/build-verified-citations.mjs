@@ -7,6 +7,7 @@
 // (O.C.G.A. -> GA ...); a row with neither goes to "any" and is offered to every state.
 import fs from 'fs';
 import { citations } from '../api/_cites.js';
+import { DATE_RE } from './verified-log.mjs';
 
 const FILES = ['VERIFICATION_LOG.md', 'VERIFICATION_LOG-SEO-CONTENT.md'].filter(f => fs.existsSync(f));
 const FORMS = [
@@ -25,9 +26,12 @@ const stateOf = (text, heading) => {
 
 const out = { any: new Map(), states: {} };
 const SUBS = new Map();   // "st|k" -> Set of logged subsection suffixes, e.g. "(k)", "(d)(1)"
+const VDATE = new Map();   // "st|k" -> newest verified_on of any entry that logged the citation
+let curDate = null;       // verified_on of the entry being parsed (SEO log: its verified_on token; old log: its heading date)
 const add = (st, k, s) => {
   const m = st ? (out.states[st] ??= new Map()) : out.any;
   if (!m.has(k)) m.set(k, s);
+  if (curDate && (VDATE.get((st || '*') + '|' + k) || '') < curDate) VDATE.set((st || '*') + '|' + k, curDate);
 };
 function addText(text, heading, display, fullRow) {
   const st = stateOf(text, heading);
@@ -45,12 +49,14 @@ for (const f of FILES) {
   const lines = fs.readFileSync(f, 'utf8').split(/\r?\n/);
   let heading = '', oldStyle = null;
   for (const line of lines) {
-    if (/^#{2,3}\s/.test(line)) { heading = line; oldStyle = null; }
+    if (/^#{2,3}\s/.test(line)) { heading = line; oldStyle = null; curDate = null; }
     if (/^\|/.test(line)) {
       const cols = line.split('|').slice(1, -1).map(c => c.trim());
       if (cols.length < 2 || !/^(VERIFIED|CORRECTED)/i.test(cols[1])) continue;   // header, separator, REMOVED rows
+      curDate = (line.match(DATE_RE) || [])[1] || null;
       addText(cols[0], heading, cols[0], cols.join(' '));
     } else if (/^### \d{4}-\d\d-\d\d — /.test(line)) {                            // old-style entry; counts only if its Verdict is VERIFIED
+      curDate = line.match(/^### (\d{4}-\d\d-\d\d)/)[1];
       oldStyle = { title: line.replace(/^### \d{4}-\d\d-\d\d — /, ''), ok: false };
       oldStyle.pending = true;
     } else if (oldStyle && /^- \*\*Verdict:\*\*\s*(VERIFIED|CORRECTED)/i.test(line)) {
@@ -58,11 +64,12 @@ for (const f of FILES) {
       oldStyle = null;
     } else if (/\((?:[A-Z]{2})\)\s*$/.test(heading) && /^## /.test(heading) && /^\s*-\s/.test(line)) {
       // 2026-07-22 per-state source sections: every bullet is backed by a dated live source URL
+      curDate = (line.match(DATE_RE) || [])[1] || curDate;   // sub-bullets inherit their source bullet's date
       addText(line, heading, line.replace(/^\s*-\s*(\*\*[^*]+\*\*)?\s*/, '').slice(0, 120));
     }
   }
 }
-const ser = (m, st) => [...m].map(([k, s]) => { const sub = [...new Set([...(SUBS.get((st || '*') + '|' + k) || []), ...(SUBS.get('*|' + k) || [])])].sort(); return sub.length ? { k, s: s.slice(0, 160), sub } : { k, s: s.slice(0, 160) }; });
+const ser = (m, st) => [...m].map(([k, s]) => { const sub = [...new Set([...(SUBS.get((st || '*') + '|' + k) || []), ...(SUBS.get('*|' + k) || [])])].sort(); const v = VDATE.get((st || '*') + '|' + k) || null; const o = { k, s: s.slice(0, 160) }; if (sub.length) o.sub = sub; if (v) o.v = v; return o; });
 const json = { generated: new Date().toISOString().slice(0, 10), any: ser(out.any, null), states: Object.fromEntries(Object.entries(out.states).map(([a, m]) => [a, ser(m, a)])) };
 fs.writeFileSync('api/_verified-citations.json', JSON.stringify(json, null, 1) + '\n');
 console.log('verified citations: any=' + json.any.length + ' ' + Object.entries(json.states).map(([a, v]) => a + '=' + v.length).join(' '));
