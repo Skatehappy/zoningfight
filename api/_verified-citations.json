@@ -76,6 +76,10 @@
   {
    "k": "S:211.009",
    "s": "Section 211.003; Section 211.008; Section 211.009"
+  },
+  {
+   "k": "C:schultz",
+   "s": "Schultz v. Pritts, 291 Md. 1 (1981)"
   }
  ],
  "states": {
@@ -292,6 +296,10 @@
    {
     "k": "C:sun-brite",
     "s": "Sun-Brite Car Wash v. Board of Zoning & Appeals of Town of North Hempstead, 69 N.Y.2d 406 (1987)"
+   },
+   {
+    "k": "C:north",
+    "s": "Matter of North Shore Steak House v. Board of Appeals of Thomaston, 30 N.Y.2d 238 (1972)"
    }
   ],
   "CA": [
@@ -578,6 +586,18 @@
    {
     "k": "S:286.0115",
     "s": "Fla. Stat. § 286.0115"
+   },
+   {
+    "k": "C:irvine",
+    "s": "Irvine v. Duval County Planning Comm'n, 495 So. 2d 167 (Fla. 1986)"
+   },
+   {
+    "k": "C:miami-dade",
+    "s": "Jesus Fellowship, Inc. v. Miami-Dade County, 752 So. 2d 708 (Fla. 3d DCA 2000)"
+   },
+   {
+    "k": "C:dusseau",
+    "s": "Dusseau v. Metro. Dade County Bd. of County Comm'rs, 794 So. 2d 1270 (Fla. 2001)"
    }
   ],
   "IL": [
@@ -1200,6 +1220,10 @@
    {
     "k": "C:cg&t",
     "s": "CG&T Corp. v. Board of Adjustment of Wilmington, 105 N.C. App. 32 (1992)"
+   },
+   {
+    "k": "C:refining",
+    "s": "Humble Oil & Refining Co. v. Board of Aldermen, 284 N.C. 458, 202 S.E.2d 129 (1974)"
    }
   ],
   "AZ": [

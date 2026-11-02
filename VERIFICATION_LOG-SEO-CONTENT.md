@@ -532,3 +532,23 @@ Source: scripts/data/generated/** and state-data.json swept against the CORRECTE
 | New York spot-zoning standing sentence | CORRECTED | Replaced "standing requires special damage" with the Sun-Brite rule logged above (proximity supports an inference of injury; no special damages needed; the interest must be within the zone of interests). The unsourced "SEQRA violations alone can invalidate a rezoning" sentence removed. | as logged above |
 
 Still Secondary because the official sites block automated access: California (leginfo.legislature.ca.gov returns 403), New York (nysenate.gov 403; API needs a key), Georgia code (Justia 403; legis.ga.gov has no section-text endpoint), and all case holdings (CourtListener serves names and citations but not readable opinion text to automation).
+
+### Close-out item 1 - burden-shift letter frames re-checked (2026-11-02)
+
+Text of each opinion read from the Caselaw Access Project (static.case.law) where available; Florida cases are West-only, so they were checked through quotations in later Florida opinions.
+
+| Item | Status | Detail | Source |
+|---|---|---|---|
+| Pennsylvania special-exception frame: the 1980 Commonwealth Court special-exception case | REMOVED | Taken out of the frame, the generator and every rendered page on direction; the Pennsylvania frame now carries no burden-shift assertion (applicant carries the burden throughout, criteria_compliance, zero case cites). The frame relies on the Municipalities Planning Code text already logged (sections 909.1, 912.1). Note: on re-reading the opinion text the court does say objectors normally hold the persuasion burden on general detriment while the applicant holds it on the specific ordinance criteria, so it could be restored later if wanted. | CAP static.case.law pa-commw 48 |
+| Schultz v. Pritts, 291 Md. 1 (1981) | VERIFIED | Opinion text: special exception shares a presumption of validity; applicant must adduce testimony that the use meets the standards but need not prove community benefit; showing no real detriment meets the burden; denial needs adverse effects above those inherent to the use. Frame proposition matches. | CAP static.case.law md 291 (Official) |
+| Humble Oil & Refining Co. v. Board of Aldermen, 284 N.C. 458, 202 S.E.2d 129 (1974) | CORRECTED | Opinion says an applicant with competent, material and substantial evidence of the required facts is prima facie entitled to the permit, and a denial should rest on contrary findings supported by such evidence. It does NOT say the burden shifts to opponents or that the applicant wins as a matter of law; that wording was removed from the frame. | CAP static.case.law nc 284 (Official) |
+| Matter of North Shore Steak House v. Board of Appeals of Thomaston, 30 N.Y.2d 238 (1972) | CORRECTED | Opinion says inclusion of the use is tantamount to a legislative finding of harmony and no adverse effect, and the applicant's burden is much lighter than for a hardship variance. "Strong presumption" and "contemplated subject only to conditions" wording was removed from the frame proposition. | CAP static.case.law ny-2d 30 (Official) |
+| Irvine v. Duval County Planning Comm'n, 495 So. 2d 167 (Fla. 1986) | VERIFIED | Once the petitioner shows the application meets the criteria, the commission must show by competent substantial evidence that the exception does not meet them and is adverse to the public interest. Quoted language confirmed in a later Florida Supreme Court opinion. | findlaw.com fl-supreme-court 1391087 (Secondary) |
+| Jesus Fellowship, Inc. v. Miami-Dade County, 752 So. 2d 708 (Fla. 3d DCA 2000) | VERIFIED | Application must be granted unless the opposition shows the requests do not meet the standards and are in fact adverse to the public interest. Quoted in secondary sources only; the frame text is unchanged (FL frame frozen). | bilzin.com; courtlistener quotation (Secondary) |
+| Dusseau v. Metro. Dade County Bd. of County Comm'rs, 794 So. 2d 1270 (Fla. 2001) | VERIFIED | Certiorari review asks whether the decision is supported by competent substantial evidence. | courtlistener (Secondary) |
+
+### Close-out item 2 - held sentences cross-check (2026-11-02)
+
+| Item | Status | Detail | Source |
+|---|---|---|---|
+| 77 withheld sentences in 30 generated source files | NOT RENDERED | All 30 files are merged combos (47 merged, 301 to the state hub); none has a public page, the hub reads only hub-pending-fields (empty), and neither the letter nor checklist generator reads generated sources or state-data. Rendered held sentences: 0. Held sentences in state-data: 0. Full text leak check over all 66 public files: 0 unlogged citations. | build cross-check |

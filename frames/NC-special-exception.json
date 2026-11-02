@@ -10,7 +10,7 @@
   "governing_authority": [
     {
       "cite": "Humble Oil & Refining Co. v. Board of Aldermen of Chapel Hill, 284 N.C. 458, 202 S.E.2d 129 (1974)",
-      "proposition": "When an applicant produces competent, material, and substantial evidence establishing the facts and conditions the ordinance requires for issuance, prima facie the applicant is entitled to the permit; the burden then shifts to the opponents to present competent, material, and substantial evidence to the contrary, and absent such evidence the applicant is entitled to the permit as a matter of law."
+      "proposition": "When an applicant produces competent, material, and substantial evidence tending to establish the facts and conditions the ordinance requires for issuance, prima facie the applicant is entitled to the permit; a denial should be based upon contrary findings supported by competent, material, and substantial evidence appearing in the record."
     }
   ],
   "section_order": [
@@ -56,6 +56,6 @@
   ],
   "record_preservation": true,
   "verified_on": "2026-09-09",
-  "verified_via": "WebSearch, Perplexity",
+  "verified_via": "WebSearch",
   "validation_status": "verified"
 }
