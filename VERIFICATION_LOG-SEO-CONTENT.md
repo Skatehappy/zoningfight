@@ -361,3 +361,23 @@ Source: N.C. General Statutes on ncleg.gov (`https://www.ncleg.gov/EnactedLegisl
 | The Good Neighbors of Oregon Hill (Halifax) reference | REMOVED | Case could not be confirmed (search returned a Rockingham County case instead). | — |
 | The Mann Media and SBA v. Asheville references | REMOVED | Holdings on competent evidence could not be confirmed from opinion text. | — |
 | The Mangum v. Raleigh Board of Adjustment reference | REMOVED | Holding on standing could not be confirmed; page now points to the standing rules in § 160D-1402(c). | — |
+
+### Arizona (AZ) — nonconforming-use-letter, zoning-board-hearing-objection, zoning-code-violation-defense
+Source: Arizona Revised Statutes on azleg.gov (`https://www.azleg.gov/ars/<title>/<section>.htm`) — Official, fetched 2026-11-01.
+
+| Citation as it now appears | Status | What it says | Source |
+|---|---|---|---|
+| A.R.S. § 9-462.02 | CORRECTED | Subsection A: nothing in a zoning ordinance affects existing property or the right to its continued use for the purpose used when the ordinance takes effect. No abandonment or expansion test in the statute; pages that stated one were reworded to defer to the local ordinance. | Official: azleg.gov/ars/9/00462-02.htm |
+| A.R.S. § 9-462.04 | CORRECTED | (A) notice at least 15 days before the hearing, published in a newspaper of general circulation (or posted if none); first class mail to owners of the area and those within 300 feet only when the rezoning is not initiated by the owner. (H) protest by owners of 20 percent or more by area and number of lots within the zoning area requires a three-fourths vote; (K) zoning area = rezoned area plus 150 feet; protest filed with the clerk by noon one business day before the vote. | Official: azleg.gov/ars/9/00462-04.htm |
+| A.R.S. § 9-461.06 | VERIFIED | Adoption and amendment of general plan, public participation procedures. | Official: azleg.gov/ars/9/00461-06.htm |
+| A.R.S. § 9-462.05 | CORRECTED | Enforcement: the municipality enforces zoning ordinances as other ordinances and may sue to prevent, restrain, correct or abate violations. The statute has no class 3 misdemeanor, jail or fine amounts; pages that said so were reworded. | Official: azleg.gov/ars/9/00462-05.htm |
+| A.R.S. § 9-462.06 | VERIFIED | Board of adjustment. (G)(2) variance only for special circumstances applicable to the property; (H)(2) none if self-imposed; (K) special action in superior court within 30 days after the board decision. | Official: azleg.gov/ars/9/00462-06.htm |
+| A.R.S. § 9-500.21 | VERIFIED | Civil enforcement of municipal ordinances: a city that classifies ordinance violations as civil offenses must establish procedures. | Official: azleg.gov/ars/9/00500-21.htm |
+| A.R.S. §§ 11-811 and 11-815 | VERIFIED | County zoning. § 11-815(C): violation is a class 2 misdemeanor, each day a separate offense; (D) county civil penalties capped at the class 2 maximum fine. | Official: azleg.gov/ars/11/00811.htm, 00815.htm |
+| A.R.S. § 12-348 | CORRECTED | (A) a court shall award fees and expenses to a party that prevails by an adjudication on the merits in listed proceedings, including a civil action brought by a city, town or county against the party and a special action brought to challenge its action; (C) court may deny or reduce. Pages that gave a flat right and a dollar cap were reworded. | Official: azleg.gov/ars/12/00348.htm |
+| A.R.S. § 12-751 | CORRECTED | Anti-SLAPP motion to dismiss (the pages cited the wrong section number). | Official: azleg.gov/ars/12/00751.htm |
+| A.R.S. § 12-1134 | CORRECTED | Compensation when a land use law enacted after the owner acquired the property reduces its value; exceptions in subsection B. The page said it does not apply to enforcement of preexisting rules; reworded to track the statute. | Official: azleg.gov/ars/12/01134.htm |
+| The county nonconforming-use section (eleven-eight-thirty) | REMOVED | No such section exists in Title 11; azleg.gov returns not found. | — |
+| The judicial-review and appeal sections twelve-nine-oh-four, twelve-twenty-oh-one and twelve-twenty-one-oh-one | REMOVED | Not the vehicle for review of a board of adjustment decision (that is the 9-462.06 special action); twelve-twenty-one-oh-one governs appeals to the court of appeals. | — |
+| The Rotter, Outdoor Systems and Ivancovich case references | REMOVED | Holdings and, for Ivancovich, the court (page said Supreme Court but cited the Court of Appeals reporter) could not be confirmed; statements restated from the statute. | — |
+| The $3,500 small-claims figure | REMOVED | Not verified; sentence reworded without a number. | — |
