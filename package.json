@@ -23,6 +23,7 @@
     "generate:all": "npm run generate:content && npm run generate:pages",
     "verify": "node scripts/verify-frames.mjs",
     "build:citations": "node scripts/build-verified-citations.mjs",
-    "test:citelock": "node scripts/test-citelock.mjs"
+    "test:citelock": "node scripts/test-citelock.mjs",
+    "test": "node scripts/run-tests.mjs"
   }
 }
