@@ -26,7 +26,13 @@ async function readBody(req) {
   return raw ? JSON.parse(raw) : {};
 }
 
+// Time budget: the model part of a checklist request is capped at 20s total (retry only if the first reply was
+// back within 8s); on any miss the per-type fallback list is returned with HTTP 200.
+export const CHECKLIST_MODEL_MS = 20000;
+export const CHECKLIST_RETRY_MS = 8000;
+
 export default async function handler(req, res) {
+  const t0 = Date.now();
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -72,13 +78,13 @@ Letter excerpt: ${letterExcerpt?.substring(0, 200) || ''}`;
     // Never parse a cut-off reply: callComplete retries once with a higher limit, then reports truncation.
     // Any model failure (HTTP error, truncation, unparseable reply) falls back to this letter type's own list, HTTP 200.
     const diag = {};
-    const r = await callComplete('https://api.anthropic.com/v1/messages', apiKey, max => ({ model: MODEL, max_tokens: max, thinking: { type: 'disabled' }, system, messages: [{ role: 'user', content: prompt }] }), [2000, 4000]);
+    const r = await callComplete('https://api.anthropic.com/v1/messages', apiKey, max => ({ model: MODEL, max_tokens: max, thinking: { type: 'disabled' }, system, messages: [{ role: 'user', content: prompt }] }), [2000, 4000], { deadline: t0 + CHECKLIST_MODEL_MS, retryBefore: t0 + CHECKLIST_RETRY_MS });
     diag.attempts = r.attempts; diag.stop = r.stop; diag.status = r.status;
     let checklist = null;
     if (r.ok) {
       try { checklist = JSON.parse(r.text.replace(/```json|```/g, '').trim()); } catch { diag.parseFailed = true; }
     } else {
-      diag.failed = r.truncated ? 'truncated' : 'model-error';
+      diag.failed = r.timedOut ? 'timeout' : r.truncated ? 'truncated' : 'model-error';
       console.error(`[checklist] model failure reason=${diag.failed} status=${r.status || 'n/a'}`);
     }
 

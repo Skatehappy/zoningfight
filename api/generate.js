@@ -17,6 +17,9 @@ export const config = { maxDuration: 60 };
 
 const PRODUCT_LINK = 'Z3JNl';
 
+// Appended server-side to every letter request (client cannot remove it).
+export const PLAIN_TEXT_RULE = [String.fromCharCode(10), String.fromCharCode(10), "FORMAT RULE (mandatory): write the letter as plain text only. Do not use markdown of any kind: no # headings, no ** or __ bold, no * or _ italics, no bullet markers other than a plain hyphen at line start, no tables or | characters, no code fences, no horizontal rules. Use ordinary paragraphs and numbered lines such as 1. 2. 3. where a list is needed."].join("");
+
 function cors(res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -34,7 +37,16 @@ async function readBody(req) {
   return raw ? JSON.parse(raw) : {};
 }
 
+// Per-request time budget (ms). Vercel Node maxDuration is 60s; every request answers by ~50s at the latest.
+//  - HARD_MS: each model fetch is aborted here; the request then answers 502 (or a stripped fallback) instead of 504.
+//  - RETRY_BEFORE_MS: the truncation retry (second, larger call) and the lint regeneration (second attempt) each
+//    start only if the previous model reply arrived before this mark; otherwise they are skipped.
+// Worst case: reply at 22s + retry capped at 50s = 50s. One model call per request in the normal case.
+export const HARD_MS = 50000;
+export const RETRY_BEFORE_MS = 22000;
+
 export default async function handler(req, res) {
+  const t0 = Date.now();
   cors(res);
 
   if (req.method === 'OPTIONS') return res.status(204).end();
@@ -73,6 +85,7 @@ export default async function handler(req, res) {
         try {
           await fetch(`https://payhip.com/api/v1/license/usage`, {
             method: 'PUT',
+            signal: AbortSignal.timeout(8000),
             headers: { 'payhip-api-key': payhipApiKey, 'Content-Type': 'application/x-www-form-urlencoded' },
             body: `product_link=${PRODUCT_LINK}&license_key=${encodeURIComponent(accessCode.trim())}`,
           });
@@ -97,7 +110,7 @@ ${draftLetter}` : (userPrompt || '');
 
     let messages;
     if (reviewMode && draftLetter) {
-      messages = [{ role: 'user', content: `Review and improve this appeal letter. Fix vague language, ensure all arguments are explicitly stated, remove emotional appeals, tighten redundancy. Return ONLY the improved letter:\n\n${draftLetter}` }];
+      messages = [{ role: 'user', content: `Review and improve this appeal letter. Fix vague language, ensure all arguments are explicitly stated, remove emotional appeals, tighten redundancy. Write plain text only (no markdown: no #, **, __, tables or code fences). Return ONLY the improved letter:\n\n${draftLetter}` }];
     } else {
       messages = [{ role: 'user', content: userPrompt }];
     }
@@ -105,10 +118,10 @@ ${draftLetter}` : (userPrompt || '');
     const callAnthropic = async (avoid = []) => {
       const avoidNote = avoid.length ? `
 Do NOT use any of the following citations or figures (they are not verified): ${avoid.join('; ')}. Rewrite without them.` : '';
-      const sys = isCheckCall ? undefined : ((systemPrompt || '') + citationRules(verified) + avoidNote).trim();
+      const sys = isCheckCall ? undefined : ((systemPrompt || '') + citationRules(verified) + PLAIN_TEXT_RULE + avoidNote).trim();
       // stop_reason "max_tokens" = truncated: retried once with a higher limit, never linted or returned as a letter.
-      const r = await callComplete('https://api.anthropic.com/v1/messages', anthropicKey, max => ({ model: MODEL, max_tokens: max, thinking: { type: 'disabled' }, system: sys, messages }), [3000, 6000]);
-      if (!r.ok) return { httpError: r.err, truncated: !!r.truncated };
+      const r = await callComplete('https://api.anthropic.com/v1/messages', anthropicKey, max => ({ model: MODEL, max_tokens: max, thinking: { type: 'disabled' }, system: sys, messages }), [3000, 6000], { deadline: t0 + HARD_MS, retryBefore: t0 + RETRY_BEFORE_MS });
+      if (!r.ok) return { httpError: r.err, truncated: !!r.truncated, timedOut: !!r.timedOut };
       return { text: r.text };
     };
 
@@ -120,8 +133,15 @@ Do NOT use any of the following citations or figures (they are not verified): ${
     let avoid = [];
     let fallback = null;   // citation-stripped first draft, used if the single regeneration itself fails
     for (let attempt = 0; attempt < 2; attempt++) {
+      // Budget guard: a second model call (lint regeneration) only starts if the first finished early enough.
+      if (attempt > 0 && Date.now() - t0 > RETRY_BEFORE_MS) {
+        console.error(`[budget] skipping attempt ${attempt + 1} at ${Date.now() - t0}ms`);
+        if (fallback) return res.status(200).json({ text: fallback });
+        return res.status(502).json({ error: 'The letter took too long to finish checking, so it was not delivered. Your access code has not been used. Please try again.', detail: 'time-budget' });
+      }
       const gen = await callAnthropic(avoid);
       if (gen.httpError && fallback) return res.status(200).json({ text: fallback });
+      if (gen.timedOut) return res.status(502).json({ error: 'The AI took too long to answer, so no letter was delivered. Your access code has not been used. Please try again.', detail: 'timeout' });
       if (gen.truncated) return res.status(502).json({ error: 'The letter was cut off before it finished, so it was not delivered. Your access code has not been used. Please try again.', detail: 'truncated' });
       if (gen.httpError) return res.status(502).json({ error: 'AI generation failed', detail: String(gen.httpError).slice(0, 500) });
       const lint = lintLetter(gen.text, { criteria, forbiddenPhrases, enforceForbidden });

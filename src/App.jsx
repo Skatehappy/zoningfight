@@ -7,6 +7,7 @@ import { buildFramePrompt } from "./lib/prompt.js";
 import { cleanCriteria, MAX_ROWS, MIN_ROWS, CRITERION_CAP, EVIDENCE_CAP } from "./lib/criteria.js";
 import { stateAbbr } from "../frames/select.mjs";
 import { lookupHost, searchString } from "./lib/hosts.js";
+import { stripMarkdown } from "./lib/stripMarkdown.js";
 
 const EMAILJS_SERVICE_ID  = "YOUR_EMAILJS_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_EMAILJS_TEMPLATE_ID";
@@ -626,7 +627,14 @@ export default function App() {
       body: JSON.stringify({ accessCode, systemPrompt, userPrompt, reviewMode: !!reviewMode, draftLetter: draftLetter || "", state: formData.state, letterType: activeAppType().appType, ...extra }),
     });
     if (!res.ok) { const err = await res.json().catch(() => ({})); const ex = new Error(err.error || "Generation failed"); ex.taxCode = res.status === 401 ? "CODE_INVALID" : res.status === 409 ? "CODE_CONSUMED" : "TRANSIENT"; throw ex; }
-    return (await res.json()).text;
+    return stripMarkdown((await res.json()).text);
+  };
+
+  // The review pass is a separate request. If it fails for a transient reason (timeout, 5xx) the already-linted draft
+  // is delivered as the standard letter rather than failing the whole purchase; code/auth errors still surface.
+  const reviewOrDraft = async (draft, extra = {}) => {
+    try { return await callAPI("", "", true, draft, extra); }
+    catch (e) { if (e && e.taxCode === "TRANSIENT") { console.warn("[review] failed, delivering draft"); return draft; } throw e; }
   };
 
   const systemPrompt = "You are an expert land use and zoning attorney. Write compelling variance appeal letters that address the specific evaluation criteria for the town. Cite hardship, minimum variance necessary, and public benefit. Professional, precise tone. 550-750 words. Format: formal letter with [DATE] placeholder, via certified mail to the Zoning Board of Appeals. Output ONLY the letter, no preamble.";
@@ -885,7 +893,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
         setLoadingMsg("Drafting your letter...");
         const draft = await callAPI(built.system, built.user, false, "", frameExtra);
         setLoadingMsg("Running quality review...");
-        reviewed = await callAPI("", "", true, draft, frameExtra);
+        reviewed = await reviewOrDraft(draft, frameExtra);
         setLoadingMsg("Generating assertive version...");
         const builtA = buildFramePrompt(sel.frame, { ...opts, tone: "assertive" });
         alt = await callAPI(builtA.system, builtA.user, false, "", frameExtra);
@@ -894,7 +902,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
         setLoadingMsg("Drafting your letter...");
         const draft = await callAPI(effectivePrompt, buildPrompt("standard"), false, "");
         setLoadingMsg("Running quality review...");
-        reviewed = await callAPI("", "", true, draft);
+        reviewed = await reviewOrDraft(draft);
         setLoadingMsg("Generating assertive version...");
         alt = await callAPI(effectivePrompt, buildPrompt("assertive"), false, "");
       }
@@ -916,7 +924,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
             letterExcerpt: reviewed.substring(0, 300),
           }),
         });
-        if (clRes.ok) setChecklist((await clRes.json()).checklist || []);
+        if (clRes.ok) setChecklist(((await clRes.json()).checklist || []).map(stripMarkdown));
       } catch {}
 
       // Deliver: render the letter, THEN mark the code used (only after delivery).
@@ -977,7 +985,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
     doc.setFont("Times", "normal");
     doc.setFontSize(11);
     const today = new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
-    const fullText = text.replace(/\[DATE\]/g, today);
+    const fullText = stripMarkdown(text).replace(/\[DATE\]/g, today);
     const lines = doc.splitTextToSize(fullText, usableWidth);
     let y = margin;
     lines.forEach(line => {

@@ -4,17 +4,32 @@
 // so callers can never parse or send half an output.
 // The endpoint URL is passed in by the handler (which has already passed verifyLicense): auth-gate rule - no helper
 // module names the Anthropic host itself.
-export async function callComplete(url, apiKey, buildBody, limits) {
+//
+// Time budget (opts): every request must finish well inside the platform limit, so
+//   opts.deadline    absolute ms timestamp: each fetch is aborted at this instant -> { ok:false, timedOut:true }
+//   opts.retryBefore absolute ms timestamp: a truncation retry (a second, larger call) only starts if the first
+//                    reply arrived before it; otherwise the result is the same as a failed retry (truncated).
+export async function callComplete(url, apiKey, buildBody, limits, opts = {}) {
+  const { deadline = Infinity, retryBefore = Infinity } = opts;
   for (let i = 0; i < limits.length; i++) {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify(buildBody(limits[i])),
-    });
-    if (!response.ok) return { ok: false, status: response.status, err: await response.text() };
-    const data = await response.json();
+    const left = deadline - Date.now();
+    if (left <= 500) return { ok: false, timedOut: true, err: 'No time left for a model call', attempts: i };
+    let response;
+    try {
+      response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
+        body: JSON.stringify(buildBody(limits[i])),
+        signal: Number.isFinite(left) ? AbortSignal.timeout(left) : undefined,
+      });
+      if (!response.ok) return { ok: false, status: response.status, err: await response.text() };
+      var data = await response.json();
+    } catch (e) {
+      if (e && (e.name === 'TimeoutError' || e.name === 'AbortError')) return { ok: false, timedOut: true, err: 'Model call exceeded its time budget', attempts: i + 1 };
+      return { ok: false, err: String(e && e.message || e), attempts: i + 1 };
+    }
     if (data.stop_reason === 'max_tokens') {
-      if (i < limits.length - 1) continue;
+      if (i < limits.length - 1 && Date.now() < retryBefore) continue;
       return { ok: false, truncated: true, err: 'Model reply was cut off at the token limit', stop: data.stop_reason, attempts: i + 1 };
     }
     // Extract the text block by type, not by position (adaptive thinking can put a "thinking" block first).
