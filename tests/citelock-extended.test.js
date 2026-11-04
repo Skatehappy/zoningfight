@@ -28,8 +28,8 @@ assert(/Do NOT use any of the following/.test(systems[1]), 'regeneration instruc
 systems = []; script = ['Dear Board,\n\nThe filing fee is $349 as stated.']; r = await call(gen, { ...az, userPrompt: 'Filing fee paid: $349' });
 assert(/\$349/.test(r.json.text), 'user-supplied figure kept');
 // 5. checklist: items with unverified cites / figures dropped; clean items kept; prompt carries rules
-script = [JSON.stringify(['Completed application form', 'Pay the $349 filing fee', 'Cite A.R.S. § 99-999.9 in the cover note', 'Photographs of the property'])];
+script = [JSON.stringify(['Completed application form', 'Pay the $349 filing fee', 'Cite A.R.S. § 99-999.9 in the cover note', 'Photographs of the property', 'Survey or plot plan'])];
 systems = []; r = await call(chk, { accessCode: 'REAL', address: '1 Main St', state: 'Arizona', varianceType: 'Area variance', letterExcerpt: '' });
-assert.equal(r.status, 200); assert.deepEqual(r.json.checklist, ['Completed application form', 'Photographs of the property']);
+assert.equal(r.status, 200); assert.deepEqual(r.json.checklist, ['Completed application form', 'Photographs of the property', 'Survey or plot plan']);
 assert(/CITATION RULES/.test(systems[0]) && /FIGURE RULES/.test(systems[0]), 'checklist prompt carries citation + figure rules');
 console.log('citelock-extended.test: PASS');

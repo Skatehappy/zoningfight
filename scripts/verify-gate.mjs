@@ -70,7 +70,7 @@ try { execFileSync('node', ['scripts/test-auth-gate.mjs'], { cwd: ROOT, stdio: '
 // ── A13: no stale / unverifiable claim in sources or rendered pages ──
 try { execFileSync('node', ['scripts/test-stale-claims.mjs'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A13: stale claims survive\n' + (e.stdout || '') + (e.stderr || '')); }
 // ── A14: retrofit tests (Payhip contract, isCheckCall, extended citation lock, UI wiring) ──
-for (const t of ['tests/payhip-mock.test.js', 'tests/isCheckCall.test.js', 'tests/citelock-extended.test.js', 'tests/pa-frame.test.js']) {
+for (const t of ['tests/payhip-mock.test.js', 'tests/isCheckCall.test.js', 'tests/citelock-extended.test.js', 'tests/pa-frame.test.js', 'tests/checklist-maxtokens.test.js']) {
   try { execFileSync('node', [t], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A14: ' + t + ' failed\n' + (e.stdout || '') + (e.stderr || '')); }
 }
 // ── A15: verified_on freshness (every log entry dated; rendered/generator-fed citations <= 12 months, warn > 10) ──

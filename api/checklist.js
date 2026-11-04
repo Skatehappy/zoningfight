@@ -5,6 +5,8 @@ import { verifyLicense } from './_license.js';
 import { isTestCode, takeTestBudget } from './_g4t.js';
 import { verifiedFor, citationRules, lintCitations } from './_citelint.js';
 import { lintNumbers } from './_numlint.js';
+import { callComplete } from './_complete.js';
+import { typeInfo, fallbackFor } from './_checklist-fallbacks.js';
 import VERIFIED from './_verified-citations.json' with { type: 'json' };
 
 const NO_FIGURES = '\n\nFIGURE RULES (mandatory): do not state any filing-fee amount, dollar figure, penalty amount or number of days/deadline unless the user supplied it; for fees and deadlines say to confirm the amount or date with the clerk.';
@@ -45,7 +47,8 @@ export default async function handler(req, res) {
 
     // Fail closed: nothing reaches Anthropic unless a Payhip license verifies (or a G4T test code,
     // inert unless G4_TEST_CODE_SECRET is set). Read-only verify: does NOT mark the code used.
-    if (isTestCode(accessCode)) {
+    const testCode = isTestCode(accessCode);
+    if (testCode) {
       const b = takeTestBudget();
       console.error(`[g4t] checklist test code use ${b.used}/${b.cap}`);
       if (!b.ok) return res.status(429).json({ error: 'Test code daily cap reached' });
@@ -56,82 +59,44 @@ export default async function handler(req, res) {
 
     const verified = verifiedFor(VERIFIED, state);
     const userText = `${address || ''} ${varianceType || ''}`;
+    const info = typeInfo(varianceType);
+    const who = isOpposing ? 'a property owner opposing a zoning decision made for another party' : 'an applicant or property owner';
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 900,
-        thinking: { type: 'disabled' },
-        system: (citationRules(verified) + NO_FIGURES).trim(),
-        messages: [{
-          role: 'user',
-          content: isOpposing
-            ? `Generate a practical checklist for a property owner OPPOSING a zoning variance granted to another party, as a JSON array of strings. Cover: confirm and calendar the appeal deadline (these windows are short and jurisdictional); send via certified mail, return receipt requested; file with the town or county clerk as well as the board; request the complete record (application, staff report, minutes, findings of fact); photograph site conditions and your property's exposure; identify other affected neighbors who may join; consult a land use attorney before the deadline if the impact is significant; check whether your jurisdiction requires a formal appeal filing versus a letter of objection. Return ONLY a valid JSON array, no other text.
-
-Objector property: ${address}, ${state}
-Situation: ${varianceType || 'Opposing a granted variance'}
-Letter excerpt: ${letterExcerpt?.substring(0, 200) || ''}`
-            : `Generate a practical zoning variance submission checklist as a JSON array of strings. Be specific to this situation. Include items like completed application form, letter copies, site plan, survey, photos, filing fee, deed, abutter list, etc. Return ONLY a valid JSON array, no other text.
+    const system = (citationRules(verified) + NO_FIGURES).trim();
+    const prompt = `Generate a practical checklist for ${who} sending a letter to a zoning board or office about ${info.focus}, as a JSON array of 8 to 10 strings. Every item is one plain action step of at most 25 words and fits this situation only: do not include steps that belong to a different kind of zoning matter. Always include sending the letter by certified mail with return receipt and keeping a copy. Return ONLY a valid JSON array, no other text.
 
 Property: ${address}, ${state}
-Variance type: ${varianceType || 'Area variance'}
-Letter excerpt: ${letterExcerpt?.substring(0, 200) || ''}`,
-        }],
-      }),
-    });
+Situation: ${varianceType || 'Other zoning matter'}
+Letter excerpt: ${letterExcerpt?.substring(0, 200) || ''}`;
 
-    // Fail loudly on an API error instead of silently returning an empty
-    // checklist (the pre-migration bug: a dead model 404'd and this returned []).
-    if (!response.ok) {
-      const detail = await response.text();
-      return res.status(502).json({ error: 'Checklist generation failed', detail });
-    }
-
-    const data = await response.json();
-    const text = data.content?.find(b => b.type === 'text')?.text || '[]';
-    const clean = text.replace(/```json|```/g, '').trim();
-
-    let checklist;
-    try {
-      checklist = JSON.parse(clean);
-    } catch {
-      checklist = isOpposing
-        ? [
-            'Confirm the appeal deadline and calendar it — these windows are short and jurisdictional',
-            'Send your objection via certified mail, return receipt requested',
-            'File with the town or county clerk as well as the board that granted the variance',
-            'Request the complete record: application, staff report, minutes, and findings of fact',
-            'Photograph the site conditions and your property\'s exposure (light, drainage, sightlines)',
-            'Identify other affected neighbors who may join the objection',
-            'Consult a land use attorney before the deadline if the impact is significant',
-            'Check whether your jurisdiction requires a formal appeal filing versus a letter of objection',
-          ]
-        : [
-            'Completed variance application form (from town clerk)',
-            'This cover letter — 3 copies minimum',
-            'Current survey or plot plan showing dimensions',
-            'Site plan showing proposed work and setbacks',
-            'Photographs of the property from street and rear',
-            'Filing fee — check amount with town clerk',
-            'Copy of deed or proof of ownership',
-            'List of abutting property owners with addresses',
-            'Any prior variance approvals or relevant board decisions',
-          ];
+    // Never parse a cut-off reply: callComplete retries once with a higher limit, then reports truncation.
+    // Any model failure (HTTP error, truncation, unparseable reply) falls back to this letter type's own list, HTTP 200.
+    const diag = {};
+    const r = await callComplete('https://api.anthropic.com/v1/messages', apiKey, max => ({ model: MODEL, max_tokens: max, thinking: { type: 'disabled' }, system, messages: [{ role: 'user', content: prompt }] }), [2000, 4000]);
+    diag.attempts = r.attempts; diag.stop = r.stop; diag.status = r.status;
+    let checklist = null;
+    if (r.ok) {
+      try { checklist = JSON.parse(r.text.replace(/```json|```/g, '').trim()); } catch { diag.parseFailed = true; }
+    } else {
+      diag.failed = r.truncated ? 'truncated' : 'model-error';
+      console.error(`[checklist] model failure reason=${diag.failed} status=${r.status || 'n/a'}`);
     }
 
     // Citation lock + numeric-claims check on every item (items with an unverified cite/figure are dropped).
+    // If fewer than 3 survive (or the reply was unusable), this letter type's static fallback is used instead.
     if (Array.isArray(checklist)) {
-      checklist = checklist.filter(it => typeof it === 'string'
-        && lintCitations(it, verified.keys, userText, verified.subs).ok
-        && lintNumbers(it, verified.abbr, userText).ok);
-    }
-    return res.status(200).json({ checklist });
+      checklist = checklist.filter(it => typeof it === 'string' && it.trim()).filter(it => {
+        const c = lintCitations(it, verified.keys, userText, verified.subs);
+        const n = lintNumbers(it, verified.abbr, userText);
+        if (c.ok && n.ok) return true;
+        (diag.droppedItems = diag.droppedItems || []).push({ item: it.slice(0, 120), cites: c.bad, nums: n.bad });
+        return false;
+      }).slice(0, 15);
+    } else if (checklist !== null) { diag.parseFailed = true; checklist = null; }
+    diag.survivors = Array.isArray(checklist) ? checklist.length : -1;
+    if (!Array.isArray(checklist) || checklist.length < 3) { diag.usedFallback = true; checklist = fallbackFor(varianceType); }
+
+    return res.status(200).json(testCode ? { checklist, _diag: diag } : { checklist });
 
   } catch (err) {
     return res.status(500).json({ error: err.message });

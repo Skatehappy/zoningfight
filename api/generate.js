@@ -5,6 +5,7 @@ import { isTestCode, takeTestBudget } from './_g4t.js';
 import { verifyLicense } from './_license.js';
 import { verifiedFor, citationRules, lintCitations } from './_citelint.js';
 import { lintNumbers } from './_numlint.js';
+import { callComplete } from './_complete.js';
 import VERIFIED from './_verified-citations.json' with { type: 'json' };
 
 // Node serverless runtime (NOT edge). Edge caps at ~25s on Hobby and ignores
@@ -105,28 +106,10 @@ ${draftLetter}` : (userPrompt || '');
       const avoidNote = avoid.length ? `
 Do NOT use any of the following citations or figures (they are not verified): ${avoid.join('; ')}. Rewrite without them.` : '';
       const sys = isCheckCall ? undefined : ((systemPrompt || '') + citationRules(verified) + avoidNote).trim();
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': anthropicKey,
-          'anthropic-version': '2023-06-01',
-        },
-        body: JSON.stringify({
-          model: MODEL,
-          max_tokens: 3000,
-          thinking: { type: 'disabled' },
-          system: sys,
-          messages,
-        }),
-      });
-      if (!response.ok) return { httpError: await response.text() };
-      const data = await response.json();
-      // Extract the text block by type, not position (adaptive thinking can put a
-      // thinking block first). Missing text => treat as a generation failure.
-      const t = data.content?.find(b => b.type === 'text')?.text;
-      if (!t) return { httpError: `No text block (stop_reason: ${data.stop_reason || 'unknown'})` };
-      return { text: t };
+      // stop_reason "max_tokens" = truncated: retried once with a higher limit, never linted or returned as a letter.
+      const r = await callComplete('https://api.anthropic.com/v1/messages', anthropicKey, max => ({ model: MODEL, max_tokens: max, thinking: { type: 'disabled' }, system: sys, messages }), [3000, 6000]);
+      if (!r.ok) return { httpError: r.err, truncated: !!r.truncated };
+      return { text: r.text };
     };
 
     // Generate, LINT (forbidden hardship phrases + no-fabrication for special
@@ -139,6 +122,7 @@ Do NOT use any of the following citations or figures (they are not verified): ${
     for (let attempt = 0; attempt < 2; attempt++) {
       const gen = await callAnthropic(avoid);
       if (gen.httpError && fallback) return res.status(200).json({ text: fallback });
+      if (gen.truncated) return res.status(502).json({ error: 'The letter was cut off before it finished, so it was not delivered. Your access code has not been used. Please try again.', detail: 'truncated' });
       if (gen.httpError) return res.status(502).json({ error: 'AI generation failed', detail: String(gen.httpError).slice(0, 500) });
       const lint = lintLetter(gen.text, { criteria, forbiddenPhrases, enforceForbidden });
       if (lint.ok) {
