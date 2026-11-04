@@ -88,6 +88,9 @@ try {
 try { execFileSync('node', ['tests/strict-coverage.test.js'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A15s: strict-coverage mock tests failed\n' + (e.stdout || '') + (e.stderr || '')); }
 let a15s = '';
 try { a15s = execFileSync('node', ['scripts/test-strict-coverage.mjs'], { cwd: ROOT, stdio: 'pipe' }).toString().trim(); } catch (e) { fail('A15s: unmapped citation(s)/figure(s) in pages, frames or sources\n' + (e.stdout || '') + (e.stderr || '')); }
+// ── A16: banned marketing claims (attorney-quality etc.) + disclaimer present on every public page ──
+try { execFileSync('node', ['tests/banned-claims.test.js'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A16: banned-claims mock tests failed\n' + (e.stdout || '') + (e.stderr || '')); }
+try { execFileSync('node', ['scripts/check-banned-claims.mjs'], { cwd: ROOT, stdio: 'pipe' }); } catch (e) { fail('A16: banned marketing claim(s) or missing disclaimer\n' + (e.stdout || '') + (e.stderr || '')); }
 console.log('A15s ' + a15s.split(/\r?\n/).pop());
 console.log('A15 ' + a15.split(/\r?\n/).pop() + '; A13 stale-claims clean; A14 payhip/isCheckCall/citelock-ext pass; ' + ui);
 console.log('GATE GREEN — A1 files ok; A9 citation-log parity: all ' + tokens.size + ' citations logged; A10 citation lock + G4T mock test pass; A11 auth gate (no Anthropic without Payhip/G4T) pass.');

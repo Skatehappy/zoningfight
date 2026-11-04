@@ -1065,7 +1065,7 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
               Your Zoning Board Said No. Fight Back.
             </h1>
             <p style={{ fontSize: "17px", color: colors.inkMuted, maxWidth: "480px", margin: "0 auto 40px", lineHeight: "1.7" }}>
-              AI-generated letters to <strong>request</strong> a variance — or to <strong>oppose</strong> one granted to a neighbor. Also building permits, stop-work orders, non-conforming use, CUPs, code interpretation, sign permits, and code enforcement. Attorney-quality. 5 minutes. {APP.price}.
+              AI-generated letters to <strong>request</strong> a variance — or to <strong>oppose</strong> one granted to a neighbor. Also building permits, stop-work orders, non-conforming use, CUPs, code interpretation, sign permits, and code enforcement. Clear, well-organized drafts in 5 minutes. {APP.price}. Not legal advice.
             </p>
             <div style={{ maxWidth: "400px", margin: "0 auto", background: colors.white, border: `1px solid ${colors.border}`, borderRadius: "12px", padding: "32px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}>
               <div style={{ fontSize: "14px", color: colors.inkLight, marginBottom: "16px", fontWeight: "600" }}>Enter Your Access Code</div>
@@ -1086,6 +1086,9 @@ ADDITIONAL INFO: ${formData.additionalInfo || "none"}`;
               </div>
               <div style={{ marginTop: "12px", fontSize: "12px", color: colors.inkFaint }}>
                 Your letter tool is at <strong>zoningfight.com</strong> — bookmark it.
+              </div>
+              <div style={{ marginTop: "12px", fontSize: "11px", color: colors.inkFaint }}>
+                Legal Disclaimer: ZoningFight is a letter-drafting tool, not a law firm. Letters are AI-generated and are not legal advice. Consult a licensed attorney for legal representation.
               </div>
             </div>
           </div>

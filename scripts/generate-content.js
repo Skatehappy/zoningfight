@@ -45,6 +45,7 @@ REQUIREMENTS:
 - All deadlines must match current state law
 - All penalties/remedies must reflect actual statute
 - No legalese - readable by non-lawyers
+- Never describe the letters or this tool as "attorney-quality", "lawyer-quality", "attorney-grade", "attorney-written" or as a substitute for a lawyer, and never give or promise legal advice
 - Total word count across fields: 800-1200 words minimum
 - Do not invent facts. If unsure, use phrases like "varies by jurisdiction"
 - Output ONLY the JSON object

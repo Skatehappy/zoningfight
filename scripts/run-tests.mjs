@@ -5,7 +5,7 @@ import { readdirSync } from 'node:fs';
 const root = new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
 const suites = [
   'scripts/verify-frames.mjs', 'scripts/test-citelock.mjs', 'scripts/test-auth-gate.mjs',
-  'scripts/test-stale-claims.mjs', 'scripts/test-strict-coverage.mjs', 'scripts/test-verified-dates.mjs',
+  'scripts/test-stale-claims.mjs', 'scripts/test-strict-coverage.mjs', 'scripts/test-verified-dates.mjs', 'scripts/check-banned-claims.mjs',
   ...readdirSync(root + 'tests').filter(f => /\.test\.m?js$/.test(f)).sort().map(f => 'tests/' + f),
 ];
 let pass = 0; const failed = [];
