@@ -8,6 +8,7 @@ import { cleanCriteria, MAX_ROWS, MIN_ROWS, CRITERION_CAP, EVIDENCE_CAP } from "
 import { stateAbbr } from "../frames/select.mjs";
 import { lookupHost, searchString } from "./lib/hosts.js";
 import { stripMarkdown } from "./lib/stripMarkdown.js";
+import { USER_SIGNS_RULE } from "../api/_persona.js";
 
 const EMAILJS_SERVICE_ID  = "YOUR_EMAILJS_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_EMAILJS_TEMPLATE_ID";
@@ -637,9 +638,9 @@ export default function App() {
     catch (e) { if (e && e.taxCode === "TRANSIENT") { console.warn("[review] failed, delivering draft"); return draft; } throw e; }
   };
 
-  const systemPrompt = "You are an expert land use and zoning attorney. Write compelling variance appeal letters that address the specific evaluation criteria for the town. Cite hardship, minimum variance necessary, and public benefit. Professional, precise tone. 550-750 words. Format: formal letter with [DATE] placeholder, via certified mail to the Zoning Board of Appeals. Output ONLY the letter, no preamble.";
+  const systemPrompt = "You are an expert zoning-dispute letter writer. Write compelling variance appeal letters that address the specific evaluation criteria for the town. Cite hardship, minimum variance necessary, and public benefit. Professional, precise tone. 550-750 words. Format: formal letter with [DATE] placeholder, via certified mail to the Zoning Board of Appeals. Output ONLY the letter, no preamble.";
 
-  const buildingPermitPrompt = `You are an expert land use and zoning attorney specializing in building permit denial appeals. Write firm, legally precise demand letters.
+  const buildingPermitPrompt = `You are an expert zoning-dispute letter writer specializing in building permit denial appeals. Write firm, legally precise demand letters.
 
 Rules:
 - Open with clear statement: the municipality denied the building permit application on a specific date; the denial is improper for specified reasons
@@ -655,7 +656,7 @@ Rules:
 - Format: formal letter with [DATE] placeholder, via certified mail
 - Output ONLY the letter, no preamble`;
 
-  const stopWorkPrompt = `You are an expert land use and zoning attorney specializing in stop-work orders and cease-and-desist responses. Write firm, legally precise response letters with appropriate urgency.
+  const stopWorkPrompt = `You are an expert zoning-dispute letter writer specializing in stop-work orders and cease-and-desist responses. Write firm, legally precise response letters with appropriate urgency.
 
 Rules:
 - Open with clear statement: the municipality issued a stop-work / cease-and-desist order on a specific date; the order is improper because the activity is permitted
@@ -671,7 +672,7 @@ Rules:
 - Format: formal letter with [DATE] placeholder, via certified mail and hand delivery
 - Output ONLY the letter, no preamble`;
 
-  const nonConformingPrompt = `You are an expert land use and zoning attorney specializing in non-conforming use protections. Write firm, legally precise demand letters.
+  const nonConformingPrompt = `You are an expert zoning-dispute letter writer specializing in non-conforming use protections. Write firm, legally precise demand letters.
 
 Rules:
 - Open with clear statement: the use at issue was lawfully established on a specific date and is protected as a pre-existing legal non-conforming use
@@ -687,7 +688,7 @@ Rules:
 - Format: formal letter with [DATE] placeholder, via certified mail
 - Output ONLY the letter, no preamble`;
 
-  const cupPrompt = `You are an expert land use and zoning attorney specializing in conditional use permit (CUP) / special exception appeals. Write firm, legally precise appeal letters.
+  const cupPrompt = `You are an expert zoning-dispute letter writer specializing in conditional use permit (CUP) / special exception appeals. Write firm, legally precise appeal letters.
 
 Rules:
 - Open with clear statement: the municipality denied a conditional use permit / special exception for the specified proposed use on a specific date; the denial lacks required findings
@@ -704,7 +705,7 @@ Rules:
 - Format: formal letter with [DATE] placeholder, via certified mail
 - Output ONLY the letter, no preamble`;
 
-  const codeInterpretationPrompt = `You are an expert land use and zoning attorney specializing in zoning code interpretation disputes. Write firm, legally precise demand letters.
+  const codeInterpretationPrompt = `You are an expert zoning-dispute letter writer specializing in zoning code interpretation disputes. Write firm, legally precise demand letters.
 
 Rules:
 - Open with clear statement: the municipality has interpreted a specific zoning ordinance section in a manner the property owner disputes
@@ -720,7 +721,7 @@ Rules:
 - Format: formal letter with [DATE] placeholder, via certified mail
 - Output ONLY the letter, no preamble`;
 
-  const signPermitPrompt = `You are an expert land use and zoning attorney specializing in sign ordinance disputes and First Amendment challenges. Write firm, legally precise appeal letters.
+  const signPermitPrompt = `You are an expert zoning-dispute letter writer specializing in sign ordinance disputes and First Amendment challenges. Write firm, legally precise appeal letters.
 
 Rules:
 - Open with clear statement: the municipality denied the sign permit application on a specific date; the denial is improper for specified reasons
@@ -737,7 +738,7 @@ Rules:
 - Format: formal letter with [DATE] placeholder, via certified mail
 - Output ONLY the letter, no preamble`;
 
-  const codeEnforcementPrompt = `You are an expert land use and zoning attorney specializing in code enforcement defense and selective enforcement claims. Write firm, legally precise response letters.
+  const codeEnforcementPrompt = `You are an expert zoning-dispute letter writer specializing in code enforcement defense and selective enforcement claims. Write firm, legally precise response letters.
 
 Rules:
 - Open with clear statement: the property owner received a code enforcement notice on a specific date; the notice is improper because the activity is permitted or the enforcement is selective
@@ -752,7 +753,7 @@ Rules:
 - Format: formal letter with [DATE] placeholder, via certified mail
 - Output ONLY the letter, no preamble`;
 
-  const opposingPrompt = `You are an expert land use and zoning attorney representing a property owner who OPPOSES a variance that has been granted to another party.
+  const opposingPrompt = `You are an expert zoning-dispute letter writer drafting for a property owner who OPPOSES a variance that has been granted to another party.
 
 Write a formal objection letter that argues the variance should be rescinded, denied on rehearing, or overturned on appeal.
 
@@ -774,7 +775,10 @@ Format: formal letter with [DATE] placeholder, addressed to the board that grant
 
 Output ONLY the letter, no preamble.`;
 
-  const pickSystemPrompt = (varianceType) => {
+  const pickSystemPrompt = (varianceType) => `${pickBasePrompt(varianceType)}
+
+${USER_SIGNS_RULE}`;
+  const pickBasePrompt = (varianceType) => {
     if (formData.direction === "opposing") return opposingPrompt;
     if (!varianceType) return systemPrompt;
     if (varianceType === "Building Permit Denial") return buildingPermitPrompt;

@@ -6,6 +6,7 @@ import { isTestCode, takeTestBudget } from './_g4t.js';
 import { verifiedFor, citationRules, lintCitations } from './_citelint.js';
 import { lintNumbers } from './_numlint.js';
 import { callComplete } from './_complete.js';
+import { findPersona } from './_persona.js';
 import { typeInfo, fallbackFor } from './_checklist-fallbacks.js';
 import VERIFIED from './_verified-citations.json' with { type: 'json' };
 
@@ -69,7 +70,7 @@ export default async function handler(req, res) {
     const who = isOpposing ? 'a property owner opposing a zoning decision made for another party' : 'an applicant or property owner';
 
     const system = (citationRules(verified) + NO_FIGURES).trim();
-    const prompt = `Generate a practical checklist for ${who} sending a letter to a zoning board or office about ${info.focus}, as a JSON array of 8 to 10 strings. Every item is one plain action step of at most 25 words and fits this situation only: do not include steps that belong to a different kind of zoning matter. Always include sending the letter by certified mail with return receipt and keeping a copy. Return ONLY a valid JSON array, no other text.
+    const prompt = `Generate a practical checklist for ${who} sending a letter to a zoning board or office about ${info.focus}, as a JSON array of 8 to 10 strings. Every item is one plain action step of at most 25 words and fits this situation only: do not include steps that belong to a different kind of zoning matter. Always include sending the letter by certified mail with return receipt and keeping a copy. Steps are for the owner or applicant to do themselves; never write a step as if from an attorney, counsel or law firm. Return ONLY a valid JSON array, no other text.
 
 Property: ${address}, ${state}
 Situation: ${varianceType || 'Other zoning matter'}
@@ -94,8 +95,9 @@ Letter excerpt: ${letterExcerpt?.substring(0, 200) || ''}`;
       checklist = checklist.filter(it => typeof it === 'string' && it.trim()).filter(it => {
         const c = lintCitations(it, verified.keys, userText, verified.subs);
         const n = lintNumbers(it, verified.abbr, userText);
-        if (c.ok && n.ok) return true;
-        (diag.droppedItems = diag.droppedItems || []).push({ item: it.slice(0, 120), cites: c.bad, nums: n.bad });
+        const p = findPersona(it);   // no attorney voice: such an item is dropped (fewer than 3 survivors -> static fallback)
+        if (c.ok && n.ok && !p.length) return true;
+        (diag.droppedItems = diag.droppedItems || []).push({ item: it.slice(0, 120), cites: c.bad, nums: n.bad, persona: p });
         return false;
       }).slice(0, 15);
     } else if (checklist !== null) { diag.parseFailed = true; checklist = null; }

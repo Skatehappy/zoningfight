@@ -589,3 +589,96 @@ Gate A15 strict mode requires every dollar, percent and day figure on a page or 
 | Herrera v. City of Miami, 600 So. 2d 561 (Fla. 3d DCA 1992) | VERIFIED (Secondary) | Opinion dated June 23, 1992; a variance hardship must be exceptional and unique to the individual landowner, not shared by other owners in the area (citing Elwyn v. City of Miami), and a self-created hardship does not support a variance. | Secondary: Perplexity reading https://courtlistener.com/opinion/1147329/herrera-v-city-of-miami/ (CourtListener blocks direct fetch); cite resolves at /c/so-2d/600/561/ | verified_on: 2026-11-02 |
 | ZoningFight flat fee of $19 (product price) | VERIFIED (owner-set) | First-party price set by the seller for the Payhip product (src/App.jsx and the landing page); not a legal claim. The Payhip listing page itself is behind Cloudflare and could not be fetched by machine, so the owner should confirm the listing price. | Owner decision; payhip.com listing not machine-readable | verified_on: 2026-11-02 |
 
+
+## Open records and open meetings acts - all 10 states (2026-11-04)
+Purpose: a records request in a ZoningFight letter must cite the state's PUBLIC-RECORDS act; the OPEN-MEETINGS act is only for meeting notice, agenda, hearing-access and executive-session issues. Root cause of the live defect (a Georgia letter cited O.C.G.A. 50-14-1 for a records request): the verified set for Georgia held only 50-14-1 (Open Meetings Act) in this area and no Open Records Act entry, and no prompt told the model which act to use. Note that O.C.G.A. 50-18-70(b)(1) borrows the definition of "agency" from 50-14-1; that cross-reference is a definition only, not a records-request authority.
+Method: Perplexity (perplexity_ask / perplexity_search) plus the official statute text where it could be read; each row says Official or Secondary and what was actually read. Sections whose text was not read directly are marked in the row. Only figures read in the sources are stated.
+
+### Georgia (GA) - Open Records Act and Open Meetings Act
+Source: Official Code of Georgia Annotated 2025 Supp., Title 50 volume, read in full text 2026-11-04 (Official: https://www.legis.ga.gov/api/document/docs/default-source/joint-features-document-library/t50-ch13-40-(v38a)-pdf.pdf).
+
+| Citation as it now appears | Status | What it says | Source | verified_on |
+|---|---|---|---|---|
+| O.C.G.A. § 50-18-70 | VERIFIED | Open Records Act (Article 4 of Chapter 18, Title 50), (a) legislative intent: strong public policy in favor of open government, strong presumption that public records are available for inspection without delay, article broadly construed and exceptions construed narrowly; (b) definitions, agency has the meaning given in 50-14-1 plus membership associations of local governments. | Official: https://www.legis.ga.gov/api/document/docs/default-source/joint-features-document-library/t50-ch13-40-(v38a)-pdf.pdf (read 2026-11-04; last amendment: Ga. L. 2025 p. 689 (SB 12), custodian definition added; 2024-2026 amendments: SB 12 in 2025, no 2024 or 2026 amendment found) | verified_on: 2026-11-04 |
+| O.C.G.A. § 50-18-71 | VERIFIED | (a)(1) all public records are open for personal inspection and copying unless exempted by court order or law; (b)(1)(A) agencies produce responsive records within a reasonable time not to exceed three business days of receipt; if only some records are available, those are made available within that period; if records exist but are unavailable within three business days, the agency provides within that period a description and a timeline and produces as soon as practicable; (b)(1)(B) a request may be made orally or in writing; (d) when withholding, the agency states the specific Code section, subsection and paragraph within three business days; cost estimate notice within three business days when costs exceed $25.00. | Official: https://www.legis.ga.gov/api/document/docs/default-source/joint-features-document-library/t50-ch13-40-(v38a)-pdf.pdf (read 2026-11-04; last amendment: Ga. L. 2025 p. 689 (SB 12) revised (a); 2024-2026 amendments: SB 12 in 2025 only; a 2026 proposal seen in search results was not shown as enacted) | verified_on: 2026-11-04 |
+| O.C.G.A. § 50-14-1 | VERIFIED (scope note) | Open Meetings Act only. Use it for meeting notice and access issues, never as the authority for a records request (that is 50-18-70 et seq.). The 2026-11-02 row above is unchanged. | Official: same Title 50 volume (read 2026-11-04) | verified_on: 2026-11-04 |
+
+### California (CA) - Public Records Act and Brown Act
+Source: Secondary: FindLaw section pages read directly 2026-11-04 (codes.findlaw.com/ca/government-code/gov-sect-7922-535, gov-sect-54953, gov-sect-54954-2, gov-sect-54956); official leginfo.legislature.ca.gov pages returned 403 to direct fetch, official text for 7922.530 seen as a Perplexity excerpt.
+
+| Citation as it now appears | Status | What it says | Source | verified_on |
+|---|---|---|---|---|
+| Cal. Gov. Code § 7920.000 | VERIFIED (act range) | California Public Records Act is codified from Gov. Code 7920.000 et seq. (Division 10, recodified 2023); the short-title section text itself was not read. | Official: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=7922.530 (section range seen via Perplexity excerpt) | verified_on: 2026-11-04 |
+| Cal. Gov. Code § 7922.530 | VERIFIED | A state or local agency, on a request for a copy of records that reasonably describes an identifiable record, shall make the records promptly available on payment of the direct cost of duplication. | Official: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=7922.530 (Perplexity excerpt 2026-11-04; page not machine-fetchable) | verified_on: 2026-11-04 |
+| Cal. Gov. Code § 7922.535 | VERIFIED | (a) the agency determines within 10 days (calendar days) of receiving the request whether it seeks disclosable records; (b) in unusual circumstances, written notice may extend that period by no more than 14 days. A 2026 amendment (AB 370) adds a cyberattack ground; the FindLaw text shows it. | Secondary: https://codes.findlaw.com/ca/government-code/gov-sect-7922-535/ (read 2026-11-04); official leginfo not machine-fetchable | verified_on: 2026-11-04 |
+| Cal. Gov. Code § 54950 | VERIFIED (act range) | The Ralph M. Brown Act, Gov. Code 54950 et seq., is the open-meetings act for local agencies. | Secondary: https://codes.findlaw.com/ca/government-code/gov-sect-54953/ (read 2026-11-04) | verified_on: 2026-11-04 |
+| Cal. Gov. Code § 54953 | VERIFIED | (a) all meetings of the legislative body of a local agency shall be open and public. | Secondary: https://codes.findlaw.com/ca/government-code/gov-sect-54953/ (read 2026-11-04) | verified_on: 2026-11-04 |
+
+### Texas (TX) - Public Information Act and Open Meetings Act
+Source: official statutes.capitol.texas.gov text as Perplexity excerpts; texas.public.law read directly (Secondary). The official site returned only navigation to a direct fetch.
+
+| Citation as it now appears | Status | What it says | Source | verified_on |
+|---|---|---|---|---|
+| Tex. Gov't Code Chapter 552 (Public Information Act) | VERIFIED (chapter) | Chapter 552 is the Texas Public Information Act, the records act. | Official: https://statutes.capitol.texas.gov/ (Perplexity excerpt 2026-11-04) | verified_on: 2026-11-04 |
+| Tex. Gov't Code § 552.221 | VERIFIED | (a) the officer for public information shall promptly produce public information; (d) if it cannot be produced within 10 business days the officer certifies that in writing and sets a date and hour. 2025 Acts ch. 452 (H.B. 4219) appears in the history; which subsection it changed was not confirmed. | Secondary: https://texas.public.law/statutes/tex._gov't_code_section_552.221 (read 2026-11-04); Official excerpt via Perplexity | verified_on: 2026-11-04 |
+| Tex. Gov't Code Chapter 551 (Open Meetings Act) | VERIFIED (chapter) | Chapter 551 is the Texas Open Meetings Act. | Official: https://statutes.capitol.texas.gov/GetStatute.aspx?Code=GV&Value=551 (Perplexity excerpt 2026-11-04) | verified_on: 2026-11-04 |
+| Tex. Gov't Code § 551.002 | VERIFIED | Every regular, special, or called meeting of a governmental body shall be open to the public, except as provided by the chapter. | Official: https://statutes.capitol.texas.gov/GetStatute.aspx?Code=GV&Value=551 (Perplexity excerpt 2026-11-04) | verified_on: 2026-11-04 |
+
+### Florida (FL) - Public Records Act and Sunshine Law
+Source: Official: leg.state.fl.us/statutes (0119.07 and 0286.011) read 2026-11-04. Amendments 2024-2026 not checked.
+
+| Citation as it now appears | Status | What it says | Source | verified_on |
+|---|---|---|---|---|
+| Fla. Stat. Chapter 119 (Public Records Act) | VERIFIED (chapter) | Chapter 119 is the Public Records Act. | Official: http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0119/0119.html (read 2026-11-04) | verified_on: 2026-11-04 |
+| Fla. Stat. § 119.07 | VERIFIED | (1)(a) the custodian shall permit the record to be inspected and copied at any reasonable time under reasonable conditions; (1)(c) acknowledge requests promptly and respond in good faith. The statute sets no fixed response deadline. | Official: http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0119/Sections/0119.07.html (read 2026-11-04) | verified_on: 2026-11-04 |
+| Fla. Stat. § 286.011 | VERIFIED | (1) meetings at which official acts are to be taken are public meetings open to the public at all times; reasonable notice, no numeric minimum. | Official: http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0200-0299/0286/Sections/0286.011.html (read 2026-11-04) | verified_on: 2026-11-04 |
+
+### New York (NY) - Freedom of Information Law and Open Meetings Law
+Source: Official: nysenate.gov/legislation/laws/PBO/87, /89, /103 and /104 read 2026-11-04.
+
+| Citation as it now appears | Status | What it says | Source | verified_on |
+|---|---|---|---|---|
+| N.Y. Public Officers Law § 87 | VERIFIED | (2) each agency shall, in accordance with its published rules, make available for public inspection and copying all records except those that may be withheld under the listed exceptions. Article 6 is the Freedom of Information Law. | Official: https://www.nysenate.gov/legislation/laws/PBO/87 (read 2026-11-04; amendments 2024-2026: none found) | verified_on: 2026-11-04 |
+| N.Y. Public Officers Law § 89 | VERIFIED | (3)(a) within five business days of receipt of a written request reasonably described, the agency makes the record available, denies in writing, or acknowledges in writing with an approximate date; where it cannot grant within twenty business days of the acknowledgement it gives a reason and a specific date. | Official: https://www.nysenate.gov/legislation/laws/PBO/89 (read 2026-11-04; amendments 2024-2026: none found) | verified_on: 2026-11-04 |
+| N.Y. Public Officers Law § 103 | VERIFIED | Article 7 is the Open Meetings Law; (a) every meeting of a public body shall be open to the general public, subject to the executive-session rules. | Official: https://www.nysenate.gov/legislation/laws/PBO/103 (read 2026-11-04) | verified_on: 2026-11-04 |
+
+### Illinois (IL) - Freedom of Information Act and Open Meetings Act
+Source: Official ilga.gov text as quoted in Perplexity search results (direct ilga.gov fetches returned 403). Amendments 2024-2026: not fully checked.
+
+| Citation as it now appears | Status | What it says | Source | verified_on |
+|---|---|---|---|---|
+| 5 ILCS 140/3 | VERIFIED | (a) each public body shall make available for inspection or copying all public records; (d) the public body responds within 5 business days after receipt of the request; (e) extension of not more than 5 business days from the original due date for the listed reasons. | Official: https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=85&ChapterID=2 (Perplexity excerpt 2026-11-04) | verified_on: 2026-11-04 |
+| 5 ILCS 120/2 | VERIFIED | (a) all meetings of public bodies shall be open to the public; 120/2.02(a): agenda posted at least 48 hours in advance of a regular meeting. | Official: https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=84&ChapterID=2 (Perplexity excerpt 2026-11-04) | verified_on: 2026-11-04 |
+
+### Pennsylvania (PA) - Right-to-Know Law and Sunshine Act
+Source: Official palegis.us / legis.state.pa.us text as search excerpts (the RTKL PDF itself was unreadable).
+
+| Citation as it now appears | Status | What it says | Source | verified_on |
+|---|---|---|---|---|
+| 65 P.S. § 67.901 | VERIFIED | Right-to-Know Law (65 P.S. 67.101 et seq.): the time for response shall not exceed five business days; no response within that time is a deemed denial; 67.902(b) a written notice within five business days can extend the response by up to 30 days. | Official: https://www.openrecords.pa.gov/ (RTKL text, Perplexity excerpt 2026-11-04) | verified_on: 2026-11-04 |
+| 65 Pa.C.S. § 704 | VERIFIED | Sunshine Act: official action and deliberations by a quorum of an agency shall take place at a meeting open to the public unless closed under section 707, 708 or 712; section 709(a): special or rescheduled meetings need notice at least 24 hours in advance. | Official: https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/65/00.007..HTM (Perplexity quotation 2026-11-04) | verified_on: 2026-11-04 |
+
+### Ohio (OH) - Public Records Act and Open Meetings Act
+Source: Official: codes.ohio.gov section-149.43 and section-121.22 read 2026-11-04. The pages show later-effective versions (149.43 by H.B. 31, 121.22 by H.B. 96); what changed was not stated.
+
+| Citation as it now appears | Status | What it says | Source | verified_on |
+|---|---|---|---|---|
+| Ohio R.C. 149.43 | VERIFIED | (B)(1) public records are promptly prepared and made available for inspection; copies at cost within a reasonable period of time. No numeric deadline. | Official: https://codes.ohio.gov/ohio-revised-code/section-149.43 (read 2026-11-04) | verified_on: 2026-11-04 |
+| Ohio R.C. 121.22 | VERIFIED | (C) all meetings of any public body are public meetings open to the public at all times; (F) a special meeting needs at least twenty-four hours' advance notice to the news media. | Official: https://codes.ohio.gov/ohio-revised-code/section-121.22 (read 2026-11-04) | verified_on: 2026-11-04 |
+
+### North Carolina (NC) - Public Records Act and Open Meetings Law
+Source: Official: ncleg.gov Chapter_132.html and Chapter_143 Article_33C read 2026-11-04.
+
+| Citation as it now appears | Status | What it says | Source | verified_on |
+|---|---|---|---|---|
+| N.C. Gen. Stat. § 132-1 | VERIFIED | Defines public records (Public Records Act, Chapter 132). | Official: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByChapter/Chapter_132.html (read 2026-11-04) | verified_on: 2026-11-04 |
+| N.C. Gen. Stat. § 132-6 | VERIFIED | (a) copies furnished as promptly as possible; inspection during reasonable hours. No numeric deadline. | Official: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByChapter/Chapter_132.html (read 2026-11-04) | verified_on: 2026-11-04 |
+| N.C. Gen. Stat. § 143-318.10 | VERIFIED | (a) each official meeting of a public body shall be open to the public; 143-318.12: special meetings need notice posted and delivered at least 48 hours before the meeting. | Official: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_143/Article_33C.html (read 2026-11-04) | verified_on: 2026-11-04 |
+
+### Arizona (AZ) - Public Records Law and Open Meeting Law
+Source: Official: azleg.gov ars/39/00121.htm, 00121-01.htm and ars/38/00431.htm, 00431-01.htm, 00431-02.htm read 2026-11-04. Amendments 2024-2026 not checked.
+
+| Citation as it now appears | Status | What it says | Source | verified_on |
+|---|---|---|---|---|
+| A.R.S. § 39-121 | VERIFIED | Public records and other matters in the custody of an officer are open to inspection by any person at all times during office hours; 39-121.01(D)(1) the custodian shall promptly furnish copies. No numeric deadline. | Official: https://www.azleg.gov/ars/39/00121.htm (read 2026-11-04) | verified_on: 2026-11-04 |
+| A.R.S. § 38-431.01 | VERIFIED | (A) all meetings of any public body shall be public meetings; 38-431.02(C) meetings require at least twenty-four hours' notice to the members of the public body and the public. | Official: https://www.azleg.gov/ars/38/00431-01.htm (read 2026-11-04) | verified_on: 2026-11-04 |

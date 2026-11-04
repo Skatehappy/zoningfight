@@ -6,6 +6,8 @@ import { verifyLicense } from './_license.js';
 import { verifiedFor, citationRules, lintCitations } from './_citelint.js';
 import { lintNumbers } from './_numlint.js';
 import { callComplete } from './_complete.js';
+import { findPersona, USER_SIGNS_RULE } from './_persona.js';
+import { openActsRule, lintRecordsMeetings } from './_open-acts.js';
 import VERIFIED from './_verified-citations.json' with { type: 'json' };
 
 // Node serverless runtime (NOT edge). Edge caps at ~25s on Hobby and ignores
@@ -110,15 +112,17 @@ ${draftLetter}` : (userPrompt || '');
 
     let messages;
     if (reviewMode && draftLetter) {
-      messages = [{ role: 'user', content: `Review and improve this appeal letter. Fix vague language, ensure all arguments are explicitly stated, remove emotional appeals, tighten redundancy. Write plain text only (no markdown: no #, **, __, tables or code fences). Return ONLY the improved letter:\n\n${draftLetter}` }];
+      messages = [{ role: 'user', content: `Review and improve this appeal letter. Fix vague language, ensure all arguments are explicitly stated, remove emotional appeals, tighten redundancy. Write plain text only (no markdown: no #, **, __, tables or code fences). Keep the writer as the owner/applicant signing in their own name ([Your Name]); never present the letter as written by an attorney, counsel or a firm. Return ONLY the improved letter:\n\n${draftLetter}` }];
     } else {
       messages = [{ role: 'user', content: userPrompt }];
     }
 
-    const callAnthropic = async (avoid = []) => {
+    const callAnthropic = async (avoid = [], personaHits = []) => {
       const avoidNote = avoid.length ? `
 Do NOT use any of the following citations or figures (they are not verified): ${avoid.join('; ')}. Rewrite without them.` : '';
-      const sys = isCheckCall ? undefined : ((systemPrompt || '') + citationRules(verified) + PLAIN_TEXT_RULE + avoidNote).trim();
+      const personaNote = personaHits.length ? `
+Your previous draft was rejected because it contained the phrase "${personaHits.join('", "')}". The letter is written and signed by the owner/applicant in their own name ([Your Name]); never describe the writer as an attorney, counsel, law firm or representative. Rewrite it without that wording.` : '';
+      const sys = isCheckCall ? undefined : ((systemPrompt || '') + citationRules(verified) + openActsRule(verified.abbr) + '\n\n' + USER_SIGNS_RULE + PLAIN_TEXT_RULE + avoidNote + personaNote).trim();
       // stop_reason "max_tokens" = truncated: retried once with a higher limit, never linted or returned as a letter.
       const r = await callComplete('https://api.anthropic.com/v1/messages', anthropicKey, max => ({ model: MODEL, max_tokens: max, thinking: { type: 'disabled' }, system: sys, messages }), [3000, 6000], { deadline: t0 + HARD_MS, retryBefore: t0 + RETRY_BEFORE_MS });
       if (!r.ok) return { httpError: r.err, truncated: !!r.truncated, timedOut: !!r.timedOut };
@@ -131,6 +135,7 @@ Do NOT use any of the following citations or figures (they are not verified): ${
     // client sends { markUsed:true } after the letter renders.
     let lastReason = null;
     let avoid = [];
+    let personaHits = [];
     let fallback = null;   // citation-stripped first draft, used if the single regeneration itself fails
     for (let attempt = 0; attempt < 2; attempt++) {
       // Budget guard: a second model call (lint regeneration) only starts if the first finished early enough.
@@ -139,18 +144,30 @@ Do NOT use any of the following citations or figures (they are not verified): ${
         if (fallback) return res.status(200).json({ text: fallback });
         return res.status(502).json({ error: 'The letter took too long to finish checking, so it was not delivered. Your access code has not been used. Please try again.', detail: 'time-budget' });
       }
-      const gen = await callAnthropic(avoid);
+      const gen = await callAnthropic(avoid, personaHits);
       if (gen.httpError && fallback) return res.status(200).json({ text: fallback });
       if (gen.timedOut) return res.status(502).json({ error: 'The AI took too long to answer, so no letter was delivered. Your access code has not been used. Please try again.', detail: 'timeout' });
       if (gen.truncated) return res.status(502).json({ error: 'The letter was cut off before it finished, so it was not delivered. Your access code has not been used. Please try again.', detail: 'truncated' });
       if (gen.httpError) return res.status(502).json({ error: 'AI generation failed', detail: String(gen.httpError).slice(0, 500) });
+      // No attorney voice: the letter is the user's own. A hit regenerates once (budget permitting, see the guard above);
+      // a second hit is never returned and never marks the code used (markUsed is a separate, later request).
+      if (!isCheckCall) {
+        const ph = findPersona(gen.text);
+        if (ph.length) {
+          console.error(`[persona] attempt ${attempt + 1} rejected phrases=${JSON.stringify(ph)}`);
+          if (attempt === 0) { personaHits = ph; continue; }
+          if (fallback) return res.status(200).json({ text: fallback });
+          return res.status(502).json({ error: `The letter could not be produced without wording that presents it as written by an attorney or firm (${ph.join('; ')}), so no letter was delivered. Your access code has not been used. Please try again.`, detail: 'persona-lint' });
+        }
+      }
       const lint = lintLetter(gen.text, { criteria, forbiddenPhrases, enforceForbidden });
       if (lint.ok) {
         if (isCheckCall) return res.status(200).json({ text: lint.cleanText });
         const cl0 = lintCitations(lint.cleanText, verified.keys, userText, verified.subs);
         const nl = lintNumbers(lint.cleanText, verified.abbr, userText);   // dollar/percent/day figures vs verified state data
-        if (cl0.ok && nl.ok) return res.status(200).json({ text: lint.cleanText });
-        const cl = { bad: [...cl0.bad, ...nl.bad], stripped: lintNumbers(cl0.stripped, verified.abbr, userText).stripped };
+        const rm = lintRecordsMeetings(lint.cleanText, verified.abbr);   // records request must cite the public-records act, not the open-meetings act
+        if (cl0.ok && nl.ok && rm.ok) return res.status(200).json({ text: lint.cleanText });
+        const cl = { bad: [...cl0.bad, ...nl.bad, ...rm.bad], stripped: rm.strip(lintNumbers(cl0.stripped, verified.abbr, userText).stripped) };
         // Log citation strings only (never letter text / user input).
         console.error(`[citelint] state=${verified.abbr || 'n/a'} attempt=${attempt + 1} misses=${cl.bad.length} cites=${JSON.stringify(cl.bad.map(s => s.slice(0, 80)))} action=${attempt === 0 ? 'regenerate' : 'strip'}`);
         if (attempt === 1) return res.status(200).json({ text: cl.stripped });

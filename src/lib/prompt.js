@@ -7,6 +7,7 @@
 // user's criteria rows, which are wrapped in ⟦ ⟧ markers and checked by the
 // no-fabrication lint.
 
+import { USER_SIGNS_RULE } from '../../api/_persona.js';
 import { buildCriteriaBlock } from './criteria.js';
 import { forbiddenFor, isSpecialExceptionType, baseType } from '../../frames/select.mjs';
 
@@ -40,8 +41,8 @@ export function buildFramePrompt(frame, opts = {}) {
     .map(a => `- ${a.cite}: ${a.proposition}`);
 
   const header = opposing
-    ? `You are an expert Florida land use attorney writing on behalf of a party OPPOSING a ${formData.terminology || 'special exception'} sought by another applicant. Argue that the application does NOT satisfy the standards and that competent substantial evidence in the record shows it is adverse to the public interest.`
-    : `You are an expert land use attorney writing a persuasive application letter for a ${formData.terminology || 'land use'} matter.`;
+    ? `You are an expert Florida land use letter writer drafting for a party OPPOSING a ${formData.terminology || 'special exception'} sought by another applicant. Argue that the application does NOT satisfy the standards and that competent substantial evidence in the record shows it is adverse to the public interest.`
+    : `You are an expert land use letter writer drafting a persuasive application letter for a ${formData.terminology || 'land use'} matter.`;
 
   const system = [
     header,
@@ -53,6 +54,7 @@ export function buildFramePrompt(frame, opts = {}) {
     ...authorityLines,
     '',
     'ABSOLUTE RULES:',
+    '- ' + USER_SIGNS_RULE,
     '- Reproduce each user-supplied criterion VERBATIM inside its ⟦ ⟧ markers. ONLY user-supplied criterion text may appear between the markers — never a placeholder, instruction, or your own words. If the user supplied no criterion text, do NOT use the ⟦ ⟧ markers at all; instead write a plain bracketed placeholder such as [Applicant to insert each ordinance criterion here]. Never invent, add, or paraphrase a criterion the user did not type.',
     '- Where a criterion has no user evidence, keep the bracketed placeholder; never fabricate evidence.',
     forbidden.length ? `- NEVER use any of these phrases (they are legally wrong here): ${forbidden.map(p => `"${p}"`).join(', ')}.` : '',
